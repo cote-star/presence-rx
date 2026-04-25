@@ -17,7 +17,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 - **Visibility:** 35% | **Position:** 1.8
 - **Gap type:** stronghold
-- **Action Priority:** 14/100 | **Recommended Action:** monitor | **Trend:** stronghold
+- **Action Priority:** 14/100 | **Recommended Action:** Monitor | **Trend:** stronghold
 
 ### CRM for Startups
 
@@ -26,7 +26,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 - **Competitor:** HubSpot dominates at N/A vs Attio at 22%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat CRM for Startups as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 54/100 | **Recommended Action:** test_next | **Trend:** proof_gap
+- **Action Priority:** 54/100 | **Recommended Action:** Test next | **Trend:** evidence gap
 
 ### Modern CRM Alternative
 
@@ -35,16 +35,16 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 - **Competitor:** Salesforce dominates at N/A vs Attio at 5%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Modern CRM Alternative as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 63/100 | **Recommended Action:** test_next | **Trend:** proof_gap
+- **Action Priority:** 63/100 | **Recommended Action:** Test next | **Trend:** evidence gap
 
 ### CRM Migration
 
 - **Visibility:** 3% | **Position:** 4.2
-- **Gap type:** volume_frequency
+- **Gap type:** volume / frequency
 - **Competitor:** HubSpot dominates at N/A vs Attio at 3%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat CRM Migration as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 65/100 | **Recommended Action:** test_next | **Trend:** proof_gap
+- **Action Priority:** 65/100 | **Recommended Action:** Test next | **Trend:** evidence gap
 
 ### RevOps Tools
 
@@ -53,7 +53,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 - **Competitor:** HubSpot dominates at N/A vs Attio at 15%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat RevOps Tools as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 57/100 | **Recommended Action:** test_next | **Trend:** proof_gap
+- **Action Priority:** 57/100 | **Recommended Action:** Test next | **Trend:** evidence gap
 
 ## Gap-Type Summary
 
@@ -62,7 +62,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 | Product-Led CRM | 35% | stronghold | N/A | moderate | N/A | 14 |
 | CRM for Startups | 22% | perception | confirmed | moderate | 100% | 54 |
 | Modern CRM Alternative | 5% | indexing | confirmed | moderate | 100% | 63 |
-| CRM Migration | 3% | volume_frequency | confirmed | moderate | 100% | 65 |
+| CRM Migration | 3% | volume / frequency | confirmed | moderate | 100% | 65 |
 | RevOps Tools | 15% | perception | confirmed | moderate | 100% | 57 |
 
 ## Evidence Chain

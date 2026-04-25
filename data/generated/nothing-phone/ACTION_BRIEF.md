@@ -42,7 +42,7 @@
 
 - **Visibility:** 10% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Publish explicit innovation proof and monitor whether AI answers adopt that association.
 - **Action Priority:** 85/100
@@ -56,7 +56,7 @@
 
 - **Visibility:** 6% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Publish minimalist-hardware positioning content and rerun this prompt cluster.
 - **Action Priority:** 87/100
@@ -74,7 +74,7 @@
 
 - **Visibility:** 12% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Test schema, canonical source pages, and ecosystem prompts after the next Peec snapshot.
 - **Action Priority:** 85/100
@@ -92,7 +92,7 @@
 
 - **Visibility:** 1% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Seed sustained wireless-audio proof across editorial and owned surfaces.
 - **Action Priority:** 84/100
@@ -113,7 +113,7 @@
 | bbh-2026-mobile-ecosystem | indexing | cluster:mobile-ecosystem |
 | bbh-2026-consumer-tech-innovation | perception | cluster:consumer-tech-innovation |
 | bbh-2026-minimalist-hardware | perception | cluster:minimalist-hardware |
-| bbh-2026-wireless-audio | volume_frequency | cluster:wireless-audio |
+| bbh-2026-wireless-audio | volume / frequency | cluster:wireless-audio |
 
 ### Planned Prompts (sample)
 

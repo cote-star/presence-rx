@@ -11,7 +11,7 @@
   "claims": [
     {
       "claim_id": "claim:bmw:luxury-ev-transition:v1",
-      "claim": "BMW has a perception blind spot in Luxury EV Transition; partner evidence is moderate.",
+      "claim": "BMW has a perception blind spot in Luxury EV Transition; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:luxury-ev-transition",
       "methods": [
@@ -32,7 +32,7 @@
     },
     {
       "claim_id": "claim:bmw:premium-suv-segment:v1",
-      "claim": "BMW has a indexing blind spot in Premium SUV Segment; partner evidence is moderate.",
+      "claim": "BMW has an indexing blind spot in Premium SUV Segment; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:premium-suv-segment",
       "methods": [
@@ -53,7 +53,7 @@
     },
     {
       "claim_id": "claim:bmw:electric-i-series:v1",
-      "claim": "BMW has a volume_frequency blind spot in Electric i-Series; partner evidence is moderate.",
+      "claim": "BMW has a volume / frequency blind spot in Electric i-Series; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:electric-i-series",
       "methods": [
@@ -74,7 +74,7 @@
     },
     {
       "claim_id": "claim:bmw:brand-heritage:v1",
-      "claim": "BMW has a perception blind spot in Brand Heritage; partner evidence is moderate.",
+      "claim": "BMW has a perception blind spot in Brand Heritage; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:brand-heritage",
       "methods": [

@@ -19,6 +19,8 @@ from presence_rx.contracts import (
     TavilyEvidence,
     ValueAddedMetrics,
 )
+from presence_rx.display_labels import human_decision
+from presence_rx.display_labels import human_gap_type as human_gap
 
 console = Console()
 
@@ -121,7 +123,9 @@ def build_action_brief(
 
             # Value metrics
             if vm:
-                lines.append(f"- **Recommended Action:** {vm.decision_bucket}")
+                lines.append(
+                    f"- **Recommended Action:** {human_decision(vm.decision_bucket)}"
+                )
                 lines.append(f"- **Reason:** {vm.decision_bucket_reason}")
                 lines.append(f"- **Recommended next move:** {vm.recommended_next_move}")
                 lines.append(f"- **Action Priority:** {vm.opportunity_score}/100")
@@ -157,7 +161,7 @@ def build_action_brief(
         lines.append("|-------|----------|----------------|")
         for topic in prescription.planned_topics:
             lines.append(
-                f"| {topic.name} | {topic.gap_type} | {topic.source_cluster_id} |"
+                f"| {topic.name} | {human_gap(topic.gap_type)} | {topic.source_cluster_id} |"
             )
         lines.append("")
 
@@ -165,7 +169,10 @@ def build_action_brief(
         lines.append("| Prompt | Country | Gap Type |")
         lines.append("|--------|---------|----------|")
         for prompt in prescription.planned_prompts[:6]:
-            lines.append(f"| {prompt.text[:80]}... | {prompt.country_code} | {prompt.gap_type} |")
+            gt = human_gap(prompt.gap_type)
+            lines.append(
+                f"| {prompt.text[:80]}... | {prompt.country_code} | {gt} |"
+            )
         if len(prescription.planned_prompts) > 6:
             lines.append(
                 f"| *...and {len(prescription.planned_prompts) - 6} more* | | |"

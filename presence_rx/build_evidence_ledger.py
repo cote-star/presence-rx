@@ -62,20 +62,22 @@ def _claim_status(gap: ClassifiedGap) -> tuple[ClaimStatus, PublicationStatus]:
 
 
 def _claim_text(brand: str, gap: ClassifiedGap, status: ClaimStatus) -> str:
-    gap_type = gap.provisional_gap_type.value
+    from presence_rx.display_labels import human_gap_article
+
+    gap_article = human_gap_article(gap.provisional_gap_type.value)
     if status == ClaimStatus.BLOCKED:
         return (
-            f"{gap.cluster_label} classification is contested; partner methods "
-            "conflict and require review."
+            f"{gap.cluster_label} classification is contested; "
+            "independent methods conflict and require review."
         )
     if status == ClaimStatus.INSUFFICIENT_EVIDENCE:
         return (
-            f"{brand} has a provisional {gap_type} signal in {gap.cluster_label}; "
-            "partner evidence is limited or unavailable."
+            f"{brand} has a provisional signal in {gap.cluster_label}; "
+            "evidence is limited or unavailable."
         )
     return (
-        f"{brand} has a {gap_type} blind spot in {gap.cluster_label}; "
-        f"partner evidence is {gap.confidence_tier.value}."
+        f"{brand} has {gap_article} blind spot in {gap.cluster_label}; "
+        f"evidence is {gap.confidence_tier.value}."
     )
 
 
@@ -84,7 +86,7 @@ def _publication_language(brand: str, gap: ClassifiedGap, status: ClaimStatus) -
     if status == ClaimStatus.BLOCKED:
         return (
             f"Do not claim {brand} ownership of the {gap.cluster_label} topic; "
-            f"partner methods conflict ({conflicts} conflicts)."
+            f"independent methods conflict ({conflicts} conflicts)."
         )
     if gap.confidence_tier == EvidenceTier.STRONG:
         return (
@@ -98,7 +100,7 @@ def _publication_language(brand: str, gap: ClassifiedGap, status: ClaimStatus) -
         )
     return (
         f"Explore the {brand} association in the {gap.cluster_label} topic; "
-        "partner evidence is limited."
+        "evidence is limited."
     )
 
 

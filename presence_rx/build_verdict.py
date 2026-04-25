@@ -87,7 +87,9 @@ def build_presence_verdict(
     for row in rows:
         vis_pct = f"{(row.visibility_target_share or 0) * 100:.0f}%"
         pos = f"{row.visibility_target_avg_position or 0:.1f}"
-        gap = row.gap_type or "stronghold"
+        from presence_rx.display_labels import human_gap_type
+
+        gap = human_gap_type(row.gap_type)
         competitor = row.visibility_competitor_owner or "N/A"
 
         lines.append(f"### {row.cluster_label}\n")
@@ -122,10 +124,12 @@ def build_presence_verdict(
         # Value metrics
         vm = metric_map.get(row.cluster_id)
         if vm:
+            from presence_rx.display_labels import human_decision, human_trend
+
             lines.append(
                 f"- **Action Priority:** {vm.opportunity_score}/100 | "
-                f"**Recommended Action:** {vm.decision_bucket} | "
-                f"**Trend:** {vm.trend_label}"
+                f"**Recommended Action:** {human_decision(vm.decision_bucket)} | "
+                f"**Trend:** {human_trend(vm.trend_label)}"
             )
 
         lines.append("")
@@ -141,8 +145,10 @@ def build_presence_verdict(
         "|----------------|-----------------|-----------------|"
     )
     for row in rows:
+        from presence_rx.display_labels import human_gap_type as _hgt
+
         vis = f"{(row.visibility_target_share or 0) * 100:.0f}%"
-        gap = row.gap_type or "stronghold"
+        gap = _hgt(row.gap_type)
         gap_info = next((g for g in classified if g.cluster_id == row.cluster_id), None)
         status = gap_info.classification_status if gap_info else "N/A"
         tier = gap_info.confidence_tier if gap_info else row.confidence_tier

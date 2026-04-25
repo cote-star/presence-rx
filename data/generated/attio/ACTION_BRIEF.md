@@ -35,7 +35,7 @@
 
 - **Visibility:** 22% | **Competitor:** HubSpot
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Publish explicit crm for startups positioning content and monitor AI adoption.
 - **Action Priority:** 54/100
@@ -48,7 +48,7 @@
 
 - **Visibility:** 15% | **Competitor:** HubSpot
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Publish explicit revops tools positioning content and monitor AI adoption.
 - **Action Priority:** 57/100
@@ -65,7 +65,7 @@
 
 - **Visibility:** 5% | **Competitor:** Salesforce
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.
 - **Action Priority:** 63/100
@@ -82,7 +82,7 @@
 
 - **Visibility:** 3% | **Competitor:** HubSpot
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Seed sustained crm migration proof across editorial and owned surfaces.
 - **Action Priority:** 65/100
@@ -101,7 +101,7 @@
 |-------|----------|----------------|
 | bbh-2026-crm-for-startups | perception | cluster:crm-for-startups |
 | bbh-2026-modern-crm-alternative | indexing | cluster:modern-crm-alternative |
-| bbh-2026-crm-migration | volume_frequency | cluster:crm-migration |
+| bbh-2026-crm-migration | volume / frequency | cluster:crm-migration |
 | bbh-2026-revops-tools | perception | cluster:revops-tools |
 
 ### Planned Prompts (sample)

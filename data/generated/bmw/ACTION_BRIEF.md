@@ -35,7 +35,7 @@
 
 - **Visibility:** 12% | **Competitor:** Tesla
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Publish explicit luxury ev transition positioning content and monitor AI adoption.
 - **Action Priority:** 59/100
@@ -48,7 +48,7 @@
 
 - **Visibility:** 30% | **Competitor:** Mercedes-Benz
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Publish explicit brand heritage positioning content and monitor AI adoption.
 - **Action Priority:** 52/100
@@ -65,7 +65,7 @@
 
 - **Visibility:** 15% | **Competitor:** Mercedes-Benz
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.
 - **Action Priority:** 57/100
@@ -82,7 +82,7 @@
 
 - **Visibility:** 6% | **Competitor:** Tesla
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** test_next
+- **Recommended Action:** Test next
 - **Reason:** The signal is plausible but needs public proof before action.
 - **Recommended next move:** Seed sustained electric i-series proof across editorial and owned surfaces.
 - **Action Priority:** 62/100
@@ -101,7 +101,7 @@
 |-------|----------|----------------|
 | bbh-2026-luxury-ev-transition | perception | cluster:luxury-ev-transition |
 | bbh-2026-premium-suv-segment | indexing | cluster:premium-suv-segment |
-| bbh-2026-electric-i-series | volume_frequency | cluster:electric-i-series |
+| bbh-2026-electric-i-series | volume / frequency | cluster:electric-i-series |
 | bbh-2026-brand-heritage | perception | cluster:brand-heritage |
 
 ### Planned Prompts (sample)

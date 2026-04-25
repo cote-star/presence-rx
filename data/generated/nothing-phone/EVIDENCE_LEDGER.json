@@ -11,7 +11,7 @@
   "claims": [
     {
       "claim_id": "claim:nothing-phone:mobile-ecosystem:v1",
-      "claim": "Nothing Phone has a indexing blind spot in Mobile Ecosystem; partner evidence is strong.",
+      "claim": "Nothing Phone has an indexing blind spot in Mobile Ecosystem; evidence is strong.",
       "status": "directional",
       "cluster_id": "cluster:mobile-ecosystem",
       "methods": [
@@ -34,7 +34,7 @@
     },
     {
       "claim_id": "claim:nothing-phone:consumer-tech-innovation:v1",
-      "claim": "Nothing Phone has a perception blind spot in Consumer Tech Innovation; partner evidence is strong.",
+      "claim": "Nothing Phone has a perception blind spot in Consumer Tech Innovation; evidence is strong.",
       "status": "directional",
       "cluster_id": "cluster:consumer-tech-innovation",
       "methods": [
@@ -57,7 +57,7 @@
     },
     {
       "claim_id": "claim:nothing-phone:minimalist-hardware:v1",
-      "claim": "Nothing Phone has a perception blind spot in Minimalist Hardware; partner evidence is strong.",
+      "claim": "Nothing Phone has a perception blind spot in Minimalist Hardware; evidence is strong.",
       "status": "directional",
       "cluster_id": "cluster:minimalist-hardware",
       "methods": [
@@ -80,7 +80,7 @@
     },
     {
       "claim_id": "claim:nothing-phone:wireless-audio:v1",
-      "claim": "Nothing Phone has a volume_frequency blind spot in Wireless Audio; partner evidence is strong.",
+      "claim": "Nothing Phone has a volume / frequency blind spot in Wireless Audio; evidence is strong.",
       "status": "directional",
       "cluster_id": "cluster:wireless-audio",
       "methods": [

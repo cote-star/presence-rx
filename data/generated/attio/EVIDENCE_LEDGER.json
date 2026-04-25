@@ -11,7 +11,7 @@
   "claims": [
     {
       "claim_id": "claim:attio:crm-for-startups:v1",
-      "claim": "Attio has a perception blind spot in CRM for Startups; partner evidence is moderate.",
+      "claim": "Attio has a perception blind spot in CRM for Startups; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:crm-for-startups",
       "methods": [
@@ -32,7 +32,7 @@
     },
     {
       "claim_id": "claim:attio:modern-crm-alternative:v1",
-      "claim": "Attio has a indexing blind spot in Modern CRM Alternative; partner evidence is moderate.",
+      "claim": "Attio has an indexing blind spot in Modern CRM Alternative; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:modern-crm-alternative",
       "methods": [
@@ -53,7 +53,7 @@
     },
     {
       "claim_id": "claim:attio:crm-migration:v1",
-      "claim": "Attio has a volume_frequency blind spot in CRM Migration; partner evidence is moderate.",
+      "claim": "Attio has a volume / frequency blind spot in CRM Migration; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:crm-migration",
       "methods": [
@@ -74,7 +74,7 @@
     },
     {
       "claim_id": "claim:attio:revops-tools:v1",
-      "claim": "Attio has a perception blind spot in RevOps Tools; partner evidence is moderate.",
+      "claim": "Attio has a perception blind spot in RevOps Tools; evidence is moderate.",
       "status": "directional",
       "cluster_id": "cluster:revops-tools",
       "methods": [
