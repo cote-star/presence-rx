@@ -91,6 +91,6 @@ See [docs/PEEC_MCP_EXPLORATION.md](docs/PEEC_MCP_EXPLORATION.md) for the verifie
 
 See [docs/FUTURE_DIRECTIONS.md](docs/FUTURE_DIRECTIONS.md) for the channel-activation roadmap (concept-only, sources the static `/future-directions` page in the Lovable webapp).
 
-See [docs/DESIGN_TOKENS.md](docs/DESIGN_TOKENS.md) for the Lovable webapp design constraint — must follow Peec AI's visual philosophy.
+See [docs/design.md](docs/design.md) for the Peec AI design style guide (tokens captured 2026-04-25) that the Lovable webapp must follow.
 
 See [docs/PUBLIC_SAFETY_CHECKLIST.md](docs/PUBLIC_SAFETY_CHECKLIST.md) before committing, pushing, recording, or making the repo public.

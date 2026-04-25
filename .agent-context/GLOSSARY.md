@@ -161,7 +161,7 @@ Build step #21 in the priority order. Sunday afternoon, post-submission. Channel
 ## Design Terms (D-013)
 
 **Peec design philosophy**
-The Lovable webapp must align visually with Peec AI's interface — clean, data-driven, executive-readable. Tokens captured from the live peec.ai interface (their public HTML/docs do not expose CSS). See [../docs/DESIGN_TOKENS.md](../docs/DESIGN_TOKENS.md).
+The Lovable webapp must align visually with Peec AI's interface — clean, data-driven, executive-readable, near-black on off-white, single light theme, Geist Variable typeface, 14 px body, 8 px / 12 px radii, signature inset+ring shadow replacing borders. Tokens captured 2026-04-25 from the live peec.ai interface (their public HTML/docs do not expose CSS). See [../docs/design.md](../docs/design.md).
 
 **Design tokens**
 Color palette, typography, spacing, surface, motion, iconography references for the Lovable webapp. Captured by inspecting the live rendered Peec interface in DevTools. Filled in by the Lovable lane before any visual work lands.

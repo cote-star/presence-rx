@@ -2,8 +2,8 @@
 
 Cold-start pack for any agent (Claude / Codex / Gemini / Cursor / human) joining the Peec AI track of Big Berlin Hack 2026. Read this before touching any code or doc.
 
-> Pack version: `0.4.0` — Saturday 2026-04-25, late afternoon. Product renamed **Proof of Presence → Presence Rx** (D-014). New primary tagline: *Diagnose. Prescribe. Refuse.*
-> Project: `big-berlin-hack/challenges/peec/repo` (GitHub repo will be `presence-rx` when created via `gh-play`)
+> Pack version: `0.5.0` — Saturday 2026-04-25, late afternoon. Peec AI design tokens captured and documented (D-013 satisfied); `DESIGN_TOKENS.md` renamed to `design.md` with the full style guide.
+> Project: `big-berlin-hack/challenges/peec/repo` (GitHub repo: [cote-star/presence-rx](https://github.com/cote-star/presence-rx), private)
 
 ## What This Pack Is
 
@@ -44,7 +44,7 @@ If anything in this pack contradicts these, **the canonical doc wins** and this 
 | Public-safety rules | [../docs/PUBLIC_SAFETY_CHECKLIST.md](../docs/PUBLIC_SAFETY_CHECKLIST.md) |
 | End-to-end flow + 2-min storyboard | [../docs/END_TO_END_BUILD_GUIDE_AND_STORYBOARD.md](../docs/END_TO_END_BUILD_GUIDE_AND_STORYBOARD.md) |
 | Future-directions (channel activation) concept | [../docs/FUTURE_DIRECTIONS.md](../docs/FUTURE_DIRECTIONS.md) |
-| Lovable webapp design tokens (Peec alignment) | [../docs/DESIGN_TOKENS.md](../docs/DESIGN_TOKENS.md) |
+| Peec AI design style guide (Lovable visual reference) | [../docs/design.md](../docs/design.md) |
 
 ## Hard Rules (Do Not Violate)
 
@@ -56,7 +56,7 @@ If anything in this pack contradicts these, **the canonical doc wins** and this 
 
 ## Pack Maintenance
 
-This pack is `0.4.0`. Update the relevant file when:
+This pack is `0.5.0`. Update the relevant file when:
 
 - A locked decision changes → update [DECISIONS.md](DECISIONS.md)
 - New verified Peec data lands → update [GROUND_TRUTH.md](GROUND_TRUTH.md)
@@ -67,6 +67,7 @@ After any update, bump the pack version in this file and note what changed.
 
 ## Changelog
 
+- `0.5.0` (2026-04-25, late afternoon) — **D-013 satisfied: Peec AI design tokens captured.** A separate agent walked the live Peec AI app (Tags, Overview, Prompts, Brands, Profile, Domains) and extracted the full design system — typography (Geist Variable, 14 px body), color (near-black on off-white, semantic taxonomy palette), spacing (4 px base, ~200 px sidebar), radii (8 px chips/buttons, 12 px sidebar/cards), the signature inset+ring shadow that replaces borders almost everywhere, motion tokens, layout shell, components (buttons, inputs, tags, cards, tables, charts), iconography, interaction patterns, voice, and a CSS cheat sheet. `DESIGN_TOKENS.md` renamed to `design.md` (preserved in git history via `git mv`). All 9 references across SCOPE_FINAL, README, INDEX, DECISIONS (D-013 marked satisfied), GLOSSARY, LANES, ONBOARDING, ARTIFACTS, pm-dashboard updated to point at the new filename. SCOPE_FINAL build step 10 marked complete. The Lovable lane can apply Section 9 cheat-sheet variables directly when build starts.
 - `0.4.0` (2026-04-25, late afternoon) — **Product renamed: Proof of Presence → Presence Rx (D-014).** Primary tagline locked: *Diagnose. Prescribe. Refuse.* (with *Find your brand's blind spots in AI answers* as sub-tagline). Single-pass rename touched 14 files, 30 mentions: SCOPE_FINAL, README (new diagnose/prescribe header), BATTLE_PLAN, AGENT_BRIEFING, OVERVIEW, INDEX, DECISIONS (D-003 updated + new D-014), ARTIFACTS, GLOSSARY (with new gap-type / future-directions / design terms added), LANES (Lovable lane now references DESIGN_TOKENS + Tier 4 #21 future-directions page), ONBOARDING (lane task assignments now include gap-type classifier and design-tokens capture), VALIDATION_REPORT, PEEC_MCP_EXPLORATION, PEEC_PM_VISUAL_BOARD, INTEGRATION_CHECKLIST, pm-dashboard.html. Deliverable name "Presence Verdict Pack" preserved. GitHub repo target name: `presence-rx`.
 - `0.3.0` (2026-04-25, late afternoon) — Three new locked decisions: D-011 (gap-type classifier as Tier 1.5 — `perception` / `indexing` / `volume_frequency` field on every blind spot, demo centerpiece), D-012 (future-directions split: public concept-only `FUTURE_DIRECTIONS.md` + private prototype outside repo, sneak peek in submission video, full demo only at live finalist pitch), D-013 (Lovable webapp must follow Peec AI design philosophy with tokens captured in `DESIGN_TOKENS.md`). Two new docs: `FUTURE_DIRECTIONS.md`, `DESIGN_TOKENS.md`. SCOPE_FINAL build priority order extended from 16 to 19 steps + post-submission private-demo step. Demo storyboard updated to weave gap-type moment (0:30-0:50) and sneak peek (1:50-2:00).
 - `0.2.0` (2026-04-25) — Post-cleanup refresh. HANDOFF.md retired; references removed from ARTIFACTS, ONBOARDING. Top-level BATTLE_PLAN slimmed to a pointer at SCOPE_FINAL. Top-level AGENT_BRIEFING tightened. pm-dashboard.html aligned with locked scope (Build Status replaces PM Questions tab; Value-Add narrowed to in-scope items).

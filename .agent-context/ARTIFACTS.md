@@ -53,7 +53,7 @@ Where every doc, file, and generated artifact lives in this repo. Use this as a 
 | [../docs/PEEC_PM_VISUAL_BOARD.md](../docs/PEEC_PM_VISUAL_BOARD.md) | Fast walkthrough for the Peec PM. Validation questions for partner-tech eligibility and demo fit. |
 | [../docs/PUBLIC_SAFETY_CHECKLIST.md](../docs/PUBLIC_SAFETY_CHECKLIST.md) | Pre-commit, pre-push, pre-record safety rules. Run before every public release. |
 | [../docs/FUTURE_DIRECTIONS.md](../docs/FUTURE_DIRECTIONS.md) | Channel-activation roadmap. Concept-only. Sources the static `/future-directions` page in the Lovable webapp. Generic vendor references (Morning Consult, Pathmatics, brand-lift methodology) are fine. No agency attribution, no specific client engagement, no engagement-bound data. |
-| [../docs/DESIGN_TOKENS.md](../docs/DESIGN_TOKENS.md) | Lovable webapp design constraint (D-013): the webapp must follow Peec AI's visual philosophy. Tokens captured from the live peec.ai interface — checklist to fill in before the Lovable lane lands visual work. |
+| [../docs/design.md](../docs/design.md) | Peec AI design style guide (Lovable webapp reference). Tokens captured 2026-04-25 from the live peec.ai interface. Renamed from `DESIGN_TOKENS.md` — D-013 now satisfied. Sections 9–11 are the actionable cheat sheet, usage guide, and constraints for the Lovable build. |
 
 ## Onboarding Pack (this folder, `.agent-context/`)
 

@@ -77,10 +77,11 @@ Locked decisions on the Peec build, with rationale and links to source docs. Ope
 - **Source:** [../docs/FUTURE_DIRECTIONS.md](../docs/FUTURE_DIRECTIONS.md), [../docs/SCOPE_FINAL.md](../docs/SCOPE_FINAL.md) Tier 4 #21.
 
 ### D-013: Lovable webapp must follow Peec AI's design philosophy
-- **Decision:** The Lovable dashboard surface (Tier 4 #20, eligibility-critical) must align visually with Peec AI's design philosophy — clean, data-driven, executive-readable, with color and typography pulled from the live peec.ai interface. Captured as design tokens in [../docs/DESIGN_TOKENS.md](../docs/DESIGN_TOKENS.md). Required before the Lovable build kicks off; cannot be sourced from the public peec.ai HTML alone (no exposed CSS / brand guidelines), so the agent building Lovable must reference the live rendered Peec interface directly.
+- **Decision:** The Lovable dashboard surface (Tier 4 #20, eligibility-critical) must align visually with Peec AI's design philosophy — clean, data-driven, executive-readable, with color and typography pulled from the live peec.ai interface. Tokens captured in [../docs/design.md](../docs/design.md) (renamed from `DESIGN_TOKENS.md`).
+- **Status:** ✓ **Satisfied 2026-04-25 (late afternoon).** Tokens captured from a live walkthrough of the Peec AI app (Tags, Overview, Prompts, Brands, Profile, Domains). The Lovable build can apply the cheat-sheet CSS variables (Section 9) directly.
 - **When locked:** Saturday 2026-04-25, late afternoon.
 - **Why:** Track judges include the Peec PM. A surface visually disconnected from Peec reads as "wrapper that doesn't respect the host." Visual alignment is a credibility signal that a 2-minute demo can leverage without spending a sentence on it.
-- **Source:** [../docs/DESIGN_TOKENS.md](../docs/DESIGN_TOKENS.md), [../docs/SCOPE_FINAL.md](../docs/SCOPE_FINAL.md) Tier 4 #20.
+- **Source:** [../docs/design.md](../docs/design.md), [../docs/SCOPE_FINAL.md](../docs/SCOPE_FINAL.md) Tier 4 #20.
 
 ### D-014: Renamed from "Proof of Presence" → "Presence Rx"
 - **Decision:** Rename the product from "Proof of Presence" to **Presence Rx**. Adopt **Diagnose. Prescribe. Refuse.** as the primary tagline; keep *Find your brand's blind spots in AI answers* as a sub-tagline. GitHub repo name (when created via `gh-play`) will be `presence-rx`. Local folder structure (`challenges/peec/repo`) unchanged.
