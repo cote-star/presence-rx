@@ -6,7 +6,9 @@ Multi-agent repo. Read this and the parent [AGENT_BRIEFING.md](../AGENT_BRIEFING
 
 - Play side. No work credentials. No work connectors.
 - Hackathon "no early start": no application code or mock data before official start. Boilerplate is allowed.
-- Track lock at Saturday 12:30 CEST. Peec activates only if both Buena and Qontext are unfavorable and partner-tech eligibility holds.
+- **Track locked: Peec.** Brand locked: Nothing Phone. Submission deadline: Sunday 14:00 CEST.
+- **Active plan:** [docs/SCOPE_FINAL.md](docs/SCOPE_FINAL.md) is the source of truth for what to build. 22 features in 4 tiers, 6-axis blind-spot model, eligibility-critical lane (Gemini + Tavily + Lovable, with Entire as Lovable fallback by Saturday 17:00).
+- **Onboarding:** new agents start at [.agent-context/INDEX.md](.agent-context/INDEX.md).
 
 ## Lanes
 

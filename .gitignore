@@ -22,8 +22,12 @@ yarn-error.log*
 .pnpm-store/
 dist/
 build/
+out/
 .next/
 .turbo/
+
+# Vercel / deploy
+.vercel/
 
 # Python / uv
 __pycache__/
@@ -35,11 +39,22 @@ venv/
 .ruff_cache/
 .mypy_cache/
 
+# Test / reports
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
 # Logs / temp
 *.log
 tmp/
 .cache/
 
+# Agent chorus sessions (provider configs are tracked)
+.agent-chorus/sessions/
+
 # Local data (no real property data committed)
 data/local/
 data/private/
+artifacts/local/
+screenshots/local/

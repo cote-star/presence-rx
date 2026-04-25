@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presence Rx - Solution & Flow</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #222633;
+    --border: #2e3345;
+    --text: #e4e6ed;
+    --muted: #8b8fa3;
+    --accent: #6c5ce7;
+    --accent2: #a29bfe;
+    --green: #00b894;
+    --orange: #fdcb6e;
+    --red: #e17055;
+    --blue: #74b9ff;
+    --pink: #fd79a8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, var(--accent) 0%, #4834d4 100%);
+    padding: 2.5rem 2rem 0;
+    text-align: center;
+  }
+  .header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+  .header .tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-top: 0.4rem;
+    font-weight: 400;
+  }
+  .header .context {
+    display: inline-flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header .context span { white-space: nowrap; }
+  .header .tag-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: 0.28rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  /* Tabs */
+  .tab-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 1.5rem;
+  }
+  .tab-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .tab-btn:hover { color: rgba(255,255,255,0.85); }
+  .tab-btn.active {
+    color: #fff;
+    border-bottom-color: #fff;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px 8px 0 0;
+  }
+
+  /* Tab content */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Layout */
+  .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .section { margin-bottom: 2.5rem; }
+  .section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent2);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .section-title .mini-tag {
+    margin-left: 0.45rem;
+    color: var(--muted);
+    letter-spacing: 0.7px;
+  }
+
+  /* Status banner */
+  .data-note {
+    background: rgba(253,203,110,0.12);
+    border: 1px solid rgba(253,203,110,0.35);
+    color: #ffeaa7;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    font-size: 0.86rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Punchline strip */
+  .punchline-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+  }
+  .punchline-card {
+    background: linear-gradient(135deg, rgba(108,92,231,0.18), rgba(34,38,51,0.9));
+    border: 1px solid rgba(162,155,254,0.35);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  .punchline-card .kicker {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent2);
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+  }
+  .punchline-card .line {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .punchline-card .sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+
+  /* Cards grid */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .hero-card .number { font-size: 2rem; font-weight: 700; line-height: 1; }
+  .hero-card .label { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+  .hero-card.green .number { color: var(--green); }
+  .hero-card.orange .number { color: var(--orange); }
+  .hero-card.red .number { color: var(--red); }
+  .hero-card.blue .number { color: var(--blue); }
+  .hero-card.accent .number { color: var(--accent2); }
+
+  /* Pipeline */
+  .pipeline { display: flex; gap: 0; overflow-x: auto; padding: 0.5rem 0; }
+  .pipe-step { flex: 1; min-width: 130px; position: relative; text-align: center; }
+  .pipe-step .pipe-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 0.75rem;
+    margin: 0 0.25rem;
+    position: relative;
+    z-index: 1;
+  }
+  .pipe-step .pipe-icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+  .pipe-step .pipe-label { font-size: 0.78rem; font-weight: 600; }
+  .pipe-step .pipe-detail { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }
+  .pipe-step .pipe-tool {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.15rem 0.4rem;
+    margin-top: 0.4rem;
+    color: var(--accent2);
+  }
+  .pipe-arrow {
+    position: absolute;
+    right: -0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 1rem;
+    z-index: 2;
+  }
+
+  /* Data-to-solution flow */
+  .solution-flow {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+    overflow-x: auto;
+  }
+  .flow-lanes {
+    display: grid;
+    grid-template-columns: 1.05fr 1.15fr 1.15fr 1.1fr 1.05fr;
+    gap: 0.75rem;
+    min-width: 980px;
+  }
+  .lane {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem;
+    position: relative;
+  }
+  .lane::after {
+    content: '->';
+    position: absolute;
+    right: -0.62rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent2);
+    font-weight: 800;
+    font-size: 0.95rem;
+    z-index: 2;
+  }
+  .lane:last-child::after { display: none; }
+  .lane-title {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent2);
+    margin-bottom: 0.65rem;
+  }
+  .flow-chip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  .flow-chip:last-child { margin-bottom: 0; }
+  .flow-chip strong {
+    display: block;
+    font-size: 0.83rem;
+    line-height: 1.25;
+  }
+  .flow-chip span {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.18rem;
+    line-height: 1.35;
+  }
+  .flow-chip.anchor { border-color: var(--accent); background: rgba(108,92,231,0.1); }
+  .flow-chip.pass { border-color: var(--green); background: rgba(0,184,148,0.08); }
+  .flow-chip.warn { border-color: var(--orange); background: rgba(253,203,110,0.08); }
+  .flow-chip.stop { border-color: var(--red); background: rgba(225,112,85,0.08); }
+  .flow-caption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .flow-caption .caption-pill {
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.3rem 0.6rem;
+  }
+
+  /* Cluster table */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:last-child td { border-bottom: none; }
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .badge.strong { background: rgba(0,184,148,0.15); color: var(--green); }
+  .badge.moderate { background: rgba(253,203,110,0.15); color: var(--orange); }
+  .badge.limited { background: rgba(225,112,85,0.15); color: var(--red); }
+  .badge.blocked { background: rgba(225,112,85,0.25); color: var(--red); }
+  .badge.act { background: rgba(0,184,148,0.15); color: var(--green); }
+  .badge.test { background: rgba(116,185,255,0.15); color: var(--blue); }
+  .badge.monitor { background: rgba(253,203,110,0.15); color: var(--orange); }
+  .badge.block { background: rgba(225,112,85,0.15); color: var(--red); }
+
+  /* Proof chain */
+  .proof-chain { display: flex; flex-direction: column; gap: 0; }
+  .proof-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .proof-step::before {
+    content: '';
+    position: absolute;
+    left: 0.65rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .proof-step:last-child::before { display: none; }
+  .proof-dot {
+    position: absolute;
+    left: 0.25rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--accent2);
+    background: var(--bg);
+    z-index: 1;
+  }
+  .proof-content {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    flex: 1;
+    margin-bottom: 0.75rem;
+  }
+  .proof-content .proof-label {
+    font-size: 0.72rem;
+    color: var(--accent2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  .proof-content .proof-text { font-size: 0.88rem; margin-top: 0.2rem; }
+  .proof-content .proof-source { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* Blocked claim callout */
+  .blocked-callout {
+    background: var(--surface);
+    border: 1px solid var(--red);
+    border-left: 4px solid var(--red);
+    border-radius: 0 12px 12px 0;
+    padding: 1.25rem;
+  }
+  .blocked-callout .blocked-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+  .blocked-callout .blocked-claim {
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: line-through;
+    opacity: 0.7;
+  }
+  .blocked-callout .blocked-reason { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+  .blocked-callout .safe-rewrite {
+    font-size: 0.88rem;
+    color: var(--green);
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--green);
+  }
+  .blocked-callout .next-step { font-size: 0.82rem; color: var(--blue); margin-top: 0.5rem; }
+
+  /* Differentiator grid */
+  .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 700px) { .diff-grid { grid-template-columns: 1fr; } }
+  .diff-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .diff-card h3 { font-size: 0.88rem; margin-bottom: 0.5rem; }
+  .diff-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .diff-card .card-tag {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent2);
+    margin-bottom: 0.5rem;
+  }
+  .diff-card.highlight {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(108,92,231,0.08), rgba(108,92,231,0.02));
+  }
+
+  /* PM questions */
+  .question-list { list-style: none; display: grid; gap: 0.75rem; }
+  .question-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .q-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .q-text { font-size: 0.88rem; }
+  .q-context { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; }
+
+  /* Demo timeline */
+  .demo-timeline { display: flex; flex-direction: column; gap: 0; }
+  .demo-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .demo-step:last-child { border-bottom: none; }
+  .demo-time { font-size: 0.78rem; font-weight: 700; color: var(--accent2); padding-top: 0.15rem; }
+  .demo-visual { font-weight: 600; font-size: 0.92rem; }
+  .demo-words { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* Partner stack */
+  .partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .partner-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .partner-card .partner-name { font-weight: 700; font-size: 0.95rem; }
+  .partner-card .partner-role { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
+  .partner-card .partner-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  .partner-card .partner-tag.required { background: rgba(108,92,231,0.2); color: var(--accent2); }
+  .partner-card .partner-tag.eligible { background: rgba(0,184,148,0.15); color: var(--green); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Action brief preview */
+  .action-brief {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .action-brief h3 { font-size: 1rem; margin-bottom: 1rem; color: var(--green); }
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .action-item:last-child { border-bottom: none; }
+  .action-icon {
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+  .action-text { font-size: 0.88rem; }
+  .action-text .action-sub { font-size: 0.78rem; color: var(--muted); }
+
+  /* ===== DEEP DIVE TAB STYLES ===== */
+  .prose { max-width: 820px; margin: 0 auto; }
+  .prose h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .prose h2:first-child { margin-top: 0; }
+  .prose h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.75rem 0 0.5rem;
+    color: var(--accent2);
+  }
+  .prose p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+  }
+  .prose p strong { color: var(--text); }
+  .prose ul, .prose ol {
+    margin: 0.5rem 0 1rem 1.5rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .prose li { margin-bottom: 0.3rem; }
+  .prose li strong { color: var(--text); }
+  .prose .callout {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .prose .callout.green-callout { border-left-color: var(--green); }
+  .prose .callout.red-callout { border-left-color: var(--red); }
+  .prose .callout.blue-callout { border-left-color: var(--blue); }
+  .prose .source-rule {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.78rem;
+    color: var(--accent2);
+    font-weight: 600;
+    margin: 0.1rem 0.15rem;
+  }
+  .prose .step-grid {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0.75rem 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .prose .step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .prose .step-body { padding-top: 0.35rem; }
+  .prose .step-body strong { display: block; font-size: 0.95rem; color: var(--text); margin-bottom: 0.2rem; }
+  .prose .step-body span { font-size: 0.85rem; color: var(--muted); }
+
+  /* Guardrail table in prose */
+  .prose .guard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+  }
+  .prose .guard-table th {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+  }
+  .prose .guard-table td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 0.85rem;
+  }
+
+  /* Value-add layer */
+  .value-add-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1rem;
+  }
+  .value-add-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.15rem;
+    position: relative;
+  }
+  .value-add-card.lit {
+    border-color: var(--accent);
+    background: linear-gradient(135deg, rgba(108,92,231,0.10), rgba(34,38,51,0.9));
+  }
+  .va-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.6rem;
+  }
+  .va-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .va-title {
+    font-size: 0.97rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .va-row {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .va-row:first-of-type { border-top: none; }
+  .va-row-label {
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent2);
+    font-weight: 700;
+    padding-top: 0.1rem;
+  }
+  .va-row-text { font-size: 0.83rem; color: var(--text); line-height: 1.45; }
+  .va-row-text code {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.05rem 0.35rem;
+    font-size: 0.78rem;
+    color: var(--accent2);
+  }
+  .va-priority {
+    display: inline-block;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .va-priority.p0 { background: rgba(0,184,148,0.18); color: var(--green); }
+  .va-priority.p1 { background: rgba(116,185,255,0.18); color: var(--blue); }
+  .va-priority.p2 { background: rgba(253,203,110,0.18); color: var(--orange); }
+
+  /* Flow arrow diagram */
+  .flow-strip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+  .flow-node {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .flow-node.highlight-node {
+    border-color: var(--accent);
+    background: rgba(108,92,231,0.1);
+  }
+  .flow-arr { color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Presence Rx</h1>
+  <div class="tagline" style="font-weight:600;letter-spacing:0.5px;">Diagnose. Prescribe. Refuse.</div>
+  <div class="tagline" style="opacity:0.75;font-size:0.95rem;margin-top:0.15rem;">Find your brand's blind spots in AI answers.</div>
+  <div class="context">
+    <span>Big Berlin Hack 2026</span>
+    <span>Track: Peec AI</span>
+    <span>April 25&ndash;26, Berlin</span>
+    <span>Solution &amp; Flow</span>
+  </div>
+  <div class="tag-row">
+    <span class="tag-pill">Nothing Phone (locked)</span>
+    <span class="tag-pill">Real Peec MCP data</span>
+    <span class="tag-pill">Peec is source of record</span>
+    <span class="tag-pill">Guardrails first</span>
+  </div>
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('dashboard', event)">Dashboard</button>
+    <button class="tab-btn" onclick="switchTab('deepdive', event)">How It Works</button>
+    <button class="tab-btn" onclick="switchTab('reasoning', event)">Why This Way</button>
+    <button class="tab-btn" onclick="switchTab('questions', event)">Build Status</button>
+  </div>
+</div>
+
+<!-- ==================== TAB 1: DASHBOARD ==================== -->
+<div id="tab-dashboard" class="tab-content active">
+<div class="container">
+
+  <div class="data-note">
+    <strong>MCP verified &middot; Nothing Phone locked:</strong> All data below is real, pulled from Peec MCP. Nothing Phone chosen over Attio because: (1) other teams will default to Attio, (2) the "Invisible Champion" data story is stronger, (3) the minimalist hardware blind spot is a perfect guardrail demo moment. 50 prompts, 5 topics, 10 brands.
+  </div>
+
+  <div class="section">
+    <div class="section-title">What We're Building</div>
+    <div class="diff-grid">
+      <div class="diff-card highlight">
+        <div class="card-tag">Problem</div>
+        <h3>The Problem</h3>
+        <p>Challenger brands don't know where they appear in AI-generated answers, who owns the language of their category, or where their biggest blind spots are. Nothing Phone dominates Smartphone Design prompts but is invisible in Minimalist Hardware &mdash; the topic most aligned with its brand. Current tools stop at "you are visible here."</p>
+      </div>
+      <div class="diff-card highlight">
+        <div class="card-tag">Product</div>
+        <h3>Our Product: Presence Rx</h3>
+        <p>A structured Presence Verdict that turns Peec visibility data into an evidence-graded action brief. Every recommendation comes with receipts: source of record, method agreement, guardrail decision, and allowed claim language.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Punchlines <span class="mini-tag">say these first</span></div>
+    <div class="punchline-strip">
+      <div class="punchline-card"><div class="kicker">Core</div><div class="line">Receipts, not vibes.</div><div class="sub">Every action traces back to Peec evidence and method checks.</div></div>
+      <div class="punchline-card"><div class="kicker">Peec role</div><div class="line">Peec owns the visibility truth.</div><div class="sub">Gemini interprets, Tavily validates public proof, neither overrides Peec.</div></div>
+      <div class="punchline-card"><div class="kicker">Differentiator</div><div class="line">The no is the feature.</div><div class="sub">Blocked claims prove the system is disciplined, not just generative.</div></div>
+      <div class="punchline-card"><div class="kicker">Output</div><div class="line">From prompts to Presence Verdict.</div><div class="sub">Prompt clusters become a marketer-ready verdict pack with receipts at every step.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Executive Snapshot <span class="mini-tag">real Peec data &middot; Nothing Phone project</span></div>
+    <div class="hero-grid">
+      <div class="hero-card accent"><div class="number">50</div><div class="label">Prompts Tracked</div></div>
+      <div class="hero-card blue"><div class="number">5</div><div class="label">Peec Topics</div></div>
+      <div class="hero-card green"><div class="number">10</div><div class="label">Brands Tracked</div></div>
+      <div class="hero-card red"><div class="number">20%</div><div class="label">Overall Visibility</div></div>
+      <div class="hero-card orange"><div class="number">2.4</div><div class="label">Avg Position (#1 when seen)</div></div>
+      <div class="hero-card blue"><div class="number">4/5</div><div class="label">Topics with Blind Spots</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Pipeline: How It Works <span class="mini-tag">8-step solution flow with gap-type classifier as the new sharp moment</span></div>
+    <div class="pipeline">
+      <div class="pipe-step"><div class="pipe-box"><div class="pipe-icon">&#x1F50D;</div><div class="pipe-label">1. Ingest</div><div class="pipe-detail">Peec MCP snapshot</div><div class="pipe-tool">Peec MCP</div></div><div class="pipe-arrow">&rarr;</div></div>
+      <div class="pipe-step"><div class="pipe-box"><div class="pipe-icon">&#x1F310;</div><div class="pipe-label">2. Enrich</div><div class="pipe-detail">Public proof &amp; gaps</div><div class="pipe-tool">Tavily</div></div><div class="pipe-arrow">&rarr;</div></div>
+      <div class="pipe-step"><div class="pipe-box"><div class="pipe-icon">&#x1F9E0;</div><div class="pipe-label">3. Value-Add Metrics</div><div class="pipe-detail">Relevance &middot; trust &middot; topics &middot; trends</div><div class="pipe-tool">Gemini</div></div><div class="pipe-arrow">&rarr;</div></div>
+      <div class="pipe-step"><div class="pipe-box"><div class="pipe-icon">&#x1F4CA;</div><div class="pipe-label">4. Competitor Landscape</div><div class="pipe-detail">Combined-metric ownership map</div><div class="pipe-tool">Pipeline</div></div><div class="pipe-arrow">&rarr;</div></div>
+      <div class="pipe-step"><div class="pipe-box" style="background:linear-gradient(135deg,rgba(253,203,110,0.25),rgba(225,112,85,0.18));border:2px solid #fdcb6e;"><div class="pipe-icon">&#x2728;</div><div class="pipe-label" style="color:#fdcb6e;">5. Gap-Type Classifier</div><div class="pipe-detail">perception &middot; indexing &middot; volume</div><div class="pipe-tool">Tier 1.5 &middot; demo centerpiece</div></div><div class="pipe-arrow">&rarr;</div></div>
+      <div class="pipe-step"><div class="pipe-box"><div class="pipe-icon">&#x1F6E1;&#xFE0F;</div><div class="pipe-label">Guardrails</div><div class="pipe-detail">Grade &amp; block</div><div class="pipe-tool">Method Ladder</div></div><div class="pipe-arrow">&rarr;</div></div>
+      <div class="pipe-step"><div class="pipe-box"><div class="pipe-icon">&#x1F4DD;</div><div class="pipe-label">6. Action Brief</div><div class="pipe-detail">Presence Verdict + intervention class</div><div class="pipe-tool">Generator</div></div><div class="pipe-arrow">&rarr;</div></div>
+      <div class="pipe-step"><div class="pipe-box"><div class="pipe-icon">&#x21BB;</div><div class="pipe-label">Prescription</div><div class="pipe-detail">create_prompt &middot; create_tag</div><div class="pipe-tool">Peec MCP writes</div></div></div>
+    </div>
+    <div class="data-note" style="background: rgba(108,92,231,0.08); border-color: rgba(162,155,254,0.4); color: var(--text); margin-top: 1rem;">
+      <strong>The new sharp moment (step 5):</strong> Tier 1 diagnoses <em>where</em> the brand is invisible. Tier 1.5 classifies <em>what kind of fix</em> each blind spot needs — perception, indexing, or volume/frequency. Each gap type triggers a different intervention class in the action brief. <em>No other Peec wrapper does this.</em>
+    </div>
+    <div class="data-note" style="background: rgba(223,230,233,0.08); border: 1px dashed rgba(99,110,114,0.4); color: var(--muted); margin-top: 0.5rem; font-size: 0.85rem;">
+      <strong>Sneak peek &middot; future direction:</strong> the Lovable webapp also exposes a static <code>/future-directions</code> route — the channel-activation roadmap. Concept-only on the public surface; the actual prototype with permissioned external benchmark data lives outside this repo. See <a href="docs/FUTURE_DIRECTIONS.md" style="color:var(--accent2);">docs/FUTURE_DIRECTIONS.md</a>.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Data-To-Solution Flow <span class="mini-tag">what moves through the system</span></div>
+    <div class="solution-flow">
+      <div class="flow-lanes">
+        <div class="lane">
+          <div class="lane-title">1. Peec Signal</div>
+          <div class="flow-chip anchor"><strong>Prompt observations</strong><span>Prompt text, answer text, brand mentions, competitor mentions.</span></div>
+          <div class="flow-chip anchor"><strong>Visibility fields</strong><span>Rank, position, share, model/provider, snapshot id if available.</span></div>
+          <div class="flow-chip anchor"><strong>Evidence refs</strong><span>Peec refs become the anchor for every recommendation.</span></div>
+        </div>
+        <div class="lane">
+          <div class="lane-title">2. Structure</div>
+          <div class="flow-chip"><strong>Prompt universe</strong><span>Category, competitor, buying intent, problem-aware, analyst/review.</span></div>
+          <div class="flow-chip"><strong>Prompt clusters</strong><span>Similar prompts become marketer-readable units.</span></div>
+          <div class="flow-chip"><strong>Ownership map</strong><span>Who owns each cluster: target, competitor, unclear, or no owner.</span></div>
+        </div>
+        <div class="lane">
+          <div class="lane-title">3. Explain</div>
+          <div class="flow-chip"><strong>Gemini analysis</strong><span>Themes, missing associations, parent topics, scenario wording.</span></div>
+          <div class="flow-chip"><strong>Tavily proof</strong><span>Public proof, competitor assets, contradicting evidence, proof gaps.</span></div>
+          <div class="flow-chip"><strong>Campaign taxonomy</strong><span>Cluster -> parent topic -> campaign type -> campaign category.</span></div>
+        </div>
+        <div class="lane">
+          <div class="lane-title">4. Decide</div>
+          <div class="flow-chip pass"><strong>Evidence tier</strong><span>Strong, moderate, limited, or blocked.</span></div>
+          <div class="flow-chip warn"><strong>Decision bucket</strong><span>Act now, test next, monitor, deprioritize, or block.</span></div>
+          <div class="flow-chip stop"><strong>Claim guardrail</strong><span>Allowed language, safe rewrite, unavailable reason, next evidence.</span></div>
+        </div>
+        <div class="lane">
+          <div class="lane-title">5. Output</div>
+          <div class="flow-chip pass"><strong>Verdict pack</strong><span>PRESENCE_VERDICT.md, ACTION_BRIEF.md, evidence ledger, manifest.</span></div>
+          <div class="flow-chip pass"><strong>Presence Rx dashboard</strong><span>Executive snapshot, proof chain, blocked claim, partner-tech story.</span></div>
+          <div class="flow-chip warn"><strong>PM decisions</strong><span>Best brand, required Peec fields, claim boundaries, partner eligibility.</span></div>
+        </div>
+      </div>
+      <div class="flow-caption">
+        <span class="caption-pill">Peec = visibility truth</span>
+        <span class="caption-pill">Gemini = interpretation</span>
+        <span class="caption-pill">Tavily = public proof</span>
+        <span class="caption-pill">Guardrails = go/no-go</span>
+        <span class="caption-pill">Output = Presence Verdict + action brief</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Peec Topic Map <span class="mini-tag">real Nothing Phone data &middot; 50 prompts across 5 topics</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Peec Topic</th><th>Visibility</th><th>SoV</th><th>Position</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Smartphone Design</strong><br><span style="font-size:0.78rem;color:var(--muted)">build quality, aesthetics, glyph interface, transparent hardware</span></td><td style="color:var(--green);font-weight:700">72%</td><td style="color:var(--green);font-weight:700">85%</td><td style="color:var(--green);font-weight:700">1.9</td><td><span class="badge strong">owns it</span></td></tr>
+          <tr><td><strong>Mobile Ecosystem</strong><br><span style="font-size:0.78rem;color:var(--muted)">cross-device, clean software, launcher customization</span></td><td style="color:var(--red);font-weight:700">12%</td><td>7%</td><td>3.8</td><td><span class="badge limited">blind spot &mdash; Apple at 72%</span></td></tr>
+          <tr><td><strong>Consumer Tech Innovation</strong><br><span style="font-size:0.78rem;color:var(--muted)">disruptors, sustainability, transparent design, startup challengers</span></td><td style="color:var(--red);font-weight:700">10%</td><td>5%</td><td>3.7</td><td><span class="badge limited">blind spot &mdash; Apple at 45%</span></td></tr>
+          <tr><td><strong>Minimalist Hardware</strong><br><span style="font-size:0.78rem;color:var(--muted)">clean workspace, desk setups, minimalist tech accessories</span></td><td style="color:var(--red);font-weight:700">6%</td><td>2%</td><td>4.1</td><td><span class="badge blocked">ironic gap &mdash; Apple at 39%</span></td></tr>
+          <tr><td><strong>Wireless Audio</strong><br><span style="font-size:0.78rem;color:var(--muted)">earbuds, noise-canceling, audio quality, Nothing Ear</span></td><td style="color:var(--red);font-weight:700">1%</td><td>0%</td><td>2.0</td><td><span class="badge blocked">invisible &mdash; Apple at 53%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Proof Chain &mdash; Receipts Before Recommendations</div>
+    <div class="proof-chain">
+      <div class="proof-step"><div class="proof-dot"></div><div class="proof-content"><div class="proof-label">Recommendation</div><div class="proof-text">Create public content establishing Nothing Phone in minimalist hardware conversations.</div><div class="proof-source">decision_bucket: act_now &middot; allowed_language: "Prioritize this action"</div></div></div>
+      <div class="proof-step"><div class="proof-dot"></div><div class="proof-content"><div class="proof-label">Claim</div><div class="proof-text">Nothing Phone is absent from minimalist hardware prompts despite being a minimalist brand.</div><div class="proof-source">claim_id: claim:nothing:minimalist:001 &middot; status: actionable</div></div></div>
+      <div class="proof-step"><div class="proof-dot"></div><div class="proof-content"><div class="proof-label">Peec Evidence</div><div class="proof-text">6% visibility in Minimalist Hardware topic. Apple has 39%. Nothing Phone appears in only 8 of ~145 AI responses in this topic.</div><div class="proof-source">source_of_record: peec &middot; topic: Minimalist Hardware &middot; SoV: 2%</div></div></div>
+      <div class="proof-step"><div class="proof-dot"></div><div class="proof-content"><div class="proof-label">Public Proof (Tavily)</div><div class="proof-text">Apple dominates "minimalist desk setup" and "clean workspace tech" search results. Nothing Phone has no dedicated minimalist positioning content.</div><div class="proof-source">source_of_record: tavily &middot; proof_gap: confirmed</div></div></div>
+      <div class="proof-step"><div class="proof-dot"></div><div class="proof-content"><div class="proof-label">Gemini Analysis</div><div class="proof-text">Perception theme: "minimalist design" is associated with Apple, not Nothing. Missing association: "transparent minimalism" as distinct design language.</div><div class="proof-source">source_of_record: gemini_analysis &middot; agreement_score: 3/3</div></div></div>
+      <div class="proof-step"><div class="proof-dot"></div><div class="proof-content"><div class="proof-label">Guardrail Decision</div><div class="proof-text">evidence_tier: strong &middot; publication_status: publishable &middot; methods agree</div><div class="proof-source">Passed: has_peec_ref, has_public_source, has_parent_topic, method_consensus</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Blocked Claim &mdash; The No Is The Feature</div>
+    <div class="blocked-callout">
+      <div class="blocked-tag">&#x26D4; Blocked &mdash; EVIDENCE_CONTRADICTION</div>
+      <div class="blocked-claim">"Nothing Phone is the go-to minimalist tech brand in AI answers."</div>
+      <div class="blocked-reason"><strong>Reason:</strong> Peec shows 6% visibility in Minimalist Hardware &mdash; Apple has 39%. Nothing Phone appears in fewer than 1 in 15 AI responses about minimalist tech. The brand's identity doesn't match its AI presence.</div>
+      <div class="safe-rewrite"><strong>Safe rewrite:</strong> "Nothing Phone dominates Smartphone Design (72% visibility, position 1.9) but is nearly invisible in adjacent topics like Minimalist Hardware (6%) and Wireless Audio (1%)."</div>
+      <div class="next-step"><strong>Next evidence to collect:</strong> Publish minimalist hardware content featuring Nothing Phone's transparent design language. Monitor if AI engines start associating Nothing with the broader minimalist category.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Action Brief Preview</div>
+    <div class="action-brief">
+      <h3>What To Do This Week</h3>
+      <div class="action-item"><div class="action-icon" style="color:var(--green)">&#x25B6;</div><div class="action-text"><strong>Create minimalist hardware positioning content</strong><div class="action-sub">Target: Minimalist Hardware topic (6% vis) &middot; bucket: act_now &middot; biggest ironic gap</div></div></div>
+      <div class="action-item"><div class="action-icon" style="color:var(--blue)">&#x25B6;</div><div class="action-text"><strong>Publish Nothing Ear content for wireless audio visibility</strong><div class="action-sub">Target: Wireless Audio topic (1% vis) &middot; bucket: test_next &middot; Apple at 53%</div></div></div>
+      <div class="action-item"><div class="action-icon" style="color:var(--green)">&#x25B6;</div><div class="action-text"><strong>Defend Smartphone Design leadership</strong><div class="action-sub">Nothing Phone owns this at 72% vis, 85% SoV, position 1.9 &middot; bucket: protect</div></div></div>
+      <div class="action-item"><div class="action-icon" style="color:var(--red)">&#x2716;</div><div class="action-text"><strong>Do not claim: "Nothing Phone is the go-to minimalist tech brand"</strong><div class="action-sub">Blocked: 6% visibility in Minimalist Hardware &middot; Apple 39% &middot; safe rewrite available</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">How This Is Different</div>
+    <div class="diff-grid">
+      <div class="diff-card"><h3>Most AI Visibility Tools</h3><p>"You are mentioned in X% of prompts." A metric without an action. No claim grading, no source of record, no blocked claims.</p></div>
+      <div class="diff-card highlight"><h3>Presence Rx</h3><p>Visibility signal &rarr; evidence quality &rarr; source of record &rarr; allowed language &rarr; action or block decision. Every recommendation is auditable.</p></div>
+      <div class="diff-card"><h3>Generic Content Generators</h3><p>"Here are 10 blog post ideas." No evidence that the idea is grounded in real AI answer data.</p></div>
+      <div class="diff-card highlight"><h3>Presence Rx</h3><p>50 prompts &rarr; 5 topics &rarr; 1 stronghold, 4 blind spots, 1 blocked claim. The Presence Verdict explains what it dropped and why.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Value-Add Layer <span class="mini-tag">what we add on top of Peec, mapped to SCOPE_FINAL tiers</span></div>
+    <div class="data-note" style="background: rgba(108,92,231,0.08); border-color: rgba(162,155,254,0.4); color: var(--text);">
+      <strong>Why this matters:</strong> Peec already does visibility analysis, prompt clustering, citation tracking, and even opportunity-scored recommendations (<code>get_actions</code>). To avoid being "just a Peec wrapper," every item below is something Peec does <em>not</em> do today and is in the locked 22-feature scope.
+    </div>
+    <div class="value-add-grid">
+
+      <div class="value-add-card lit">
+        <div class="va-head">
+          <div class="va-num">1</div>
+          <div class="va-title">Blocked Claim + Safe Rewrite</div>
+          <span class="va-priority p0">Tier 1 #2</span>
+        </div>
+        <div class="va-row"><div class="va-row-label">What</div><div class="va-row-text">"Nothing Phone is the minimalist leader" &rarr; BLOCKED. Rules engine, not AI. Demo centerpiece. Data already supports the verdict (6% vs Apple 39%).</div></div>
+        <div class="va-row"><div class="va-row-label">Why</div><div class="va-row-text">Peec's <code>get_actions</code> is opportunity-scored but never says "do not claim this yet." The "no" is the feature.</div></div>
+        <div class="va-row"><div class="va-row-label">How</div><div class="va-row-text">Three-field check (input gate, evidence tier, publication status) + decision buckets. Blocked claims register stays visible in <code>CLAIMS_TO_AVOID</code>.</div></div>
+      </div>
+
+      <div class="value-add-card lit">
+        <div class="va-head">
+          <div class="va-num">2</div>
+          <div class="va-title">Proof Chain with Receipts</div>
+          <span class="va-priority p0">Tier 1 #3</span>
+        </div>
+        <div class="va-row"><div class="va-row-label">What</div><div class="va-row-text">Recommendation &rarr; claim &rarr; Peec evidence &rarr; Tavily public proof &rarr; Gemini analysis &rarr; source-of-record &rarr; guardrail decision. Every link auditable.</div></div>
+        <div class="va-row"><div class="va-row-label">Why</div><div class="va-row-text">Most teams ship a polished marketing brief. Polished briefs read generic. Receipts are credible.</div></div>
+        <div class="va-row"><div class="va-row-label">How</div><div class="va-row-text">Every claim in <code>EVIDENCE_LEDGER.json</code> carries claim_id, evidence refs, source-of-record, evidence tier, allowed language.</div></div>
+      </div>
+
+      <div class="value-add-card lit">
+        <div class="va-head">
+          <div class="va-num">3</div>
+          <div class="va-title">Multi-Axis Blind-Spot Diagnosis</div>
+          <span class="va-priority p0">Tier 1 #1, #4, #5, #6</span>
+        </div>
+        <div class="va-row"><div class="va-row-label">What</div><div class="va-row-text">Topic / Channel / Engine / Content Type. Most Peec wrappers stop at topic visibility. We diagnose four axes per finding.</div></div>
+        <div class="va-row"><div class="va-row-label">Why</div><div class="va-row-text">Peec exposes far more than topic visibility. Each axis maps to a different read tool and unlocks differentiated insight.</div></div>
+        <div class="va-row"><div class="va-row-label">How</div><div class="va-row-text"><code>get_brand_report(dims=topic_id|model_id|country_code)</code> + <code>get_domain_report</code> + <code>get_url_report</code> with gap filter.</div></div>
+      </div>
+
+      <div class="value-add-card lit">
+        <div class="va-head">
+          <div class="va-num">4</div>
+          <div class="va-title">Feedback Loop into Peec (prescription writes)</div>
+          <span class="va-priority p1">Tier 3</span>
+        </div>
+        <div class="va-row"><div class="va-row-label">What</div><div class="va-row-text"><code>create_prompt</code> for DE/GB and gap topics, <code>create_tag</code> for campaigns, <code>create_topic</code> for sub-themes. The system improves the data it depends on.</div></div>
+        <div class="va-row"><div class="va-row-label">Why</div><div class="va-row-text">No Peec wrapper does this. The proof point is loop closure ("we just told Peec what to monitor"), not new metrics.</div></div>
+        <div class="va-row"><div class="va-row-label">How</div><div class="va-row-text">Cross-reference blocked claims with topic coverage; emit prompt + tag suggestions; call the Peec MCP write tools live in the demo.</div></div>
+      </div>
+
+      <div class="value-add-card">
+        <div class="va-head">
+          <div class="va-num">5</div>
+          <div class="va-title">Chat-Level Evidence (Receipts)</div>
+          <span class="va-priority p1">Tier 2 #10</span>
+        </div>
+        <div class="va-row"><div class="va-row-label">What</div><div class="va-row-text">Pull 3-5 actual AI responses via <code>list_chats</code> + <code>get_chat</code>. Show "ChatGPT was asked X, responded with Y, Nothing Phone absent." Ultimate receipt.</div></div>
+        <div class="va-row"><div class="va-row-label">Why</div><div class="va-row-text">A visibility number is abstract. An actual AI response showing the brand omitted is concrete.</div></div>
+        <div class="va-row"><div class="va-row-label">How</div><div class="va-row-text">Sample chats from the highest-impact blind-spot prompts; embed verbatim excerpts in the evidence appendix.</div></div>
+      </div>
+
+      <div class="value-add-card">
+        <div class="va-head">
+          <div class="va-num">6</div>
+          <div class="va-title">Human Sign-Off via Entire (fallback path)</div>
+          <span class="va-priority p2">D-005 fallback</span>
+        </div>
+        <div class="va-row"><div class="va-row-label">What</div><div class="va-row-text">Each blocked claim becomes a review ticket: keep blocked / promote / collect more evidence. Decisions persist into the manifest.</div></div>
+        <div class="va-row"><div class="va-row-label">Why</div><div class="va-row-text">Hard fallback for the third eligible partner technology if Lovable is not integrated by Saturday 17:00.</div></div>
+        <div class="va-row"><div class="va-row-label">How</div><div class="va-row-text">Map blocked-claims register to Entire review queue. Persist override decisions back into the manifest with rationale.</div></div>
+      </div>
+
+    </div>
+    <div class="data-note" style="background: rgba(0,184,148,0.08); border-color: rgba(0,184,148,0.35); color: var(--text); margin-top: 1.25rem;">
+      <strong>Build order:</strong> 1, 2, 3 are Tier 1 must-ship. 4 is Tier 3 (setup, not result &mdash; demos the API call moment). 5 is Tier 2 polish. 6 is the eligibility-critical fallback. Source: <a href="docs/SCOPE_FINAL.md" style="color:var(--accent2);">docs/SCOPE_FINAL.md</a>.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Partner Technology Stack</div>
+    <div class="partner-grid">
+      <div class="partner-card"><div class="partner-name">Peec AI MCP</div><div class="partner-role">Source of truth for AI-answer visibility: brand mentions, competitor positions, answer framing, prompt-level observations.</div><div class="partner-tag required">Required Track Tool</div></div>
+      <div class="partner-card"><div class="partner-name">Google Gemini</div><div class="partner-role">Analysis engine: prompt classification, perception themes, parent-topic classification, scenario wording.</div><div class="partner-tag eligible">Eligible Partner #1</div></div>
+      <div class="partner-card"><div class="partner-name">Tavily</div><div class="partner-role">Public evidence collector: competitor proof, proof-gap analysis, public source validation.</div><div class="partner-tag eligible">Eligible Partner #2</div></div>
+      <div class="partner-card"><div class="partner-name">Lovable</div><div class="partner-role">Fast executive dashboard over the study, action brief, proof chain, and blocked claims.</div><div class="partner-tag eligible">Eligible Partner #3</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">2-Minute Demo Storyboard <span class="mini-tag">gap-type classifier added at 0:30 &middot; future-directions sneak peek at 1:50</span></div>
+    <div class="demo-timeline">
+      <div class="demo-step"><div class="demo-time">0:00&ndash;0:15</div><div><div class="demo-visual">The Invisible Champion</div><div class="demo-words">"Nothing Phone ranks #1 when AI mentions it &mdash; but 80% of AI answers don't mention it at all. Presence Rx finds the blind spots."</div></div></div>
+      <div class="demo-step"><div class="demo-time">0:15&ndash;0:30</div><div><div class="demo-visual">Multi-Axis Blind-Spot Map</div><div class="demo-words">"Four blind spots across topic, channel, engine, and content type: 6% in Minimalist Hardware, editorial sites cite Apple, ChatGPT lags Gemini, LISTICLE/COMPARISON pages skip Nothing."</div></div></div>
+      <div class="demo-step" style="border-left: 3px solid #fdcb6e; padding-left: 0.75rem;"><div class="demo-time" style="color:#fdcb6e;">0:30&ndash;0:50</div><div><div class="demo-visual" style="color:#fdcb6e;">Gap-Type Classifier &middot; the new sharp moment</div><div class="demo-words">"But not all blind spots are the same. <strong>Minimalist Hardware is a perception problem.</strong> <strong>Mobile Ecosystem is an indexing problem.</strong> <strong>Wireless Audio is a volume problem.</strong> Each needs a different fix. Every recommendation in our action brief carries a gap type."</div></div></div>
+      <div class="demo-step"><div class="demo-time">0:50&ndash;1:10</div><div><div class="demo-visual">Proof Chain</div><div class="demo-words">"Every finding has receipts. Peec: 6% visibility, Apple at 39%. Tavily: Apple dominates public minimalist content. Gemini: 'minimalist' is associated with Apple, not Nothing. Methods agree, evidence tier strong, gap type = perception."</div></div></div>
+      <div class="demo-step"><div class="demo-time">1:10&ndash;1:25</div><div><div class="demo-visual">Blocked Claim</div><div class="demo-words">"The system blocks 'Nothing Phone is the go-to minimalist tech brand.' Safe rewrite provided. Next evidence to collect specified. The no is the feature."</div></div></div>
+      <div class="demo-step"><div class="demo-time">1:25&ndash;1:40</div><div><div class="demo-visual">Prescription &middot; loop closure</div><div class="demo-words">"We tell Peec what to monitor next: new prompts for DE/GB and the gap topics, campaign tags created. Setup, not new metrics &mdash; Peec runs daily."</div></div></div>
+      <div class="demo-step"><div class="demo-time">1:40&ndash;1:50</div><div><div class="demo-visual">Presence Verdict Pack</div><div class="demo-words">"The deliverable: PRESENCE_VERDICT.md, ACTION_BRIEF.md, EVIDENCE_LEDGER.json, manifest.json. Every recommendation traceable. Every blocked claim justified."</div></div></div>
+      <div class="demo-step" style="border-left: 3px dashed #636e72; padding-left: 0.75rem;"><div class="demo-time" style="color:var(--muted);">1:50&ndash;2:00</div><div><div class="demo-visual" style="color:var(--muted);">Sneak Peek &middot; /future-directions</div><div class="demo-words">"Where this goes next &mdash; channel activation, gap-weighted spend allocation. <em>Future direction. Calibrated against external industry benchmarks held under license, not redistributable.</em> Static preview, separate from the diagnostic pipeline above."</div></div></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ==================== TAB 2: DEEP DIVE ==================== -->
+<div id="tab-deepdive" class="tab-content">
+<div class="container">
+<div class="prose">
+
+  <h2>The One-Liner</h2>
+  <div class="callout">
+    <strong>Presence Rx: find your brand's blind spots in AI answers. We turn Peec visibility data into an auditable Presence Verdict for marketers &mdash; with receipts at every step.</strong>
+  </div>
+
+  <h2>The Problem</h2>
+  <p>When someone asks ChatGPT or Gemini <em>"best minimalist tech brands,"</em> the AI gives an answer. That answer mentions some brands, ignores others, and frames each one with specific traits. Nothing Phone &mdash; a brand built on minimalist transparent design &mdash; appears in only 6% of those answers. Apple appears in 39%.</p>
+  <p>A marketer can check Peec and see <em>"we're mentioned in 20% of prompts overall."</em> But that number alone doesn't tell them:</p>
+  <ul>
+    <li><strong>Where do they dominate?</strong> 72% visibility in Smartphone Design &mdash; but only 6% in Minimalist Hardware.</li>
+    <li><strong>What trait is the brand missing?</strong> AI answers associate "minimalist" with Apple, not Nothing Phone.</li>
+    <li><strong>What's safe to claim?</strong> Saying "Nothing Phone is the minimalist tech leader" would be wrong &mdash; the data contradicts it.</li>
+    <li><strong>What to actually do about it?</strong> Create minimalist positioning content? Publish Nothing Ear reviews? Just monitor?</li>
+  </ul>
+  <p>Most tools stop at the visibility number. <strong>Presence Rx goes further.</strong></p>
+
+  <h2>What We Build: The Presence Verdict</h2>
+  <p>A <strong>verdict pack</strong> &mdash; a set of structured artifacts that a marketer can read, trust, and act on:</p>
+  <ul>
+    <li><strong>PRESENCE_VERDICT.md</strong> &mdash; the full diagnosis: where the brand appears, who owns which prompts, what associations are missing, what's strong vs weak.</li>
+    <li><strong>ACTION_BRIEF.md</strong> &mdash; the short executive output: what to do this week, what messaging to change, what content to create, what <em>not</em> to claim, and what prompts to monitor.</li>
+    <li><strong>EVIDENCE_LEDGER.json</strong> &mdash; every claim mapped to its sources (Peec data, public web evidence, Gemini analysis) with confidence grades.</li>
+    <li><strong>manifest.json</strong> &mdash; metadata: which Peec snapshot, which taxonomy version, when generated, how fresh.</li>
+  </ul>
+
+  <h2>How the Pipeline Works</h2>
+
+  <div class="step-grid">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Ingest from Peec MCP</strong>
+      <span>Pull the visibility data for Nothing Phone and its 9 competitors (Apple, Samsung, Google, Sony, Bose, Pixel, Xiaomi, OnePlus, Logitech). Peec gives us 50 prompts across 5 topics. Brand reports add visibility (20% overall), SoV (8%), sentiment (64), and position (2.4 &mdash; best in the field). <br><span class="source-rule">Peec is the source of truth for visibility. Nothing else overrides it.</span></span>
+    </div>
+
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Map Peec Topics to Parent Themes</strong>
+      <span>Peec already groups prompts into 5 topics: Smartphone Design, Mobile Ecosystem, Consumer Tech Innovation, Minimalist Hardware, Wireless Audio. We layer our campaign taxonomy on top. Key finding: Nothing Phone owns 1 topic (72% vis) but has critical blind spots in 4 others (1&ndash;12% vis). Each topic gets an evidence tier and decision bucket.</span>
+    </div>
+
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Enrich with Tavily</strong>
+      <span>Tavily searches the public web to find supporting or contradicting evidence. Does Apple dominate "minimalist desk setup" search results? Does Nothing Phone have any dedicated minimalist positioning content? This finds <strong>proof gaps</strong> &mdash; things the brand should have publicly but doesn't, especially on editorial gap domains (rtings, whathifi, dezeen, yankodesign).<br><span class="source-rule">Tavily owns public evidence. It doesn't override Peec visibility.</span></span>
+    </div>
+
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Analyze with Gemini</strong>
+      <span>Gemini classifies prompts into parent marketing themes (like "buyer friction" or "implementation support"), identifies perception gaps (what trait the brand is missing), and drafts scenario recommendations. We use a <strong>parent-topic taxonomy</strong> &mdash; candidate topics get classified into stable marketing themes, confidence-filtered, and only accepted labels flow into the action brief.<br><span class="source-rule">Gemini owns analysis language. It doesn't own visibility truth.</span></span>
+    </div>
+
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <strong>Apply Guardrails</strong>
+      <span>This is the key differentiator. Every finding goes through a <strong>three-field check</strong> (see below), then gets assigned a <strong>decision bucket</strong>: act now, test next, monitor, deprioritize, or block. At least one finding must be visibly blocked or downgraded in the demo.</span>
+    </div>
+
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <strong>Generate Artifacts</strong>
+      <span>The pipeline produces the study, action brief, evidence ledger, and manifest. Markdown artifacts are generated from structured JSON (the study SSOT), not hand-written. A dashboard reads the same JSON.</span>
+    </div>
+  </div>
+
+  <h2>The Guardrail Engine (Our Differentiator)</h2>
+  <p>Every finding passes through three separate checks:</p>
+  <table class="guard-table">
+    <thead><tr><th>Check</th><th>Question</th><th>Values</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Input Gate</strong></td><td>Can this finding even enter analysis?</td><td>passed / failed / skipped</td></tr>
+      <tr><td><strong>Evidence Tier</strong></td><td>How strong is the evidence?</td><td>strong / moderate / limited / blocked</td></tr>
+      <tr><td><strong>Publication Status</strong></td><td>Can it appear in executive output?</td><td>publishable / directional_with_caveat / diagnostics_only / blocked</td></tr>
+    </tbody>
+  </table>
+
+  <p>The <strong>method ladder</strong> determines evidence tier:</p>
+  <table class="guard-table">
+    <thead><tr><th>Evidence</th><th>Rule</th><th>Allowed Language</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge strong">strong</span></td><td>5+ Peec observations, 2+ methods agree, no conflict</td><td>"Prioritize this action"</td></tr>
+      <tr><td><span class="badge moderate">moderate</span></td><td>2&ndash;4 observations, some agreement</td><td>"Test this action"</td></tr>
+      <tr><td><span class="badge limited">limited</span></td><td>Thin Peec data, only public evidence</td><td>"Explore this hypothesis"</td></tr>
+      <tr><td><span class="badge blocked">blocked</span></td><td>Contradictory evidence or overstatement risk</td><td>"Do not claim this yet"</td></tr>
+    </tbody>
+  </table>
+  <p>Any system that only shows positive recommendations looks like it's making stuff up. <strong>Showing what was blocked is what makes it credible.</strong></p>
+
+  <h2>The Proof Chain</h2>
+  <p>Pick any recommendation and trace it backwards through every link:</p>
+  <div class="flow-strip">
+    <div class="flow-node highlight-node">Recommendation</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node">Claim</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node">Peec Evidence</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node">Public Proof (Tavily)</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node">Gemini Analysis</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node highlight-node">Guardrail Decision</div>
+  </div>
+  <p>Every link shows which tool is the <strong>source of record</strong> for that piece of data:</p>
+  <ul>
+    <li><span class="source-rule">Peec</span> owns visibility (mentions, rank, position)</li>
+    <li><span class="source-rule">Tavily</span> owns public proof (competitor content, proof gaps)</li>
+    <li><span class="source-rule">Gemini</span> owns perception analysis (themes, missing associations)</li>
+    <li><span class="source-rule">Guardrail engine</span> owns the go/no-go decision</li>
+  </ul>
+
+  <h2>The Blocked Claim</h2>
+  <div class="callout red-callout">
+    <p><strong>Tempting claim:</strong> <em style="text-decoration:line-through;opacity:0.6">"Nothing Phone is the go-to minimalist tech brand in AI answers."</em></p>
+    <p><strong>System decision:</strong> Blocked &mdash; Peec shows 6% visibility in Minimalist Hardware. Apple has 39%. The brand's identity doesn't match its AI presence.</p>
+    <p><strong>Safe rewrite:</strong> "Nothing Phone dominates Smartphone Design (72%) but is invisible in the broader minimalist tech category (6%). This is the brand's biggest blind spot."</p>
+    <p><strong>Next step:</strong> Publish minimalist hardware content featuring Nothing's transparent design language. Monitor for visibility shifts in next Peec snapshot.</p>
+  </div>
+  <p>This is what makes Presence Rx different from a content generator. It tells the marketer what <strong>not</strong> to say &mdash; which is more valuable than 10 generic blog post ideas.</p>
+
+  <h2>The Campaign Taxonomy Layer</h2>
+  <p>Findings don't just sit as raw clusters. They roll up into a <strong>campaign taxonomy</strong>:</p>
+  <div class="flow-strip">
+    <div class="flow-node">Prompt Cluster</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node">Parent Topic</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node">Campaign Type</div>
+    <div class="flow-arr">&rarr;</div>
+    <div class="flow-node highlight-node">Campaign Category</div>
+  </div>
+  <p>When evidence is too thin at the campaign-type level, it falls back to the broader category &mdash; and says so explicitly. This makes the output useful for a marketer who thinks in campaigns, not prompt IDs.</p>
+
+  <h2>Why It Uses Peec Well</h2>
+  <div class="callout green-callout">
+    <p>Peec is the <strong>anchor</strong>. No recommendation can enter the action brief without at least one Peec evidence ref. The whole pipeline is designed around Peec being the source of truth:</p>
+    <ul style="margin-top:0.5rem;margin-bottom:0">
+      <li><strong>Peec</strong> &rarr; "Where does the brand appear?"</li>
+      <li><strong>Gemini</strong> &rarr; "What does that mean?"</li>
+      <li><strong>Tavily</strong> &rarr; "Is there public proof?"</li>
+      <li><strong>Guardrails</strong> &rarr; "Is it safe to recommend?"</li>
+    </ul>
+  </div>
+  <p>The system never lets Gemini or Tavily override Peec visibility. They support it, they don't replace it.</p>
+
+  <h2>The Pitch in One Breath</h2>
+  <div class="callout blue-callout">
+    <strong>"Presence Rx: Peec shows where you appear. We show what's safe to claim, what's not, and what to do next &mdash; your Presence Verdict, with receipts at every step."</strong>
+  </div>
+
+  <h2>Four Tags To Validate</h2>
+  <div class="flow-strip">
+    <div class="flow-node highlight-node">Receipts, not vibes</div>
+    <div class="flow-node highlight-node">Peec is visibility truth</div>
+    <div class="flow-node highlight-node">The no is the feature</div>
+    <div class="flow-node highlight-node">From prompts to Presence Verdict</div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ==================== TAB 3: REASONING ==================== -->
+<div id="tab-reasoning" class="tab-content">
+<div class="container">
+<div class="prose">
+
+  <h2>Why This Approach?</h2>
+  <div class="callout">
+    Every design decision answers one question: <strong>how do we win a hackathon track where most teams will build a generic AI marketing dashboard?</strong>
+  </div>
+
+  <h2>The Competitive Landscape</h2>
+  <p>Peec gives every team the same starting point: AI-answer visibility data. Most teams will do one of these:</p>
+  <ul>
+    <li><strong>Dashboard team:</strong> Pipe Peec numbers into charts. "You are mentioned 33% of the time." Looks polished, says nothing actionable.</li>
+    <li><strong>Content generator team:</strong> Feed Peec data to an LLM, output blog post ideas. Generic, no evidence, no guardrails.</li>
+    <li><strong>Chatbot team:</strong> "Ask questions about your AI visibility." Interactive but shallow &mdash; no structured output a marketer can act on.</li>
+  </ul>
+  <p><strong>We are none of these.</strong> We produce a structured Presence Verdict with auditable evidence, guardrails, and an explicit proof chain. The judges see discipline, not just a demo.</p>
+
+  <h2>Design Decision: Evidence-Backed Verdict Pack</h2>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>Alternative: Generate a Report</h3>
+      <p>Just have Gemini write a nice marketing report from Peec data. Fast to build, looks professional.</p>
+      <p><strong>Why we rejected it:</strong> No traceability. The report looks authoritative but no one can verify any claim. A judge asks "where does this come from?" and there's no answer. This is what every AI-generated report already does.</p>
+    </div>
+    <div class="diff-card highlight">
+      <h3>Our Choice: Presence Verdict + Evidence Ledger</h3>
+      <p>Every claim has a claim_id, evidence refs, source of record, and a guardrail decision. The verdict and action brief are generated from a single source-of-truth JSON.</p>
+      <p><strong>Why this wins:</strong> Traceability is the feature. "Click any recommendation, see the receipt." No other hackathon team will do this because it's harder to build.</p>
+    </div>
+  </div>
+
+  <h2>Design Decision: Guardrails as the Differentiator</h2>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>Alternative: Show Only Positive Recommendations</h3>
+      <p>Typical AI output: "Here are 5 things you should do." No qualification, no blocked claims, no honesty about data limits.</p>
+      <p><strong>Why we rejected it:</strong> It looks like every other AI tool. Judges have seen this pattern 100 times. It also overclaims &mdash; if the data is thin, the recommendation is noise.</p>
+    </div>
+    <div class="diff-card highlight">
+      <h3>Our Choice: Block Weak Claims Visibly</h3>
+      <p>The system refuses to promote a finding when methods conflict or coverage is too thin. Blocked claims are shown with reasons and safe rewrites.</p>
+      <p><strong>Why this wins:</strong> It's counterintuitive &mdash; showing what the system <em>won't</em> say is more impressive than showing what it will. Judges remember the "no" because every other team only says "yes."</p>
+    </div>
+  </div>
+
+  <h2>Design Decision: Peec as Anchor, Not Just Data Source</h2>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>Alternative: Use Peec as One Input Among Many</h3>
+      <p>Treat Peec, Gemini, and Tavily as equal sources. Blend everything into a unified score.</p>
+      <p><strong>Why we rejected it:</strong> It dilutes Peec. The track judges want to see Peec used <em>well</em>, not buried in a blend. It also creates a mess &mdash; if everything is a source of truth, nothing is.</p>
+    </div>
+    <div class="diff-card highlight">
+      <h3>Our Choice: Strict Source-of-Record Hierarchy</h3>
+      <p>Peec owns visibility. Gemini owns analysis language. Tavily owns public evidence. No tool overrides another's domain. Every field has a declared source.</p>
+      <p><strong>Why this wins:</strong> The Peec PM sees her product positioned as the credible anchor. Judges see clean architecture. The source-of-record map is a visible artifact, not a hidden assumption.</p>
+    </div>
+  </div>
+
+  <h2>Design Decision: Prompt Clusters, Not Raw Prompts</h2>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>Alternative: Show Individual Prompt Results</h3>
+      <p>List every Peec observation one by one. 42 rows of "this prompt mentioned you in position 3."</p>
+      <p><strong>Why we rejected it:</strong> Not actionable. A marketer can't act on 42 individual prompts. And it looks like a data dump, not a product.</p>
+    </div>
+    <div class="diff-card highlight">
+      <h3>Our Choice: Cluster into Actionable Units</h3>
+      <p>Group similar prompts into clusters. Each cluster has an owner, evidence tier, decision bucket, and campaign type. The pipeline funnel shows 42 &rarr; 9 &rarr; 3.</p>
+      <p><strong>Why this wins:</strong> The funnel is the demo moment. "We started with 42 prompts and the system narrowed it to 3 actionable moves." That's a story. A list of 42 rows is not.</p>
+    </div>
+  </div>
+
+  <h2>Design Decision: Campaign Taxonomy</h2>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>Alternative: Just Show Clusters</h3>
+      <p>Prompt clusters are enough. Skip the parent-topic and campaign-type layers.</p>
+      <p><strong>Why we rejected it:</strong> Marketers think in campaigns, not prompt clusters. "brand_marketing" means something; "cluster:minimalist-hardware" doesn't. Without the taxonomy, the output feels like an engineering artifact, not a marketing tool.</p>
+    </div>
+    <div class="diff-card highlight">
+      <h3>Our Choice: Three-Level Taxonomy</h3>
+      <p>Prompt cluster &rarr; parent topic &rarr; campaign type &rarr; campaign category. When type-level evidence is thin, fall back to category and say so.</p>
+      <p><strong>Why this wins:</strong> Adds intellectual depth without complexity. Shows the system is precise when evidence supports it and conservative when it doesn't. That graceful degradation is what separates a prototype from a product.</p>
+    </div>
+  </div>
+
+  <h2>Is the Reasoning Validated?</h2>
+
+  <h3>What's Validated</h3>
+  <table class="guard-table">
+    <thead><tr><th>Decision</th><th>Validation</th><th>Confidence</th></tr></thead>
+    <tbody>
+      <tr><td>Evidence-backed verdict pack</td><td>Pattern proven in prior analytics work. Auditable outputs consistently score higher in review than narrative-only reports.</td><td><span class="badge strong">strong</span></td></tr>
+      <tr><td>Guardrails as differentiator</td><td>Judges reward discipline. Showing blocked claims is counterintuitive and memorable. No competing team is likely to do this.</td><td><span class="badge strong">strong</span></td></tr>
+      <tr><td>Peec as anchor</td><td>Track judges want their tool used well. Giving Peec source-of-record status is the strongest possible signal.</td><td><span class="badge strong">strong</span></td></tr>
+      <tr><td>Prompt clusters over raw data</td><td>Confirmed: Peec already groups 50 prompts into 5 topics. Funnel narrative (50 &rarr; 5 topics &rarr; N actionable moves) is more compelling than a data table.</td><td><span class="badge strong">strong</span></td></tr>
+      <tr><td>Campaign taxonomy</td><td>Adds depth and marketer relevance. Pattern works well in prior projects.</td><td><span class="badge moderate">moderate</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>What's Now Validated (MCP Exploration)</h3>
+  <table class="guard-table">
+    <thead><tr><th>Question</th><th>Finding</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Does Peec data have enough depth?</td><td>Yes. 50 prompts, 5 topics, full brand reports with visibility/SoV/sentiment/position. Topic-level breakdown confirmed with real numbers.</td><td><span class="badge strong">resolved</span></td></tr>
+      <tr><td>Which brand has the best story?</td><td>Nothing Phone. "Invisible Champion": 20% overall visibility but #1 position (2.4). Dominates Smartphone Design (72%) but is invisible in Minimalist Hardware (6%) &mdash; the topic most aligned with its brand. Other teams will default to Attio.</td><td><span class="badge strong">resolved</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Open Questions (deferred to organisers / build gates)</h3>
+  <table class="guard-table">
+    <thead><tr><th>Question</th><th>Risk</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Q-001: Does Peec MCP count toward the 3-partner minimum?</td><td>If yes, we have 4 partners and Lovable becomes optional. If no, Gemini + Tavily + Lovable must all ship in real code paths (Entire as fallback).</td><td>Ask organisers on Discord. Plan assumes "no" &mdash; the eligibility-critical lane (D-005) ships all three regardless.</td></tr>
+      <tr><td>Q-003: Lovable feasibility within the time budget</td><td>At Feasibility 6, Lovable integration could slip past the Saturday 17:00 decision gate.</td><td>Hard checkpoint at 17:00. If Lovable is not pushing data, swap to Entire (review/sign-off workflow over blocked claims) per D-009 fallback.</td></tr>
+      <tr><td>Q-004: Public-safety scan on generated artifacts</td><td>Generated artifacts may pull text from Peec chats, Tavily results, or Gemini analyses that could echo private fingerprints.</td><td>Run <a href="docs/PUBLIC_SAFETY_CHECKLIST.md" style="color:var(--accent2);">PUBLIC_SAFETY_CHECKLIST.md</a> on every generated artifact before pushing public.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The Core Bet</h3>
+  <div class="callout blue-callout">
+    <p><strong>We're betting that in a room full of AI dashboards and content generators, the team that shows discipline &mdash; evidence chains, blocked claims, source-of-record separation, and graceful degradation &mdash; will stand out.</strong></p>
+    <p>This bet is strong because:</p>
+    <ul style="margin-top:0.5rem;margin-bottom:0">
+      <li>Hackathon judges are tired of "here's what AI generated." They reward why and how.</li>
+      <li>The Peec PM wants her product to look credible, not just flashy. Making Peec the anchor serves her interests.</li>
+      <li>The guardrail pattern is hard to build in a weekend &mdash; which means no other team will have it.</li>
+      <li>The evidence ledger adds technical depth without needing a complex frontend.</li>
+    </ul>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ==================== TAB 4: BUILD STATUS ==================== -->
+<div id="tab-questions" class="tab-content">
+<div class="container">
+
+  <div class="section">
+    <div class="section-title">Locked Decisions <span class="mini-tag">source: docs/.agent-context/DECISIONS.md</span></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ID</th><th>Decision</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><strong>D-001</strong></td><td>Track is Peec</td><td>Peec MCP gave us deeper data than expected; Nothing Phone "Invisible Champion" pattern stronger than Buena/Qontext.</td></tr>
+          <tr><td><strong>D-002</strong></td><td>Brand is Nothing Phone</td><td>(1) Other teams default to Attio; (2) Invisible Champion (best position 2.4, 20% vis); (3) Minimalist Hardware ironic gap (6% vs Apple 39%) is the blocked-claim moment.</td></tr>
+          <tr><td><strong>D-003</strong></td><td>Product = Presence Rx; deliverable = Presence Verdict</td><td>Earlier "AI Distribution Study" framing was generic. Presence Rx ties to receipts + blocked claims.</td></tr>
+          <tr><td><strong>D-004</strong></td><td>Six-axis blind-spot model</td><td>Topic / Channel / Engine / Geography / Authority / Evidence. Each axis maps to a different Peec read tool.</td></tr>
+          <tr><td><strong>D-005</strong></td><td>Eligibility lane: Gemini + Tavily + Lovable (Entire fallback by 17:00)</td><td>Hackathon rules require 3 eligible partner technologies in real code paths.</td></tr>
+          <tr><td><strong>D-007</strong></td><td>No <code>create_project</code> available</td><td>Work entirely inside the existing Nothing Phone Peec project. New brands/prompts/topics/tags via <code>create_*</code> writes.</td></tr>
+          <tr><td><strong>D-009</strong></td><td>Lovable is Tier 1 (eligibility-critical)</td><td>Promoted from Tier 4. <code>pm-dashboard.html</code> is the local visual shell, not a substitute for partner-tech eligibility.</td></tr>
+          <tr><td><strong>D-010</strong></td><td>Tier 3 prescription writes are setup, not results</td><td>Peec runs daily; new prompts created mid-demo will not have data within the 2-min window. Honest framing avoids judges expecting populated data.</td></tr>
+          <tr style="background: rgba(253,203,110,0.06);"><td><strong>D-011</strong></td><td>Gap-type classifier (Tier 1.5) is the new sharp moment</td><td><code>perception / indexing / volume_frequency</code> field on every blind spot. Tier 1 diagnoses <em>where</em>; Tier 1.5 classifies <em>what kind of fix</em>. Each gap type triggers a different intervention class.</td></tr>
+          <tr><td><strong>D-012</strong></td><td>Future-directions split (public concept-only, private prototype outside repo)</td><td>Permission to use external benchmark data &ne; permission to publish. Public repo gets <code>FUTURE_DIRECTIONS.md</code> + <code>/future-directions</code> static page (concept-only). Private prototype with real benchmarks lives outside the repo, only for live finalist pitch.</td></tr>
+          <tr><td><strong>D-013</strong></td><td>Lovable webapp must follow Peec AI's design philosophy</td><td>Visual disconnection from Peec reads as "wrapper that doesn't respect the host." Tokens captured from live Peec interface (no public CSS exposed). See <code>DESIGN_TOKENS.md</code>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Build Status by Tier <span class="mini-tag">source: docs/SCOPE_FINAL.md</span></div>
+
+    <h3 style="margin-top:1rem;color:var(--accent2);font-size:1rem;">Tier 1 &mdash; Core Demo (must-ship)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Feature</th><th>Rating</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Topic blind spot map</td><td><span class="badge strong">Build</span></td><td>Real Peec data verified</td></tr>
+          <tr><td>2</td><td>Blocked claim + safe rewrite</td><td><span class="badge strong">Build</span></td><td>Demo centerpiece</td></tr>
+          <tr><td>3</td><td>Proof chain</td><td><span class="badge strong">Build</span></td><td>Sources of record defined</td></tr>
+          <tr><td>4</td><td>Channel gap analysis</td><td><span class="badge strong">Build</span></td><td>Editorial vs UGC split mapped</td></tr>
+          <tr><td>5</td><td>AI engine split</td><td><span class="badge strong">Build</span></td><td>Gemini 26% / ChatGPT 18% / Google AIO 17%</td></tr>
+          <tr><td>6</td><td>Content type gaps</td><td><span class="badge strong">Build</span></td><td>LISTICLE + COMPARISON URL evidence</td></tr>
+          <tr><td>7</td><td>Action brief (PRESENCE_VERDICT.md)</td><td><span class="badge strong">Build</span></td><td>Schema in ARTIFACT_CONTRACTS.md</td></tr>
+          <tr><td>8</td><td>Executive snapshot</td><td><span class="badge strong">Build</span></td><td>Hero cards on Tab 1</td></tr>
+          <tr><td>9</td><td>Evidence ledger (JSON)</td><td><span class="badge strong">Build</span></td><td>Schema in ARTIFACT_CONTRACTS.md</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem;color:#fdcb6e;font-size:1rem;">Tier 1.5 &mdash; Gap-Type Classifier (the new sharp moment)</h3>
+    <div class="data-note" style="background: rgba(253,203,110,0.08); border-color: rgba(253,203,110,0.4); color: var(--text); margin-bottom: 0.75rem; font-size: 0.85rem;">
+      <strong>Framing:</strong> Tier 1 diagnoses <em>where</em> the brand is invisible. Tier 1.5 classifies <em>what kind of fix</em> each blind spot needs. Each gap type triggers a different intervention class. (D-011)
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Feature</th><th>Rating</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>9b</td><td>Gap-type classifier (perception / indexing / volume_frequency)</td><td><span class="badge strong">Build</span></td><td>Demo centerpiece. Buildable from data already in pipeline.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem;color:var(--accent2);font-size:1rem;">Tier 2 &mdash; Differentiators (eligibility-critical)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Feature</th><th>Rating</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>10</td><td>Chat-level evidence (receipts)</td><td><span class="badge moderate">Partial</span></td><td>list_chats + get_chat sample</td></tr>
+          <tr><td>11</td><td>Peec actions comparison</td><td><span class="badge strong">Build</span></td><td>Our guardrailed version vs <code>get_actions</code></td></tr>
+          <tr><td>12</td><td>Citation vs retrieval authority</td><td><span class="badge moderate">Partial</span></td><td>nothing.tech retrieved &ne; cited</td></tr>
+          <tr><td>13</td><td>Gemini perception analysis</td><td><span class="badge strong">Build</span></td><td><strong>Eligible partner #1 &mdash; must ship</strong></td></tr>
+          <tr><td>14</td><td>Tavily public evidence</td><td><span class="badge strong">Build</span></td><td><strong>Eligible partner #2 &mdash; must ship</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem;color:var(--accent2);font-size:1rem;">Tier 3 &mdash; Prescription Layer (setup, not result)</h3>
+    <div class="data-note" style="background: rgba(253,203,110,0.08); border-color: rgba(253,203,110,0.3); color: var(--text); margin-bottom: 0.75rem; font-size: 0.85rem;">
+      <strong>Framing:</strong> Tier 3 demos the API write moment. Data populates after Peec's next daily run, post-demo. Proof point is loop closure, not new metrics. (D-010)
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Feature</th><th>Rating</th></tr></thead>
+        <tbody>
+          <tr><td>15</td><td>Geo expansion prompts (DE, GB, IN)</td><td><span class="badge limited">Setup</span></td></tr>
+          <tr><td>16</td><td>Monitoring prompts for gap topics</td><td><span class="badge limited">Setup</span></td></tr>
+          <tr><td>17</td><td>Custom tags for campaigns</td><td><span class="badge limited">Setup</span></td></tr>
+          <tr><td>18</td><td>New topics for sub-themes</td><td><span class="badge limited">Setup</span></td></tr>
+          <tr><td>19</td><td>Campaign taxonomy mapping</td><td><span class="badge moderate">Partial</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem;color:var(--accent2);font-size:1rem;">Tier 4 &mdash; Surface</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Feature</th><th>Rating</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>20</td><td>Lovable dashboard <span style="color:var(--muted);font-size:0.78rem;">&middot; visual style follows Peec design tokens (D-013)</span></td><td><span class="badge strong">Build</span></td><td><strong>Eligible partner #3 &mdash; must ship</strong>. Entire fallback by 17:00.</td></tr>
+          <tr><td>21</td><td>Future Directions static page <span style="color:var(--muted);font-size:0.78rem;">&middot; <code>/future-directions</code> route &middot; concept-only, banner</span></td><td><span class="badge strong">Build</span></td><td>Sources from <code>FUTURE_DIRECTIONS.md</code>. No real Pathmatics/MC data, no source names.</td></tr>
+          <tr><td>22</td><td>Temporal trend analysis</td><td><span class="badge moderate">Partial</span></td><td>Date dimension if time permits</td></tr>
+          <tr><td>23</td><td>Multi-brand generalizability</td><td><span class="badge limited">Setup</span></td><td>Demo only; doubles scope otherwise</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Submission Gates <span class="mini-tag">Sunday 14:00 CEST hard deadline</span></div>
+    <div class="diff-grid">
+      <div class="diff-card highlight">
+        <div class="card-tag">Required</div>
+        <h3>Public GitHub Repo</h3>
+        <p>Create via <code>gh-play</code>, push current scaffold + generated artifacts. Run <code>PUBLIC_SAFETY_CHECKLIST.md</code> grep on every artifact before pushing public.</p>
+      </div>
+      <div class="diff-card highlight">
+        <div class="card-tag">Required</div>
+        <h3>Three Eligible Partner Techs in Real Code</h3>
+        <p>Gemini + Tavily + Lovable, all in real code paths. Entire is the hard fallback for Lovable by Saturday 17:00.</p>
+      </div>
+      <div class="diff-card highlight">
+        <div class="card-tag">Required</div>
+        <h3>2-Minute Video</h3>
+        <p>Loom or equivalent. Walk through proof chain + blocked claim + prescription loop closure.</p>
+      </div>
+      <div class="diff-card">
+        <div class="card-tag">Optional</div>
+        <h3>Aikido Side Challenge</h3>
+        <p>Connect public repo, capture security report screenshot. Only if P0 stable by Sunday 12:00.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="footer">
+  Big Berlin Hack 2026 &middot; Peec AI Track &middot; Presence Rx &middot; The Invisible Champion &middot; Nothing Phone
+</div>
+
+<script>
+function switchTab(tab, evt) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  if (evt && evt.target) evt.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
