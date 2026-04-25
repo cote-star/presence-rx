@@ -145,7 +145,7 @@ The demo must walk one recommendation from action -> claim -> evidence -> source
 - [ ] Public GitHub repo created via `gh-play`, code pushed
 - [ ] README lists every API, framework, and tool actually used (no planned-only claims)
 - [ ] Public-safety scan clean on the repo and on every generated artifact
-- [ ] Any internal-only file is gitignored or sanitized (no `/Users/...` paths, no work-side identifiers)
+- [ ] Any internal-only file is gitignored or sanitized (no absolute home-directory paths, no work-side identifiers)
 - [ ] 2-minute video recorded on Loom or equivalent, walkthrough matches real behavior
 - [ ] Submission form link verified on Discord
 - [ ] Form submitted before Sunday 14:00 CEST

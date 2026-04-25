@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Public-safety pre-commit harness for Presence Rx.
+#   1) Runs gitleaks (mirrors the global hook so we don't lose secret scanning when this repo overrides core.hooksPath).
+#   2) Greps staged additions for forbidden fingerprint patterns.
+# Allowed: 'Morning Consult', 'Pathmatics', 'brand lift' — generic vendor / methodology refs.
+# Disallowed: agency names, Cannes-specific refs, work-side connector names, /Users/ paths.
+# Policy reference: docs/PUBLIC_SAFETY_CHECKLIST.md.
+set -euo pipefail
+
+# Step 1 — gitleaks (skipped silently if not installed)
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks git --staged --no-banner --redact
+fi
+
+# Step 2 — forbidden-pattern grep on staged additions.
+# Excludes the hook itself and the policy doc (both must name patterns by definition).
+PATTERN='\b(edelman|cannes|atl-api|atl-comment|gh-work|dbx-work|sentry-api|m365-api|figma-api|slack-api)\b|/Users/'
+HITS=$(git diff --cached --diff-filter=AM -U0 \
+    -- ':!.githooks/pre-commit' \
+       ':!docs/PUBLIC_SAFETY_CHECKLIST.md' \
+  | grep -E '^\+[^+]' \
+  | grep -i -E "$PATTERN" || true)
+
+if [ -n "$HITS" ]; then
+  printf '\n\033[31m✗ public-safety pre-commit hook BLOCKED commit.\033[0m\n' >&2
+  printf 'Forbidden pattern(s) found in staged additions:\n' >&2
+  printf '%s\n' "$HITS" | sed 's/^/    /' >&2
+  printf '\nAllowed:    Morning Consult, Pathmatics, brand lift (generic vendor / methodology references).\n' >&2
+  printf 'Disallowed: agency names, Cannes-specific references, work-side connector names, /Users/ paths.\n' >&2
+  printf 'Policy:     docs/PUBLIC_SAFETY_CHECKLIST.md\n\n' >&2
+  exit 1
+fi

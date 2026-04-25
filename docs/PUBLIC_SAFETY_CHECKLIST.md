@@ -62,3 +62,24 @@ rg -n "private|internal|client|secret|token|password|<absolute-private-path>|<or
 ```
 
 Then manually inspect every hit. Generic words like `client` may be fine in safety docs, but no private identifier should remain.
+
+## Automated Pre-Commit Harness
+
+A pre-commit hook at [.githooks/pre-commit](../.githooks/pre-commit) enforces the rules above on every commit:
+
+1. Runs `gitleaks` against staged changes to catch credentials, API keys, tokens.
+2. Greps staged additions for forbidden fingerprint patterns: agency names, Cannes-specific event references, work-side connector names (atl-api / gh-work / dbx-work / sentry-api / m365-api / figma-api / slack-api), and `/Users/` paths.
+
+**Allowed (do not flag):** `Morning Consult`, `Pathmatics`, `brand lift` — generic vendor / methodology references used industry-wide.
+
+**Setup after cloning the repo (one-time):**
+
+```bash
+git config core.hooksPath .githooks
+```
+
+This is required because git does not auto-set `core.hooksPath` from in-repo configuration. Each agent or developer must run this once after cloning. Verify with `git config --local --get core.hooksPath` (should print `.githooks`).
+
+**If a legitimate edit triggers a false positive** (e.g., a doc that needs to discuss the rule itself), use placeholder syntax (`<absolute-path>`, `<agency-name>`) rather than the literal pattern. The hook excludes two files from its scan: itself (`.githooks/pre-commit`) and this policy doc (`docs/PUBLIC_SAFETY_CHECKLIST.md`) — both must name the patterns by definition. All other docs are scanned.
+
+**To bypass for a known-safe commit** (rare): `git commit --no-verify`. Document why in the commit message, and review the commit before pushing.
