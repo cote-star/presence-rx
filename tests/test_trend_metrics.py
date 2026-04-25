@@ -118,7 +118,7 @@ def test_dashboard_uses_peec_style_shell() -> None:
 
     assert "--peec-bg: #FFFFFF" in html
     assert 'class="app-shell"' in html
-    assert 'class="filter-pill">Brand: Nothing Phone' in html
+    assert 'id="brandPill"' in html
     assert 'class="journey-rail"' in html
     assert 'id="blind-spots"' in html
     assert 'id="evidence"' in html

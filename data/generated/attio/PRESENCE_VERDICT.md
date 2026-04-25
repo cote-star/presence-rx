@@ -25,7 +25,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 - **Gap type:** perception
 - **Competitor:** HubSpot dominates at N/A vs Attio at 22%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, Attio holds 22% visibility at position 2.1 in CRM for Startups; Tavily shows the topic is associated with HubSpot free-tier onboarding rather than modern CRM alternatives.
+- **Diagnostic:** Treat CRM for Startups as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 54/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ### Modern CRM Alternative
@@ -34,7 +34,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 - **Gap type:** indexing
 - **Competitor:** Salesforce dominates at N/A vs Attio at 5%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, Attio holds 5% visibility at position 3.8 in Modern CRM Alternative; Tavily shows 'CRM alternative' queries resolve to Salesforce comparison content rather than surfacing Attio.
+- **Diagnostic:** Treat Modern CRM Alternative as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 63/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ### CRM Migration
@@ -43,7 +43,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 - **Gap type:** volume_frequency
 - **Competitor:** HubSpot dominates at N/A vs Attio at 3%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, Attio holds 3% visibility at position 4.2 in CRM Migration; Tavily shows migration content is almost exclusively about HubSpot and Salesforce pathways.
+- **Diagnostic:** Treat CRM Migration as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 65/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ### RevOps Tools
@@ -52,7 +52,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 - **Gap type:** perception
 - **Competitor:** HubSpot dominates at N/A vs Attio at 15%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, Attio holds 15% visibility at position 2.5 in RevOps Tools; Tavily shows RevOps discourse is dominated by HubSpot Operations Hub positioning.
+- **Diagnostic:** Treat RevOps Tools as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 57/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ## Gap-Type Summary
@@ -73,7 +73,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **Who currently owns the answer:** HubSpot (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -86,7 +86,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **Who currently owns the answer:** Salesforce (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -99,7 +99,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **Who currently owns the answer:** HubSpot (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -112,7 +112,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **Who currently owns the answer:** HubSpot (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -125,7 +125,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **Who currently owns the answer:** Salesforce (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** "Attio is the leading modern crm alternative brand" → BLOCKED
 
@@ -138,7 +138,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **Who currently owns the answer:** HubSpot (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** "Attio is the leading crm migration brand" → BLOCKED
 
@@ -151,7 +151,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **Who currently owns the answer:** HubSpot (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** "Attio is the leading revops tools brand" → BLOCKED
 
@@ -171,5 +171,5 @@ Pipeline version: `0.2.0-step2` | Taxonomy: `2026-04-25-demo` | Generated: `2026
 ### Data Sources
 
 - **Peec MCP:** verified snapshot (2026-04-25)
-- **Tavily:** manifest (0 queries, 0 sources)
-- **Gemini:** substitute (API quota exhausted; findings grounded in Peec + Tavily data)
+- **Tavily:** not available
+- **Gemini:** substitute (API quota exhausted; findings grounded in Peec data only)

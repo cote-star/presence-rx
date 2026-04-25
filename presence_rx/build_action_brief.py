@@ -201,7 +201,8 @@ def build_action_brief(
         )
     lines.append(f"- **Peec MCP:** {peec_label}")
 
-    if tavily is not None:
+    tavily_available = tavily is not None and tavily.summary.sources > 0
+    if tavily_available:
         query_count = tavily.metadata.request_count
         source_count = tavily.summary.sources
         resp_time = tavily.metadata.response_time_seconds
@@ -212,19 +213,23 @@ def build_action_brief(
         lines.append(f"- **Tavily:** {tavily_label}")
     else:
         tavily_src = manifest.sources.get("tavily")
-        if tavily_src:
+        if tavily_src and (tavily_src.query_count or 0) > 0 and (tavily_src.source_count or 0) > 0:
             q = tavily_src.query_count or 0
             s = tavily_src.source_count or 0
             lines.append(f"- **Tavily:** manifest ({q} queries, {s} sources)")
         else:
-            lines.append("- **Tavily:** unavailable")
+            lines.append("- **Tavily:** not available")
 
     if gemini is not None:
         run_mode = gemini.metadata.run_mode
         if run_mode == "test":
+            if tavily_available:
+                gemini_grounding = "findings grounded in Peec + Tavily data"
+            else:
+                gemini_grounding = "findings grounded in Peec data only"
             lines.append(
-                "- **Gemini:** substitute (API quota exhausted; "
-                "findings grounded in Peec + Tavily data)"
+                f"- **Gemini:** substitute (API quota exhausted; "
+                f"{gemini_grounding})"
             )
         else:
             lines.append(

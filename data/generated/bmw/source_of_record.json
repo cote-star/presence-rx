@@ -8,7 +8,7 @@
     {
       "field": "topic_breakdown",
       "source": "peec_mcp",
-      "rationale": "Topic-level metrics and IDs are from the MCP-verified Nothing Phone project."
+      "rationale": "Topic-level metrics and IDs are from the MCP-verified BMW project."
     },
     {
       "field": "engine_breakdown",

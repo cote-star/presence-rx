@@ -40,10 +40,9 @@
 - **Recommended next move:** Publish explicit luxury ev transition positioning content and monitor AI adoption.
 - **Action Priority:** 59/100
 - **Publication language:** Test the BMW association in the Luxury EV Transition topic; 2 of 2 methods support.
-- **AI perception:** AI frames 'luxury EV' as synonymous with Tesla Model S and Model X across editorial and consumer sources
-- **AI perception:** BMW i4 and iX appear in dedicated reviews but are not retrieved as default answers for luxury EV queries
-- **Missing association:** BMW i4 and iX as serious luxury EV contenders with driving dynamics heritage carried into electric
-- **Missing association:** BMW's Neue Klasse platform as next-generation electric architecture rivaling Tesla's engineering
+- **AI perception:** brand association
+- **AI perception:** category positioning
+- **Missing association:** luxury ev transition association
 
 #### Brand Heritage
 
@@ -54,10 +53,9 @@
 - **Recommended next move:** Publish explicit brand heritage positioning content and monitor AI adoption.
 - **Action Priority:** 52/100
 - **Publication language:** Test the BMW association in the Brand Heritage topic; 2 of 2 methods support.
-- **AI perception:** AI increasingly associates 'luxury automotive heritage' with Mercedes-Benz over BMW in historical and brand-narrative queries
-- **AI perception:** BMW's 'Ultimate Driving Machine' heritage is recognized but narrowed to performance rather than luxury lineage
-- **Missing association:** BMW's motorsport heritage (M division, touring car championships) as luxury brand credential
-- **Missing association:** BMW's design evolution from the 2002 to modern lineup as a continuous luxury narrative
+- **AI perception:** brand association
+- **AI perception:** category positioning
+- **Missing association:** brand heritage association
 
 ### Indexing Gaps (Premium SUV Segment)
 
@@ -72,10 +70,9 @@
 - **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.
 - **Action Priority:** 57/100
 - **Publication language:** Test the BMW association in the Premium SUV Segment topic; 2 of 2 methods support.
-- **AI perception:** AI defaults to Mercedes GLE and GLC when answering premium SUV queries across editorial and review sources
-- **AI perception:** BMW X3 and X5 appear in comparison articles but are not the primary retrieval result for the category
-- **Missing association:** BMW X3/X5 as segment-leading premium SUVs with best-in-class driving dynamics
-- **Missing association:** BMW X-series sales leadership in key markets as evidence of segment relevance
+- **AI perception:** ecosystem availability
+- **AI perception:** owned content discoverability
+- **Missing association:** clear ecosystem proof surfaced in AI answers
 
 ### Volume / Frequency Gaps (Electric i-Series)
 
@@ -90,10 +87,9 @@
 - **Recommended next move:** Seed sustained electric i-series proof across editorial and owned surfaces.
 - **Action Priority:** 62/100
 - **Publication language:** Test the BMW association in the Electric i-Series topic; 2 of 2 methods support.
-- **AI perception:** AI associates electric vehicle coverage with Tesla Model 3 and Model Y due to overwhelming editorial volume
-- **AI perception:** BMW i4 and iX reviews exist but are outnumbered by Tesla coverage by an order of magnitude
-- **Missing association:** BMW i4 as a driver's EV with M-Sport credentials and rear-wheel-drive character
-- **Missing association:** BMW iX as a technology flagship with next-generation iDrive and sustainable materials
+- **AI perception:** category presence
+- **AI perception:** product-line recall
+- **Missing association:** repeated wireless audio association
 
 ## Monitoring Plan
 
@@ -140,5 +136,5 @@
 ### Data Sources
 
 - **Peec MCP:** verified snapshot (2026-04-25)
-- **Tavily:** manifest (0 queries, 0 sources)
-- **Gemini:** substitute (API quota exhausted; findings grounded in Peec + Tavily data)
+- **Tavily:** not available
+- **Gemini:** substitute (API quota exhausted; findings grounded in Peec data only)

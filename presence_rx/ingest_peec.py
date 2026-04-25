@@ -965,7 +965,7 @@ def build_artifacts(
                 field="topic_breakdown",
                 source="peec_mcp",
                 rationale=(
-                    "Topic-level metrics and IDs are from the MCP-verified Nothing Phone project."
+                    f"Topic-level metrics and IDs are from the MCP-verified {seed.brand} project."
                 ),
             ),
             SourceOfRecordItem(

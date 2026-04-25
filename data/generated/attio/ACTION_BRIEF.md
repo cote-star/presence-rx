@@ -40,10 +40,9 @@
 - **Recommended next move:** Publish explicit crm for startups positioning content and monitor AI adoption.
 - **Action Priority:** 54/100
 - **Publication language:** Test the Attio association in the CRM for Startups topic; 2 of 2 methods support.
-- **AI perception:** AI frames 'best CRM for startups' as a HubSpot narrative with free-tier onboarding as the default recommendation
-- **AI perception:** Attio appears in niche product-hunt and VC-backed startup coverage but not in general startup CRM queries
-- **Missing association:** Attio as a modern CRM built natively for startup workflows with flexible data modeling
-- **Missing association:** Attio's real-time sync and relationship intelligence as startup-specific advantages over HubSpot's legacy architecture
+- **AI perception:** brand association
+- **AI perception:** category positioning
+- **Missing association:** crm for startups association
 
 #### RevOps Tools
 
@@ -54,10 +53,9 @@
 - **Recommended next move:** Publish explicit revops tools positioning content and monitor AI adoption.
 - **Action Priority:** 57/100
 - **Publication language:** Test the Attio association in the RevOps Tools topic; 2 of 2 methods support.
-- **AI perception:** AI associates RevOps tooling with HubSpot Operations Hub as the integrated RevOps platform
-- **AI perception:** Attio's reporting and automation features are discussed in product reviews but not framed as RevOps capabilities
-- **Missing association:** Attio's native workflow automation and reporting as RevOps-ready features
-- **Missing association:** Attio's API-first design enabling RevOps integration patterns without middleware
+- **AI perception:** brand association
+- **AI perception:** category positioning
+- **Missing association:** revops tools association
 
 ### Indexing Gaps (Modern CRM Alternative)
 
@@ -72,10 +70,9 @@
 - **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.
 - **Action Priority:** 63/100
 - **Publication language:** Test the Attio association in the Modern CRM Alternative topic; 2 of 2 methods support.
-- **AI perception:** AI routes 'CRM alternative' queries to Salesforce comparison pages and HubSpot-vs-Salesforce articles
-- **AI perception:** Attio content exists on its own domain and in tech press but is not retrieved in alternative-framed queries
-- **Missing association:** Attio as a next-generation CRM alternative with native API-first architecture
-- **Missing association:** Attio's flexible object model as a structural differentiator from legacy CRM platforms
+- **AI perception:** ecosystem availability
+- **AI perception:** owned content discoverability
+- **Missing association:** clear ecosystem proof surfaced in AI answers
 
 ### Volume / Frequency Gaps (CRM Migration)
 
@@ -90,10 +87,9 @@
 - **Recommended next move:** Seed sustained crm migration proof across editorial and owned surfaces.
 - **Action Priority:** 65/100
 - **Publication language:** Test the Attio association in the CRM Migration topic; 2 of 2 methods support.
-- **AI perception:** AI associates CRM migration with HubSpot-to-Salesforce and Salesforce-to-HubSpot pathways supported by extensive documentation
-- **AI perception:** Almost no 'migrate to Attio' content exists in editorial or documentation sources
-- **Missing association:** Attio migration tooling and CSV/API import capabilities for switching from legacy CRMs
-- **Missing association:** Attio as a migration destination with lower switching cost than incumbent platforms
+- **AI perception:** category presence
+- **AI perception:** product-line recall
+- **Missing association:** repeated wireless audio association
 
 ## Monitoring Plan
 
@@ -140,5 +136,5 @@
 ### Data Sources
 
 - **Peec MCP:** verified snapshot (2026-04-25)
-- **Tavily:** manifest (0 queries, 0 sources)
-- **Gemini:** substitute (API quota exhausted; findings grounded in Peec + Tavily data)
+- **Tavily:** not available
+- **Gemini:** substitute (API quota exhausted; findings grounded in Peec data only)

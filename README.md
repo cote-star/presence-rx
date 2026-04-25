@@ -7,14 +7,14 @@ Big Berlin Hack 2026 implementation repo. Track: **Peec AI (locked)**. Briefing:
 
 ## Status
 
-**MVP pipeline complete.** Track locked, brand locked on **Nothing Phone** (the Invisible Champion: best position 2.4, 20% overall visibility, 4 of 5 topics with blind spots). Full 9-step pipeline executing end-to-end: Peec ingest, Tavily enrichment (40 live web sources), Gemini perception analysis, 3-method gap classification (all 4 confirmed at STRONG confidence), claim-checked evidence ledger, priority signals, competitor landscape, prescription plan, and interactive dashboard.
+**MVP pipeline complete.** Track locked, brand locked on **Nothing Phone** (the Invisible Champion: best position 2.4, 20% overall visibility, 4 of 5 topics with blind spots). Full 9-step pipeline executing end-to-end: Peec ingest, Tavily enrichment (40 live web sources), Gemini perception analysis, 3-signal gap classification (all 4 confirmed at STRONG evidence level), claim-checked evidence ledger, priority signals, competitor landscape, action plan, and interactive dashboard.
 
 ## Quick Start
 
 ```bash
 uv sync --dev              # install dependencies
 make run                   # run full pipeline (outputs: artifacts/local/)
-make test                  # 120 tests
+make test                  # 172 tests
 make lint                  # ruff check
 ```
 
@@ -52,7 +52,7 @@ flowchart TD
     E --> F[5. Gap-Type Classifier<br/>perception · indexing · volume_frequency]
     F --> G[Claim Check<br/>3-signal verification · evidence levels · claims to avoid]
     G --> H[6. Action Brief<br/>PRESENCE_VERDICT · ACTION_BRIEF<br/>EVIDENCE_LEDGER · manifest]
-    H --> I[Prescription Writes<br/>create_prompt · create_tag · create_topic]
+    H --> I[Monitoring Setup<br/>create_prompt · create_tag · create_topic]
     I --> J[Lovable Webapp<br/>aligned with Peec design philosophy]
     H -.->|sneak peek<br/>concept only| K[/future-directions<br/>Channel Activation · Lift · Spend<br/>Static · Permissioned data outside repo/]
 
@@ -90,7 +90,7 @@ See [AGENTS.md](AGENTS.md) for lane assignments and coordination rules.
 
 ## Reusable Patterns
 
-See [docs/ANALYTICS_PATTERNS_FOR_PEEC.md](docs/ANALYTICS_PATTERNS_FOR_PEEC.md) for public-safe analytics patterns: evidence ledger, claim guardrails, prompt universe routing, and the demo proof step.
+See [docs/ANALYTICS_PATTERNS_FOR_PEEC.md](docs/ANALYTICS_PATTERNS_FOR_PEEC.md) for public-safe analytics patterns: evidence ledger, claim checks, prompt universe routing, and the demo proof step.
 
 See [docs/TREND_ECON_PATTERNS.md](docs/TREND_ECON_PATTERNS.md) for trend-analytics details: prompt clusters as trend objects, surge vs slow-burn, quality flags, SSOT, and strategic quadrants.
 
@@ -100,13 +100,15 @@ See [docs/CAMPAIGN_TAXONOMY_FOR_PEEC.md](docs/CAMPAIGN_TAXONOMY_FOR_PEEC.md) for
 
 See [docs/PLANNING_AND_MEASUREMENT_PATTERNS.md](docs/PLANNING_AND_MEASUREMENT_PATTERNS.md) for scenario-planning, reporting, readiness gates, visible assumptions, and sparse-data behavior.
 
-See [docs/METHOD_GUARDRAILS_AND_EVIDENCE.md](docs/METHOD_GUARDRAILS_AND_EVIDENCE.md) for method ladders, evidence strength tiers, method agreement, and claim language rules.
+See [docs/METHOD_GUARDRAILS_AND_EVIDENCE.md](docs/METHOD_GUARDRAILS_AND_EVIDENCE.md) for method ladders, evidence strength tiers, signal alignment, and claim language rules.
+
+See [docs/TERMINOLOGY.md](docs/TERMINOLOGY.md) for the public terminology map used by the dashboard, markdown deliverables, and current documentation.
 
 See [docs/ARTIFACT_CONTRACTS.md](docs/ARTIFACT_CONTRACTS.md) for the initial JSON artifact contracts.
 
 See [docs/END_TO_END_BUILD_GUIDE_AND_STORYBOARD.md](docs/END_TO_END_BUILD_GUIDE_AND_STORYBOARD.md) for the complete build order, data flow, dashboard wireframes, and 2-minute demo storyboard.
 
-See [docs/VALIDATION_REPORT.md](docs/VALIDATION_REPORT.md) for the current repo validation status, implementation gaps, and next build cut.
+See [docs/VALIDATION_REPORT.md](docs/VALIDATION_REPORT.md) for the original validation snapshot; use [docs/PROGRESS.md](docs/PROGRESS.md) and [docs/_STATUS.md](docs/_STATUS.md) for current validation status.
 
 See **[docs/SCOPE_FINAL.md](docs/SCOPE_FINAL.md)** — the locked, rated scope for the build. 22 features across 4 tiers, 6-axis blind-spot model (Topic / Channel / Engine / Geography / Authority / Evidence), eligibility-critical lane explicit, build priority order with submission gates. **Read this first.**
 

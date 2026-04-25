@@ -181,14 +181,18 @@ def build_presence_verdict(
             # What proof exists
             tavily_f = tavily_finding_map.get(claim.cluster_id)
             gap_info = classified_map.get(claim.cluster_id)
-            source_count = len(tavily_f.sources) if tavily_f else 0
             method_count = (
                 sum(1 for s in gap_info.method_signals if s.signal == "supports")
                 if gap_info else len(claim.methods)
             )
             total_methods = len(gap_info.method_signals) if gap_info else len(claim.methods)
+            if tavily_f is not None:
+                source_count = len(tavily_f.sources)
+                tavily_proof = f"{source_count} public sources checked"
+            else:
+                tavily_proof = "Tavily: not available for this case study"
             lines.append(
-                f"**What proof exists:** {source_count} public sources checked; "
+                f"**What proof exists:** {tavily_proof}; "
                 f"{method_count} of {total_methods} methods agree\n"
             )
 
@@ -244,7 +248,8 @@ def build_presence_verdict(
         peec_label = f"verified snapshot `{snap}` ({date})"
     lines.append(f"- **Peec MCP:** {peec_label}")
 
-    if tavily is not None:
+    tavily_available = tavily is not None and tavily.summary.sources > 0
+    if tavily_available:
         query_count = tavily.metadata.request_count
         source_count = tavily.summary.sources
         resp_time = tavily.metadata.response_time_seconds
@@ -255,19 +260,23 @@ def build_presence_verdict(
         lines.append(f"- **Tavily:** {tavily_label}")
     else:
         tavily_src = manifest.sources.get("tavily")
-        if tavily_src:
+        if tavily_src and (tavily_src.query_count or 0) > 0 and (tavily_src.source_count or 0) > 0:
             q = tavily_src.query_count or 0
             s = tavily_src.source_count or 0
             lines.append(f"- **Tavily:** manifest ({q} queries, {s} sources)")
         else:
-            lines.append("- **Tavily:** unavailable")
+            lines.append("- **Tavily:** not available")
 
     if gemini is not None:
         run_mode = gemini.metadata.run_mode
         if run_mode == "test":
+            if tavily_available:
+                gemini_grounding = "findings grounded in Peec + Tavily data"
+            else:
+                gemini_grounding = "findings grounded in Peec data only"
             lines.append(
-                "- **Gemini:** substitute (API quota exhausted; "
-                "findings grounded in Peec + Tavily data)"
+                f"- **Gemini:** substitute (API quota exhausted; "
+                f"{gemini_grounding})"
             )
         else:
             lines.append(

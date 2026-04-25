@@ -129,3 +129,82 @@ def test_value_metrics_per_brand(case_id):
     assert len(metrics.rows) == 5
     for row in metrics.rows:
         assert 0 <= row.opportunity_score <= 100
+
+
+# ---------- Multi-brand hardening tests ----------
+
+
+@pytest.mark.parametrize("case_id", BRAND_IDS)
+def test_no_brand_leakage_in_source_of_record(case_id):
+    """source_of_record.json must not mention other brands."""
+    seed = get_seed(case_id)
+    artifacts = build_artifacts(seed)
+    sor_dump = artifacts.source_of_record.model_dump_json()
+
+    other_brands = {"Nothing Phone", "Attio", "BMW"} - {seed.brand}
+    for other in other_brands:
+        assert other not in sor_dump, (
+            f"{case_id} source_of_record.json mentions '{other}'"
+        )
+
+
+@pytest.mark.parametrize("case_id", BRAND_IDS)
+def test_manifest_brand_matches_seed(case_id):
+    """Manifest brand must match the seed brand, not a hardcoded value."""
+    seed = get_seed(case_id)
+    artifacts = build_artifacts(seed)
+    assert artifacts.manifest.brand == seed.brand
+
+
+@pytest.mark.parametrize("case_id", BRAND_IDS)
+def test_dashboard_uses_correct_brand_name(case_id):
+    """Dashboard HTML must reference the correct brand, not hardcoded Nothing Phone."""
+    from presence_rx.build_mvp_dashboard import build_dashboard
+
+    seed = get_seed(case_id)
+    artifacts = build_artifacts(seed)
+    html = build_dashboard(artifacts.study_ssot, manifest=artifacts.manifest)
+
+    # The data dict should contain the correct brand name
+    assert f'"brand_name": "{seed.brand}"' in html
+    # Brand name should not be hardcoded in JS
+    assert "const brandName = 'Nothing Phone'" not in html
+
+
+@pytest.mark.parametrize("case_id", ["attio", "bmw"])
+def test_verdict_tavily_provenance_honest_when_unavailable(case_id):
+    """When Tavily has 0 sources, verdict must not claim Tavily evidence exists."""
+    seed = get_seed(case_id)
+    artifacts = build_artifacts(seed)
+    content = build_presence_verdict(artifacts.study_ssot, artifacts.manifest)
+
+    # Should NOT say "Tavily: live" when no Tavily data
+    assert "Tavily: live" not in content
+    # Should indicate unavailable
+    assert (
+        "not available" in content.lower()
+        or "no tavily" in content.lower()
+        or "0 sources" in content.lower()
+        or "unavailable" in content.lower()
+    )
+
+
+@pytest.mark.parametrize("case_id", ["attio", "bmw"])
+def test_no_nothing_phone_in_any_artifact_text(case_id):
+    """No artifact text for Attio/BMW should mention 'Nothing Phone'."""
+    seed = get_seed(case_id)
+    artifacts = build_artifacts(seed)
+
+    # Check study rows
+    for row in artifacts.study_ssot.rows:
+        assert "Nothing Phone" not in row.cluster_label
+
+    # Check manifest
+    assert artifacts.manifest.brand != "Nothing Phone"
+    assert "Nothing Phone" not in str(artifacts.manifest.competitors)
+
+    # Check source of record
+    for item in artifacts.source_of_record.sources:
+        assert "Nothing Phone" not in item.rationale, (
+            f"{case_id} source_of_record leaks 'Nothing Phone' in: {item.rationale}"
+        )

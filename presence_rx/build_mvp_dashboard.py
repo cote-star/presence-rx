@@ -14,6 +14,7 @@ from presence_rx.contracts import (
     EvidenceLedger,
     GapClassification,
     GeminiAnalysis,
+    Manifest,
     PrescriptionPlan,
     StudySsot,
     TavilyEvidence,
@@ -49,6 +50,7 @@ def _html(
     tavily: TavilyEvidence | None,
     prescription: PrescriptionPlan | None = None,
     gemini: GeminiAnalysis | None = None,
+    manifest: Manifest | None = None,
 ) -> str:
     tavily_public_summary = (
         {
@@ -64,7 +66,9 @@ def _html(
         if tavily
         else None
     )
+    brand_name = manifest.brand if manifest else "Brand"
     data = {
+        "brand_name": brand_name,
         "study": study.model_dump(mode="json"),
         "classification": classification.model_dump(mode="json") if classification else None,
         "ledger": ledger.model_dump(mode="json") if ledger else None,
@@ -886,7 +890,7 @@ def _html(
     </header>
     <div class="content">
       <div class="filterbar" aria-label="Dashboard filters">
-        <div class="filter-pill">Brand: Nothing Phone</div>
+        <div class="filter-pill" id="brandPill">Brand: ...</div>
         <div class="filter-pill">Time: Apr 25</div>
         <div class="filter-pill">Market: US</div>
         <div class="filter-pill">Models: 3</div>
@@ -910,7 +914,7 @@ def _html(
         <div class="verdict-panel" id="verdict">
           <div class="verdict-row">
             <div class="verdict-label">Verdict</div>
-            <div class="verdict-value">Nothing Phone is visible as a design stronghold, but under-owned across four commercial AI-answer surfaces.</div>
+            <div class="verdict-value" id="verdictText">The brand is visible in a stronghold topic, but under-owned across key commercial AI-answer surfaces.</div>
           </div>
           <div class="verdict-row">
             <div class="verdict-label">Primary risk</div>
@@ -950,7 +954,7 @@ def _html(
         <div class="panel-header">
           <div>
             <h2 class="panel-title">Perception analysis</h2>
-            <p class="panel-subtitle">How AI models perceive each topic and what associations are missing for Nothing Phone.</p>
+            <p class="panel-subtitle" id="perceptionSubtitle">How AI models perceive each topic and what associations are missing for the brand.</p>
           </div>
         </div>
         <div class="table-wrap">
@@ -1018,7 +1022,7 @@ def _html(
             <div class="panel-header">
               <div>
                 <h2 class="panel-title">Competitor landscape</h2>
-                <p class="panel-subtitle">Shows whether Nothing Phone or a competitor owns the answer surface.</p>
+                <p class="panel-subtitle" id="landscapeSubtitle">Shows whether the brand or a competitor owns the answer surface.</p>
               </div>
             </div>
             <div id="landscapeChart" class="chart"></div>
@@ -1292,7 +1296,14 @@ const plotLayoutBase = {
 
 const plotConfig = { displayModeBar: false, responsive: true };
 const labels = studyRows.map(r => r.cluster_label);
-const brandName = 'Nothing Phone';
+const brandName = data.brand_name || 'Brand';
+document.getElementById('brandPill').textContent = 'Brand: ' + brandName;
+document.getElementById('perceptionSubtitle').textContent = 'How AI models perceive each topic and what associations are missing for ' + brandName + '.';
+document.getElementById('landscapeSubtitle').textContent = 'Shows whether ' + brandName + ' or a competitor owns the answer surface.';
+const strongholds = studyRows.filter(r => !r.gap_type);
+const blindSpots = studyRows.filter(r => r.gap_type);
+const strongholdLabel = strongholds.length ? strongholds[0].cluster_label : 'its stronghold topic';
+document.getElementById('verdictText').textContent = brandName + ' is visible in ' + strongholdLabel + ', but under-owned across ' + blindSpots.length + ' commercial AI-answer surfaces.';
 const competitorNames = [...new Set(studyRows.map(r => r.visibility_competitor_owner).filter(Boolean))];
 const competitorLegendName = competitorNames.length === 1 ? competitorNames[0] : 'Named competitor';
 
@@ -1798,10 +1809,12 @@ def build_dashboard(
     tavily: TavilyEvidence | None = None,
     prescription: PrescriptionPlan | None = None,
     gemini: GeminiAnalysis | None = None,
+    manifest: Manifest | None = None,
 ) -> str:
     return _html(
         study, classification, ledger, metrics, landscape, tavily, prescription,
         gemini=gemini,
+        manifest=manifest,
     )
 
 

@@ -10,15 +10,14 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 
 ### CRM for Startups
 
-**Gap:** Attio wants to be known for CRM for Startups but AI associates it with HubSpot dominates startup CRM discourse across G2, Capterra, and editorial listicles as the default free-to-paid CRM funnel for early-stage companies.
+**Gap:** Attio wants to be known for CRM for Startups but AI associates it with HubSpot is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated crm for startups page with structured data and explicit brand positioning
 - **Where:** Attio website, blog, documentation
 - **Key language:** Use explicit "CRM for Startups" keywords that AI systems index
-- **Missing association to address:** Attio as a modern CRM built natively for startup workflows with flexible data modeling
-- **Missing association to address:** Attio's real-time sync and relationship intelligence as startup-specific advantages over HubSpot's legacy architecture
+- **Missing association to address:** crm for startups association
 
 #### Earned Media Angle
 
@@ -49,15 +48,14 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 
 ### RevOps Tools
 
-**Gap:** Attio wants to be known for RevOps Tools but AI associates it with HubSpot Operations Hub is positioned as the default RevOps platform across analyst reports, G2 categories, and editorial content about revenue operations tooling.
+**Gap:** Attio wants to be known for RevOps Tools but AI associates it with HubSpot is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated revops tools page with structured data and explicit brand positioning
 - **Where:** Attio website, blog, documentation
 - **Key language:** Use explicit "RevOps Tools" keywords that AI systems index
-- **Missing association to address:** Attio's native workflow automation and reporting as RevOps-ready features
-- **Missing association to address:** Attio's API-first design enabling RevOps integration patterns without middleware
+- **Missing association to address:** revops tools association
 
 #### Earned Media Angle
 
@@ -92,15 +90,14 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 
 ### Modern CRM Alternative
 
-**Gap:** Attio wants to be known for Modern CRM Alternative but AI associates it with Salesforce owns the CRM alternative frame by default: queries for 'CRM alternative' return Salesforce competitor comparison pages rather than genuinely alternative platforms.
+**Gap:** Attio wants to be known for Modern CRM Alternative but AI associates it with Salesforce is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated modern crm alternative page with structured data and explicit brand positioning
 - **Where:** Attio website, blog, documentation
 - **Key language:** Use explicit "Modern CRM Alternative" keywords that AI systems index
-- **Missing association to address:** Attio as a next-generation CRM alternative with native API-first architecture
-- **Missing association to address:** Attio's flexible object model as a structural differentiator from legacy CRM platforms
+- **Missing association to address:** clear ecosystem proof surfaced in AI answers
 
 #### Earned Media Angle
 
@@ -135,15 +132,14 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 
 ### CRM Migration
 
-**Gap:** Attio wants to be known for CRM Migration but AI associates it with HubSpot and Salesforce dominate CRM migration discourse with extensive migration guides, partner ecosystems, and certification programs creating deep content moats.
+**Gap:** Attio wants to be known for CRM Migration but AI associates it with HubSpot is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated crm migration page with structured data and explicit brand positioning
 - **Where:** Attio website, blog, documentation
 - **Key language:** Use explicit "CRM Migration" keywords that AI systems index
-- **Missing association to address:** Attio migration tooling and CSV/API import capabilities for switching from legacy CRMs
-- **Missing association to address:** Attio as a migration destination with lower switching cost than incumbent platforms
+- **Missing association to address:** repeated wireless audio association
 
 #### Earned Media Angle
 
@@ -177,5 +173,5 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 ## Data Sources
 
 - **Peec MCP:** verified snapshot (2026-04-25)
-- **Tavily:** unavailable
-- **Gemini:** substitute (API quota exhausted; findings grounded in Peec + Tavily data)
+- **Tavily:** not available
+- **Gemini:** substitute (API quota exhausted; findings grounded in Peec data only)

@@ -118,6 +118,7 @@ def run_mvp(
             tavily=tavily,
             prescription=prescription,
             gemini=gemini,
+            manifest=manifest,
         ),
         dashboard_dir,
     )

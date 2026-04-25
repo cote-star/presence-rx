@@ -25,7 +25,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 - **Gap type:** perception
 - **Competitor:** Tesla dominates at N/A vs BMW at 12%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, BMW holds 12% visibility at position 2.8 in Luxury EV Transition; Tavily shows luxury EV queries resolve to Tesla Model S/X coverage rather than BMW i-series.
+- **Diagnostic:** Treat Luxury EV Transition as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 59/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ### Premium SUV Segment
@@ -34,7 +34,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 - **Gap type:** indexing
 - **Competitor:** Mercedes-Benz dominates at N/A vs BMW at 15%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, BMW holds 15% visibility at position 2.5 in Premium SUV Segment; Tavily shows premium SUV queries surface Mercedes GLE/GLC content ahead of BMW X-series.
+- **Diagnostic:** Treat Premium SUV Segment as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 57/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ### Electric i-Series
@@ -43,7 +43,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 - **Gap type:** volume_frequency
 - **Competitor:** Tesla dominates at N/A vs BMW at 6%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, BMW holds 6% visibility at position 3.5 in Electric i-Series despite active products; Tavily shows electric vehicle queries surface Tesla models almost exclusively due to content volume advantage.
+- **Diagnostic:** Treat Electric i-Series as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 62/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ### Brand Heritage
@@ -52,7 +52,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 - **Gap type:** perception
 - **Competitor:** Mercedes-Benz dominates at N/A vs BMW at 30%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
-- **Diagnostic:** In Peec data, BMW holds 30% visibility at position 1.8 in Brand Heritage but Mercedes-Benz is the competitor owner; Tavily shows luxury heritage queries increasingly favor Mercedes founding mythology over BMW's performance lineage.
+- **Diagnostic:** Treat Brand Heritage as a provisional diagnostic gap until live Gemini analysis is available.
 - **Action Priority:** 52/100 | **Recommended Action:** test_next | **Trend:** proof_gap
 
 ## Gap-Type Summary
@@ -73,7 +73,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **Who currently owns the answer:** Tesla (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -86,7 +86,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **Who currently owns the answer:** Mercedes-Benz (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -99,7 +99,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **Who currently owns the answer:** Tesla (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -112,7 +112,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **Who currently owns the answer:** Mercedes-Benz (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** No blocked claims for this topic
 
@@ -125,7 +125,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **Who currently owns the answer:** Tesla (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** "BMW is the leading luxury ev transition brand" → BLOCKED
 
@@ -138,7 +138,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **Who currently owns the answer:** Mercedes-Benz (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** "BMW is the leading premium suv segment brand" → BLOCKED
 
@@ -151,7 +151,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **Who currently owns the answer:** Tesla (N/A visibility)
 
-**What proof exists:** 0 public sources checked; 2 of 3 methods agree
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
 **What claim is unsafe:** "BMW is the leading electric i-series brand" → BLOCKED
 
@@ -171,5 +171,5 @@ Pipeline version: `0.2.0-step2` | Taxonomy: `2026-04-25-demo` | Generated: `2026
 ### Data Sources
 
 - **Peec MCP:** verified snapshot (2026-04-25)
-- **Tavily:** manifest (0 queries, 0 sources)
-- **Gemini:** substitute (API quota exhausted; findings grounded in Peec + Tavily data)
+- **Tavily:** not available
+- **Gemini:** substitute (API quota exhausted; findings grounded in Peec data only)

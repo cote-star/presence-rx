@@ -254,7 +254,8 @@ def build_activation_brief(
             f"({manifest.generated_at.strftime('%Y-%m-%d')})"
         )
 
-    if tavily is not None:
+    tavily_available = tavily is not None and tavily.summary.sources > 0
+    if tavily_available:
         query_count = tavily.metadata.request_count
         source_count = tavily.summary.sources
         lines.append(
@@ -262,14 +263,18 @@ def build_activation_brief(
             f"{source_count} sources)"
         )
     else:
-        lines.append("- **Tavily:** unavailable")
+        lines.append("- **Tavily:** not available")
 
     if gemini is not None:
         run_mode = gemini.metadata.run_mode
         if run_mode == "test":
+            if tavily_available:
+                gemini_grounding = "findings grounded in Peec + Tavily data"
+            else:
+                gemini_grounding = "findings grounded in Peec data only"
             lines.append(
-                "- **Gemini:** substitute (API quota exhausted; "
-                "findings grounded in Peec + Tavily data)"
+                f"- **Gemini:** substitute (API quota exhausted; "
+                f"{gemini_grounding})"
             )
         else:
             lines.append(

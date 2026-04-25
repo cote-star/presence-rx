@@ -10,15 +10,14 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 
 ### Luxury EV Transition
 
-**Gap:** BMW wants to be known for Luxury EV Transition but AI associates it with Tesla dominates luxury EV discourse across Electrek, InsideEVs, Car and Driver, and consumer forums as the default reference point for premium electric vehicles.
+**Gap:** BMW wants to be known for Luxury EV Transition but AI associates it with Tesla is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated luxury ev transition page with structured data and explicit brand positioning
 - **Where:** BMW website, blog, documentation
 - **Key language:** Use explicit "Luxury EV Transition" keywords that AI systems index
-- **Missing association to address:** BMW i4 and iX as serious luxury EV contenders with driving dynamics heritage carried into electric
-- **Missing association to address:** BMW's Neue Klasse platform as next-generation electric architecture rivaling Tesla's engineering
+- **Missing association to address:** luxury ev transition association
 
 #### Earned Media Angle
 
@@ -51,15 +50,14 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 
 ### Brand Heritage
 
-**Gap:** BMW wants to be known for Brand Heritage but AI associates it with Mercedes-Benz owns luxury heritage association across Wikipedia, brand history articles, and automotive journalism with references to the invention of the automobile and Silver Arrows racing lineage.
+**Gap:** BMW wants to be known for Brand Heritage but AI associates it with Mercedes-Benz is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated brand heritage page with structured data and explicit brand positioning
 - **Where:** BMW website, blog, documentation
 - **Key language:** Use explicit "Brand Heritage" keywords that AI systems index
-- **Missing association to address:** BMW's motorsport heritage (M division, touring car championships) as luxury brand credential
-- **Missing association to address:** BMW's design evolution from the 2002 to modern lineup as a continuous luxury narrative
+- **Missing association to address:** brand heritage association
 
 #### Earned Media Angle
 
@@ -92,15 +90,14 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 
 ### Premium SUV Segment
 
-**Gap:** BMW wants to be known for Premium SUV Segment but AI associates it with Mercedes-Benz GLE and GLC are the default premium SUV references in MotorTrend, Car and Driver, and Edmunds retrieval results for category-level queries.
+**Gap:** BMW wants to be known for Premium SUV Segment but AI associates it with Mercedes-Benz is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated premium suv segment page with structured data and explicit brand positioning
 - **Where:** BMW website, blog, documentation
 - **Key language:** Use explicit "Premium SUV Segment" keywords that AI systems index
-- **Missing association to address:** BMW X3/X5 as segment-leading premium SUVs with best-in-class driving dynamics
-- **Missing association to address:** BMW X-series sales leadership in key markets as evidence of segment relevance
+- **Missing association to address:** clear ecosystem proof surfaced in AI answers
 
 #### Earned Media Angle
 
@@ -135,15 +132,14 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 
 ### Electric i-Series
 
-**Gap:** BMW wants to be known for Electric i-Series but AI associates it with Tesla Model 3 and Model Y dominate electric vehicle editorial volume across Electrek, InsideEVs, CNET, and mainstream press with multi-year coverage depth.
+**Gap:** BMW wants to be known for Electric i-Series but AI associates it with Tesla is the Peec-visible owner
 
 #### Owned Content Brief
 
 - **What to create:** Dedicated electric i-series page with structured data and explicit brand positioning
 - **Where:** BMW website, blog, documentation
 - **Key language:** Use explicit "Electric i-Series" keywords that AI systems index
-- **Missing association to address:** BMW i4 as a driver's EV with M-Sport credentials and rear-wheel-drive character
-- **Missing association to address:** BMW iX as a technology flagship with next-generation iDrive and sustainable materials
+- **Missing association to address:** repeated wireless audio association
 
 #### Earned Media Angle
 
@@ -177,5 +173,5 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 ## Data Sources
 
 - **Peec MCP:** verified snapshot (2026-04-25)
-- **Tavily:** unavailable
-- **Gemini:** substitute (API quota exhausted; findings grounded in Peec + Tavily data)
+- **Tavily:** not available
+- **Gemini:** substitute (API quota exhausted; findings grounded in Peec data only)
