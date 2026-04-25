@@ -208,3 +208,107 @@ def test_no_nothing_phone_in_any_artifact_text(case_id):
         assert "Nothing Phone" not in item.rationale, (
             f"{case_id} source_of_record leaks 'Nothing Phone' in: {item.rationale}"
         )
+
+
+# ---------- Multi-brand combined dashboard tests ----------
+
+
+def test_multi_brand_dashboard_contains_all_brands():
+    """Combined dashboard embeds all 3 brands' data and has a brand switcher."""
+    from presence_rx.build_mvp_dashboard import _build_brand_data, build_multi_brand_dashboard
+
+    brands_data = {}
+    for case_id in BRAND_IDS:
+        seed = get_seed(case_id)
+        artifacts = build_artifacts(seed)
+        brands_data[case_id] = _build_brand_data(
+            artifacts.study_ssot, None, None, None, None, None,
+            manifest=artifacts.manifest,
+        )
+
+    html = build_multi_brand_dashboard(brands_data)
+
+    # All 3 data scripts are embedded
+    assert 'id="presence-data-nothing-phone"' in html
+    assert 'id="presence-data-attio"' in html
+    assert 'id="presence-data-bmw"' in html
+
+    # Brand switcher dropdown exists
+    assert 'id="brandSwitcher"' in html
+    assert '<option value="nothing-phone">' in html
+    assert '<option value="attio">' in html
+    assert '<option value="bmw">' in html
+
+    # All brand names appear in their respective data blocks
+    assert '"brand_name": "Nothing Phone"' in html
+    assert '"brand_name": "Attio"' in html
+    assert '"brand_name": "BMW"' in html
+
+
+def test_multi_brand_dashboard_uses_peec_styles():
+    """Combined dashboard uses the same Peec design system as single-brand."""
+    from presence_rx.build_mvp_dashboard import _build_brand_data, build_multi_brand_dashboard
+
+    seed = get_seed("nothing-phone")
+    artifacts = build_artifacts(seed)
+    brands_data = {
+        "nothing-phone": _build_brand_data(
+            artifacts.study_ssot, None, None, None, None, None,
+            manifest=artifacts.manifest,
+        ),
+    }
+
+    html = build_multi_brand_dashboard(brands_data)
+
+    assert "--peec-bg: #FFFFFF" in html
+    assert 'class="app-shell"' in html
+    assert 'id="blind-spots"' in html
+    assert 'id="evidence"' in html
+    assert 'id="prescriptions"' in html
+    assert 'id="monitoring"' in html
+    assert 'id="export"' in html
+    assert "plotly_dark" not in html
+
+
+def test_multi_brand_dashboard_has_all_sections():
+    """Combined dashboard has all section IDs required by the single-brand version."""
+    from presence_rx.build_mvp_dashboard import _build_brand_data, build_multi_brand_dashboard
+
+    seed = get_seed("nothing-phone")
+    artifacts = build_artifacts(seed)
+    brands_data = {
+        "nothing-phone": _build_brand_data(
+            artifacts.study_ssot, None, None, None, None, None,
+            manifest=artifacts.manifest,
+        ),
+    }
+
+    html = build_multi_brand_dashboard(brands_data)
+
+    for section_id in [
+        "overview", "action-brief", "blind-spots", "perception",
+        "claims", "evidence", "analytics", "prescriptions",
+        "monitoring", "about", "export",
+    ]:
+        assert f'id="{section_id}"' in html, f"Missing section: {section_id}"
+
+
+def test_multi_brand_dashboard_loadbrand_js():
+    """Combined dashboard JS contains the loadBrand function and brand switcher wiring."""
+    from presence_rx.build_mvp_dashboard import _build_brand_data, build_multi_brand_dashboard
+
+    seed = get_seed("nothing-phone")
+    artifacts = build_artifacts(seed)
+    brands_data = {
+        "nothing-phone": _build_brand_data(
+            artifacts.study_ssot, None, None, None, None, None,
+            manifest=artifacts.manifest,
+        ),
+    }
+
+    html = build_multi_brand_dashboard(brands_data)
+
+    assert "function loadBrand(caseId)" in html
+    assert "brandDataSets" in html
+    assert "brandSwitcher" in html
+    assert "addEventListener" in html

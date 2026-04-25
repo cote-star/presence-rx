@@ -19,7 +19,13 @@ from presence_rx.build_competitor_landscape import (
     write_competitor_landscape,
 )
 from presence_rx.build_evidence_ledger import build_evidence_ledger, write_evidence_ledger
-from presence_rx.build_mvp_dashboard import build_dashboard, write_dashboard
+from presence_rx.build_mvp_dashboard import (
+    _build_brand_data,
+    build_dashboard,
+    build_multi_brand_dashboard,
+    write_dashboard,
+    write_multi_brand_dashboard,
+)
 from presence_rx.build_value_metrics import build_value_added_metrics, write_value_added_metrics
 from presence_rx.build_verdict import build_presence_verdict, write_presence_verdict
 from presence_rx.classify_gaps import build_gap_classification, write_gap_classification
@@ -123,6 +129,12 @@ def run_mvp(
         dashboard_dir,
     )
 
+    # Build brand data dict for multi-brand dashboard assembly
+    brand_data = _build_brand_data(
+        study, classification, ledger, metrics, landscape, tavily,
+        prescription, gemini, manifest,
+    )
+
     # --- Post-pipeline artifact refresh ---
     updated_manifest = update_manifest_post_pipeline(
         manifest,
@@ -199,10 +211,11 @@ def run_mvp(
         )
         activation_brief_path = write_activation_brief(activation_content, generated_dir)
 
-    report = {
+    report: dict[str, object] = {
         "generated_at": datetime.now(UTC).isoformat(),
         "case_id": case_id,
         "status": "mvp_built",
+        "brand_data": brand_data,
         "peec_source": "verified_docs_grounded_snapshot",
         "peec_mcp_callable_in_this_runtime": False,
         "gemini_mode": gemini_mode,
@@ -277,6 +290,52 @@ def main(
     )
     console.print("[green]MVP built[/green]")
     console.print(json.dumps(report["counts"], indent=2))
+
+
+def run_all_main(
+    allow_synthetic_gemini: Annotated[
+        bool,
+        typer.Option(
+            "--allow-synthetic-gemini",
+            help="Use deterministic Gemini-shaped labels if live Gemini is unavailable.",
+        ),
+    ] = True,
+    combined_dir: Annotated[Path | None, typer.Option("--combined-dir")] = None,
+) -> None:
+    """Run all 3 brands and build a combined multi-brand dashboard."""
+    from presence_rx.brand_config import list_brands
+
+    brand_ids = list_brands() or ["nothing-phone", "attio", "bmw"]
+    if combined_dir is None:
+        combined_dir = Path("artifacts/local/combined")
+
+    brands_data: dict[str, dict] = {}
+
+    for case_id in brand_ids:
+        generated_dir = Path(f"data/generated/{case_id}")
+        study_path = generated_dir / "study_ssot.json"
+        manifest_path = generated_dir / "manifest.json"
+        dashboard_dir = Path(f"artifacts/local/{case_id}")
+
+        console.print(f"[cyan]Building {case_id}...[/cyan]")
+        report = run_mvp(
+            study_path=study_path,
+            manifest_path=manifest_path,
+            generated_dir=generated_dir,
+            dashboard_dir=dashboard_dir,
+            allow_synthetic_gemini=allow_synthetic_gemini,
+            case_id=case_id,
+        )
+        brands_data[case_id] = report["brand_data"]  # type: ignore[assignment]
+        console.print(f"  [green]{case_id} done[/green]")
+
+    combined_html = build_multi_brand_dashboard(brands_data)
+    combined_path = write_multi_brand_dashboard(combined_html, combined_dir)
+    console.print(f"[green]Combined dashboard written to[/green] {combined_path}")
+
+
+def run_all() -> None:
+    typer.run(run_all_main)
 
 
 def run() -> None:
