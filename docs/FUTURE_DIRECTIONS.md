@@ -1,13 +1,13 @@
 # Future Directions — Channel Activation Layer
 
 > **Status:** Concept-only. Static preview. Not part of the hackathon submission deliverable.
-> **Why this lives in the repo:** to source the static page in the Lovable webapp at `/future-directions`. The page is illustrative; the channel-activation layer would be calibrated against external industry benchmark data held under license, which is not redistributable.
+> **Why this lives in the repo:** to source the static page in the Lovable webapp at `/future-directions`. The page is illustrative; the channel-activation layer would be calibrated against external industry benchmark data (e.g., Morning Consult brand-lift, Pathmatics competitor spend) held under license, which is not redistributable.
 
 ## Banner Text (rendered prominently on the webapp page)
 
 > **Future Direction — Static Preview**
 >
-> The diagnostic pipeline (Steps 1–6) is the live, reproducible deliverable. This Channel Activation layer is illustrative: it would calibrate against external industry benchmark data held under license, used with permission for one-time analysis, not redistributable. The architecture and method below are reproducible end-to-end with public data; production benchmarks are not.
+> The diagnostic pipeline (Steps 1–6) is the live, reproducible deliverable. This Channel Activation layer is illustrative: it would calibrate against external industry benchmark data — Morning Consult brand-lift benchmarks, Pathmatics competitor-spend context, and similar industry-standard tools — held under license and used with permission for one-time analysis, not redistributable. The architecture and method below are reproducible end-to-end with public data; production benchmarks are not.
 
 ## Where This Sits in the Pipeline
 
@@ -80,25 +80,36 @@ These percentages are **illustrative**. The production version would derive them
 
 ## What's Out of Scope for the Public Repo
 
-- Raw external benchmark data exports.
-- Tables shaped like external-source exports (column structure, time windows that match a known dataset).
-- Specific lift percentages tied to category + time window detail enough to back-derive a source.
-- Source attribution naming any specific provider, agency, or study.
-- Code paths or function names that reference specific external data sources.
-- Per-competitor spend numbers that match an external-source schema.
+The line is **agency / client / specific-engagement attribution** — not the names of public industry tools or general methodology terms. So:
 
-The static page on the Lovable webapp uses the illustrative content above and the banner text. Nothing more.
+**Fine to include (public):**
+
+- Naming public industry data providers as references: Morning Consult (brand-lift surveys), Pathmatics (competitor digital ad spend), and similar widely-used market-research tools.
+- "Brand lift" as a generic methodology term — it's industry-standard (Nielsen, Google Ads, Meta, and many others all run brand-lift studies).
+- Methodology described in own words: "calibrated against industry brand-lift benchmarks" or "competitor channel-spend context from a major ad-intelligence provider."
+- Aggregated illustrative outputs like the table above.
+
+**Not fine to include (private):**
+
+- Agency names (any agency) — direct attribution links the work to a specific firm.
+- Specific client engagements, named studies, or any reference distinctive enough to identify a particular agency-client engagement.
+- Verbatim text or data tables copied from any client deliverable.
+- Specific lift percentages tied to brand + category + time window in detail sufficient to back-derive a known engagement.
+- Per-competitor spend numbers shaped like a specific export from a permissioned engagement (column structure, time windows, schema match).
+- Code paths or function names that reference specific client engagements (e.g., `load_<agency>_<client>_lift.py`).
+
+The static page on the Lovable webapp uses the illustrative content above and the banner text. The vendor names appear; the agency, client, and engagement attributions do not.
 
 ## Hackathon Posture
 
 | Asset | Public? | Content type |
 |---|---|---|
-| `FUTURE_DIRECTIONS.md` (this file) | Yes (in repo) | Concept-only, illustrative numbers, no source names |
+| `FUTURE_DIRECTIONS.md` (this file) | Yes (in repo) | Concept-only, illustrative numbers, generic vendor names allowed, no agency/client attribution |
 | `/future-directions` page in Lovable webapp | Yes (in webapp) | Reads from this file; rendered with the banner |
-| 5–15 second sneak peek at end of submission video | Yes (in video) | Title card + concept animation + illustrative allocation table |
+| 5–15 second sneak peek at end of submission video | Yes (in video) | Title card + concept animation + illustrative allocation table; vendor names OK in the title card framing |
 | Channel-activation prototype with real benchmark data | **No — outside the public repo** | Built locally for the live finalist pitch only, if advancing |
 
-The line is unambiguous: anything calibrated against external benchmarks lives outside the public repo and outside the submission video. The public surface stays on concept + illustrative numbers.
+The line is **agency / client / engagement attribution**: vendor names like Morning Consult and Pathmatics are public companies referenced industry-wide, so they're fine on the public surface as generic data-provider citations. What lives outside the public repo is anything calibrated against a specific client engagement and any agency-attributable case study.
 
 ## Why Split This Way
 

@@ -150,7 +150,7 @@ The pre-decided swap: if Lovable is not integrated by Saturday 17:00, use Entire
 The hard line between what the public submission contains (steps 1-6 of the solution flow plus the gap-type classifier) and what the private prototype demonstrates (steps 7-8: channel activation, lift study, spend allocation). Permission to *use* one-time external benchmark data ≠ permission to *publish* it. The split lets us show vision without exposing fingerprintable methodology or data.
 
 **`/future-directions` page**
-Static route in the Lovable webapp. Source content from [../docs/FUTURE_DIRECTIONS.md](../docs/FUTURE_DIRECTIONS.md). Concept-only: architecture diagram, illustrative allocation table, methodology described in own words. Banner at top declares the page illustrative. **No real Pathmatics/MC data, no source names, no source-shaped tables.**
+Static route in the Lovable webapp. Source content from [../docs/FUTURE_DIRECTIONS.md](../docs/FUTURE_DIRECTIONS.md). Concept-only: architecture diagram, illustrative allocation table, methodology described in own words. Banner at top declares the page illustrative. Generic vendor references (Morning Consult, Pathmatics, brand-lift methodology) are fine as industry citations. **No agency attribution, no specific client engagement, no engagement-bound data, no tables shaped like a specific permissioned export.**
 
 **Sneak peek**
 2-min storyboard segment 1:50-2:00: 5-15 second teaser of the channel-activation roadmap. Title card framing: *"Future direction. Calibrated against external industry benchmarks held under license, not redistributable."*
@@ -169,7 +169,7 @@ Color palette, typography, spacing, surface, motion, iconography references for 
 ## Process Terms
 
 **Public-safety scan**
-The pre-push grep for private paths, internal names, work credentials, source-name fingerprints (e.g. "Morning Consult", "Pathmatics", agency names), etc. Every generated artifact must pass this before the repo goes public. See [../docs/PUBLIC_SAFETY_CHECKLIST.md](../docs/PUBLIC_SAFETY_CHECKLIST.md).
+The pre-push grep for private paths, internal names, work credentials, agency-attribution / client-engagement / engagement-bound-data fingerprints, etc. Every generated artifact must pass this before the repo goes public. **Generic industry vendor names (Morning Consult, Pathmatics, brand-lift methodology) are not flagged** — these are public companies and standard methodologies referenced industry-wide. The fingerprint risk is *agency name + specific client engagement + engagement-shaped data*, not the vendor names themselves. See [../docs/PUBLIC_SAFETY_CHECKLIST.md](../docs/PUBLIC_SAFETY_CHECKLIST.md).
 
 **Submission gate**
 Items #14-19 in the build priority order: public GitHub repo via `gh-play`, README listing every API/tool used, public-safety scan on artifacts, submission form verification on Discord, video recording, submit.
