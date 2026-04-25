@@ -1,0 +1,554 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:nothing-phone:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:nothing-phone:2026-04-25",
+    "run_mode": "live",
+    "sdk_package": "tavily-python",
+    "sdk_version": "0.7.23",
+    "query_template_version": "tavily_blind_spot:v1",
+    "search_depth": "basic",
+    "max_results": 5,
+    "query_timeout_seconds": 30,
+    "include_raw_content": false,
+    "include_answer": false,
+    "include_images": false,
+    "include_usage": true,
+    "request_count": 8,
+    "successful_query_count": 8,
+    "failed_query_count": 0,
+    "failed_query_ref": null,
+    "response_time_seconds": 7.94,
+    "api_credits_used": 8.0
+  },
+  "summary": {
+    "analyzed_rows": 4,
+    "planned_queries": 8,
+    "sources": 40,
+    "supported_findings": 4,
+    "conflicted_findings": 0,
+    "insufficient_findings": 0
+  },
+  "findings": [
+    {
+      "finding_id": "tavily:evidence:mobile-ecosystem:v1",
+      "cluster_id": "cluster:mobile-ecosystem",
+      "cluster_label": "Mobile Ecosystem",
+      "gap_type": "indexing",
+      "source_of_record": "tavily",
+      "target_query": "\"Nothing Phone\" \"Mobile Ecosystem\" reviews proof",
+      "competitor_query": "\"Apple\" \"Mobile Ecosystem\" reviews proof",
+      "public_proof_support": "supports",
+      "proof_gap_summary": "Tavily returned 5 target-role sources and 5 competitor-role sources for this blind spot.",
+      "rationale": "Raw public-web snippets support proof-gap analysis only after human review.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "study_ssot:row:mobile-ecosystem",
+        "tavily:evidence:mobile-ecosystem:v1"
+      ],
+      "sources": [
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:target_query:01",
+          "title": "Read Customer Service Reviews of nothing.tech - Trustpilot",
+          "url": "https://www.trustpilot.com/review/nothing.tech",
+          "domain": "www.trustpilot.com",
+          "snippet": "I have nothing 2a, since last update. Apps close prematurely, internet and WiFi connectivity issues and battery drain is ridiculous. I only needed to charge",
+          "score": 0.47431523,
+          "query_ref": "row:mobile-ecosystem:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:target_query:02",
+          "title": "My experience with Nothing phones (and the brand overall) - Reddit",
+          "url": "https://www.reddit.com/r/NOTHING/comments/1jwlar8/my_experience_with_nothing_phones_and_the_brand",
+          "domain": "www.reddit.com",
+          "snippet": "Overall, I was very happy with the phone \u2014 smooth performance, great design, and daily usage was a big plus. The camera had some issues at first",
+          "score": 0.44869256,
+          "query_ref": "row:mobile-ecosystem:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:target_query:03",
+          "title": "Nothing Phone (3a) Pro Cell Phone Review - Consumer Reports",
+          "url": "https://www.consumerreports.org/electronics-computers/cell-phones/nothing-phone-3a-pro/m419268",
+          "domain": "www.consumerreports.org",
+          "snippet": "**PERFORMANCE:** While the Nothing Phone (3a) Pro garners some high scores, many others score better. The phone scored a very good on our scratch resistance test. This phone is not IP rated for water intrusion and was not tested for that. In the viewing tests, the images were rated very good overall. The phone scored a very good on our scratch resistance test. This phone is not IP rated for water intrusion and was not tested for that. In the viewing tests, the images were rated very good over...",
+          "score": 0.43885794,
+          "query_ref": "row:mobile-ecosystem:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:target_query:04",
+          "title": "Nothing Phone (3) Review: Nothing Like You Expect : r/Android",
+          "url": "https://www.reddit.com/r/Android/comments/1luo240/nothing_phone_3_review_nothing_like_you_expect",
+          "domain": "www.reddit.com",
+          "snippet": "Comments Section \u00b7 dual sim, but randomly doesnt recognise one sim if the other is active (I use one as a data sim hotspot, active always),",
+          "score": 0.39761147,
+          "query_ref": "row:mobile-ecosystem:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:target_query:05",
+          "title": "Nothing Phone (3) \u2013 28 Days Long-Term Review (From a\u2026",
+          "url": "https://nothing.community/d/44164-nothing-phone-3-28-days-long-term-review-from-a-macro-photographers-perspective",
+          "domain": "nothing.community",
+          "snippet": "After 28 days of continuous use, I can confidently say that the Nothing Phone (3) perfectly blends design, performance, and creativity. It's not",
+          "score": 0.39662948,
+          "query_ref": "row:mobile-ecosystem:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:competitor_query:06",
+          "title": "Apple and Google Face Mobile Ecosystem Competition Probe in the ...",
+          "url": "https://www.cnet.com/tech/mobile/apple-and-google-face-mobile-ecosystem-competition-probe-in-the-uk",
+          "domain": "www.cnet.com",
+          "snippet": "Apple and Google are facing fresh scrutiny in the UK over the dominance of their mobile ecosystems, including their app stores, browsers and operating systems.",
+          "score": 0.45289946,
+          "query_ref": "row:mobile-ecosystem:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:competitor_query:07",
+          "title": "Balancing privacy and platform power in the mobile ecosystem",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2212473X25001270",
+          "domain": "www.sciencedirect.com",
+          "snippet": "Apple establishes the rules in its ecosystem via the App Store Review Guidelines. Under paragraph 5.1.2 of the guidelines, Apple specifies that developers",
+          "score": 0.4325193,
+          "query_ref": "row:mobile-ecosystem:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:competitor_query:08",
+          "title": "[PDF] CMA SMS Investigation into Apple's Mobile Ecosystem - GOV.UK",
+          "url": "https://assets.publishing.service.gov.uk/media/68c04961838e7712ea2bfdb9/Apple.pdf",
+          "domain": "assets.publishing.service.gov.uk",
+          "snippet": "The PDD\u2019s description of Mobile Browsers and Browser Engines is flawed (39) The CMA describes a digital activity comprising \u201cMobile Browsers and Browser Engines,\u201d which includes \u201c(a) the provision of a software application that enables users of mobile devices to access and search the internet and interact with web content; and (b) the provision of a mobile browser engine, which is the underlying technology which native apps on mobile devices use to transform web page source code into content...",
+          "score": 0.31744793,
+          "query_ref": "row:mobile-ecosystem:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:competitor_query:09",
+          "title": "Key Evidence Iphone News And Experts Are Concerned",
+          "url": "https://florysolera.com/post/key-evidence-iphone-news-and-experts-are-concerned",
+          "domain": "florysolera.com",
+          "snippet": "As Apple pushes innovation within its mobile ecosystem, the conversation isn't just about specs\u2014it's about security, performance, and how",
+          "score": 0.30994248,
+          "query_ref": "row:mobile-ecosystem:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:mobile-ecosystem:competitor_query:10",
+          "title": "The Apple Ecosystem - Medium",
+          "url": "https://medium.com/macoclock/the-apple-ecosystem-d75974d09f4b",
+          "domain": "medium.com",
+          "snippet": "The Apple ecosystem is thrown around to simply package Apple products as your 'all-in-one', 'go-to' devices in how they interact together seamlessly.",
+          "score": 0.28049612,
+          "query_ref": "row:mobile-ecosystem:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        }
+      ]
+    },
+    {
+      "finding_id": "tavily:evidence:consumer-tech-innovation:v1",
+      "cluster_id": "cluster:consumer-tech-innovation",
+      "cluster_label": "Consumer Tech Innovation",
+      "gap_type": "perception",
+      "source_of_record": "tavily",
+      "target_query": "\"Nothing Phone\" \"Consumer Tech Innovation\" reviews proof",
+      "competitor_query": "\"Apple\" \"Consumer Tech Innovation\" reviews proof",
+      "public_proof_support": "supports",
+      "proof_gap_summary": "Tavily returned 5 target-role sources and 5 competitor-role sources for this blind spot.",
+      "rationale": "Raw public-web snippets support proof-gap analysis only after human review.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "study_ssot:row:consumer-tech-innovation",
+        "tavily:evidence:consumer-tech-innovation:v1"
+      ],
+      "sources": [
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:target_query:01",
+          "title": "Nothing Phone (3) review | TechCrunch",
+          "url": "https://techcrunch.com/2025/07/08/nothing-phone-3-review",
+          "domain": "techcrunch.com",
+          "snippet": "Carl Pei led electronics manufacturer OnePlus from being a scrappy brand for tech enthusiasts offering affordable phones to one that produces multiple lines of devices, including flagship phones that challenge Samsung and Apple. The phone, priced at $799, is intended to compete with devices from Samsung and Apple. While Nothing claims that this phone is its \u201ctrue flagship,\u201d top-tier devices such as iPhones and Samsung Galaxy phones have achieved distinct camera quality with years of work. \u201cWe...",
+          "score": 0.498609,
+          "query_ref": "row:consumer-tech-innovation:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:target_query:02",
+          "title": "Read Customer Service Reviews of nothing.tech - Trustpilot",
+          "url": "https://www.trustpilot.com/review/nothing.tech",
+          "domain": "www.trustpilot.com",
+          "snippet": "I have nothing 2a, since last update. Apps close prematurely, internet and WiFi connectivity issues and battery drain is ridiculous. I only needed to charge",
+          "score": 0.49157855,
+          "query_ref": "row:consumer-tech-innovation:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:target_query:03",
+          "title": "Nothing Phone (3a) Pro Cell Phone Review - Consumer Reports",
+          "url": "https://www.consumerreports.org/electronics-computers/cell-phones/nothing-phone-3a-pro/m419268",
+          "domain": "www.consumerreports.org",
+          "snippet": "**PERFORMANCE:** While the Nothing Phone (3a) Pro garners some high scores, many others score better. The phone scored a very good on our scratch resistance test. This phone is not IP rated for water intrusion and was not tested for that. In the viewing tests, the images were rated very good overall. The phone scored a very good on our scratch resistance test. This phone is not IP rated for water intrusion and was not tested for that. In the viewing tests, the images were rated very good over...",
+          "score": 0.4882108,
+          "query_ref": "row:consumer-tech-innovation:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:target_query:04",
+          "title": "What is your review of the Nothing phone? - Quora",
+          "url": "https://www.quora.com/What-is-your-review-of-the-Nothing-phone",
+          "domain": "www.quora.com",
+          "snippet": "The Nothing Phone has better cameras, better display, far more unique design, better battery life with faster charging, more advanced features,",
+          "score": 0.43669468,
+          "query_ref": "row:consumer-tech-innovation:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:target_query:05",
+          "title": "My experience with Nothing phones (and the brand overall) - Reddit",
+          "url": "https://www.reddit.com/r/NOTHING/comments/1jwlar8/my_experience_with_nothing_phones_and_the_brand",
+          "domain": "www.reddit.com",
+          "snippet": "Overall, I was very happy with the phone \u2014 smooth performance, great design, and daily usage was a big plus. The camera had some issues at first",
+          "score": 0.40627348,
+          "query_ref": "row:consumer-tech-innovation:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:competitor_query:06",
+          "title": "[PDF] The Detailed Analysis of Innovation, Marketing, and Brand Image",
+          "url": "https://drpress.org/ojs/index.php/EHSS/article/download/20432/19995/24936",
+          "domain": "drpress.org",
+          "snippet": "The study reveals that Apple's success with the iPhone results from superior technology and a carefully crafted product policy that resonates with consumers on.",
+          "score": 0.29651213,
+          "query_ref": "row:consumer-tech-innovation:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:competitor_query:07",
+          "title": "[PDF] Apple Inc.\u2014written evidence (DCC0015) - UK Parliament Committees",
+          "url": "https://committees.parliament.uk/writtenevidence/121849/pdf",
+          "domain": "committees.parliament.uk",
+          "snippet": "From our earliest days to today, these unique products reflect our conviction that sophisticated technology can be safe, secure, and easy to use",
+          "score": 0.2296047,
+          "query_ref": "row:consumer-tech-innovation:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:competitor_query:08",
+          "title": "How Apple Is Organized for Innovation",
+          "url": "https://hbr.org/2020/11/how-apple-is-organized-for-innovation",
+          "domain": "hbr.org",
+          "snippet": "Organizational restructuring|How Apple Is Organized for Innovation. # How Apple Is Organized for Innovation. It\u2019s about experts leading experts. From the Magazine (November\u2013December 2020). ## Summary. Leer en espa\u00f1olLer em portugu\u00eas. Apple is well-known for its innovations in hardware, software, and services. Thanks to them, it grew from some 8,000 employees and $7 billion in revenue in 1997, the year Steve Jobs returned, to 137,000 employees and $260 billion in revenue in 2019. Much less wel...",
+          "score": 0.14585622,
+          "query_ref": "row:consumer-tech-innovation:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:competitor_query:09",
+          "title": "[PDF] How Apple's App Store practices are stifling innovation",
+          "url": "https://appfairness.org/wp-content/uploads/2021/05/caf-stifling-innovation.pdf",
+          "domain": "appfairness.org",
+          "snippet": "Out of the almost two million apps available on the App Store, one can find many examples of third-party apps that offer to iOS users high-quality, innovative products and services of great value for them: Signal and Telegram allow users to communicate for free and in a secure manner,2 Waze sends drivers real-time traffic information allowing them to \u201cavoid real-time headaches,\u201d3 Tinder helps people all over the world build meaningful connections,4 and Clue allows women to understand how thei...",
+          "score": 0.12619197,
+          "query_ref": "row:consumer-tech-innovation:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:consumer-tech-innovation:competitor_query:10",
+          "title": "Has Apple lost its perspective to lead through innovation and design ...",
+          "url": "https://www.facebook.com/EconomicTimes/posts/has-apple-lost-its-perspective-to-lead-through-innovation-and-design-and-if-so-w/10156204995432694",
+          "domain": "www.facebook.com",
+          "snippet": "Its value proposition is not its novelty, but its ability to make the entire suite of Apple services more accessible and useful in a shared family space. 3.",
+          "score": 0.10992555,
+          "query_ref": "row:consumer-tech-innovation:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        }
+      ]
+    },
+    {
+      "finding_id": "tavily:evidence:minimalist-hardware:v1",
+      "cluster_id": "cluster:minimalist-hardware",
+      "cluster_label": "Minimalist Hardware",
+      "gap_type": "perception",
+      "source_of_record": "tavily",
+      "target_query": "\"Nothing Phone\" \"Minimalist Hardware\" reviews proof",
+      "competitor_query": "\"Apple\" \"Minimalist Hardware\" reviews proof",
+      "public_proof_support": "supports",
+      "proof_gap_summary": "Tavily returned 5 target-role sources and 5 competitor-role sources for this blind spot.",
+      "rationale": "Raw public-web snippets support proof-gap analysis only after human review.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "study_ssot:row:minimalist-hardware",
+        "tavily:evidence:minimalist-hardware:v1"
+      ],
+      "sources": [
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:target_query:01",
+          "title": "Nothing Phone (2a) Review: The New Budget Standard - WIRED",
+          "url": "https://www.wired.com/review/nothing-phone-2a",
+          "domain": "www.wired.com",
+          "snippet": "The Nothing Phone (2a) is a stylish, competent performer that will work as hard as you want it to, and look good while doing so.",
+          "score": 0.47431523,
+          "query_ref": "row:minimalist-hardware:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:target_query:02",
+          "title": "Read Customer Service Reviews of nothing.tech - Trustpilot",
+          "url": "https://www.trustpilot.com/review/nothing.tech",
+          "domain": "www.trustpilot.com",
+          "snippet": "I have nothing 2a, since last update. Apps close prematurely, internet and WiFi connectivity issues and battery drain is ridiculous. I only needed to charge",
+          "score": 0.3525366,
+          "query_ref": "row:minimalist-hardware:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:target_query:03",
+          "title": "Nothing Phone 2a review: back to basics - Stuff",
+          "url": "https://www.stuff.tv/review/nothing-phone-2a-review",
+          "domain": "www.stuff.tv",
+          "snippet": "The frame itself is matte polycarbonate, which is wonderfully grippy. There's aluminium underneath for rigidity \u2013 fully recycled, of course \u2013 and some some",
+          "score": 0.3126118,
+          "query_ref": "row:minimalist-hardware:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:target_query:04",
+          "title": "Nothing Phone (1) Durability Test! - Here Goes Nothing... - YouTube",
+          "url": "https://www.youtube.com/watch",
+          "domain": "www.youtube.com",
+          "snippet": "... equipment, blunt instruments, chemicals, lubricants, expensive ... Nothing Phone (1) Review: Seeing Through the Hype! Marques Brownlee",
+          "score": 0.30461073,
+          "query_ref": "row:minimalist-hardware:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:target_query:05",
+          "title": "How good is the Nothing phone? - Quora",
+          "url": "https://www.quora.com/How-good-is-the-Nothing-phone",
+          "domain": "www.quora.com",
+          "snippet": "I personally liked it because of its overall features. Premium design, Glyph interphase, stock android, good optimisations, good cameras,",
+          "score": 0.30389753,
+          "query_ref": "row:minimalist-hardware:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:competitor_query:06",
+          "title": "Minimalist Phone Review (few weeks of use) : r/TheMinimalCompany",
+          "url": "https://www.reddit.com/r/TheMinimalCompany/comments/1p66qm8/minimalist_phone_review_few_weeks_of_use",
+          "domain": "www.reddit.com",
+          "snippet": "On the hardware front, I genuinely love the phone. It feels great in the hand, the E-ink display behaves mostly as expected (a few odd refresh",
+          "score": 0.45551404,
+          "query_ref": "row:minimalist-hardware:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:competitor_query:07",
+          "title": "Best minimalist Mac setups: More power, less stuff | Cult of Mac",
+          "url": "https://www.cultofmac.com/top-stories/best-minimalist-mac-setup",
+          "domain": "www.cultofmac.com",
+          "snippet": "The setup centers on a 13-inch M1 MacBook Pro driving a 34-inch Xiaomi ultra-wide display \u2014 though she wasn\u2019t satisfied with the Xiaomi\u2019s sharpness on macOS and was actively seeking a 5K replacement. An M2 MacBook Air sits vertically on a stand, driving Apple\u2019s 27-inch 5K Studio Display with a BenQ ScreenBar Halo monitor light perched on top. Using visionOS beta software to beam an ultra-wide virtual display from his M2 MacBook Pro into Apple Vision Pro, Panch\u00e8vre relocated the laptop off the...",
+          "score": 0.40387306,
+          "query_ref": "row:minimalist-hardware:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:competitor_query:08",
+          "title": "Latest Apple and Device Reviews",
+          "url": "https://appleinsider.com/reviews",
+          "domain": "appleinsider.com",
+          "snippet": "## HidrateSpark Pro 2 review: motivational drinking with lights, chimes, & Find My. The HidrateSpark Pro 2 makes tracking your water intake easy and fun with Apple Health integration, Find My, and plenty of options for drinking alerts. ## SmartWings smart roller shades review: bring in natural light to your Apple Home. Aqara W200 review: Affordably-priced smart thermostat has firsts for Apple users. ## Aqara W200 review: Affordably-priced smart thermostat has firsts for Apple users. ## Tilta...",
+          "score": 0.31925985,
+          "query_ref": "row:minimalist-hardware:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:competitor_query:09",
+          "title": "iPhone Air Review: A Minimalist's Dream iPhone - YouTube",
+          "url": "https://www.youtube.com/watch",
+          "domain": "www.youtube.com",
+          "snippet": "iPhone Air Review: Apple's Thinnest, Boldest iPhone Yet The iPhone ... iPhone Air Review: A Minimalist's Dream iPhone. 20 views \u00b7 4 months",
+          "score": 0.30197972,
+          "query_ref": "row:minimalist-hardware:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:minimalist-hardware:competitor_query:10",
+          "title": "Apple's minimalist design and wireless connectivity have ... - Instagram",
+          "url": "https://www.instagram.com/reel/DPEdp8YiUrf",
+          "domain": "www.instagram.com",
+          "snippet": "Competing with Windows laptops in mid-range ... Long-term profit comes from services, not just hardware. What this means for you: You're not",
+          "score": 0.20611033,
+          "query_ref": "row:minimalist-hardware:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        }
+      ]
+    },
+    {
+      "finding_id": "tavily:evidence:wireless-audio:v1",
+      "cluster_id": "cluster:wireless-audio",
+      "cluster_label": "Wireless Audio",
+      "gap_type": "volume_frequency",
+      "source_of_record": "tavily",
+      "target_query": "\"Nothing Phone\" \"Wireless Audio\" reviews proof",
+      "competitor_query": "\"Apple\" \"Wireless Audio\" reviews proof",
+      "public_proof_support": "supports",
+      "proof_gap_summary": "Tavily returned 5 target-role sources and 5 competitor-role sources for this blind spot.",
+      "rationale": "Raw public-web snippets support proof-gap analysis only after human review.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "study_ssot:row:wireless-audio",
+        "tavily:evidence:wireless-audio:v1"
+      ],
+      "sources": [
+        {
+          "source_ref": "tavily:source:row:wireless-audio:target_query:01",
+          "title": "Nothing Headphone (a) review: the wireless audio market is cornered - PhoneArena",
+          "url": "https://www.phonearena.com/reviews/nothing-headphone-a-review_id7917",
+          "domain": "www.phonearena.com",
+          "snippet": "rock | Image by PhoneArena - Nothing Headphone (a) review: the wireless audio market is cornered. An opaque take | Image by PhoneArena - Nothing Headphone (a) review: the wireless audio market is cornered. Smooth action | Image by PhoneArena - Nothing Headphone (a) review: the wireless audio market is cornered. Branded pouch and pretty nice cables | Image by PhoneArena - Nothing Headphone (a) review: the wireless audio market is cornered. The default sound is nothing special, but is super twe...",
+          "score": 0.680136,
+          "query_ref": "row:wireless-audio:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:target_query:02",
+          "title": "Phone (4a), (4a) Pro, and Headphone (a) Full Review",
+          "url": "https://nothing.community/d/55292-nothings-a-team-phone-4a-4a-pro-and-headphone-a-full-review",
+          "domain": "nothing.community",
+          "snippet": "The audio is well-balanced across all frequencies, offering a rich experience whether you're listening to music, watching a movie, or catching",
+          "score": 0.50959414,
+          "query_ref": "row:wireless-audio:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:target_query:03",
+          "title": "Nothing Headphone (1) Wireless Headphones Review : r/NothingTech",
+          "url": "https://www.reddit.com/r/NothingTech/comments/1n1lpdq/nothing_headphone_1_wireless_headphones_review",
+          "domain": "www.reddit.com",
+          "snippet": "Headphone (1) have what seems to be the clearest and most obvious control logic I've ever seen. There are no touch panels \u2014 only mechanical",
+          "score": 0.48806435,
+          "query_ref": "row:wireless-audio:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:target_query:04",
+          "title": "Why Nothing Phone (3) BEATS S25 Ultra | Audiophile Review",
+          "url": "https://www.youtube.com/watch",
+          "domain": "www.youtube.com",
+          "snippet": "Sound and Camera comparison! Here's how Nothing Phone (3)'s Bluetooth and Wired audio compare to Samsung S25 Ultra.",
+          "score": 0.41023695,
+          "query_ref": "row:wireless-audio:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:target_query:05",
+          "title": "Nothing Phone (3a) Pro Review - PCMag",
+          "url": "https://www.pcmag.com/reviews/nothing-phone-3a-pro",
+          "domain": "www.pcmag.com",
+          "snippet": "The Nothing Phone (3a) Pro is a solid midrange Android handset with a distinctive design for less than $500, but limited 5G support and availability hold it",
+          "score": 0.35193497,
+          "query_ref": "row:wireless-audio:target_query",
+          "source_role": "target",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:competitor_query:06",
+          "title": "Apple Wireless AirPods: a Comprehensive Review | AppleVis",
+          "url": "https://www.applevis.com/reviews/apple-wireless-airpods-comprehensive-review",
+          "domain": "www.applevis.com",
+          "snippet": "There is no noticeable lag with Voiceover, and audio quality is great for music and books. They do not fall out easily, and would make excellent earphones for",
+          "score": 0.43036336,
+          "query_ref": "row:wireless-audio:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:competitor_query:07",
+          "title": "Apple AirPods 4 Review: The Noise Canceling Really Is a Game ...",
+          "url": "https://www.cnet.com/tech/mobile/apple-airpods-4-review-the-noise-canceling-really-is-a-game-changer",
+          "domain": "www.cnet.com",
+          "snippet": "The AirPods 4 are, unsurprisingly, the fourth generation of Apple's original true-wireless earbuds that feature an open design, which means they don't have silicone ear tips like the AirPods Pro 2. In a first for Apple, the AirPods 4 comes in two versions: a $129 entry-level model and a $179 step-up model with active noise canceling. The combo of the new drivers and the upgraded H2 chip's processing power for Apple's Adaptive EQ -- a feature that optimizes audio quality on the fly as the posi...",
+          "score": 0.20982604,
+          "query_ref": "row:wireless-audio:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:competitor_query:08",
+          "title": "Amazon.com: Apple AirPods 4 Wireless Earbuds, Bluetooth ...",
+          "url": "https://www.amazon.com/Apple-Bluetooth-Headphones-Personalized-Effortless/dp/B0DGHMNQ5Z",
+          "domain": "www.amazon.com",
+          "snippet": "A totally transformed audio experience with Voice Isolation, Siri Interactions, and Personalized Spatial Audio. Featuring an updated fit for all-day comfort.",
+          "score": 0.2003702,
+          "query_ref": "row:wireless-audio:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:competitor_query:09",
+          "title": "I thought the Apple AirPods Pro 2 were perfect \u2013 LG proved me wrong | TechRadar",
+          "url": "https://www.techradar.com/audio/earbuds-airpods/i-thought-the-apple-airpods-pro-2-were-perfect-lg-proved-me-wrong",
+          "domain": "www.techradar.com",
+          "snippet": "LG ToneFree T90S earbuds and Apple AirPods Pro 2 in their case. Being a headphone reviewer, I get to listen to a plethora of headphones and earbuds, and while I\u2019ve definitely come across some top-performing pairs like the Sennheiser Momentum 4 Wireless and Bose QuietComfort Ultra Earbuds, I\u2019ve always returned to my trusted AirPods for their sound quality, noise cancellation and seamless connectivity with my iPhone. LG ToneFree T90S earbud in an ear. The sound quality of the LG T90S earbuds is...",
+          "score": 0.1480598,
+          "query_ref": "row:wireless-audio:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        },
+        {
+          "source_ref": "tavily:source:row:wireless-audio:competitor_query:10",
+          "title": "AirPods Pro 2 Review - 6 Months Later - YouTube",
+          "url": "https://www.youtube.com/watch",
+          "domain": "www.youtube.com",
+          "snippet": "... Apple videos: https ... AirPods Pro OTC Hearing Aid Setup, Review & Sample Audio. HearSoundly",
+          "score": 0.14710155,
+          "query_ref": "row:wireless-audio:competitor_query",
+          "source_role": "competitor",
+          "snippet_review_status": "raw"
+        }
+      ]
+    }
+  ]
+}

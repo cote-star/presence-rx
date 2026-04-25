@@ -1,0 +1,86 @@
+{
+  "brand": "Nothing Phone",
+  "competitors": [
+    "Apple",
+    "Google",
+    "Samsung",
+    "Pixel",
+    "Sony",
+    "Bose",
+    "Xiaomi",
+    "OnePlus",
+    "Logitech"
+  ],
+  "clusters": [
+    {
+      "cluster_id": "cluster:smartphone-design",
+      "label": "Smartphone Design",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:smartphone-design:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:mobile-ecosystem",
+      "label": "Mobile Ecosystem",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:mobile-ecosystem:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:consumer-tech-innovation",
+      "label": "Consumer Tech Innovation",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:consumer-tech-innovation:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:minimalist-hardware",
+      "label": "Minimalist Hardware",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:minimalist-hardware:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:wireless-audio",
+      "label": "Wireless Audio",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:wireless-audio:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    }
+  ]
+}

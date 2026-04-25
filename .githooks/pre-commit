@@ -14,7 +14,7 @@ fi
 
 # Step 2 — forbidden-pattern grep on staged additions.
 # Excludes the hook itself and the policy doc (both must name patterns by definition).
-PATTERN='\b(edelman|cannes|atl-api|atl-comment|gh-work|dbx-work|sentry-api|m365-api|figma-api|slack-api)\b|/Users/'
+PATTERN='\b(edelman|cannes|atl-api|atl-comment|gh-work|dbx-work|sentry-api|m365-api|figma-api|slack-api|[c]laude|[c]odex|[a]nthropic|[c]omposer)\b|\.agent-[c]horus|\.clau[d]e|/Users/'
 HITS=$(git diff --cached --diff-filter=AM -U0 \
     -- ':!.githooks/pre-commit' \
        ':!docs/PUBLIC_SAFETY_CHECKLIST.md' \

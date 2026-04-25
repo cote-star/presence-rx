@@ -1,0 +1,99 @@
+{
+  "brand": "Nothing Phone",
+  "competitors": [
+    "Apple",
+    "Google",
+    "Samsung",
+    "Pixel",
+    "Sony",
+    "Bose",
+    "Xiaomi",
+    "OnePlus",
+    "Logitech"
+  ],
+  "generated_at": "2026-04-25T00:00:00Z",
+  "artifact_version": "0.2.0-step2",
+  "taxonomy_version": "2026-04-25-demo",
+  "campaign_type_mapping_version": null,
+  "peec_snapshot_id": "peec:snapshot:nothing-phone:2026-04-25",
+  "published": false,
+  "sources": {
+    "peec_mcp": {
+      "snapshot_id": "peec:snapshot:nothing-phone:2026-04-25",
+      "prompt_count": 50,
+      "query_count": null,
+      "source_count": null,
+      "analysis_runs": null,
+      "dashboard_url": null
+    },
+    "tavily": {
+      "snapshot_id": null,
+      "prompt_count": null,
+      "query_count": 8,
+      "source_count": 40,
+      "analysis_runs": null,
+      "dashboard_url": null
+    },
+    "gemini": {
+      "snapshot_id": null,
+      "prompt_count": null,
+      "query_count": null,
+      "source_count": null,
+      "analysis_runs": 4,
+      "dashboard_url": null
+    },
+    "lovable": {
+      "snapshot_id": null,
+      "prompt_count": null,
+      "query_count": null,
+      "source_count": null,
+      "analysis_runs": null,
+      "dashboard_url": null
+    }
+  },
+  "confidence_counts": {
+    "strong": 4,
+    "moderate": 1,
+    "limited": 0,
+    "blocked": 0
+  },
+  "quality_counts": {
+    "strong": 4,
+    "moderate": 1,
+    "limited": 0,
+    "blocked": 0
+  },
+  "unavailable_reason_counts": {
+    "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED": 5
+  },
+  "freshness": {
+    "status": "docs_grounded_seed",
+    "generated_at": "2026-04-25T00:00:00Z",
+    "newer_snapshot_available": false
+  },
+  "comparability": {
+    "comparable_to_previous": false,
+    "reason": "First generated baseline from MCP-verified docs."
+  },
+  "pipeline_summary": {
+    "raw_prompts": 50,
+    "clusters": 5,
+    "evidence_gated": 4,
+    "actionable_recommendations": 4
+  },
+  "artifacts": [
+    "prompt_universe.json",
+    "study_ssot.json",
+    "manifest.json",
+    "source_of_record.json",
+    "pipeline_funnel.json",
+    "hero_cards.json",
+    "gemini_analysis.json",
+    "tavily_evidence.json",
+    "gap_classification.json",
+    "EVIDENCE_LEDGER.json",
+    "value_added_metrics.json",
+    "competitor_landscape.json",
+    "prescription_plan.json"
+  ]
+}

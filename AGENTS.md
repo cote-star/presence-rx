@@ -1,38 +1,39 @@
-# Agent Coordination - Peec AI
+# Contributor Guide - Peec AI
 
-Multi-agent repo. Read this and the parent [AGENT_BRIEFING.md](../AGENT_BRIEFING.md) before touching code.
+Read this before touching code. This is the public project guidance for Presence Rx.
 
 ## Context
 
-- Play side. No work credentials. No work connectors.
+- Play side only. No work credentials, work connectors, or private SaaS endpoints.
 - Hackathon "no early start": no application code or mock data before official start. Boilerplate is allowed.
-- **Track locked: Peec.** Brand locked: Nothing Phone. Submission deadline: Sunday 14:00 CEST.
-- **Active plan:** [docs/SCOPE_FINAL.md](docs/SCOPE_FINAL.md) is the source of truth for what to build. 22 features in 4 tiers, 6-axis blind-spot model, eligibility-critical lane (Gemini + Tavily + Lovable, with Entire as Lovable fallback by Saturday 17:00).
-- **Onboarding:** new agents start at [.agent-context/INDEX.md](.agent-context/INDEX.md).
+- Track locked: Peec. Brand locked: Nothing Phone. Submission deadline: Sunday 14:00 CEST.
+- Active plan: [docs/SCOPE_FINAL.md](docs/SCOPE_FINAL.md) is the source of truth for what to build.
+- Partner stack: Peec MCP, Gemini, Tavily, Lovable, with Entire as the dashboard fallback if needed.
 
-## Lanes
+## Contribution Areas
 
-| Agent | Lane | Responsibility |
-|-------|------|----------------|
-| Claude | Architecture + backend | Analysis pipeline, guardrails, verdict pack |
-| Codex | Implementation + review | Modules, tests, code review |
-| Gemini | Research + validation | Peec MCP exploration, brand data checks |
-| Claude (design) | Frontend/UX | Lovable dashboard surface |
-| Cursor / Composer | External QA | Pull-based skeptical review at gates |
-| Human (Amit) | Decisions + pitch | Track lock, mentor questions, demo, final submission |
+| Area | Responsibility |
+| --- | --- |
+| Data pipeline | Peec ingestion, normalization, artifact contracts, generated JSON |
+| Evidence layer | Tavily enrichment, Gemini analysis, source-of-record mapping |
+| Guardrails | Evidence tiers, blocked claims, safe rewrites, publication status |
+| Dashboard | Lovable surface and public-safe future-directions preview |
+| Review | Partner-tech honesty, public-safety scan, generated artifact validation |
 
 ## Branching
 
 - Default branch: `main`.
-- One feature branch per agent lane: `claude/<topic>`, `codex/<topic>`, `gemini/<topic>`.
+- Use short feature branches by work area, such as `pipeline/ingestion`, `evidence/tavily`, or `dashboard/lovable`.
 - Rebase on `main` before opening a PR. Squash on merge.
 
 ## Partner-Tech Honesty Rule
 
-Partner counts only if used in a real code path or visible workflow. Confirm with organisers whether Peec MCP itself counts toward the 3-tech minimum. Aikido is side-only.
+Partner counts only if used in a real code path or visible workflow. Peec MCP is the required track tool. Aikido is side-only.
 
 ## Submission Guard
 
 - README must list every API, framework, and tool actually used.
+- Generated artifacts must pass validation before demo or submission.
+- Public-safety scan must be clean before pushing public.
 - 2-minute video must match real behavior.
 - Submit before Sunday 14:00 CEST.

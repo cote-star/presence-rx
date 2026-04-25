@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "source_manifest_ref": "peec:snapshot:nothing-phone:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:nothing-phone:2026-04-25",
+    "ledger_template_version": "evidence_ledger:v1",
+    "used_classification": true,
+    "classifier_version": "gap_classifier:v1"
+  },
+  "generated_at": "2026-04-25T00:00:00Z",
+  "brand": "Nothing Phone",
+  "claims": [
+    {
+      "claim_id": "claim:nothing-phone:mobile-ecosystem:v1",
+      "claim": "Nothing Phone has a indexing blind spot in Mobile Ecosystem; partner evidence is strong.",
+      "status": "directional",
+      "cluster_id": "cluster:mobile-ecosystem",
+      "methods": [
+        "peec",
+        "gemini",
+        "tavily"
+      ],
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "study_ssot:row:mobile-ecosystem",
+        "peec:brand:apple",
+        "gemini:analysis:mobile-ecosystem:v1",
+        "tavily:evidence:mobile-ecosystem:v1"
+      ],
+      "confidence_tier": "strong",
+      "publication_status": "directional_with_caveat",
+      "publication_language": "Prioritize testing the Nothing Phone association in the Mobile Ecosystem topic; 3 of 3 methods support.",
+      "why_not_stronger": null
+    },
+    {
+      "claim_id": "claim:nothing-phone:consumer-tech-innovation:v1",
+      "claim": "Nothing Phone has a perception blind spot in Consumer Tech Innovation; partner evidence is strong.",
+      "status": "directional",
+      "cluster_id": "cluster:consumer-tech-innovation",
+      "methods": [
+        "peec",
+        "gemini",
+        "tavily"
+      ],
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "study_ssot:row:consumer-tech-innovation",
+        "peec:brand:apple",
+        "gemini:analysis:consumer-tech-innovation:v1",
+        "tavily:evidence:consumer-tech-innovation:v1"
+      ],
+      "confidence_tier": "strong",
+      "publication_status": "directional_with_caveat",
+      "publication_language": "Prioritize testing the Nothing Phone association in the Consumer Tech Innovation topic; 3 of 3 methods support.",
+      "why_not_stronger": null
+    },
+    {
+      "claim_id": "claim:nothing-phone:minimalist-hardware:v1",
+      "claim": "Nothing Phone has a perception blind spot in Minimalist Hardware; partner evidence is strong.",
+      "status": "directional",
+      "cluster_id": "cluster:minimalist-hardware",
+      "methods": [
+        "peec",
+        "gemini",
+        "tavily"
+      ],
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "study_ssot:row:minimalist-hardware",
+        "peec:brand:apple",
+        "gemini:analysis:minimalist-hardware:v1",
+        "tavily:evidence:minimalist-hardware:v1"
+      ],
+      "confidence_tier": "strong",
+      "publication_status": "directional_with_caveat",
+      "publication_language": "Prioritize testing the Nothing Phone association in the Minimalist Hardware topic; 3 of 3 methods support.",
+      "why_not_stronger": null
+    },
+    {
+      "claim_id": "claim:nothing-phone:wireless-audio:v1",
+      "claim": "Nothing Phone has a volume_frequency blind spot in Wireless Audio; partner evidence is strong.",
+      "status": "directional",
+      "cluster_id": "cluster:wireless-audio",
+      "methods": [
+        "peec",
+        "gemini",
+        "tavily"
+      ],
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "study_ssot:row:wireless-audio",
+        "peec:brand:apple",
+        "gemini:analysis:wireless-audio:v1",
+        "tavily:evidence:wireless-audio:v1"
+      ],
+      "confidence_tier": "strong",
+      "publication_status": "directional_with_caveat",
+      "publication_language": "Prioritize testing the Nothing Phone association in the Wireless Audio topic; 3 of 3 methods support.",
+      "why_not_stronger": null
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_ref": "peec:snapshot:nothing-phone:2026-04-25",
+      "source_type": "peec_mcp",
+      "summary": "Peec reference carried from Step 7 classification: peec:snapshot:nothing-phone:2026-04-25.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "peec:topic:mobile-ecosystem",
+      "source_type": "peec_mcp",
+      "summary": "Peec reference carried from Step 7 classification: peec:topic:mobile-ecosystem.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "study_ssot:row:mobile-ecosystem",
+      "source_type": "derived",
+      "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:mobile-ecosystem.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "peec:brand:apple",
+      "source_type": "peec_mcp",
+      "summary": "Peec reference carried from Step 7 classification: peec:brand:apple.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "gemini:analysis:mobile-ecosystem:v1",
+      "source_type": "gemini",
+      "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:mobile-ecosystem:v1.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "tavily:evidence:mobile-ecosystem:v1",
+      "source_type": "tavily",
+      "summary": "Tavily evidence reference carried from Step 7 classification: tavily:evidence:mobile-ecosystem:v1.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "peec:topic:consumer-tech-innovation",
+      "source_type": "peec_mcp",
+      "summary": "Peec reference carried from Step 7 classification: peec:topic:consumer-tech-innovation.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "study_ssot:row:consumer-tech-innovation",
+      "source_type": "derived",
+      "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:consumer-tech-innovation.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "gemini:analysis:consumer-tech-innovation:v1",
+      "source_type": "gemini",
+      "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:consumer-tech-innovation:v1.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "tavily:evidence:consumer-tech-innovation:v1",
+      "source_type": "tavily",
+      "summary": "Tavily evidence reference carried from Step 7 classification: tavily:evidence:consumer-tech-innovation:v1.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "peec:topic:minimalist-hardware",
+      "source_type": "peec_mcp",
+      "summary": "Peec reference carried from Step 7 classification: peec:topic:minimalist-hardware.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "study_ssot:row:minimalist-hardware",
+      "source_type": "derived",
+      "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:minimalist-hardware.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "gemini:analysis:minimalist-hardware:v1",
+      "source_type": "gemini",
+      "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:minimalist-hardware:v1.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "tavily:evidence:minimalist-hardware:v1",
+      "source_type": "tavily",
+      "summary": "Tavily evidence reference carried from Step 7 classification: tavily:evidence:minimalist-hardware:v1.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "peec:topic:wireless-audio",
+      "source_type": "peec_mcp",
+      "summary": "Peec reference carried from Step 7 classification: peec:topic:wireless-audio.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "study_ssot:row:wireless-audio",
+      "source_type": "derived",
+      "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:wireless-audio.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "gemini:analysis:wireless-audio:v1",
+      "source_type": "gemini",
+      "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:wireless-audio:v1.",
+      "url": null,
+      "confidence": null
+    },
+    {
+      "evidence_ref": "tavily:evidence:wireless-audio:v1",
+      "source_type": "tavily",
+      "summary": "Tavily evidence reference carried from Step 7 classification: tavily:evidence:wireless-audio:v1.",
+      "url": null,
+      "confidence": null
+    }
+  ],
+  "blocked_claims": []
+}

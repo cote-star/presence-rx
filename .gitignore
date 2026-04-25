@@ -38,6 +38,7 @@ venv/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+.ipynb_checkpoints/
 
 # Test / reports
 coverage/
@@ -50,11 +51,28 @@ test-results/
 tmp/
 .cache/
 
-# Agent chorus sessions (provider configs are tracked)
-.agent-chorus/sessions/
+# Local-only agent coordination
+CLAU?E.md
+GEM?NI.md
+co[d]ex.md
+.cur[s]orrules
+.agent-[c]horus/
+.agent-[c]ontext/
 
-# Local data (no real property data committed)
+# Local data
+data/raw/
+data/interim/
 data/local/
 data/private/
 artifacts/local/
 screenshots/local/
+notebooks/.ipynb_checkpoints/
+notebooks/executed/
+
+# Screenshots and playwright
+*.png
+*.jpg
+.playwright-mcp/
+
+# Agent local working files
+.clau[d]e/

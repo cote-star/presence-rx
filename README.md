@@ -7,7 +7,32 @@ Big Berlin Hack 2026 implementation repo. Track: **Peec AI (locked)**. Briefing:
 
 ## Status
 
-Track locked, brand locked on **Nothing Phone** (the Invisible Champion: best position 2.4 in field, 20% overall visibility, 4 of 5 topics with blind spots). Repo contains the public-safe methodology, artifact contracts, guardrails, end-to-end build guide, MCP exploration output, and integration checklist. Application code still needs to be built against real Peec MCP data and eligible partner-tech paths.
+**MVP pipeline complete.** Track locked, brand locked on **Nothing Phone** (the Invisible Champion: best position 2.4, 20% overall visibility, 4 of 5 topics with blind spots). Full 9-step pipeline executing end-to-end: Peec ingest, Tavily enrichment (40 live web sources), Gemini perception analysis, 3-method gap classification (all 4 confirmed at STRONG confidence), guardrailed evidence ledger, value-added metrics, competitor landscape, prescription plan, and interactive dashboard.
+
+## Quick Start
+
+```bash
+uv sync --dev              # install dependencies
+make run                   # run full pipeline (outputs: artifacts/local/)
+make test                  # 120 tests
+make lint                  # ruff check
+```
+
+Or step-by-step:
+
+```bash
+uv run presence-rx-ingest-peec --seed nothing-phone --out data/generated
+uv run presence-rx-enrich-tavily --study data/generated/study_ssot.json --manifest data/generated/manifest.json --out data/generated --live --yes-confirm-billing
+uv run presence-rx-run-mvp --generated-dir data/generated --dashboard-dir artifacts/local
+```
+
+## Tech Stack
+
+- **Python 3.11+** with Pydantic (strict contracts), Typer (CLI), Rich (console)
+- **google-genai 1.73.1** (Gemini API for perception analysis)
+- **tavily-python 0.7.23** (public web evidence search)
+- **Plotly.js** (client-side charts in dashboard)
+- **Peec MCP** (source of truth for AI visibility data)
 
 ## Goal
 

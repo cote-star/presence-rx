@@ -3,7 +3,7 @@
 Server URL: `https://api.peec.ai/mcp`
 Transport: Streamable HTTP
 Auth: OAuth 2.0 (browser consent on first use)
-Setup: `claude mcp add peec-ai --transport http https://api.peec.ai/mcp`
+Setup: configure `https://api.peec.ai/mcp` in your local MCP client.
 
 ## Key Discovery: Peec Already Has Structure
 

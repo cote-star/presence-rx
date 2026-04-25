@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:nothing-phone:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:nothing-phone:2026-04-25"
+  },
+  "summary": {
+    "planned_prompts": 12,
+    "planned_topics": 4,
+    "planned_tags": 6
+  },
+  "planned_topics": [
+    {
+      "operation_id": "op:create_topic:mobile-ecosystem",
+      "execution_status": "planned",
+      "topic_slug": "mobile-ecosystem",
+      "name": "bbh-2026-mobile-ecosystem",
+      "source_cluster_id": "cluster:mobile-ecosystem",
+      "gap_type": "indexing",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "study_ssot:row:mobile-ecosystem"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:consumer-tech-innovation",
+      "execution_status": "planned",
+      "topic_slug": "consumer-tech-innovation",
+      "name": "bbh-2026-consumer-tech-innovation",
+      "source_cluster_id": "cluster:consumer-tech-innovation",
+      "gap_type": "perception",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "study_ssot:row:consumer-tech-innovation"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:minimalist-hardware",
+      "execution_status": "planned",
+      "topic_slug": "minimalist-hardware",
+      "name": "bbh-2026-minimalist-hardware",
+      "source_cluster_id": "cluster:minimalist-hardware",
+      "gap_type": "perception",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "study_ssot:row:minimalist-hardware"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:wireless-audio",
+      "execution_status": "planned",
+      "topic_slug": "wireless-audio",
+      "name": "bbh-2026-wireless-audio",
+      "source_cluster_id": "cluster:wireless-audio",
+      "gap_type": "volume_frequency",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "study_ssot:row:wireless-audio"
+      ]
+    }
+  ],
+  "planned_tags": [
+    {
+      "operation_id": "op:create_tag:gap-indexing",
+      "execution_status": "planned",
+      "tag_slug": "gap-indexing",
+      "name": "bbh-2026-gap-indexing",
+      "kind": "gap",
+      "description": "Blind spots where owned or credible sources need better AI-answer surfacing."
+    },
+    {
+      "operation_id": "op:create_tag:gap-perception",
+      "execution_status": "planned",
+      "tag_slug": "gap-perception",
+      "name": "bbh-2026-gap-perception",
+      "kind": "gap",
+      "description": "Blind spots where the brand association is missing or weaker than competitors."
+    },
+    {
+      "operation_id": "op:create_tag:gap-volume-frequency",
+      "execution_status": "planned",
+      "tag_slug": "gap-volume-frequency",
+      "name": "bbh-2026-gap-volume-frequency",
+      "kind": "gap",
+      "description": "Blind spots where public proof and repeated category presence are too sparse."
+    },
+    {
+      "operation_id": "op:create_tag:geo-us",
+      "execution_status": "planned",
+      "tag_slug": "geo-us",
+      "name": "bbh-2026-geo-us",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the United States market."
+    },
+    {
+      "operation_id": "op:create_tag:geo-de",
+      "execution_status": "planned",
+      "tag_slug": "geo-de",
+      "name": "bbh-2026-geo-de",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the Germany market."
+    },
+    {
+      "operation_id": "op:create_tag:geo-gb",
+      "execution_status": "planned",
+      "tag_slug": "geo-gb",
+      "name": "bbh-2026-geo-gb",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the Great Britain market."
+    }
+  ],
+  "planned_prompts": [
+    {
+      "operation_id": "op:create_prompt:mobile-ecosystem:us",
+      "execution_status": "planned",
+      "prompt_slug": "mobile-ecosystem:us",
+      "text": "Which smartphone ecosystems should buyers consider when they want connected devices, launcher flexibility, and credible Android alternatives?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "mobile-ecosystem",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:mobile-ecosystem",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "study_ssot:row:mobile-ecosystem"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:mobile-ecosystem:de",
+      "execution_status": "planned",
+      "prompt_slug": "mobile-ecosystem:de",
+      "text": "Which smartphone ecosystems should buyers consider when they want connected devices, launcher flexibility, and credible Android alternatives?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "mobile-ecosystem",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:mobile-ecosystem",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "study_ssot:row:mobile-ecosystem"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:mobile-ecosystem:gb",
+      "execution_status": "planned",
+      "prompt_slug": "mobile-ecosystem:gb",
+      "text": "Which smartphone ecosystems should buyers consider when they want connected devices, launcher flexibility, and credible Android alternatives?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "mobile-ecosystem",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:mobile-ecosystem",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "study_ssot:row:mobile-ecosystem"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:consumer-tech-innovation:us",
+      "execution_status": "planned",
+      "prompt_slug": "consumer-tech-innovation:us",
+      "text": "Which consumer tech innovation options should buyers consider when they want distinctive design and credible alternatives to Apple?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "consumer-tech-innovation",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:consumer-tech-innovation",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "study_ssot:row:consumer-tech-innovation"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:consumer-tech-innovation:de",
+      "execution_status": "planned",
+      "prompt_slug": "consumer-tech-innovation:de",
+      "text": "Which consumer tech innovation options should buyers consider when they want distinctive design and credible alternatives to Apple?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "consumer-tech-innovation",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:consumer-tech-innovation",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "study_ssot:row:consumer-tech-innovation"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:consumer-tech-innovation:gb",
+      "execution_status": "planned",
+      "prompt_slug": "consumer-tech-innovation:gb",
+      "text": "Which consumer tech innovation options should buyers consider when they want distinctive design and credible alternatives to Apple?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "consumer-tech-innovation",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:consumer-tech-innovation",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "study_ssot:row:consumer-tech-innovation"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:minimalist-hardware:us",
+      "execution_status": "planned",
+      "prompt_slug": "minimalist-hardware:us",
+      "text": "Which minimalist hardware options should buyers consider when they want distinctive design and credible alternatives to Apple?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "minimalist-hardware",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:minimalist-hardware",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "study_ssot:row:minimalist-hardware"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:minimalist-hardware:de",
+      "execution_status": "planned",
+      "prompt_slug": "minimalist-hardware:de",
+      "text": "Which minimalist hardware options should buyers consider when they want distinctive design and credible alternatives to Apple?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "minimalist-hardware",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:minimalist-hardware",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "study_ssot:row:minimalist-hardware"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:minimalist-hardware:gb",
+      "execution_status": "planned",
+      "prompt_slug": "minimalist-hardware:gb",
+      "text": "Which minimalist hardware options should buyers consider when they want distinctive design and credible alternatives to Apple?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "minimalist-hardware",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:minimalist-hardware",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "study_ssot:row:minimalist-hardware"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:wireless-audio:us",
+      "execution_status": "planned",
+      "prompt_slug": "wireless-audio:us",
+      "text": "Which wireless audio products should Android buyers consider when they want transparent design, strong everyday features, and alternatives to AirPods?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "wireless-audio",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:wireless-audio",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "study_ssot:row:wireless-audio"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:wireless-audio:de",
+      "execution_status": "planned",
+      "prompt_slug": "wireless-audio:de",
+      "text": "Which wireless audio products should Android buyers consider when they want transparent design, strong everyday features, and alternatives to AirPods?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "wireless-audio",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:wireless-audio",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "study_ssot:row:wireless-audio"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:wireless-audio:gb",
+      "execution_status": "planned",
+      "prompt_slug": "wireless-audio:gb",
+      "text": "Which wireless audio products should Android buyers consider when they want transparent design, strong everyday features, and alternatives to AirPods?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "wireless-audio",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:wireless-audio",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "study_ssot:row:wireless-audio"
+      ]
+    }
+  ]
+}

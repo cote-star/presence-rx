@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "field": "brand_visibility",
+      "source": "peec_mcp",
+      "rationale": "Visibility, share of voice, sentiment, and position come from Peec MCP."
+    },
+    {
+      "field": "topic_breakdown",
+      "source": "peec_mcp",
+      "rationale": "Topic-level metrics and IDs are from the MCP-verified Nothing Phone project."
+    },
+    {
+      "field": "engine_breakdown",
+      "source": "peec_mcp",
+      "rationale": "Model-level visibility split is from Peec brand reports."
+    },
+    {
+      "field": "editorial_gap_domains",
+      "source": "peec_mcp",
+      "rationale": "Gap domains and citation/retrieval values are from Peec domain reports."
+    },
+    {
+      "field": "gap_type",
+      "source": "derived",
+      "rationale": "Step 2 labels are provisional scope-locked classifications awaiting enrichment."
+    },
+    {
+      "field": "pipeline_funnel",
+      "source": "derived",
+      "rationale": "Funnel counts are derived from the docs-grounded ingestion seed."
+    }
+  ]
+}

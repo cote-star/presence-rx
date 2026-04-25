@@ -1,0 +1,133 @@
+{
+  "rows": [
+    {
+      "cluster_id": "cluster:smartphone-design",
+      "cluster_label": "Smartphone Design",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.72,
+      "visibility_target_avg_position": 1.9,
+      "visibility_competitor_owner": null,
+      "gap_type": null,
+      "gap_type_source": "not_applicable",
+      "gap_type_rationale": null,
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:smartphone-design"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "moderate",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:mobile-ecosystem",
+      "cluster_label": "Mobile Ecosystem",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.12,
+      "visibility_target_avg_position": 3.8,
+      "visibility_competitor_owner": "Apple",
+      "gap_type": "indexing",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Scope-locked provisional label: current docs frame Mobile Ecosystem as an owned-content retrieval/citation problem, pending Gemini/Tavily confirmation.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "peec:brand:apple"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:consumer-tech-innovation",
+      "cluster_label": "Consumer Tech Innovation",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.1,
+      "visibility_target_avg_position": 3.7,
+      "visibility_competitor_owner": "Apple",
+      "gap_type": "perception",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Scope-locked provisional label: innovation association appears weak in the Peec snapshot, pending Gemini/Tavily confirmation.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "peec:brand:apple"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:minimalist-hardware",
+      "cluster_label": "Minimalist Hardware",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.06,
+      "visibility_target_avg_position": 4.1,
+      "visibility_competitor_owner": "Apple",
+      "gap_type": "perception",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Scope-locked provisional label from SCOPE_FINAL: brand identity is minimalism, but AI-answer visibility is owned by Apple in this topic.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "peec:brand:apple"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:wireless-audio",
+      "cluster_label": "Wireless Audio",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.01,
+      "visibility_target_avg_position": 2.0,
+      "visibility_competitor_owner": "Apple",
+      "gap_type": "volume_frequency",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Scope-locked provisional label from SCOPE_FINAL: Nothing Ear exists, but category presence is near-zero in the Peec snapshot.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "peec:brand:apple"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    }
+  ]
+}

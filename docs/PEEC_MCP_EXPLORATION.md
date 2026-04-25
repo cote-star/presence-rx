@@ -112,7 +112,7 @@ list_chats / get_chat        ──►    evidence ledger + source-of-record
 - `retrieval_rate`, `citation_rate` — averages, NOT percentages. Can exceed 1.0.
 
 ### AI Engines tracked
-ChatGPT, GPT-4o, Perplexity, Gemini, Google AI Overview, Google AI Mode, DeepSeek, Claude Haiku/Sonnet, Grok, Copilot, Qwen, LLaMA
+ChatGPT, GPT-4o, Perplexity, Gemini, Google AI Overview, Google AI Mode, DeepSeek, Grok, Copilot, Qwen, LLaMA, and other Peec-supported engines
 
 ## Next Steps for Build
 

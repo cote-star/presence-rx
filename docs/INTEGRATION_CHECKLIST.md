@@ -6,9 +6,9 @@ Track lock: **Peec (focused track)**. Brand lock: **Nothing Phone**. Deadline: *
 
 ## Phase 0 - Foundation (mostly done)
 
-- [x] Peec MCP server registered in `~/.claude.json` for the big-berlin-hack project
+- [x] Peec MCP server registered in a local MCP client for the big-berlin-hack project
 - [x] Peec OAuth completed
-- [x] Repo scaffold (README, AGENTS.md, CLAUDE.md, GEMINI.md, codex.md, .cursorrules)
+- [x] Repo scaffold (README, AGENTS.md, project docs, public-safety rules)
 - [x] Public-safe docs (13 in `docs/`)
 - [x] `pm-dashboard.html` (4-tab static walkthrough, refreshed with verified MCP findings)
 - [x] MCP exploration captured in `docs/PEEC_MCP_EXPLORATION.md` (project IDs, brand IDs, topic IDs, metric definitions)
