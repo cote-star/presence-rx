@@ -28,7 +28,7 @@
       "gap_type": "perception",
       "source_of_record": "gemini",
       "perception_themes": [
-        "brand association",
+        "crm for startups association",
         "category positioning"
       ],
       "missing_associations": [
@@ -52,11 +52,11 @@
       "gap_type": "indexing",
       "source_of_record": "gemini",
       "perception_themes": [
-        "ecosystem availability",
-        "owned content discoverability"
+        "modern crm alternative discoverability",
+        "owned content surfacing"
       ],
       "missing_associations": [
-        "clear ecosystem proof surfaced in AI answers"
+        "clear modern crm alternative proof surfaced in AI answers"
       ],
       "competitor_association": "Salesforce is the Peec-visible owner",
       "safe_scenario_wording": "Treat Modern CRM Alternative as a provisional diagnostic gap until live Gemini analysis is available.",
@@ -76,11 +76,11 @@
       "gap_type": "volume_frequency",
       "source_of_record": "gemini",
       "perception_themes": [
-        "category presence",
-        "product-line recall"
+        "crm migration presence",
+        "category coverage depth"
       ],
       "missing_associations": [
-        "repeated wireless audio association"
+        "repeated crm migration association"
       ],
       "competitor_association": "HubSpot is the Peec-visible owner",
       "safe_scenario_wording": "Treat CRM Migration as a provisional diagnostic gap until live Gemini analysis is available.",
@@ -100,7 +100,7 @@
       "gap_type": "perception",
       "source_of_record": "gemini",
       "perception_themes": [
-        "brand association",
+        "revops tools association",
         "category positioning"
       ],
       "missing_associations": [

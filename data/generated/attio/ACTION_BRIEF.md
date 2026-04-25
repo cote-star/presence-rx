@@ -40,7 +40,7 @@
 - **Recommended next move:** Publish explicit crm for startups positioning content and monitor AI adoption.
 - **Action Priority:** 54/100
 - **Publication language:** Test the Attio association in the CRM for Startups topic; 2 of 2 methods support.
-- **AI perception:** brand association
+- **AI perception:** crm for startups association
 - **AI perception:** category positioning
 - **Missing association:** crm for startups association
 
@@ -53,7 +53,7 @@
 - **Recommended next move:** Publish explicit revops tools positioning content and monitor AI adoption.
 - **Action Priority:** 57/100
 - **Publication language:** Test the Attio association in the RevOps Tools topic; 2 of 2 methods support.
-- **AI perception:** brand association
+- **AI perception:** revops tools association
 - **AI perception:** category positioning
 - **Missing association:** revops tools association
 
@@ -70,9 +70,9 @@
 - **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.
 - **Action Priority:** 63/100
 - **Publication language:** Test the Attio association in the Modern CRM Alternative topic; 2 of 2 methods support.
-- **AI perception:** ecosystem availability
-- **AI perception:** owned content discoverability
-- **Missing association:** clear ecosystem proof surfaced in AI answers
+- **AI perception:** modern crm alternative discoverability
+- **AI perception:** owned content surfacing
+- **Missing association:** clear modern crm alternative proof surfaced in AI answers
 
 ### Volume / Frequency Gaps (CRM Migration)
 
@@ -87,9 +87,9 @@
 - **Recommended next move:** Seed sustained crm migration proof across editorial and owned surfaces.
 - **Action Priority:** 65/100
 - **Publication language:** Test the Attio association in the CRM Migration topic; 2 of 2 methods support.
-- **AI perception:** category presence
-- **AI perception:** product-line recall
-- **Missing association:** repeated wireless audio association
+- **AI perception:** crm migration presence
+- **AI perception:** category coverage depth
+- **Missing association:** repeated crm migration association
 
 ## Monitoring Plan
 

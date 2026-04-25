@@ -97,7 +97,7 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 - **What to create:** Dedicated modern crm alternative page with structured data and explicit brand positioning
 - **Where:** Attio website, blog, documentation
 - **Key language:** Use explicit "Modern CRM Alternative" keywords that AI systems index
-- **Missing association to address:** clear ecosystem proof surfaced in AI answers
+- **Missing association to address:** clear modern crm alternative proof surfaced in AI answers
 
 #### Earned Media Angle
 
@@ -139,7 +139,7 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 - **What to create:** Dedicated crm migration page with structured data and explicit brand positioning
 - **Where:** Attio website, blog, documentation
 - **Key language:** Use explicit "CRM Migration" keywords that AI systems index
-- **Missing association to address:** repeated wireless audio association
+- **Missing association to address:** repeated crm migration association
 
 #### Earned Media Angle
 

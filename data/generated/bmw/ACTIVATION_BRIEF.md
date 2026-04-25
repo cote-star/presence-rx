@@ -97,7 +97,7 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - **What to create:** Dedicated premium suv segment page with structured data and explicit brand positioning
 - **Where:** BMW website, blog, documentation
 - **Key language:** Use explicit "Premium SUV Segment" keywords that AI systems index
-- **Missing association to address:** clear ecosystem proof surfaced in AI answers
+- **Missing association to address:** clear premium suv segment proof surfaced in AI answers
 
 #### Earned Media Angle
 
@@ -139,7 +139,7 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - **What to create:** Dedicated electric i-series page with structured data and explicit brand positioning
 - **Where:** BMW website, blog, documentation
 - **Key language:** Use explicit "Electric i-Series" keywords that AI systems index
-- **Missing association to address:** repeated wireless audio association
+- **Missing association to address:** repeated electric i-series association
 
 #### Earned Media Angle
 

@@ -902,16 +902,16 @@ def _html(
     <header class="topbar">
       <div class="page-kicker"><span class="nav-dot"></span>Presence Rx MVP dashboard</div>
       <div class="header-actions">
-        <button class="btn">Export</button>
-        <button class="btn primary">+ Create monitoring prompt</button>
+        <a class="btn" href="#export" style="text-decoration:none">Export</a>
+        <a class="btn primary" href="#prescriptions" style="text-decoration:none">View action plan</a>
       </div>
     </header>
     <div class="content">
       <div class="filterbar" aria-label="Dashboard filters">
         <div class="filter-pill" id="brandPill">Brand: ...</div>
-        <div class="filter-pill">Time: Apr 25</div>
-        <div class="filter-pill">Market: US</div>
-        <div class="filter-pill">Models: 3</div>
+        <div class="filter-pill" id="timePill">Snapshot: Apr 2026</div>
+        <div class="filter-pill" id="marketPill">Market: US</div>
+        <div class="filter-pill" id="modelsPill">Models: 3</div>
         <div class="filter-pill">Topics: 5</div>
       </div>
 
@@ -1289,10 +1289,18 @@ function statusCopy(status) {
 
 function methodCopy(signal) {
   if (!signal) return 'No method signal was available for this step.';
+  if (signal.signal === 'unavailable') return `${sourceLabel(signal.method === 'peec' ? 'peec_mcp' : signal.method + ':')} was not available for this case study.`;
   if (signal.method === 'peec') return 'Peec provided the visibility, rank, topic, and competitor signal.';
   if (signal.method === 'gemini') return 'Gemini checked the perception and missing-association pattern.';
   if (signal.method === 'tavily') return 'Tavily checked whether public web evidence supports the finding.';
   return statusCopy(signal.signal);
+}
+
+function humanGapType(gapType) {
+  if (gapType === 'indexing') return 'an indexing';
+  if (gapType === 'perception') return 'a perception';
+  if (gapType === 'volume_frequency') return 'a volume/frequency';
+  return gapType;
 }
 
 const plotLayoutBase = {
@@ -1316,6 +1324,9 @@ const plotConfig = { displayModeBar: false, responsive: true };
 const labels = studyRows.map(r => r.cluster_label);
 const brandName = data.brand_name || 'Brand';
 document.getElementById('brandPill').textContent = 'Brand: ' + brandName;
+document.getElementById('timePill').textContent = 'Snapshot: Apr 2026';
+document.getElementById('marketPill').textContent = 'Market: US';
+document.getElementById('modelsPill').textContent = tavilySources > 0 ? 'Live + synthetic data' : 'Synthetic seed data';
 document.getElementById('perceptionSubtitle').textContent = 'How AI models perceive each topic and what associations are missing for ' + brandName + '.';
 document.getElementById('landscapeSubtitle').textContent = 'Shows whether ' + brandName + ' or a competitor owns the answer surface.';
 const strongholds = studyRows.filter(r => !r.gap_type);
@@ -1334,12 +1345,20 @@ const avgVis = studyRows.length ? Math.round(totalVis / studyRows.length * 100) 
 const avgPosition = studyRows.length
   ? (studyRows.reduce((acc, r) => acc + (r.visibility_target_avg_position || 0), 0) / studyRows.length).toFixed(1)
   : '0';
+const positionNote = parseFloat(avgPosition) <= 2.0 ? 'near top when mentioned' : 'room to improve';
+const availableMethods = new Set();
+Object.values(classified).forEach(g => {
+  (g.method_signals || []).forEach(s => {
+    if (s.signal !== 'unavailable') availableMethods.add(s.method);
+  });
+});
+const methodCount = availableMethods.size || 1;
 document.getElementById('cards').innerHTML = [
   ['Overall visibility', `${avgVis}%`, `${studyRows.length} topics tracked`],
-  ['Avg position', avgPosition, '#1 when mentioned'],
-  ['Confirmed gaps', `${confirmed} / ${Object.keys(classified).length || studyRows.filter(r => r.gap_type).length}`, '3-method classifier'],
+  ['Avg position', avgPosition, positionNote],
+  ['Confirmed gaps', `${confirmed} / ${Object.keys(classified).length || studyRows.filter(r => r.gap_type).length}`, `${methodCount}-method classifier`],
   ['Tavily sources', compact.format(tavilySources), 'aggregate only'],
-  ['Avg opportunity', compact.format(avgOpp), '0 to 100 score']
+  ['Avg action priority', compact.format(avgOpp), '0 to 100 score']
 ].map(([label, value, sub]) => `
   <div class="metric-card">
     <div class="metric-label">${escapeHtml(label)}</div>
@@ -1492,6 +1511,11 @@ Plotly.newPlot('opportunityChart', [{
   yaxis: { ...plotLayoutBase.yaxis, title: 'Score', range: [0, 105] }
 }, plotConfig);
 
+const compY = studyRows.map(r => {
+  const share = landscape[r.cluster_id]?.competitor_visibility_share;
+  return share != null ? Math.round(share * 100) : null;
+});
+const compText = compY.map(v => v != null ? `${v}%` : 'N/A');
 Plotly.newPlot('landscapeChart', [{
   type: 'bar',
   name: brandName,
@@ -1503,9 +1527,11 @@ Plotly.newPlot('landscapeChart', [{
   type: 'bar',
   name: competitorLegendName,
   x: labels,
-  y: studyRows.map(r => Math.round((landscape[r.cluster_id]?.competitor_visibility_share || 0) * 100)),
+  y: compY,
+  text: compText,
+  textposition: 'outside',
   marker: { color: palette.red },
-  hovertemplate: `<b>%{x}</b><br>${escapeHtml(competitorLegendName)}: %{y}%<extra></extra>`
+  hovertemplate: `<b>%{x}</b><br>${escapeHtml(competitorLegendName)}: %{text}<extra></extra>`
 }], {
   ...plotLayoutBase,
   barmode: 'group',
@@ -1575,13 +1601,19 @@ document.getElementById('claimTable').innerHTML = `
       <th>Allowed language</th>
     </tr>
   </thead>
-  <tbody>${claims.map(c => `<tr>
-    <td>${escapeHtml(c.claim)}</td>
+  <tbody>${claims.map(c => {
+    let claimText = c.claim;
+    claimText = claimText.replace('a indexing', 'an indexing');
+    claimText = claimText.replace('volume_frequency', 'volume/frequency');
+    claimText = claimText.replace('partner evidence is', 'evidence is');
+    return `<tr>
+    <td>${escapeHtml(claimText)}</td>
     <td>${pill(c.status)}</td>
     <td>${pill(c.publication_status)}</td>
     <td>${pill(c.confidence_tier)}</td>
     <td>${escapeHtml(c.publication_language)}</td>
-  </tr>`).join('')}</tbody>
+  </tr>`;
+  }).join('')}</tbody>
 `;
 
 const evidenceByRef = Object.fromEntries(evidence.map(item => [item.evidence_ref, item]));
@@ -1803,7 +1835,7 @@ document.getElementById('exportCards').innerHTML = [
   ['Presence verdict', 'PRESENCE_VERDICT.md', 'Executive diagnosis, topic findings, evidence chain, and methodology.'],
   ['Action brief', 'ACTION_BRIEF.md', 'Actions grouped by gap type, claim boundaries, and monitoring plan.'],
   ['Evidence ledger', 'EVIDENCE_LEDGER.json', 'Machine-readable claims, source refs, confidence tiers, and publication status.'],
-  ['Dashboard', 'mvp_dashboard.html', 'The current webapp view rendered from generated artifacts.']
+  ['Dashboard', 'mvp_dashboard_combined.html', 'The current webapp view rendered from generated artifacts.']
 ].map(([label, artifact, copy]) => `
   <article class="decision-card">
     <div class="decision-card-header">
@@ -2682,15 +2714,15 @@ def _multi_brand_html(brands_data: dict[str, dict]) -> str:
         + options_html
         + """
         </select>
-        <button class="btn">Export</button>
-        <button class="btn primary">+ Create monitoring prompt</button>
+        <a class="btn" href="#export" style="text-decoration:none">Export</a>
+        <a class="btn primary" href="#prescriptions" style="text-decoration:none">View action plan</a>
       </div>
     </header>
     <div class="content">
       <div class="filterbar" aria-label="Dashboard filters">
         <div class="filter-pill" id="brandPill">Brand: ...</div>
-        <div class="filter-pill">Time: Apr 25</div>
-        <div class="filter-pill">Market: US</div>
+        <div class="filter-pill" id="timePill">Snapshot: Apr 2026</div>
+        <div class="filter-pill" id="marketPill">Market: US</div>
         <div class="filter-pill" id="modelsPill">Models: 3</div>
         <div class="filter-pill" id="topicsPill">Topics: 5</div>
       </div>
@@ -3052,10 +3084,18 @@ function statusCopy(status) {
 
 function methodCopy(signal) {
   if (!signal) return 'No method signal was available for this step.';
+  if (signal.signal === 'unavailable') return `${sourceLabel(signal.method === 'peec' ? 'peec_mcp' : signal.method + ':')} was not available for this case study.`;
   if (signal.method === 'peec') return 'Peec provided the visibility, rank, topic, and competitor signal.';
   if (signal.method === 'gemini') return 'Gemini checked the perception and missing-association pattern.';
   if (signal.method === 'tavily') return 'Tavily checked whether public web evidence supports the finding.';
   return statusCopy(signal.signal);
+}
+
+function humanGapType(gapType) {
+  if (gapType === 'indexing') return 'an indexing';
+  if (gapType === 'perception') return 'a perception';
+  if (gapType === 'volume_frequency') return 'a volume/frequency';
+  return gapType;
 }
 
 function interventionLabel(gapType) {
@@ -3113,6 +3153,9 @@ function loadBrand(caseId) {
 
   // --- Filter pills ---
   document.getElementById('brandPill').textContent = 'Brand: ' + brandName;
+  document.getElementById('timePill').textContent = 'Snapshot: Apr 2026';
+  document.getElementById('marketPill').textContent = 'Market: US';
+  document.getElementById('modelsPill').textContent = tavilySources > 0 ? 'Live + synthetic data' : 'Synthetic seed data';
   document.getElementById('topicsPill').textContent = 'Topics: ' + studyRows.length;
   document.getElementById('perceptionSubtitle').textContent = 'How AI models perceive each topic and what associations are missing for ' + brandName + '.';
   document.getElementById('landscapeSubtitle').textContent = 'Shows whether ' + brandName + ' or a competitor owns the answer surface.';
@@ -3133,12 +3176,20 @@ function loadBrand(caseId) {
   const avgPosition = studyRows.length
     ? (studyRows.reduce((acc, r) => acc + (r.visibility_target_avg_position || 0), 0) / studyRows.length).toFixed(1)
     : '0';
+  const positionNote = parseFloat(avgPosition) <= 2.0 ? 'near top when mentioned' : 'room to improve';
+  const availableMethods = new Set();
+  Object.values(classified).forEach(g => {
+    (g.method_signals || []).forEach(s => {
+      if (s.signal !== 'unavailable') availableMethods.add(s.method);
+    });
+  });
+  const methodCount = availableMethods.size || 1;
   document.getElementById('cards').innerHTML = [
     ['Overall visibility', `${avgVis}%`, `${studyRows.length} topics tracked`],
-    ['Avg position', avgPosition, '#1 when mentioned'],
-    ['Confirmed gaps', `${confirmed} / ${Object.keys(classified).length || studyRows.filter(r => r.gap_type).length}`, '3-method classifier'],
+    ['Avg position', avgPosition, positionNote],
+    ['Confirmed gaps', `${confirmed} / ${Object.keys(classified).length || studyRows.filter(r => r.gap_type).length}`, `${methodCount}-method classifier`],
     ['Tavily sources', compact.format(tavilySources), 'aggregate only'],
-    ['Avg opportunity', compact.format(avgOpp), '0 to 100 score']
+    ['Avg action priority', compact.format(avgOpp), '0 to 100 score']
   ].map(([label, value, sub]) => `
     <div class="metric-card">
       <div class="metric-label">${escapeHtml(label)}</div>
@@ -3291,13 +3342,19 @@ function loadBrand(caseId) {
         <th>Allowed language</th>
       </tr>
     </thead>
-    <tbody>${claims.map(c => `<tr>
-      <td>${escapeHtml(c.claim)}</td>
+    <tbody>${claims.map(c => {
+      let claimText = c.claim;
+      claimText = claimText.replace('a indexing', 'an indexing');
+      claimText = claimText.replace('volume_frequency', 'volume/frequency');
+      claimText = claimText.replace('partner evidence is', 'evidence is');
+      return `<tr>
+      <td>${escapeHtml(claimText)}</td>
       <td>${pill(c.status)}</td>
       <td>${pill(c.publication_status)}</td>
       <td>${pill(c.confidence_tier)}</td>
       <td>${escapeHtml(c.publication_language)}</td>
-    </tr>`).join('')}</tbody>
+    </tr>`;
+    }).join('')}</tbody>
   `;
 
   // --- Evidence summary ---
@@ -3479,7 +3536,7 @@ function loadBrand(caseId) {
     ['Presence verdict', 'PRESENCE_VERDICT.md', 'Executive diagnosis, topic findings, evidence chain, and methodology.'],
     ['Action brief', 'ACTION_BRIEF.md', 'Actions grouped by gap type, claim boundaries, and monitoring plan.'],
     ['Evidence ledger', 'EVIDENCE_LEDGER.json', 'Machine-readable claims, source refs, confidence tiers, and publication status.'],
-    ['Dashboard', 'mvp_dashboard.html', 'The current webapp view rendered from generated artifacts.']
+    ['Dashboard', 'mvp_dashboard_combined.html', 'The current webapp view rendered from generated artifacts.']
   ].map(([label, artifact, copy]) => `
     <article class="decision-card">
       <div class="decision-card-header">
@@ -3518,6 +3575,11 @@ function loadBrand(caseId) {
     yaxis: { ...plotLayoutBase.yaxis, title: 'Score', range: [0, 105] }
   }, plotConfig);
 
+  const compY = studyRows.map(r => {
+    const share = landscape[r.cluster_id]?.competitor_visibility_share;
+    return share != null ? Math.round(share * 100) : null;
+  });
+  const compText = compY.map(v => v != null ? `${v}%` : 'N/A');
   Plotly.newPlot('landscapeChart', [{
     type: 'bar',
     name: brandName,
@@ -3529,9 +3591,11 @@ function loadBrand(caseId) {
     type: 'bar',
     name: competitorLegendName,
     x: labels,
-    y: studyRows.map(r => Math.round((landscape[r.cluster_id]?.competitor_visibility_share || 0) * 100)),
+    y: compY,
+    text: compText,
+    textposition: 'outside',
     marker: { color: palette.red },
-    hovertemplate: `<b>%{x}</b><br>${escapeHtml(competitorLegendName)}: %{y}%<extra></extra>`
+    hovertemplate: `<b>%{x}</b><br>${escapeHtml(competitorLegendName)}: %{text}<extra></extra>`
   }], {
     ...plotLayoutBase,
     barmode: 'group',

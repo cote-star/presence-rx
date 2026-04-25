@@ -45,17 +45,17 @@ def _finding_id(row: StudyRow) -> str:
 
 def _themes(row: StudyRow) -> list[str]:
     if row.gap_type == "indexing":
-        return ["ecosystem availability", "owned content discoverability"]
+        return [f"{row.cluster_label.lower()} discoverability", "owned content surfacing"]
     if row.gap_type == "volume_frequency":
-        return ["category presence", "product-line recall"]
-    return ["brand association", "category positioning"]
+        return [f"{row.cluster_label.lower()} presence", "category coverage depth"]
+    return [f"{row.cluster_label.lower()} association", "category positioning"]
 
 
 def _missing(row: StudyRow) -> list[str]:
     if row.gap_type == "indexing":
-        return ["clear ecosystem proof surfaced in AI answers"]
+        return [f"clear {row.cluster_label.lower()} proof surfaced in AI answers"]
     if row.gap_type == "volume_frequency":
-        return ["repeated wireless audio association"]
+        return [f"repeated {row.cluster_label.lower()} association"]
     return [f"{row.cluster_label.lower()} association"]
 
 

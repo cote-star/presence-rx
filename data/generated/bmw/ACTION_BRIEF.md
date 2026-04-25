@@ -40,7 +40,7 @@
 - **Recommended next move:** Publish explicit luxury ev transition positioning content and monitor AI adoption.
 - **Action Priority:** 59/100
 - **Publication language:** Test the BMW association in the Luxury EV Transition topic; 2 of 2 methods support.
-- **AI perception:** brand association
+- **AI perception:** luxury ev transition association
 - **AI perception:** category positioning
 - **Missing association:** luxury ev transition association
 
@@ -53,7 +53,7 @@
 - **Recommended next move:** Publish explicit brand heritage positioning content and monitor AI adoption.
 - **Action Priority:** 52/100
 - **Publication language:** Test the BMW association in the Brand Heritage topic; 2 of 2 methods support.
-- **AI perception:** brand association
+- **AI perception:** brand heritage association
 - **AI perception:** category positioning
 - **Missing association:** brand heritage association
 
@@ -70,9 +70,9 @@
 - **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.
 - **Action Priority:** 57/100
 - **Publication language:** Test the BMW association in the Premium SUV Segment topic; 2 of 2 methods support.
-- **AI perception:** ecosystem availability
-- **AI perception:** owned content discoverability
-- **Missing association:** clear ecosystem proof surfaced in AI answers
+- **AI perception:** premium suv segment discoverability
+- **AI perception:** owned content surfacing
+- **Missing association:** clear premium suv segment proof surfaced in AI answers
 
 ### Volume / Frequency Gaps (Electric i-Series)
 
@@ -87,9 +87,9 @@
 - **Recommended next move:** Seed sustained electric i-series proof across editorial and owned surfaces.
 - **Action Priority:** 62/100
 - **Publication language:** Test the BMW association in the Electric i-Series topic; 2 of 2 methods support.
-- **AI perception:** category presence
-- **AI perception:** product-line recall
-- **Missing association:** repeated wireless audio association
+- **AI perception:** electric i-series presence
+- **AI perception:** category coverage depth
+- **Missing association:** repeated electric i-series association
 
 ## Monitoring Plan
 
