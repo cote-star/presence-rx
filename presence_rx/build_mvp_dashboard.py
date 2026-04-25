@@ -926,21 +926,21 @@ def _html(
       <section class="hero" id="overview">
         <div class="hero-copy">
           <span class="pill confirmed">Presence Verdict</span>
-          <h1>The invisible champion</h1>
-          <p class="subtitle">Presence Rx turns Peec visibility data into a guarded recommendation workflow. It defines the AI-answer problem, diagnoses why the brand is missing, verifies what can be said safely, and prescribes what Peec should monitor next.</p>
+          <h1 id="heroTitle"></h1>
+          <p class="subtitle" id="heroSubtitle"></p>
         </div>
         <div class="verdict-panel" id="verdict">
           <div class="verdict-row">
             <div class="verdict-label">Verdict</div>
-            <div class="verdict-value" id="verdictText">The brand is visible in a stronghold topic, but under-owned across key commercial AI-answer surfaces.</div>
+            <div class="verdict-value" id="verdictText"></div>
           </div>
           <div class="verdict-row">
             <div class="verdict-label">Primary risk</div>
-            <div class="verdict-value">AI answers may rank the brand highly when mentioned while omitting it from broader buyer-category prompts.</div>
+            <div class="verdict-value" id="riskText"></div>
           </div>
           <div class="verdict-row">
             <div class="verdict-label">Best next move</div>
-            <div class="verdict-value">Prioritize verified blind spots by gap type, then create Peec monitoring prompts for recovery.</div>
+            <div class="verdict-value" id="nextMoveText"></div>
           </div>
         </div>
       </section>
@@ -1322,6 +1322,10 @@ const strongholds = studyRows.filter(r => !r.gap_type);
 const blindSpots = studyRows.filter(r => r.gap_type);
 const strongholdLabel = strongholds.length ? strongholds[0].cluster_label : 'its stronghold topic';
 document.getElementById('verdictText').textContent = brandName + ' is visible in ' + strongholdLabel + ', but under-owned across ' + blindSpots.length + ' commercial AI-answer surfaces.';
+document.getElementById('heroTitle').textContent = brandName + ' — AI Visibility Diagnosis';
+document.getElementById('heroSubtitle').textContent = 'Presence Rx diagnoses how ' + brandName + ' shows up in AI-mediated discovery, identifies who owns the answer space, and turns evidence-gated gaps into activation plans.';
+document.getElementById('riskText').textContent = 'AI answers may rank ' + brandName + ' highly when mentioned while omitting it from broader buyer-category prompts.';
+document.getElementById('nextMoveText').textContent = 'Prioritize verified blind spots by gap type, then create Peec monitoring prompts for ' + brandName + ' recovery.';
 const competitorNames = [...new Set(studyRows.map(r => r.visibility_competitor_owner).filter(Boolean))];
 const competitorLegendName = competitorNames.length === 1 ? competitorNames[0] : 'Named competitor';
 
@@ -2702,8 +2706,8 @@ def _multi_brand_html(brands_data: dict[str, dict]) -> str:
       <section class="hero" id="overview">
         <div class="hero-copy">
           <span class="pill confirmed">Presence Verdict</span>
-          <h1>The invisible champion</h1>
-          <p class="subtitle">Presence Rx turns Peec visibility data into a guarded recommendation workflow. It defines the AI-answer problem, diagnoses why the brand is missing, verifies what can be said safely, and prescribes what Peec should monitor next.</p>
+          <h1 id="heroTitle"></h1>
+          <p class="subtitle" id="heroSubtitle"></p>
         </div>
         <div class="verdict-panel" id="verdict">
           <div class="verdict-row">
@@ -2712,11 +2716,11 @@ def _multi_brand_html(brands_data: dict[str, dict]) -> str:
           </div>
           <div class="verdict-row">
             <div class="verdict-label">Primary risk</div>
-            <div class="verdict-value">AI answers may rank the brand highly when mentioned while omitting it from broader buyer-category prompts.</div>
+            <div class="verdict-value" id="riskText"></div>
           </div>
           <div class="verdict-row">
             <div class="verdict-label">Best next move</div>
-            <div class="verdict-value">Prioritize verified blind spots by gap type, then create Peec monitoring prompts for recovery.</div>
+            <div class="verdict-value" id="nextMoveText"></div>
           </div>
         </div>
       </section>
@@ -3118,6 +3122,10 @@ function loadBrand(caseId) {
   const blindSpots = studyRows.filter(r => r.gap_type);
   const strongholdLabel = strongholds.length ? strongholds[0].cluster_label : 'its stronghold topic';
   document.getElementById('verdictText').textContent = brandName + ' is visible in ' + strongholdLabel + ', but under-owned across ' + blindSpots.length + ' commercial AI-answer surfaces.';
+  document.getElementById('heroTitle').textContent = brandName + ' — AI Visibility Diagnosis';
+  document.getElementById('heroSubtitle').textContent = 'Presence Rx diagnoses how ' + brandName + ' shows up in AI-mediated discovery, identifies who owns the answer space, and turns evidence-gated gaps into activation plans.';
+  document.getElementById('riskText').textContent = 'AI answers may rank ' + brandName + ' highly when mentioned while omitting it from broader buyer-category prompts.';
+  document.getElementById('nextMoveText').textContent = 'Prioritize verified blind spots by gap type, then create Peec monitoring prompts for ' + brandName + ' recovery.';
 
   // --- Metric cards ---
   const totalVis = studyRows.reduce((acc, r) => acc + (r.visibility_target_share || 0), 0);
