@@ -84,7 +84,7 @@ Locked decisions on the Peec build, with rationale and links to source docs. Ope
 - **Source:** [../docs/design.md](../docs/design.md), [../docs/SCOPE_FINAL.md](../docs/SCOPE_FINAL.md) Tier 4 #20.
 
 ### D-014: Renamed from "Proof of Presence" → "Presence Rx"
-- **Decision:** Rename the product from "Proof of Presence" to **Presence Rx**. Adopt **Diagnose. Prescribe. Refuse.** as the primary tagline; keep *Find your brand's blind spots in AI answers* as a sub-tagline. GitHub repo name (when created via `gh-play`) will be `presence-rx`. Local folder structure (`challenges/peec/repo`) unchanged.
+- **Decision:** Rename the product from "Proof of Presence" to **Presence Rx**. Adopt **Diagnose. Prescribe. Refuse.** as the primary tagline; keep *Find your brand's blind spots in AI answers* as a sub-tagline. GitHub repo name `cote-star/presence-rx`. Local folder also renamed `challenges/peec/repo` → `challenges/peec/presence-rx` (D-014 follow-up, Saturday late afternoon — kept the folder name aligned with the GitHub repo for less ambiguity).
 - **When locked:** Saturday 2026-04-25, late afternoon, after Tier 1.5 (gap-type classifier) added.
 - **Why:** "Proof of Presence" carried the receipts/diagnosis half but undersold the prescribe + refuse half once the gap-type classifier landed. "Presence Rx" captures all four moves (diagnose, classify, prescribe, refuse) in two syllables. Rx is universally read as "prescription" — matching what the product actually does. Preserves brand equity from the existing repo while signaling the broader scope.
 - **Migration cost:** Touched 14 files, 30 mentions across docs + dashboard. Single-pass rename. Deliverable name "Presence Verdict Pack" preserved.

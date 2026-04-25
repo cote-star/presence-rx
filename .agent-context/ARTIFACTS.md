@@ -2,7 +2,7 @@
 
 Where every doc, file, and generated artifact lives in this repo. Use this as a directory.
 
-## Repo Root (`challenges/peec/repo/`)
+## Repo Root (`challenges/peec/presence-rx/`)
 
 | File | Purpose |
 | --- | --- |

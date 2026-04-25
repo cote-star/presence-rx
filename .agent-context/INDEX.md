@@ -3,7 +3,7 @@
 Cold-start pack for any agent (Claude / Codex / Gemini / Cursor / human) joining the Peec AI track of Big Berlin Hack 2026. Read this before touching any code or doc.
 
 > Pack version: `0.5.0` — Saturday 2026-04-25, late afternoon. Peec AI design tokens captured and documented (D-013 satisfied); `DESIGN_TOKENS.md` renamed to `design.md` with the full style guide.
-> Project: `big-berlin-hack/challenges/peec/repo` (GitHub repo: [cote-star/presence-rx](https://github.com/cote-star/presence-rx), private)
+> Project: `big-berlin-hack/challenges/peec/presence-rx` (GitHub repo: [cote-star/presence-rx](https://github.com/cote-star/presence-rx), private)
 
 ## What This Pack Is
 
