@@ -68,3 +68,19 @@ def test_action_brief_does_not_contain_raw_snippets() -> None:
     artifacts = _artifacts()
     content = build_action_brief(artifacts.study_ssot, artifacts.manifest)
     assert POISON not in content
+
+
+def test_action_brief_has_provenance_section() -> None:
+    artifacts = _artifacts()
+    classification = build_gap_classification(artifacts.study_ssot, artifacts.manifest)
+    ledger = build_evidence_ledger(artifacts.study_ssot, artifacts.manifest, classification)
+    metrics = build_value_added_metrics(artifacts.study_ssot, artifacts.manifest)
+
+    content = build_action_brief(
+        artifacts.study_ssot,
+        artifacts.manifest,
+        classification=classification,
+        ledger=ledger,
+        metrics=metrics,
+    )
+    assert "Data Sources" in content

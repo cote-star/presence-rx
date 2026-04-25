@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25"
+  },
+  "summary": {
+    "planned_prompts": 12,
+    "planned_topics": 4,
+    "planned_tags": 6
+  },
+  "planned_topics": [
+    {
+      "operation_id": "op:create_topic:luxury-ev-transition",
+      "execution_status": "planned",
+      "topic_slug": "luxury-ev-transition",
+      "name": "bbh-2026-luxury-ev-transition",
+      "source_cluster_id": "cluster:luxury-ev-transition",
+      "gap_type": "perception",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "study_ssot:row:luxury-ev-transition"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:premium-suv-segment",
+      "execution_status": "planned",
+      "topic_slug": "premium-suv-segment",
+      "name": "bbh-2026-premium-suv-segment",
+      "source_cluster_id": "cluster:premium-suv-segment",
+      "gap_type": "indexing",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "study_ssot:row:premium-suv-segment"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:electric-i-series",
+      "execution_status": "planned",
+      "topic_slug": "electric-i-series",
+      "name": "bbh-2026-electric-i-series",
+      "source_cluster_id": "cluster:electric-i-series",
+      "gap_type": "volume_frequency",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "study_ssot:row:electric-i-series"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:brand-heritage",
+      "execution_status": "planned",
+      "topic_slug": "brand-heritage",
+      "name": "bbh-2026-brand-heritage",
+      "source_cluster_id": "cluster:brand-heritage",
+      "gap_type": "perception",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "study_ssot:row:brand-heritage"
+      ]
+    }
+  ],
+  "planned_tags": [
+    {
+      "operation_id": "op:create_tag:gap-indexing",
+      "execution_status": "planned",
+      "tag_slug": "gap-indexing",
+      "name": "bbh-2026-gap-indexing",
+      "kind": "gap",
+      "description": "Blind spots where owned or credible sources need better AI-answer surfacing."
+    },
+    {
+      "operation_id": "op:create_tag:gap-perception",
+      "execution_status": "planned",
+      "tag_slug": "gap-perception",
+      "name": "bbh-2026-gap-perception",
+      "kind": "gap",
+      "description": "Blind spots where the brand association is missing or weaker than competitors."
+    },
+    {
+      "operation_id": "op:create_tag:gap-volume-frequency",
+      "execution_status": "planned",
+      "tag_slug": "gap-volume-frequency",
+      "name": "bbh-2026-gap-volume-frequency",
+      "kind": "gap",
+      "description": "Blind spots where public proof and repeated category presence are too sparse."
+    },
+    {
+      "operation_id": "op:create_tag:geo-us",
+      "execution_status": "planned",
+      "tag_slug": "geo-us",
+      "name": "bbh-2026-geo-us",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the United States market."
+    },
+    {
+      "operation_id": "op:create_tag:geo-de",
+      "execution_status": "planned",
+      "tag_slug": "geo-de",
+      "name": "bbh-2026-geo-de",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the Germany market."
+    },
+    {
+      "operation_id": "op:create_tag:geo-gb",
+      "execution_status": "planned",
+      "tag_slug": "geo-gb",
+      "name": "bbh-2026-geo-gb",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the Great Britain market."
+    }
+  ],
+  "planned_prompts": [
+    {
+      "operation_id": "op:create_prompt:luxury-ev-transition:us",
+      "execution_status": "planned",
+      "prompt_slug": "luxury-ev-transition:us",
+      "text": "Which luxury ev transition options should buyers consider when they want distinctive alternatives to Tesla?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "luxury-ev-transition",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:luxury-ev-transition",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "study_ssot:row:luxury-ev-transition"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:luxury-ev-transition:de",
+      "execution_status": "planned",
+      "prompt_slug": "luxury-ev-transition:de",
+      "text": "Which luxury ev transition options should buyers consider when they want distinctive alternatives to Tesla?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "luxury-ev-transition",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:luxury-ev-transition",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "study_ssot:row:luxury-ev-transition"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:luxury-ev-transition:gb",
+      "execution_status": "planned",
+      "prompt_slug": "luxury-ev-transition:gb",
+      "text": "Which luxury ev transition options should buyers consider when they want distinctive alternatives to Tesla?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "luxury-ev-transition",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:luxury-ev-transition",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "study_ssot:row:luxury-ev-transition"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:premium-suv-segment:us",
+      "execution_status": "planned",
+      "prompt_slug": "premium-suv-segment:us",
+      "text": "Which premium suv segment options should buyers consider when they want credible alternatives in the category?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "premium-suv-segment",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:premium-suv-segment",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "study_ssot:row:premium-suv-segment"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:premium-suv-segment:de",
+      "execution_status": "planned",
+      "prompt_slug": "premium-suv-segment:de",
+      "text": "Which premium suv segment options should buyers consider when they want credible alternatives in the category?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "premium-suv-segment",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:premium-suv-segment",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "study_ssot:row:premium-suv-segment"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:premium-suv-segment:gb",
+      "execution_status": "planned",
+      "prompt_slug": "premium-suv-segment:gb",
+      "text": "Which premium suv segment options should buyers consider when they want credible alternatives in the category?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "premium-suv-segment",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:premium-suv-segment",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "study_ssot:row:premium-suv-segment"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:electric-i-series:us",
+      "execution_status": "planned",
+      "prompt_slug": "electric-i-series:us",
+      "text": "Which electric i-series options should buyers consider when they want proven alternatives to the market leader?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "electric-i-series",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:electric-i-series",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "study_ssot:row:electric-i-series"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:electric-i-series:de",
+      "execution_status": "planned",
+      "prompt_slug": "electric-i-series:de",
+      "text": "Which electric i-series options should buyers consider when they want proven alternatives to the market leader?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "electric-i-series",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:electric-i-series",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "study_ssot:row:electric-i-series"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:electric-i-series:gb",
+      "execution_status": "planned",
+      "prompt_slug": "electric-i-series:gb",
+      "text": "Which electric i-series options should buyers consider when they want proven alternatives to the market leader?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "electric-i-series",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:electric-i-series",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "study_ssot:row:electric-i-series"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:brand-heritage:us",
+      "execution_status": "planned",
+      "prompt_slug": "brand-heritage:us",
+      "text": "Which brand heritage options should buyers consider when they want distinctive alternatives to Mercedes-Benz?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "brand-heritage",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:brand-heritage",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "study_ssot:row:brand-heritage"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:brand-heritage:de",
+      "execution_status": "planned",
+      "prompt_slug": "brand-heritage:de",
+      "text": "Which brand heritage options should buyers consider when they want distinctive alternatives to Mercedes-Benz?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "brand-heritage",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:brand-heritage",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "study_ssot:row:brand-heritage"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:brand-heritage:gb",
+      "execution_status": "planned",
+      "prompt_slug": "brand-heritage:gb",
+      "text": "Which brand heritage options should buyers consider when they want distinctive alternatives to Mercedes-Benz?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "brand-heritage",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:brand-heritage",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "study_ssot:row:brand-heritage"
+      ]
+    }
+  ]
+}

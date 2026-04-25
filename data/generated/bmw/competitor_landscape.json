@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+    "landscape_version": "competitor_landscape:v1",
+    "used_tavily": false,
+    "used_classification": true
+  },
+  "summary": {
+    "topics": 5,
+    "target_owned": 0,
+    "competitor_owned": 0,
+    "contested": 4
+  },
+  "topics": [
+    {
+      "cluster_id": "cluster:driving-dynamics",
+      "cluster_label": "Driving Dynamics",
+      "target_visibility_share": 0.45,
+      "competitor_owner": null,
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "unknown",
+      "proof_source_count": 0,
+      "classification_status": "unclassified",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:driving-dynamics"
+      ]
+    },
+    {
+      "cluster_id": "cluster:luxury-ev-transition",
+      "cluster_label": "Luxury EV Transition",
+      "target_visibility_share": 0.12,
+      "competitor_owner": "Tesla",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "study_ssot:row:luxury-ev-transition",
+        "peec:brand:tesla",
+        "gemini:analysis:luxury-ev-transition:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:premium-suv-segment",
+      "cluster_label": "Premium SUV Segment",
+      "target_visibility_share": 0.15,
+      "competitor_owner": "Mercedes-Benz",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "study_ssot:row:premium-suv-segment",
+        "peec:brand:mercedes-benz",
+        "gemini:analysis:premium-suv-segment:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:electric-i-series",
+      "cluster_label": "Electric i-Series",
+      "target_visibility_share": 0.06,
+      "competitor_owner": "Tesla",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "study_ssot:row:electric-i-series",
+        "peec:brand:tesla",
+        "gemini:analysis:electric-i-series:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:brand-heritage",
+      "cluster_label": "Brand Heritage",
+      "target_visibility_share": 0.3,
+      "competitor_owner": "Mercedes-Benz",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "study_ssot:row:brand-heritage",
+        "peec:brand:mercedes-benz",
+        "gemini:analysis:brand-heritage:v1"
+      ]
+    }
+  ]
+}

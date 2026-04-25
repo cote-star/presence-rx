@@ -1,0 +1,46 @@
+{
+  "stages": [
+    {
+      "stage": "raw_peec_topics",
+      "count": 5,
+      "dropped_count": 0,
+      "drop_reasons": {}
+    },
+    {
+      "stage": "prompt_universe_clusters",
+      "count": 5,
+      "dropped_count": 0,
+      "drop_reasons": {}
+    },
+    {
+      "stage": "study_rows",
+      "count": 5,
+      "dropped_count": 0,
+      "drop_reasons": {}
+    },
+    {
+      "stage": "provisional_gap_type_rows",
+      "count": 4,
+      "dropped_count": 0,
+      "drop_reasons": {}
+    },
+    {
+      "stage": "evidence_gated",
+      "count": 4,
+      "dropped_count": 0,
+      "drop_reasons": {}
+    },
+    {
+      "stage": "claims_generated",
+      "count": 7,
+      "dropped_count": 0,
+      "drop_reasons": {}
+    },
+    {
+      "stage": "prescriptions_planned",
+      "count": 12,
+      "dropped_count": 0,
+      "drop_reasons": {}
+    }
+  ]
+}

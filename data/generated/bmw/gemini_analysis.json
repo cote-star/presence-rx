@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+    "run_mode": "test",
+    "requested_model": "gemini-2.5-flash",
+    "response_model_version": "sub-agent-substitute-v1",
+    "prompt_template_version": "gemini_blind_spot_analysis:v1",
+    "temperature": 0.0,
+    "request_count": 4,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "sdk_package": "google-genai",
+    "sdk_version": "1.73.1"
+  },
+  "summary": {
+    "analyzed_rows": 4,
+    "supported_gap_types": 4,
+    "conflicted_gap_types": 0,
+    "insufficient_gap_types": 0
+  },
+  "findings": [
+    {
+      "finding_id": "gemini:analysis:luxury-ev-transition:v1",
+      "cluster_id": "cluster:luxury-ev-transition",
+      "cluster_label": "Luxury EV Transition",
+      "gap_type": "perception",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI frames 'luxury EV' as synonymous with Tesla Model S and Model X across editorial and consumer sources",
+        "BMW i4 and iX appear in dedicated reviews but are not retrieved as default answers for luxury EV queries"
+      ],
+      "missing_associations": [
+        "BMW i4 and iX as serious luxury EV contenders with driving dynamics heritage carried into electric",
+        "BMW's Neue Klasse platform as next-generation electric architecture rivaling Tesla's engineering"
+      ],
+      "competitor_association": "Tesla dominates luxury EV discourse across Electrek, InsideEVs, Car and Driver, and consumer forums as the default reference point for premium electric vehicles.",
+      "safe_scenario_wording": "In Peec data, BMW holds 12% visibility at position 2.8 in Luxury EV Transition; Tavily shows luxury EV queries resolve to Tesla Model S/X coverage rather than BMW i-series.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources return BMW EV content in model-specific reviews but not in category-level luxury EV queries, while competitor sources frame Tesla as the luxury EV default — consistent with a perception gap where product exists but narrative association lags.",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "study_ssot:row:luxury-ev-transition",
+        "gemini:analysis:luxury-ev-transition:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:premium-suv-segment:v1",
+      "cluster_id": "cluster:premium-suv-segment",
+      "cluster_label": "Premium SUV Segment",
+      "gap_type": "indexing",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI defaults to Mercedes GLE and GLC when answering premium SUV queries across editorial and review sources",
+        "BMW X3 and X5 appear in comparison articles but are not the primary retrieval result for the category"
+      ],
+      "missing_associations": [
+        "BMW X3/X5 as segment-leading premium SUVs with best-in-class driving dynamics",
+        "BMW X-series sales leadership in key markets as evidence of segment relevance"
+      ],
+      "competitor_association": "Mercedes-Benz GLE and GLC are the default premium SUV references in MotorTrend, Car and Driver, and Edmunds retrieval results for category-level queries.",
+      "safe_scenario_wording": "In Peec data, BMW holds 15% visibility at position 2.5 in Premium SUV Segment; Tavily shows premium SUV queries surface Mercedes GLE/GLC content ahead of BMW X-series.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources confirm BMW X-series content exists and is well-reviewed, but category-level retrieval favors Mercedes models — consistent with an indexing gap where content is present but not surfacing in AI retrieval.",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "study_ssot:row:premium-suv-segment",
+        "gemini:analysis:premium-suv-segment:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:electric-i-series:v1",
+      "cluster_id": "cluster:electric-i-series",
+      "cluster_label": "Electric i-Series",
+      "gap_type": "volume_frequency",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI associates electric vehicle coverage with Tesla Model 3 and Model Y due to overwhelming editorial volume",
+        "BMW i4 and iX reviews exist but are outnumbered by Tesla coverage by an order of magnitude"
+      ],
+      "missing_associations": [
+        "BMW i4 as a driver's EV with M-Sport credentials and rear-wheel-drive character",
+        "BMW iX as a technology flagship with next-generation iDrive and sustainable materials"
+      ],
+      "competitor_association": "Tesla Model 3 and Model Y dominate electric vehicle editorial volume across Electrek, InsideEVs, CNET, and mainstream press with multi-year coverage depth.",
+      "safe_scenario_wording": "In Peec data, BMW holds 6% visibility at position 3.5 in Electric i-Series despite active products; Tavily shows electric vehicle queries surface Tesla models almost exclusively due to content volume advantage.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources confirm BMW i4 and iX reviews exist, but Peec 6% visibility indicates content volume is insufficient to compete with Tesla's editorial moat — consistent with a volume/frequency gap where coverage depth prevents surfacing.",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "study_ssot:row:electric-i-series",
+        "gemini:analysis:electric-i-series:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:brand-heritage:v1",
+      "cluster_id": "cluster:brand-heritage",
+      "cluster_label": "Brand Heritage",
+      "gap_type": "perception",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI increasingly associates 'luxury automotive heritage' with Mercedes-Benz over BMW in historical and brand-narrative queries",
+        "BMW's 'Ultimate Driving Machine' heritage is recognized but narrowed to performance rather than luxury lineage"
+      ],
+      "missing_associations": [
+        "BMW's motorsport heritage (M division, touring car championships) as luxury brand credential",
+        "BMW's design evolution from the 2002 to modern lineup as a continuous luxury narrative"
+      ],
+      "competitor_association": "Mercedes-Benz owns luxury heritage association across Wikipedia, brand history articles, and automotive journalism with references to the invention of the automobile and Silver Arrows racing lineage.",
+      "safe_scenario_wording": "In Peec data, BMW holds 30% visibility at position 1.8 in Brand Heritage but Mercedes-Benz is the competitor owner; Tavily shows luxury heritage queries increasingly favor Mercedes founding mythology over BMW's performance lineage.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources frame BMW heritage through the performance lens (M cars, driving dynamics) but not as luxury heritage, while competitor sources connect Mercedes to the broader luxury-automotive origin story — consistent with a perception gap where heritage exists but is categorized differently by AI.",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "study_ssot:row:brand-heritage",
+        "gemini:analysis:brand-heritage:v1"
+      ]
+    }
+  ]
+}

@@ -7,7 +7,7 @@ Big Berlin Hack 2026 implementation repo. Track: **Peec AI (locked)**. Briefing:
 
 ## Status
 
-**MVP pipeline complete.** Track locked, brand locked on **Nothing Phone** (the Invisible Champion: best position 2.4, 20% overall visibility, 4 of 5 topics with blind spots). Full 9-step pipeline executing end-to-end: Peec ingest, Tavily enrichment (40 live web sources), Gemini perception analysis, 3-method gap classification (all 4 confirmed at STRONG confidence), guardrailed evidence ledger, value-added metrics, competitor landscape, prescription plan, and interactive dashboard.
+**MVP pipeline complete.** Track locked, brand locked on **Nothing Phone** (the Invisible Champion: best position 2.4, 20% overall visibility, 4 of 5 topics with blind spots). Full 9-step pipeline executing end-to-end: Peec ingest, Tavily enrichment (40 live web sources), Gemini perception analysis, 3-method gap classification (all 4 confirmed at STRONG confidence), claim-checked evidence ledger, priority signals, competitor landscape, prescription plan, and interactive dashboard.
 
 ## Quick Start
 
@@ -36,7 +36,7 @@ uv run presence-rx-run-mvp --generated-dir data/generated --dashboard-dir artifa
 
 ## Goal
 
-Presence Verdict Pack via Peec MCP: multi-method analysis, guardrails, blocked-claim register, gap-type classifier, action brief.
+Presence Verdict Pack via Peec MCP: multi-method analysis, claim checks, gap-type classifier, action brief.
 
 **Primary tagline:** Diagnose. Prescribe. Refuse.
 **Sub-tagline:** Find your brand's blind spots in AI answers.
@@ -47,10 +47,10 @@ Presence Verdict Pack via Peec MCP: multi-method analysis, guardrails, blocked-c
 flowchart TD
     A[Peec MCP Snapshot<br/>Nothing Phone] --> B[1. Ingest<br/>brand · topic · domain · URL · chat reports]
     B --> C[2. Tavily Enrichment<br/>public proof · editorial gaps]
-    C --> D[3. Value-Added Metrics<br/>relevance · source trust · unsupervised topics<br/>parent topics · trend signals]
+    C --> D[3. Priority Signals<br/>intent fit · citation authority · evidence coverage<br/>signal alignment · action priority]
     D --> E[4. Competitor Landscape<br/>combined-metric ownership map]
     E --> F[5. Gap-Type Classifier<br/>perception · indexing · volume_frequency]
-    F --> G[Guardrail Engine<br/>3-field check · evidence tiers · blocked claims]
+    F --> G[Claim Check<br/>3-signal verification · evidence levels · claims to avoid]
     G --> H[6. Action Brief<br/>PRESENCE_VERDICT · ACTION_BRIEF<br/>EVIDENCE_LEDGER · manifest]
     H --> I[Prescription Writes<br/>create_prompt · create_tag · create_topic]
     I --> J[Lovable Webapp<br/>aligned with Peec design philosophy]

@@ -12,9 +12,11 @@ from presence_rx.contracts import (
     EvidenceLedger,
     GapClassification,
     GapType,
+    GeminiAnalysis,
     Manifest,
     PrescriptionPlan,
     StudySsot,
+    TavilyEvidence,
     ValueAddedMetrics,
 )
 
@@ -51,6 +53,8 @@ def build_action_brief(
     ledger: EvidenceLedger | None = None,
     metrics: ValueAddedMetrics | None = None,
     prescription: PrescriptionPlan | None = None,
+    gemini: GeminiAnalysis | None = None,
+    tavily: TavilyEvidence | None = None,
 ) -> str:
     """Build the Action Brief markdown from pipeline artifacts."""
     brand = manifest.brand
@@ -58,6 +62,7 @@ def build_action_brief(
     blocked_claims = ledger.blocked_claims if ledger else []
     classified = classification.classified_gaps if classification else []
     metric_map = {r.cluster_id: r for r in metrics.rows} if metrics else {}
+    findings = {f.cluster_id: f for f in gemini.findings} if gemini else {}
     rows_by_gap: dict[GapType, list] = {}
     for row in study.rows:
         if row.gap_type is not None:
@@ -110,16 +115,16 @@ def build_action_brief(
             )
             if gap_info:
                 lines.append(
-                    f"- **Status:** {gap_info.classification_status} "
+                    f"- **Evidence Level:** {gap_info.classification_status} "
                     f"({gap_info.confidence_tier})"
                 )
 
             # Value metrics
             if vm:
-                lines.append(f"- **Decision:** {vm.decision_bucket}")
+                lines.append(f"- **Recommended Action:** {vm.decision_bucket}")
                 lines.append(f"- **Reason:** {vm.decision_bucket_reason}")
                 lines.append(f"- **Recommended next move:** {vm.recommended_next_move}")
-                lines.append(f"- **Opportunity score:** {vm.opportunity_score}/100")
+                lines.append(f"- **Action Priority:** {vm.opportunity_score}/100")
 
             # Claim language
             claim = next(
@@ -127,6 +132,14 @@ def build_action_brief(
             )
             if claim:
                 lines.append(f"- **Publication language:** {claim.publication_language}")
+
+            # Gemini perception themes
+            finding = findings.get(row.cluster_id)
+            if finding:
+                for theme in finding.perception_themes:
+                    lines.append(f"- **AI perception:** {theme}")
+                for assoc in finding.missing_associations:
+                    lines.append(f"- **Missing association:** {assoc}")
 
             lines.append("")
 
@@ -175,6 +188,53 @@ def build_action_brief(
     lines.append(f"- **Generated:** `{manifest.generated_at.isoformat()}`")
     lines.append("")
 
+    # Data Sources provenance
+    lines.append("### Data Sources\n")
+    peec_src = manifest.sources.get("peec")
+    peec_label = (
+        f"verified snapshot ({manifest.generated_at.strftime('%Y-%m-%d')})"
+    )
+    if peec_src and peec_src.snapshot_id:
+        peec_label = (
+            f"verified snapshot `{peec_src.snapshot_id}` "
+            f"({manifest.generated_at.strftime('%Y-%m-%d')})"
+        )
+    lines.append(f"- **Peec MCP:** {peec_label}")
+
+    if tavily is not None:
+        query_count = tavily.metadata.request_count
+        source_count = tavily.summary.sources
+        resp_time = tavily.metadata.response_time_seconds
+        tavily_label = f"live ({query_count} queries, {source_count} sources"
+        if resp_time is not None:
+            tavily_label += f", {resp_time:.2f}s response time"
+        tavily_label += ")"
+        lines.append(f"- **Tavily:** {tavily_label}")
+    else:
+        tavily_src = manifest.sources.get("tavily")
+        if tavily_src:
+            q = tavily_src.query_count or 0
+            s = tavily_src.source_count or 0
+            lines.append(f"- **Tavily:** manifest ({q} queries, {s} sources)")
+        else:
+            lines.append("- **Tavily:** unavailable")
+
+    if gemini is not None:
+        run_mode = gemini.metadata.run_mode
+        if run_mode == "test":
+            lines.append(
+                "- **Gemini:** substitute (API quota exhausted; "
+                "findings grounded in Peec + Tavily data)"
+            )
+        else:
+            lines.append(
+                f"- **Gemini:** live ({gemini.metadata.request_count} requests, "
+                f"model {gemini.metadata.requested_model})"
+            )
+    else:
+        lines.append("- **Gemini:** unavailable")
+    lines.append("")
+
     return "\n".join(lines)
 
 
@@ -199,6 +259,8 @@ def main(
     ledger: Annotated[Path | None, typer.Option("--ledger")] = None,
     metrics: Annotated[Path | None, typer.Option("--metrics")] = None,
     prescription: Annotated[Path | None, typer.Option("--prescription")] = None,
+    gemini: Annotated[Path | None, typer.Option("--gemini")] = None,
+    tavily: Annotated[Path | None, typer.Option("--tavily")] = None,
 ) -> None:
     """Generate ACTION_BRIEF.md from pipeline artifacts."""
     content = build_action_brief(
@@ -208,6 +270,8 @@ def main(
         ledger=_read_optional(ledger, EvidenceLedger),
         metrics=_read_optional(metrics, ValueAddedMetrics),
         prescription=_read_optional(prescription, PrescriptionPlan),
+        gemini=_read_optional(gemini, GeminiAnalysis),
+        tavily=_read_optional(tavily, TavilyEvidence),
     )
     path = write_action_brief(content, out)
     console.print(f"[green]wrote[/green] {path}")

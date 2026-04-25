@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:nothing-phone:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:nothing-phone:2026-04-25",
+    "run_mode": "test",
+    "requested_model": "gemini-2.5-flash",
+    "response_model_version": "sub-agent-substitute-v1",
+    "prompt_template_version": "gemini_blind_spot_analysis:v1",
+    "temperature": 0.0,
+    "request_count": 4,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "sdk_package": "google-genai",
+    "sdk_version": "1.73.1"
+  },
+  "summary": {
+    "analyzed_rows": 4,
+    "supported_gap_types": 4,
+    "conflicted_gap_types": 0,
+    "insufficient_gap_types": 0
+  },
+  "findings": [
+    {
+      "finding_id": "gemini:analysis:mobile-ecosystem:v1",
+      "cluster_id": "cluster:mobile-ecosystem",
+      "cluster_label": "Mobile Ecosystem",
+      "gap_type": "indexing",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI frames mobile ecosystem as platform-control topic dominated by Apple and Google",
+        "Nothing Phone appears only through device reviews, not as ecosystem player"
+      ],
+      "missing_associations": [
+        "Nothing Phone as ecosystem participant with nothing.community and cross-device line (Phone, Ear, Headphone)",
+        "Nothing OS as differentiated Android-based software layer with ecosystem continuity"
+      ],
+      "competitor_association": "Apple dominates mobile ecosystem discourse in regulatory, academic, and editorial sources as the defining mobile ecosystem operator.",
+      "safe_scenario_wording": "In Peec data, Nothing Phone holds 12% visibility at position 3.8 in Mobile Ecosystem; Tavily shows the topic is associated with Apple platform governance rather than handset brands.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources return device reviews rather than ecosystem coverage, while competitor sources discuss Apple ecosystem control at structural levels \u2014 consistent with an indexing gap.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:mobile-ecosystem",
+        "study_ssot:row:mobile-ecosystem",
+        "gemini:analysis:mobile-ecosystem:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:consumer-tech-innovation:v1",
+      "cluster_id": "cluster:consumer-tech-innovation",
+      "cluster_label": "Consumer Tech Innovation",
+      "gap_type": "perception",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI associates consumer tech innovation with Apple organizational model and product sophistication",
+        "Nothing Phone discussed as scrappy challenger with competitive specs, not as innovation leader"
+      ],
+      "missing_associations": [
+        "Nothing Phone Glyph Interface and transparent design as consumer tech innovation",
+        "Carl Pei track record (OnePlus founder) as signal of sustained hardware innovation"
+      ],
+      "competitor_association": "Apple cited across HBR, academic PDFs, and institutional sources as the benchmark for consumer tech innovation.",
+      "safe_scenario_wording": "In Peec data, Nothing Phone holds 10% visibility at position 3.7 in Consumer Tech Innovation; Tavily shows innovation association in public sources is predominantly tied to Apple.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources describe Nothing Phone in performance and value terms rather than innovation-leadership language, while competitor sources frame Apple as the innovation archetype \u2014 consistent with a perception gap.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:consumer-tech-innovation",
+        "study_ssot:row:consumer-tech-innovation",
+        "gemini:analysis:consumer-tech-innovation:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:minimalist-hardware:v1",
+      "cluster_id": "cluster:minimalist-hardware",
+      "cluster_label": "Minimalist Hardware",
+      "gap_type": "perception",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI associates minimalist hardware with Apple products including iPhone Air and Mac setups",
+        "Nothing Phone reviews emphasize stylish and premium design but not the minimalist category label"
+      ],
+      "missing_associations": [
+        "Nothing Phone transparent-back Glyph-light design as defining hardware minimalism",
+        "Nothing brand philosophy (pure instinct design, stripped-back UI) as deliberate minimalist position"
+      ],
+      "competitor_association": "Apple owns the minimalist hardware association: iPhone Air reviewed as A Minimalist Dream iPhone, Cult of Mac curates minimalist setups.",
+      "safe_scenario_wording": "In Peec data, Nothing Phone holds 6% visibility at position 4.1 in Minimalist Hardware despite minimalism being core brand identity; Tavily shows public sources reserve the minimalist label for Apple \u2014 an ironic gap.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources use adjacent words (stylish, back to basics) but not minimalist for Nothing Phone, while competitor sources pair minimalist with Apple \u2014 consistent with a perception gap where brand intent diverges from retrievable content.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:minimalist-hardware",
+        "study_ssot:row:minimalist-hardware",
+        "gemini:analysis:minimalist-hardware:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:wireless-audio:v1",
+      "cluster_id": "cluster:wireless-audio",
+      "cluster_label": "Wireless Audio",
+      "gap_type": "volume_frequency",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI associates wireless audio primarily with Apple AirPods across CNET, Amazon, TechRadar",
+        "Nothing audio products appear in dedicated reviews but not in general wireless audio queries"
+      ],
+      "missing_associations": [
+        "Nothing Ear and Headphone as wireless audio contenders with transparent design",
+        "Nothing audio as cross-ecosystem alternative (Android-friendly, no Apple lock-in)"
+      ],
+      "competitor_association": "Apple AirPods dominate wireless audio sources across CNET, TechRadar, Amazon with multi-generational coverage as the default reference point.",
+      "safe_scenario_wording": "In Peec data, Nothing Phone holds 1% visibility in Wireless Audio despite Nothing Ear products existing; Tavily shows general wireless audio queries surface Apple AirPods almost exclusively.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources confirm Nothing audio products exist and are reviewed, but Peec 1% visibility indicates content is not surfacing in AI answers \u2014 consistent with a volume/frequency gap where coverage volume is insufficient.",
+      "evidence_refs": [
+        "peec:snapshot:nothing-phone:2026-04-25",
+        "peec:topic:wireless-audio",
+        "study_ssot:row:wireless-audio",
+        "gemini:analysis:wireless-audio:v1"
+      ]
+    }
+  ]
+}

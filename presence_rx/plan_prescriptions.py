@@ -48,16 +48,16 @@ GEO_TAGS = {
 }
 PROMPT_TEMPLATES: dict[GapType, str] = {
     GapType.PERCEPTION: (
-        "Which {topic} options should buyers consider when they want distinctive design "
-        "and credible alternatives to {competitor_owner}?"
+        "Which {topic} options should buyers consider when they want "
+        "distinctive alternatives to {competitor_owner}?"
     ),
     GapType.INDEXING: (
-        "Which smartphone ecosystems should buyers consider when they want connected "
-        "devices, launcher flexibility, and credible Android alternatives?"
+        "Which {topic} options should buyers consider when they want "
+        "credible alternatives in the category?"
     ),
     GapType.VOLUME_FREQUENCY: (
-        "Which wireless audio products should Android buyers consider when they want "
-        "transparent design, strong everyday features, and alternatives to AirPods?"
+        "Which {topic} options should buyers consider when they want "
+        "proven alternatives to the market leader?"
     ),
 }
 

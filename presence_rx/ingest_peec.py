@@ -99,6 +99,10 @@ class NothingPhoneSeed(BaseModel):
     url_gap_categories: list[str]
 
 
+# Generic alias — all brand seeds share the same schema for now.
+BrandSeed = NothingPhoneSeed
+
+
 @dataclass(frozen=True)
 class GeneratedArtifacts:
     prompt_universe: PromptUniverse
@@ -127,11 +131,11 @@ def parse_generated_at(value: str) -> datetime:
     return parsed.astimezone(UTC)
 
 
-def deterministic_seed_generated_at(seed: NothingPhoneSeed) -> datetime:
+def deterministic_seed_generated_at(seed: BrandSeed) -> datetime:
     return parse_generated_at(f"{seed.verified_at}T00:00:00+00:00")
 
 
-def resolve_generated_at(seed: NothingPhoneSeed, generated_at: str | None = None) -> datetime:
+def resolve_generated_at(seed: BrandSeed, generated_at: str | None = None) -> datetime:
     if generated_at:
         return parse_generated_at(generated_at)
 
@@ -402,15 +406,501 @@ def nothing_phone_seed() -> NothingPhoneSeed:
     )
 
 
-def _topic_evidence_refs(topic: SeedTopic) -> list[str]:
-    refs = [SNAPSHOT_REF, f"peec:topic:{slugify(topic.name)}"]
+def attio_seed() -> BrandSeed:
+    """Docs-grounded synthetic seed for Attio (SaaS/CRM)."""
+    return BrandSeed(
+        project_id="or_47ccb54e-0f32-4c95-b460-6a070499d084",
+        snapshot_ref="peec:snapshot:attio:2026-04-25",
+        verified_at="2026-04-25",
+        brand="Attio",
+        own_brand_id="kw_attio_own_brand_seed",
+        geography="US",
+        total_prompts=50,
+        brands=[
+            SeedBrand(
+                name="Attio",
+                brand_id="kw_attio_own_brand_seed",
+                is_own=True,
+                visibility=0.08,
+                share_of_voice=0.03,
+                sentiment=72,
+                position=3.2,
+            ),
+            SeedBrand(
+                name="Salesforce",
+                brand_id="kw_attio_comp_salesforce",
+                is_own=False,
+                visibility=0.45,
+                share_of_voice=0.35,
+                sentiment=58,
+                position=1.8,
+            ),
+            SeedBrand(
+                name="HubSpot",
+                brand_id="kw_attio_comp_hubspot",
+                is_own=False,
+                visibility=0.35,
+                share_of_voice=0.30,
+                sentiment=71,
+                position=1.5,
+            ),
+            SeedBrand(
+                name="Pipedrive",
+                brand_id="kw_attio_comp_pipedrive",
+                is_own=False,
+                visibility=0.12,
+                share_of_voice=0.08,
+                sentiment=68,
+                position=2.8,
+            ),
+            SeedBrand(
+                name="Monday CRM",
+                brand_id="kw_attio_comp_monday_crm",
+                is_own=False,
+                visibility=0.10,
+                share_of_voice=0.06,
+                sentiment=65,
+                position=3.0,
+            ),
+        ],
+        topics=[
+            SeedTopic(
+                name="Product-Led CRM",
+                topic_id="to_attio_product_led_crm",
+                visibility=0.35,
+                share_of_voice=0.25,
+                position=1.8,
+                verdict="STRONGHOLD",
+                competitor_owner=None,
+                owner_visibility=None,
+            ),
+            SeedTopic(
+                name="CRM for Startups",
+                topic_id="to_attio_crm_for_startups",
+                visibility=0.22,
+                share_of_voice=0.15,
+                position=2.1,
+                verdict="Blind spot",
+                competitor_owner="HubSpot",
+                owner_visibility=0.35,
+                gap_type="perception",
+                gap_type_rationale=(
+                    "Attio is built for startups but HubSpot owns the 'startup CRM' narrative "
+                    "in AI answers, despite Attio's product-market fit in that segment."
+                ),
+            ),
+            SeedTopic(
+                name="Modern CRM Alternative",
+                topic_id="to_attio_modern_crm_alt",
+                visibility=0.05,
+                share_of_voice=0.02,
+                position=3.8,
+                verdict="Blind spot",
+                competitor_owner="Salesforce",
+                owner_visibility=0.45,
+                gap_type="indexing",
+                gap_type_rationale=(
+                    "Attio content exists but AI default-routes 'CRM alternative' queries to "
+                    "Salesforce comparison pages rather than surfacing Attio as an alternative."
+                ),
+            ),
+            SeedTopic(
+                name="CRM Migration",
+                topic_id="to_attio_crm_migration",
+                visibility=0.03,
+                share_of_voice=0.01,
+                position=4.2,
+                verdict="Invisible",
+                competitor_owner="HubSpot",
+                owner_visibility=0.35,
+                gap_type="volume_frequency",
+                gap_type_rationale=(
+                    "Very few 'migrate to Attio' articles exist compared to abundant "
+                    "HubSpot/Salesforce migration guides and documentation."
+                ),
+            ),
+            SeedTopic(
+                name="RevOps Tools",
+                topic_id="to_attio_revops_tools",
+                visibility=0.15,
+                share_of_voice=0.10,
+                position=2.5,
+                verdict="Blind spot",
+                competitor_owner="HubSpot",
+                owner_visibility=0.35,
+                gap_type="perception",
+                gap_type_rationale=(
+                    "Attio has RevOps features but AI associates RevOps tooling with "
+                    "HubSpot Operations Hub rather than Attio's native capabilities."
+                ),
+            ),
+        ],
+        engines=[
+            SeedEngine(
+                name="Gemini",
+                visibility=0.10,
+                share_of_voice=0.04,
+                position=3.0,
+                sentiment=70,
+            ),
+            SeedEngine(
+                name="ChatGPT",
+                visibility=0.07,
+                share_of_voice=0.03,
+                position=3.5,
+                sentiment=72,
+            ),
+            SeedEngine(
+                name="Google AI Overview",
+                visibility=0.06,
+                share_of_voice=0.02,
+                position=3.2,
+                sentiment=74,
+            ),
+        ],
+        domain_gaps=[
+            SeedDomainGap(
+                domain="g2.com",
+                domain_type="Review",
+                retrievals=120,
+                citation_rate=0.82,
+                cited_brands=["Salesforce", "HubSpot", "Pipedrive"],
+            ),
+            SeedDomainGap(
+                domain="capterra.com",
+                domain_type="Review",
+                retrievals=95,
+                citation_rate=0.71,
+                cited_brands=["HubSpot", "Salesforce", "Monday CRM"],
+            ),
+            SeedDomainGap(
+                domain="trustradius.com",
+                domain_type="Review",
+                retrievals=60,
+                citation_rate=0.68,
+                cited_brands=["Salesforce", "HubSpot"],
+            ),
+            SeedDomainGap(
+                domain="softwareadvice.com",
+                domain_type="Review",
+                retrievals=45,
+                citation_rate=0.65,
+                cited_brands=["HubSpot", "Pipedrive", "Salesforce"],
+            ),
+            SeedDomainGap(
+                domain="pcmag.com",
+                domain_type="Editorial",
+                retrievals=30,
+                citation_rate=0.59,
+                cited_brands=["HubSpot", "Salesforce"],
+            ),
+        ],
+        url_gap_categories=[
+            "best CRM for startups 2026",
+            "Salesforce alternatives",
+            "HubSpot vs alternatives",
+            "CRM migration guide",
+            "RevOps tools comparison",
+        ],
+    )
+
+
+def bmw_seed() -> BrandSeed:
+    """Docs-grounded synthetic seed for BMW (Automotive/Luxury)."""
+    return BrandSeed(
+        project_id="or_52698861-707c-4006-bc7e-3563aad6cd44",
+        snapshot_ref="peec:snapshot:bmw:2026-04-25",
+        verified_at="2026-04-25",
+        brand="BMW",
+        own_brand_id="kw_bmw_own_brand_seed",
+        geography="US",
+        total_prompts=50,
+        brands=[
+            SeedBrand(
+                name="BMW",
+                brand_id="kw_bmw_own_brand_seed",
+                is_own=True,
+                visibility=0.18,
+                share_of_voice=0.12,
+                sentiment=68,
+                position=2.2,
+            ),
+            SeedBrand(
+                name="Tesla",
+                brand_id="kw_bmw_comp_tesla",
+                is_own=False,
+                visibility=0.42,
+                share_of_voice=0.30,
+                sentiment=62,
+                position=1.4,
+            ),
+            SeedBrand(
+                name="Mercedes-Benz",
+                brand_id="kw_bmw_comp_mercedes",
+                is_own=False,
+                visibility=0.25,
+                share_of_voice=0.18,
+                sentiment=72,
+                position=1.9,
+            ),
+            SeedBrand(
+                name="Audi",
+                brand_id="kw_bmw_comp_audi",
+                is_own=False,
+                visibility=0.15,
+                share_of_voice=0.10,
+                sentiment=70,
+                position=2.5,
+            ),
+            SeedBrand(
+                name="Porsche",
+                brand_id="kw_bmw_comp_porsche",
+                is_own=False,
+                visibility=0.12,
+                share_of_voice=0.08,
+                sentiment=78,
+                position=2.8,
+            ),
+            SeedBrand(
+                name="Lexus",
+                brand_id="kw_bmw_comp_lexus",
+                is_own=False,
+                visibility=0.08,
+                share_of_voice=0.05,
+                sentiment=74,
+                position=3.0,
+            ),
+            SeedBrand(
+                name="Volvo",
+                brand_id="kw_bmw_comp_volvo",
+                is_own=False,
+                visibility=0.10,
+                share_of_voice=0.06,
+                sentiment=75,
+                position=2.7,
+            ),
+            SeedBrand(
+                name="Genesis",
+                brand_id="kw_bmw_comp_genesis",
+                is_own=False,
+                visibility=0.05,
+                share_of_voice=0.03,
+                sentiment=71,
+                position=3.5,
+            ),
+            SeedBrand(
+                name="Rivian",
+                brand_id="kw_bmw_comp_rivian",
+                is_own=False,
+                visibility=0.06,
+                share_of_voice=0.04,
+                sentiment=69,
+                position=3.2,
+            ),
+            SeedBrand(
+                name="Lucid",
+                brand_id="kw_bmw_comp_lucid",
+                is_own=False,
+                visibility=0.04,
+                share_of_voice=0.02,
+                sentiment=67,
+                position=3.8,
+            ),
+            SeedBrand(
+                name="Hyundai",
+                brand_id="kw_bmw_comp_hyundai",
+                is_own=False,
+                visibility=0.14,
+                share_of_voice=0.09,
+                sentiment=66,
+                position=2.6,
+            ),
+            SeedBrand(
+                name="Toyota",
+                brand_id="kw_bmw_comp_toyota",
+                is_own=False,
+                visibility=0.20,
+                share_of_voice=0.14,
+                sentiment=70,
+                position=2.0,
+            ),
+        ],
+        topics=[
+            SeedTopic(
+                name="Driving Dynamics",
+                topic_id="to_bmw_driving_dynamics",
+                visibility=0.45,
+                share_of_voice=0.35,
+                position=1.5,
+                verdict="STRONGHOLD",
+                competitor_owner=None,
+                owner_visibility=None,
+            ),
+            SeedTopic(
+                name="Luxury EV Transition",
+                topic_id="to_bmw_luxury_ev_transition",
+                visibility=0.12,
+                share_of_voice=0.08,
+                position=2.8,
+                verdict="Blind spot",
+                competitor_owner="Tesla",
+                owner_visibility=0.42,
+                gap_type="perception",
+                gap_type_rationale=(
+                    "BMW has i4/iX but AI frames 'luxury EV' as Tesla Model S/X territory, "
+                    "sidelining BMW's electrification progress in premium segment."
+                ),
+            ),
+            SeedTopic(
+                name="Premium SUV Segment",
+                topic_id="to_bmw_premium_suv",
+                visibility=0.15,
+                share_of_voice=0.10,
+                position=2.5,
+                verdict="Blind spot",
+                competitor_owner="Mercedes-Benz",
+                owner_visibility=0.25,
+                gap_type="indexing",
+                gap_type_rationale=(
+                    "BMW X-series exists but AI defaults to Mercedes GLE/GLC for premium "
+                    "SUV queries; BMW content is not surfacing in retrieval."
+                ),
+            ),
+            SeedTopic(
+                name="Electric i-Series",
+                topic_id="to_bmw_electric_i_series",
+                visibility=0.06,
+                share_of_voice=0.03,
+                position=3.5,
+                verdict="Invisible",
+                competitor_owner="Tesla",
+                owner_visibility=0.42,
+                gap_type="volume_frequency",
+                gap_type_rationale=(
+                    "BMW i4 and iX exist but sparse editorial coverage compared to "
+                    "Tesla Model 3/Y volume dominates AI training and retrieval sources."
+                ),
+            ),
+            SeedTopic(
+                name="Brand Heritage",
+                topic_id="to_bmw_brand_heritage",
+                visibility=0.30,
+                share_of_voice=0.22,
+                position=1.8,
+                verdict="Blind spot",
+                competitor_owner="Mercedes-Benz",
+                owner_visibility=0.25,
+                gap_type="perception",
+                gap_type_rationale=(
+                    "Both have strong heritage but AI increasingly associates 'luxury heritage' "
+                    "with Mercedes over BMW, eroding a historically shared narrative."
+                ),
+            ),
+        ],
+        engines=[
+            SeedEngine(
+                name="Gemini",
+                visibility=0.20,
+                share_of_voice=0.14,
+                position=2.3,
+                sentiment=66,
+            ),
+            SeedEngine(
+                name="ChatGPT",
+                visibility=0.16,
+                share_of_voice=0.11,
+                position=2.5,
+                sentiment=70,
+            ),
+            SeedEngine(
+                name="Google AI Overview",
+                visibility=0.18,
+                share_of_voice=0.12,
+                position=2.1,
+                sentiment=68,
+            ),
+        ],
+        domain_gaps=[
+            SeedDomainGap(
+                domain="caranddriver.com",
+                domain_type="Editorial",
+                retrievals=150,
+                citation_rate=0.88,
+                cited_brands=["Tesla", "Mercedes-Benz", "Audi", "Porsche"],
+            ),
+            SeedDomainGap(
+                domain="motortrend.com",
+                domain_type="Editorial",
+                retrievals=130,
+                citation_rate=0.82,
+                cited_brands=["Tesla", "Mercedes-Benz", "Toyota"],
+            ),
+            SeedDomainGap(
+                domain="edmunds.com",
+                domain_type="Review",
+                retrievals=110,
+                citation_rate=0.79,
+                cited_brands=["Tesla", "Mercedes-Benz", "Audi"],
+            ),
+            SeedDomainGap(
+                domain="electrek.com",
+                domain_type="Editorial",
+                retrievals=85,
+                citation_rate=0.91,
+                cited_brands=["Tesla", "Rivian", "Lucid"],
+            ),
+            SeedDomainGap(
+                domain="insideevs.com",
+                domain_type="Editorial",
+                retrievals=70,
+                citation_rate=0.85,
+                cited_brands=["Tesla", "Rivian", "Hyundai"],
+            ),
+            SeedDomainGap(
+                domain="topgear.com",
+                domain_type="Editorial",
+                retrievals=55,
+                citation_rate=0.74,
+                cited_brands=["Mercedes-Benz", "Porsche", "Audi"],
+            ),
+            SeedDomainGap(
+                domain="autoexpress.com",
+                domain_type="Editorial",
+                retrievals=40,
+                citation_rate=0.68,
+                cited_brands=["Mercedes-Benz", "Audi", "Volvo"],
+            ),
+        ],
+        url_gap_categories=[
+            "best luxury EV 2026",
+            "Tesla Model S alternatives",
+            "BMW vs Mercedes EV",
+            "premium electric SUV comparison",
+            "luxury brand EV range comparison",
+        ],
+    )
+
+
+def get_seed(case_id: str) -> BrandSeed:
+    """Return the docs-grounded seed for a registered brand case."""
+    if case_id == "nothing-phone":
+        return nothing_phone_seed()
+    if case_id == "attio":
+        return attio_seed()
+    if case_id == "bmw":
+        return bmw_seed()
+    raise ValueError(f"Unknown case_id: {case_id}. Expected: nothing-phone, attio, bmw")
+
+
+def _topic_evidence_refs(topic: SeedTopic, snapshot_ref: str = SNAPSHOT_REF) -> list[str]:
+    refs = [snapshot_ref, f"peec:topic:{slugify(topic.name)}"]
     if topic.competitor_owner:
         refs.append(f"peec:brand:{slugify(topic.competitor_owner)}")
     return refs
 
 
 def build_artifacts(
-    seed: NothingPhoneSeed, generated_at: datetime | None = None
+    seed: BrandSeed, generated_at: datetime | None = None
 ) -> GeneratedArtifacts:
     resolved_generated_at = generated_at or deterministic_seed_generated_at(seed)
     competitors = [brand.name for brand in seed.brands if not brand.is_own]
@@ -453,7 +943,7 @@ def build_artifacts(
                 gap_type_source="scope_final" if topic.gap_type else "not_applicable",
                 gap_type_rationale=topic.gap_type_rationale,
                 confidence_tier="limited" if topic.gap_type else "moderate",
-                evidence_refs=_topic_evidence_refs(topic),
+                evidence_refs=_topic_evidence_refs(topic, seed.snapshot_ref),
                 input_gate_status="passed",
                 evidence_tier="limited" if topic.gap_type else "moderate",
                 publication_status="diagnostics_only",
@@ -696,7 +1186,8 @@ def update_pipeline_funnel_post_pipeline(
     prescription: PrescriptionPlan | None = None,
 ) -> PipelineFunnel:
     """Extend funnel with evidence-gating, claims, and prescription stages."""
-    stages = list(funnel.stages)
+    downstream = {"evidence_gated", "claims_generated", "prescriptions_planned"}
+    stages = [s for s in funnel.stages if s.stage not in downstream]
     if classification is not None:
         stages.append(FunnelStage(
             stage="evidence_gated",
@@ -720,7 +1211,7 @@ def main(
         str,
         typer.Option(
             "--seed",
-            help="Docs-grounded seed to ingest. Step 2 supports only 'nothing-phone'.",
+            help="Docs-grounded seed to ingest (nothing-phone, attio, bmw).",
         ),
     ] = "nothing-phone",
     out: Annotated[
@@ -740,10 +1231,7 @@ def main(
 ) -> None:
     """Generate Step 2 baseline artifacts from a docs-grounded Peec seed."""
 
-    if seed != "nothing-phone":
-        raise typer.BadParameter("Step 2 supports only --seed nothing-phone")
-
-    seed_data = nothing_phone_seed()
+    seed_data = get_seed(seed)
     resolved_generated_at = resolve_generated_at(seed_data, generated_at)
     artifacts = build_artifacts(seed_data, generated_at=resolved_generated_at)
     written = write_artifacts(artifacts, out)

@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+    "metrics_version": "value_added_metrics:v1",
+    "used_gemini": true,
+    "used_tavily": false,
+    "used_classification": true
+  },
+  "summary": {
+    "rows": 5,
+    "average_opportunity_score": 50,
+    "contested_rows": 0,
+    "proof_gap_rows": 4
+  },
+  "rows": [
+    {
+      "cluster_id": "cluster:driving-dynamics",
+      "cluster_label": "Driving Dynamics",
+      "gap_type": null,
+      "parent_topic": "category_authority",
+      "trend_label": "stronghold",
+      "trend_zone": "stronghold",
+      "zone_basis": "single_snapshot_visibility",
+      "decision_bucket": "monitor",
+      "decision_bucket_reason": "The target brand already owns this prompt cluster.",
+      "primary_gap": "NONE_STRONGHOLD",
+      "recommended_next_move": "Maintain monitoring and use this cluster as the comparison baseline.",
+      "relevance_score": 45,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 0,
+      "opportunity_score": 18,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:driving-dynamics"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:luxury-ev-transition",
+      "cluster_label": "Luxury EV Transition",
+      "gap_type": "perception",
+      "parent_topic": "brand_association",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "MISSING_ASSOCIATION",
+      "recommended_next_move": "Publish explicit luxury ev transition positioning content and monitor AI adoption.",
+      "relevance_score": 72,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 59,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "study_ssot:row:luxury-ev-transition",
+        "peec:brand:tesla",
+        "gemini:analysis:luxury-ev-transition:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:premium-suv-segment",
+      "cluster_label": "Premium SUV Segment",
+      "gap_type": "indexing",
+      "parent_topic": "content_discoverability",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "RETRIEVAL_NOT_CITATION",
+      "recommended_next_move": "Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.",
+      "relevance_score": 68,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 57,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "study_ssot:row:premium-suv-segment",
+        "peec:brand:mercedes-benz",
+        "gemini:analysis:premium-suv-segment:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:electric-i-series",
+      "cluster_label": "Electric i-Series",
+      "gap_type": "volume_frequency",
+      "parent_topic": "category_presence",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "MISSING_PUBLIC_VOLUME",
+      "recommended_next_move": "Seed sustained electric i-series proof across editorial and owned surfaces.",
+      "relevance_score": 81,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 62,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "study_ssot:row:electric-i-series",
+        "peec:brand:tesla",
+        "gemini:analysis:electric-i-series:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:brand-heritage",
+      "cluster_label": "Brand Heritage",
+      "gap_type": "perception",
+      "parent_topic": "brand_association",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "MISSING_ASSOCIATION",
+      "recommended_next_move": "Publish explicit brand heritage positioning content and monitor AI adoption.",
+      "relevance_score": 54,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 52,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "study_ssot:row:brand-heritage",
+        "peec:brand:mercedes-benz",
+        "gemini:analysis:brand-heritage:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    }
+  ]
+}

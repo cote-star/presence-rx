@@ -1,0 +1,12 @@
+{
+  "case_id": "attio",
+  "brand_name": "Attio",
+  "category": "saas",
+  "peec_project_id": "or_47ccb54e-0f32-4c95-b460-6a070499d084",
+  "competitors": ["Salesforce", "HubSpot", "Pipedrive", "Monday CRM", "Copper"],
+  "audience_segments": ["startup founders", "sales operators", "RevOps teams", "product-led growth teams"],
+  "buying_journey_stages": ["awareness", "consideration", "comparison", "migration", "adoption"],
+  "priority_topics": ["CRM for Startups", "Modern CRM Alternative", "CRM Migration", "Sales Ops Tools", "Product-Led CRM"],
+  "known_market_tension": "Modern challenger: flexible and loved by operators, but invisible in AI-mediated CRM discovery dominated by Salesforce and HubSpot",
+  "channels_to_activate": ["editorial", "comparison_sites", "g2", "product_hunt", "community"]
+}

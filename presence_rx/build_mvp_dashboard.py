@@ -866,7 +866,7 @@ def _html(
     </nav>
     <nav class="nav-group">
       <div class="nav-label">Actions</div>
-      <a class="nav-item" href="#prescriptions"><span class="nav-dot"></span>Prescriptions</a>
+      <a class="nav-item" href="#prescriptions"><span class="nav-dot"></span>Action plan</a>
       <a class="nav-item" href="#monitoring"><span class="nav-dot"></span>Monitoring</a>
     </nav>
     <nav class="nav-group">
@@ -896,7 +896,7 @@ def _html(
       <div class="journey-rail" aria-label="Presence Rx workflow">
         <div class="journey-step"><span class="step-index">1</span><div class="step-title">Define</div><div class="step-copy">Scope the brand, market, models, and Peec snapshot.</div></div>
         <div class="journey-step"><span class="step-index">2</span><div class="step-title">Diagnose</div><div class="step-copy">Find prompt clusters where visibility or association breaks.</div></div>
-        <div class="journey-step"><span class="step-index">3</span><div class="step-title">Verify</div><div class="step-copy">Grade claims with Peec, Gemini, Tavily, and guardrails.</div></div>
+        <div class="journey-step"><span class="step-index">3</span><div class="step-title">Verify</div><div class="step-copy">Check claims with Peec, Gemini, Tavily, and publication rules.</div></div>
         <div class="journey-step"><span class="step-index">4</span><div class="step-title">Prescribe</div><div class="step-copy">Translate each gap type into a concrete intervention.</div></div>
         <div class="journey-step"><span class="step-index">5</span><div class="step-title">Monitor</div><div class="step-copy">Create prompts and tags to track recovery in Peec.</div></div>
       </div>
@@ -961,7 +961,7 @@ def _html(
       <section class="panel" id="claims">
         <div class="panel-header">
           <div>
-            <h2 class="panel-title">Guardrail claims</h2>
+            <h2 class="panel-title">Claim checks</h2>
             <p class="panel-subtitle">What the team can say safely in a deck, brief, or demo.</p>
           </div>
         </div>
@@ -1005,7 +1005,7 @@ def _html(
           <section class="panel">
             <div class="panel-header">
               <div>
-                <h2 class="panel-title">Opportunity score</h2>
+                <h2 class="panel-title">Action priority</h2>
                 <p class="panel-subtitle">Which blind spot deserves work first.</p>
               </div>
             </div>
@@ -1037,8 +1037,8 @@ def _html(
         <section class="panel">
           <div class="panel-header">
             <div>
-              <h2 class="panel-title">Value-added metrics radar</h2>
-              <p class="panel-subtitle">Multi-axis scoring per topic: relevance, source trust, proof strength, agreement, and opportunity.</p>
+              <h2 class="panel-title">Priority signals</h2>
+              <p class="panel-subtitle">Multi-axis scoring per topic: intent fit, citation authority, evidence coverage, signal alignment, and action priority.</p>
             </div>
           </div>
           <div id="radarChart" class="chart tall"></div>
@@ -1063,7 +1063,7 @@ def _html(
       <section class="panel" id="prescriptions">
         <div class="panel-header">
           <div>
-            <h2 class="panel-title">Prescriptions</h2>
+            <h2 class="panel-title">Action plan</h2>
             <p class="panel-subtitle">The action queue: what to create in Peec so recovery can be monitored.</p>
           </div>
           <span class="pill monitor">setup</span>
@@ -1227,7 +1227,7 @@ function problemCopy(row, metric, owner) {
     return `${brandName} already owns this answer surface. Keep it as the benchmark for future Peec runs.`;
   }
   const ownerText = clusterOwner(row, owner).name;
-  return `${ownerText} is currently the visible owner of this prompt cluster. The current decision bucket is ${metric?.decision_bucket || 'unclassified'}, with ${metric?.primary_gap || 'a visibility gap'} as the primary gap.`;
+  return `${ownerText} is currently the visible owner of this prompt cluster. The recommended action is ${metric?.decision_bucket || 'unclassified'}, with ${metric?.primary_gap || 'a visibility gap'} as the primary gap.`;
 }
 
 function sourceLabel(refOrType) {
@@ -1377,7 +1377,7 @@ document.getElementById('actionBriefCards').innerHTML = GAP_TYPE_ORDER.map(gapTy
               ${tonePill(clusterOwnerInfo.label, clusterOwnerInfo.tone)}
             </div>
             <div class="stat-list">
-              <div class="stat-box"><span class="metric-label">Opportunity</span><strong>${escapeHtml(metric.opportunity_score ?? 0)}</strong></div>
+              <div class="stat-box"><span class="metric-label">Action Priority</span><strong>${escapeHtml(metric.opportunity_score ?? 0)}</strong></div>
               <div class="stat-box"><span class="metric-label">${escapeHtml(brandName)}</span><strong>${Math.round((row.visibility_target_share || 0) * 100)}%</strong></div>
               <div class="stat-box"><span class="metric-label">Cluster owner</span><strong>${escapeHtml(clusterOwnerInfo.name)}</strong></div>
             </div>
@@ -1396,7 +1396,7 @@ document.getElementById('pipelineTable').innerHTML = `
     <tr><th>Peec topics</th><td class="number">${studyRows.length}</td></tr>
     <tr><th>Models</th><td class="number">3 AI engines</td></tr>
     <tr><th>Classified gaps</th><td class="number">${confirmed}</td></tr>
-    <tr><th>Guardrail claims</th><td class="number">${claims.length}</td></tr>
+    <tr><th>Claim checks</th><td class="number">${claims.length}</td></tr>
     <tr><th>Blocked claims</th><td class="number">${blocked}</td></tr>
   </tbody>
 `;
@@ -1425,7 +1425,7 @@ document.getElementById('blindSpotCards').innerHTML = studyRows.map(row => {
         <div class="stat-box"><span class="metric-label">${escapeHtml(brandName)}</span><strong>${visibility}%</strong></div>
         <div class="stat-box"><span class="metric-label">Cluster owner</span><strong>${escapeHtml(clusterOwnerInfo.name)}</strong></div>
         <div class="stat-box"><span class="metric-label">Owner visibility</span><strong>${escapeHtml(ownerVisibility)}</strong></div>
-        <div class="stat-box"><span class="metric-label">Opportunity</span><strong>${escapeHtml(metric.opportunity_score ?? 0)}</strong></div>
+        <div class="stat-box"><span class="metric-label">Action Priority</span><strong>${escapeHtml(metric.opportunity_score ?? 0)}</strong></div>
       </div>
       <p><strong>Intervention:</strong> ${escapeHtml(interventionLabel(row.gap_type))}</p>
       <p><strong>Next move:</strong> ${escapeHtml(metric.recommended_next_move || 'Monitor this cluster in the next Peec run.')}</p>
@@ -1453,7 +1453,7 @@ Plotly.newPlot('opportunityChart', [{
   marker: { color: studyRows.map(r => topicColors[metrics[r.cluster_id]?.trend_label || 'blind_spot'] || palette.cyan) },
   text: studyRows.map(r => metrics[r.cluster_id]?.opportunity_score || 0),
   textposition: 'outside',
-  hovertemplate: '<b>%{x}</b><br>Opportunity score: %{y}<extra></extra>'
+  hovertemplate: '<b>%{x}</b><br>Action priority: %{y}<extra></extra>'
 }], {
   ...plotLayoutBase,
   yaxis: { ...plotLayoutBase.yaxis, title: 'Score', range: [0, 105] }
@@ -1507,9 +1507,9 @@ document.getElementById('gapTable').innerHTML = `
       <th>Gap type</th>
       <th>Parent topic</th>
       <th>Trend</th>
-      <th>Decision</th>
+      <th>Recommended Action</th>
       <th>Primary gap</th>
-      <th class="number">Opportunity</th>
+      <th class="number">Action Priority</th>
       <th>Cluster owner</th>
       <th class="number">Proof</th>
     </tr>
@@ -1538,7 +1538,7 @@ document.getElementById('claimTable').innerHTML = `
       <th>Claim</th>
       <th>Status</th>
       <th>Publication</th>
-      <th>Confidence</th>
+      <th>Evidence Level</th>
       <th>Allowed language</th>
     </tr>
   </thead>
@@ -1576,7 +1576,7 @@ document.getElementById('claimReviewCards').innerHTML = claims.map(claim => {
   const methodSteps = ['peec', 'gemini', 'tavily', 'guardrail'].map(method => {
     if (method === 'guardrail') {
       return `<div class="method-step">
-        <div class="method-step-title"><span class="status-dot ${slug(claim.status)}"></span>Guardrail</div>
+        <div class="method-step-title"><span class="status-dot ${slug(claim.status)}"></span>Claim check</div>
         <p>${escapeHtml(claim.publication_status === 'blocked' ? 'Blocks unsafe language.' : 'Allows directional language with caveat.')}</p>
       </div>`;
     }
@@ -1732,7 +1732,7 @@ document.getElementById('perceptionTable').innerHTML = `
 `;
 
 // Radar chart for value-added metrics
-const radarCategories = ['Relevance', 'Source Trust', 'Proof Strength', 'Agreement', 'Opportunity'];
+const radarCategories = ['Intent Fit', 'Citation Authority', 'Evidence Coverage', 'Signal Alignment', 'Action Priority'];
 const radarTraces = studyRows.map(r => {
   const m = metrics[r.cluster_id] || {};
   const vals = [

@@ -10,7 +10,10 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
+from presence_rx.brand_config import load_brand_config
 from presence_rx.build_action_brief import build_action_brief, write_action_brief
+from presence_rx.build_activation_brief import build_activation_brief, write_activation_brief
+from presence_rx.build_challenged_claims import build_challenged_claims
 from presence_rx.build_competitor_landscape import (
     build_competitor_landscape,
     write_competitor_landscape,
@@ -56,6 +59,7 @@ def run_mvp(
     generated_dir: Path,
     dashboard_dir: Path,
     allow_synthetic_gemini: bool,
+    case_id: str = "nothing-phone",
 ) -> dict[str, object]:
     study = StudySsot.model_validate_json(study_path.read_text())
     manifest = Manifest.model_validate_json(manifest_path.read_text())
@@ -79,7 +83,10 @@ def run_mvp(
     )
     classification_path = write_gap_classification(classification, generated_dir)
 
-    ledger = build_evidence_ledger(study, manifest, classification)
+    challenged = build_challenged_claims(study, manifest)
+    ledger = build_evidence_ledger(
+        study, manifest, classification, challenged_claims=challenged,
+    )
     ledger_path = write_evidence_ledger(ledger, generated_dir)
 
     metrics = build_value_added_metrics(
@@ -99,6 +106,8 @@ def run_mvp(
     )
     landscape_path = write_competitor_landscape(landscape, generated_dir)
 
+    prescription = build_prescription_plan(study, manifest)
+
     dashboard_path = write_dashboard(
         build_dashboard(
             study,
@@ -107,14 +116,13 @@ def run_mvp(
             metrics=metrics,
             landscape=landscape,
             tavily=tavily,
-            prescription=build_prescription_plan(study, manifest),
+            prescription=prescription,
             gemini=gemini,
         ),
         dashboard_dir,
     )
 
     # --- Post-pipeline artifact refresh ---
-    prescription = build_prescription_plan(study, manifest)
     updated_manifest = update_manifest_post_pipeline(
         manifest,
         tavily=tavily,
@@ -152,10 +160,18 @@ def run_mvp(
     prescription_path = write_prescription_plan(prescription, generated_dir)
 
     # --- Generate markdown deliverables ---
+    # Load brand config for verdict narrative (non-fatal if missing)
+    try:
+        verdict_brand_config = load_brand_config(case_id)
+    except FileNotFoundError:
+        verdict_brand_config = None
+
     verdict_content = build_presence_verdict(
         study, updated_manifest,
         classification=classification, ledger=ledger,
         metrics=metrics, gemini=gemini,
+        landscape=landscape, tavily=tavily,
+        brand_config=verdict_brand_config,
     )
     verdict_path = write_presence_verdict(verdict_content, generated_dir)
 
@@ -163,11 +179,28 @@ def run_mvp(
         study, updated_manifest,
         classification=classification, ledger=ledger,
         metrics=metrics, prescription=prescription,
+        gemini=gemini, tavily=tavily,
     )
     action_brief_path = write_action_brief(action_brief_content, generated_dir)
 
+    try:
+        brand_config = load_brand_config(case_id)
+    except FileNotFoundError:
+        brand_config = None
+
+    activation_brief_path = None
+    if brand_config:
+        activation_content = build_activation_brief(
+            study, updated_manifest,
+            classification=classification, metrics=metrics,
+            gemini=gemini, brand_config=brand_config,
+            tavily=tavily, ledger=ledger,
+        )
+        activation_brief_path = write_activation_brief(activation_content, generated_dir)
+
     report = {
         "generated_at": datetime.now(UTC).isoformat(),
+        "case_id": case_id,
         "status": "mvp_built",
         "peec_source": "verified_docs_grounded_snapshot",
         "peec_mcp_callable_in_this_runtime": False,
@@ -182,6 +215,7 @@ def run_mvp(
             "prescription_plan": str(prescription_path),
             "presence_verdict": str(verdict_path),
             "action_brief": str(action_brief_path),
+            "activation_brief": str(activation_brief_path) if activation_brief_path else None,
         },
         "counts": {
             "study_rows": len(study.rows),
@@ -203,10 +237,17 @@ def run_mvp(
 
 
 def main(
-    study: Annotated[Path, typer.Option("--study")] = Path("data/generated/study_ssot.json"),
-    manifest: Annotated[Path, typer.Option("--manifest")] = Path("data/generated/manifest.json"),
-    generated_dir: Annotated[Path, typer.Option("--generated-dir")] = Path("data/generated"),
-    dashboard_dir: Annotated[Path, typer.Option("--dashboard-dir")] = Path("artifacts/local"),
+    case_id: Annotated[
+        str,
+        typer.Option(
+            "--case-id",
+            help="Brand case id (nothing-phone, attio, bmw). Controls default paths.",
+        ),
+    ] = "nothing-phone",
+    study: Annotated[Path | None, typer.Option("--study")] = None,
+    manifest: Annotated[Path | None, typer.Option("--manifest")] = None,
+    generated_dir: Annotated[Path | None, typer.Option("--generated-dir")] = None,
+    dashboard_dir: Annotated[Path | None, typer.Option("--dashboard-dir")] = None,
     allow_synthetic_gemini: Annotated[
         bool,
         typer.Option(
@@ -215,12 +256,23 @@ def main(
         ),
     ] = True,
 ) -> None:
+    # Resolve defaults from case_id
+    if generated_dir is None:
+        generated_dir = Path(f"data/generated/{case_id}")
+    if study is None:
+        study = generated_dir / "study_ssot.json"
+    if manifest is None:
+        manifest = generated_dir / "manifest.json"
+    if dashboard_dir is None:
+        dashboard_dir = Path(f"artifacts/local/{case_id}")
+
     report = run_mvp(
         study_path=study,
         manifest_path=manifest,
         generated_dir=generated_dir,
         dashboard_dir=dashboard_dir,
         allow_synthetic_gemini=allow_synthetic_gemini,
+        case_id=case_id,
     )
     console.print("[green]MVP built[/green]")
     console.print(json.dumps(report["counts"], indent=2))

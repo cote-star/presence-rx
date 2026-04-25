@@ -1,0 +1,88 @@
+{
+  "brand": "BMW",
+  "competitors": [
+    "Tesla",
+    "Mercedes-Benz",
+    "Audi",
+    "Porsche",
+    "Lexus",
+    "Volvo",
+    "Genesis",
+    "Rivian",
+    "Lucid",
+    "Hyundai",
+    "Toyota"
+  ],
+  "clusters": [
+    {
+      "cluster_id": "cluster:driving-dynamics",
+      "label": "Driving Dynamics",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:driving-dynamics:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:luxury-ev-transition",
+      "label": "Luxury EV Transition",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:luxury-ev-transition:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:premium-suv-segment",
+      "label": "Premium SUV Segment",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:premium-suv-segment:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:electric-i-series",
+      "label": "Electric i-Series",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:electric-i-series:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:brand-heritage",
+      "label": "Brand Heritage",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:brand-heritage:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    }
+  ]
+}

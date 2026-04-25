@@ -67,8 +67,14 @@ def _topic(
     row: StudyRow,
     classified_gap: object | None,
     proof_source_count: int,
+    competitor_visibility_override: dict[str, float] | None = None,
 ) -> CompetitorTopic:
-    competitor_visibility = COMPETITOR_VISIBILITY_BY_CLUSTER.get(row.cluster_id)
+    source = (
+        competitor_visibility_override
+        if competitor_visibility_override is not None
+        else COMPETITOR_VISIBILITY_BY_CLUSTER
+    )
+    competitor_visibility = source.get(row.cluster_id)
     visibility_delta = (
         round(competitor_visibility - row.visibility_target_share, 4)
         if competitor_visibility is not None and row.visibility_target_share is not None
@@ -104,6 +110,7 @@ def build_competitor_landscape(
     classification: GapClassification | None = None,
     tavily: TavilyEvidence | None = None,
     generated_at: datetime | None = None,
+    competitor_visibility: dict[str, float] | None = None,
 ) -> CompetitorLandscape:
     classifications = _classification_map(classification)
     source_counts = _source_count_map(tavily)
@@ -112,6 +119,7 @@ def build_competitor_landscape(
             row,
             classifications.get(row.cluster_id),
             source_counts.get(row.cluster_id, 0),
+            competitor_visibility_override=competitor_visibility,
         )
         for row in study.rows
     ]

@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+    "metrics_version": "value_added_metrics:v1",
+    "used_gemini": true,
+    "used_tavily": false,
+    "used_classification": true
+  },
+  "summary": {
+    "rows": 5,
+    "average_opportunity_score": 51,
+    "contested_rows": 0,
+    "proof_gap_rows": 4
+  },
+  "rows": [
+    {
+      "cluster_id": "cluster:product-led-crm",
+      "cluster_label": "Product-Led CRM",
+      "gap_type": null,
+      "parent_topic": "category_authority",
+      "trend_label": "stronghold",
+      "trend_zone": "stronghold",
+      "zone_basis": "single_snapshot_visibility",
+      "decision_bucket": "monitor",
+      "decision_bucket_reason": "The target brand already owns this prompt cluster.",
+      "primary_gap": "NONE_STRONGHOLD",
+      "recommended_next_move": "Maintain monitoring and use this cluster as the comparison baseline.",
+      "relevance_score": 35,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 0,
+      "opportunity_score": 14,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:product-led-crm"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:crm-for-startups",
+      "cluster_label": "CRM for Startups",
+      "gap_type": "perception",
+      "parent_topic": "brand_association",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "MISSING_ASSOCIATION",
+      "recommended_next_move": "Publish explicit crm for startups positioning content and monitor AI adoption.",
+      "relevance_score": 61,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 54,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups",
+        "peec:brand:hubspot",
+        "gemini:analysis:crm-for-startups:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:modern-crm-alternative",
+      "cluster_label": "Modern CRM Alternative",
+      "gap_type": "indexing",
+      "parent_topic": "content_discoverability",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "RETRIEVAL_NOT_CITATION",
+      "recommended_next_move": "Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.",
+      "relevance_score": 83,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 63,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative",
+        "peec:brand:salesforce",
+        "gemini:analysis:modern-crm-alternative:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:crm-migration",
+      "cluster_label": "CRM Migration",
+      "gap_type": "volume_frequency",
+      "parent_topic": "category_presence",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "MISSING_PUBLIC_VOLUME",
+      "recommended_next_move": "Seed sustained crm migration proof across editorial and owned surfaces.",
+      "relevance_score": 87,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 65,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration",
+        "peec:brand:hubspot",
+        "gemini:analysis:crm-migration:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    },
+    {
+      "cluster_id": "cluster:revops-tools",
+      "cluster_label": "RevOps Tools",
+      "gap_type": "perception",
+      "parent_topic": "brand_association",
+      "trend_label": "proof_gap",
+      "trend_zone": "proof_gap",
+      "zone_basis": "proof_coverage",
+      "decision_bucket": "test_next",
+      "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+      "primary_gap": "MISSING_ASSOCIATION",
+      "recommended_next_move": "Publish explicit revops tools positioning content and monitor AI adoption.",
+      "relevance_score": 68,
+      "source_trust_score": 0,
+      "proof_strength_score": 0,
+      "method_agreement_score": 100,
+      "opportunity_score": 57,
+      "labeling_source": "peec_mcp+gemini+tavily+derived",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools",
+        "peec:brand:hubspot",
+        "gemini:analysis:revops-tools:v1"
+      ],
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+    }
+  ]
+}

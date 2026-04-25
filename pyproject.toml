@@ -17,6 +17,7 @@ dependencies = [
 
 [project.scripts]
 presence-rx-analyze-gemini = "presence_rx.analyze_gemini:run"
+presence-rx-build-challenged-claims = "presence_rx.build_challenged_claims:run"
 presence-rx-build-evidence-ledger = "presence_rx.build_evidence_ledger:run"
 presence-rx-build-competitor-landscape = "presence_rx.build_competitor_landscape:run"
 presence-rx-build-mvp-dashboard = "presence_rx.build_mvp_dashboard:run"
@@ -29,6 +30,7 @@ presence-rx-run-mvp = "presence_rx.run_mvp:run"
 presence-rx-synthesize-gemini = "presence_rx.synthesize_gemini_analysis:run"
 presence-rx-build-verdict = "presence_rx.build_verdict:run"
 presence-rx-build-action-brief = "presence_rx.build_action_brief:run"
+presence-rx-build-activation-brief = "presence_rx.build_activation_brief:run"
 presence-rx-validate = "presence_rx.validate:app"
 
 [dependency-groups]

@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+    "run_mode": "test",
+    "requested_model": "gemini-2.5-flash",
+    "response_model_version": "sub-agent-substitute-v1",
+    "prompt_template_version": "gemini_blind_spot_analysis:v1",
+    "temperature": 0.0,
+    "request_count": 4,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "sdk_package": "google-genai",
+    "sdk_version": "1.73.1"
+  },
+  "summary": {
+    "analyzed_rows": 4,
+    "supported_gap_types": 4,
+    "conflicted_gap_types": 0,
+    "insufficient_gap_types": 0
+  },
+  "findings": [
+    {
+      "finding_id": "gemini:analysis:crm-for-startups:v1",
+      "cluster_id": "cluster:crm-for-startups",
+      "cluster_label": "CRM for Startups",
+      "gap_type": "perception",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI frames 'best CRM for startups' as a HubSpot narrative with free-tier onboarding as the default recommendation",
+        "Attio appears in niche product-hunt and VC-backed startup coverage but not in general startup CRM queries"
+      ],
+      "missing_associations": [
+        "Attio as a modern CRM built natively for startup workflows with flexible data modeling",
+        "Attio's real-time sync and relationship intelligence as startup-specific advantages over HubSpot's legacy architecture"
+      ],
+      "competitor_association": "HubSpot dominates startup CRM discourse across G2, Capterra, and editorial listicles as the default free-to-paid CRM funnel for early-stage companies.",
+      "safe_scenario_wording": "In Peec data, Attio holds 22% visibility at position 2.1 in CRM for Startups; Tavily shows the topic is associated with HubSpot free-tier onboarding rather than modern CRM alternatives.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources return Attio in product reviews and funding announcements but not in 'best CRM for startups' listicles, while competitor sources frame HubSpot as the default startup CRM — consistent with a perception gap where product capability diverges from AI narrative.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups",
+        "gemini:analysis:crm-for-startups:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:modern-crm-alternative:v1",
+      "cluster_id": "cluster:modern-crm-alternative",
+      "cluster_label": "Modern CRM Alternative",
+      "gap_type": "indexing",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI routes 'CRM alternative' queries to Salesforce comparison pages and HubSpot-vs-Salesforce articles",
+        "Attio content exists on its own domain and in tech press but is not retrieved in alternative-framed queries"
+      ],
+      "missing_associations": [
+        "Attio as a next-generation CRM alternative with native API-first architecture",
+        "Attio's flexible object model as a structural differentiator from legacy CRM platforms"
+      ],
+      "competitor_association": "Salesforce owns the CRM alternative frame by default: queries for 'CRM alternative' return Salesforce competitor comparison pages rather than genuinely alternative platforms.",
+      "safe_scenario_wording": "In Peec data, Attio holds 5% visibility at position 3.8 in Modern CRM Alternative; Tavily shows 'CRM alternative' queries resolve to Salesforce comparison content rather than surfacing Attio.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources confirm Attio blog posts and press coverage exist but are not retrieved in 'alternative to Salesforce' or 'modern CRM' queries, while competitor sources dominate the comparison frame — consistent with an indexing gap where content exists but fails to surface.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative",
+        "gemini:analysis:modern-crm-alternative:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:crm-migration:v1",
+      "cluster_id": "cluster:crm-migration",
+      "cluster_label": "CRM Migration",
+      "gap_type": "volume_frequency",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI associates CRM migration with HubSpot-to-Salesforce and Salesforce-to-HubSpot pathways supported by extensive documentation",
+        "Almost no 'migrate to Attio' content exists in editorial or documentation sources"
+      ],
+      "missing_associations": [
+        "Attio migration tooling and CSV/API import capabilities for switching from legacy CRMs",
+        "Attio as a migration destination with lower switching cost than incumbent platforms"
+      ],
+      "competitor_association": "HubSpot and Salesforce dominate CRM migration discourse with extensive migration guides, partner ecosystems, and certification programs creating deep content moats.",
+      "safe_scenario_wording": "In Peec data, Attio holds 3% visibility at position 4.2 in CRM Migration; Tavily shows migration content is almost exclusively about HubSpot and Salesforce pathways.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources return virtually no 'migrate to Attio' documentation or guides, while competitor sources have hundreds of migration articles and partner content — consistent with a volume/frequency gap where insufficient content volume prevents AI retrieval.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration",
+        "gemini:analysis:crm-migration:v1"
+      ]
+    },
+    {
+      "finding_id": "gemini:analysis:revops-tools:v1",
+      "cluster_id": "cluster:revops-tools",
+      "cluster_label": "RevOps Tools",
+      "gap_type": "perception",
+      "source_of_record": "gemini",
+      "perception_themes": [
+        "AI associates RevOps tooling with HubSpot Operations Hub as the integrated RevOps platform",
+        "Attio's reporting and automation features are discussed in product reviews but not framed as RevOps capabilities"
+      ],
+      "missing_associations": [
+        "Attio's native workflow automation and reporting as RevOps-ready features",
+        "Attio's API-first design enabling RevOps integration patterns without middleware"
+      ],
+      "competitor_association": "HubSpot Operations Hub is positioned as the default RevOps platform across analyst reports, G2 categories, and editorial content about revenue operations tooling.",
+      "safe_scenario_wording": "In Peec data, Attio holds 15% visibility at position 2.5 in RevOps Tools; Tavily shows RevOps discourse is dominated by HubSpot Operations Hub positioning.",
+      "gap_type_support": "supports",
+      "rationale": "Tavily target sources describe Attio features in CRM terms rather than RevOps language, while competitor sources frame HubSpot as the RevOps standard — consistent with a perception gap where feature parity exists but categorical association does not.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools",
+        "gemini:analysis:revops-tools:v1"
+      ]
+    }
+  ]
+}

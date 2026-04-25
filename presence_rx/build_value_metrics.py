@@ -29,7 +29,9 @@ console = Console()
 OUTPUT_NAME = "value_added_metrics.json"
 METRICS_VERSION = "value_added_metrics:v1"
 
-TREND_CONTEXT = {
+# Nothing-Phone-specific trend context overrides (kept for backward compat).
+# When the cluster_id matches, these take priority over _derive_trend_context().
+TREND_CONTEXT: dict[str, dict[str, str]] = {
     "cluster:smartphone-design": {
         "parent_topic": "mobile_design_authority",
         "primary_gap": "NONE_STRONGHOLD",
@@ -70,6 +72,45 @@ TREND_CONTEXT = {
 }
 
 
+def _derive_trend_context(row: StudyRow) -> dict[str, str]:
+    """Derive trend context from gap type -- works for any brand."""
+    if row.gap_type is None:
+        return {
+            "parent_topic": "category_authority",
+            "primary_gap": "NONE_STRONGHOLD",
+            "recommended_next_move": (
+                "Maintain monitoring and use this cluster as the comparison baseline."
+            ),
+        }
+    if row.gap_type == "indexing":
+        return {
+            "parent_topic": "content_discoverability",
+            "primary_gap": "RETRIEVAL_NOT_CITATION",
+            "recommended_next_move": (
+                f"Test schema, canonical source pages, and monitoring prompts "
+                f"for {row.cluster_label}."
+            ),
+        }
+    if row.gap_type == "perception":
+        return {
+            "parent_topic": "brand_association",
+            "primary_gap": "MISSING_ASSOCIATION",
+            "recommended_next_move": (
+                f"Publish explicit {row.cluster_label.lower()} positioning content "
+                f"and monitor AI adoption."
+            ),
+        }
+    # volume_frequency
+    return {
+        "parent_topic": "category_presence",
+        "primary_gap": "MISSING_PUBLIC_VOLUME",
+        "recommended_next_move": (
+            f"Seed sustained {row.cluster_label.lower()} proof across editorial "
+            f"and owned surfaces."
+        ),
+    }
+
+
 def _classification_map(
     classification: GapClassification | None,
 ) -> dict[str, object]:
@@ -87,13 +128,7 @@ def _tavily_map(tavily: TavilyEvidence | None) -> dict[str, object]:
 def _parent_topic(row: StudyRow) -> str:
     if row.cluster_id in TREND_CONTEXT:
         return TREND_CONTEXT[row.cluster_id]["parent_topic"]
-    if row.gap_type == "indexing":
-        return "ecosystem_integration"
-    if row.gap_type == "perception":
-        return "brand_association"
-    if row.gap_type == "volume_frequency":
-        return "category_presence"
-    return "mobile_design_authority"
+    return _derive_trend_context(row)["parent_topic"]
 
 
 def _trend_label(
@@ -155,13 +190,7 @@ def _primary_gap(row: StudyRow) -> str:
     context = TREND_CONTEXT.get(row.cluster_id)
     if context:
         return context["primary_gap"]
-    if row.gap_type == "indexing":
-        return "RETRIEVAL_NOT_CITATION"
-    if row.gap_type == "perception":
-        return "MISSING_ASSOCIATION"
-    if row.gap_type == "volume_frequency":
-        return "MISSING_PUBLIC_VOLUME"
-    return "NONE_STRONGHOLD"
+    return _derive_trend_context(row)["primary_gap"]
 
 
 def _recommended_next_move(row: StudyRow) -> str:
@@ -170,7 +199,7 @@ def _recommended_next_move(row: StudyRow) -> str:
         return context["recommended_next_move"]
     if row.action_recommendation:
         return row.action_recommendation
-    return "Monitor this cluster in the next Presence Rx run."
+    return _derive_trend_context(row)["recommended_next_move"]
 
 
 def _proof_strength_score(tavily_finding: object | None) -> int:

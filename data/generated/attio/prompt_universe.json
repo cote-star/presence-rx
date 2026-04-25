@@ -1,0 +1,81 @@
+{
+  "brand": "Attio",
+  "competitors": [
+    "Salesforce",
+    "HubSpot",
+    "Pipedrive",
+    "Monday CRM"
+  ],
+  "clusters": [
+    {
+      "cluster_id": "cluster:product-led-crm",
+      "label": "Product-Led CRM",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:product-led-crm:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:crm-for-startups",
+      "label": "CRM for Startups",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:crm-for-startups:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:modern-crm-alternative",
+      "label": "Modern CRM Alternative",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:modern-crm-alternative:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:crm-migration",
+      "label": "CRM Migration",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:crm-migration:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    },
+    {
+      "cluster_id": "cluster:revops-tools",
+      "label": "RevOps Tools",
+      "stage": "consideration",
+      "prompt_type": "peec_topic",
+      "prompts": [
+        {
+          "prompt_id": "peec:topic:revops-tools:prompts-unavailable",
+          "text": null,
+          "source": "peec_mcp_docs_seed",
+          "unavailable_reason": "PROMPT_TEXT_UNAVAILABLE_IN_DOCS_GROUNDED_SEED"
+        }
+      ]
+    }
+  ]
+}

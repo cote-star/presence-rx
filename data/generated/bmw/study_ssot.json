@@ -1,0 +1,133 @@
+{
+  "rows": [
+    {
+      "cluster_id": "cluster:driving-dynamics",
+      "cluster_label": "Driving Dynamics",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.45,
+      "visibility_target_avg_position": 1.5,
+      "visibility_competitor_owner": null,
+      "gap_type": null,
+      "gap_type_source": "not_applicable",
+      "gap_type_rationale": null,
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:driving-dynamics"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "moderate",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:luxury-ev-transition",
+      "cluster_label": "Luxury EV Transition",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.12,
+      "visibility_target_avg_position": 2.8,
+      "visibility_competitor_owner": "Tesla",
+      "gap_type": "perception",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "BMW has i4/iX but AI frames 'luxury EV' as Tesla Model S/X territory, sidelining BMW's electrification progress in premium segment.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:luxury-ev-transition",
+        "peec:brand:tesla"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:premium-suv-segment",
+      "cluster_label": "Premium SUV Segment",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.15,
+      "visibility_target_avg_position": 2.5,
+      "visibility_competitor_owner": "Mercedes-Benz",
+      "gap_type": "indexing",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "BMW X-series exists but AI defaults to Mercedes GLE/GLC for premium SUV queries; BMW content is not surfacing in retrieval.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:premium-suv-segment",
+        "peec:brand:mercedes-benz"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:electric-i-series",
+      "cluster_label": "Electric i-Series",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.06,
+      "visibility_target_avg_position": 3.5,
+      "visibility_competitor_owner": "Tesla",
+      "gap_type": "volume_frequency",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "BMW i4 and iX exist but sparse editorial coverage compared to Tesla Model 3/Y volume dominates AI training and retrieval sources.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:electric-i-series",
+        "peec:brand:tesla"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:brand-heritage",
+      "cluster_label": "Brand Heritage",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.3,
+      "visibility_target_avg_position": 1.8,
+      "visibility_competitor_owner": "Mercedes-Benz",
+      "gap_type": "perception",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Both have strong heritage but AI increasingly associates 'luxury heritage' with Mercedes over BMW, eroding a historically shared narrative.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:bmw:2026-04-25",
+        "peec:topic:brand-heritage",
+        "peec:brand:mercedes-benz"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    }
+  ]
+}

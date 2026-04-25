@@ -180,6 +180,7 @@ def build_evidence_ledger(
     manifest: Manifest,
     classification: GapClassification,
     *,
+    challenged_claims: list[tuple[Claim, BlockedClaim]] | None = None,
     generated_at: datetime | None = None,
 ) -> EvidenceLedger:
     study_cluster_ids = {row.cluster_id for row in study.rows}
@@ -201,6 +202,10 @@ def build_evidence_ledger(
         for gap in classification.classified_gaps
         if _claim_status(gap)[0] == ClaimStatus.BLOCKED
     ]
+    if challenged_claims:
+        for claim, blocked in challenged_claims:
+            claims.append(claim)
+            blocked_claims.append(blocked)
     return EvidenceLedger(
         metadata=EvidenceLedgerMetadata(
             source_manifest_ref=manifest.peec_snapshot_id,

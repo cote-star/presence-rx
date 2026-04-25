@@ -1,0 +1,133 @@
+{
+  "rows": [
+    {
+      "cluster_id": "cluster:product-led-crm",
+      "cluster_label": "Product-Led CRM",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.35,
+      "visibility_target_avg_position": 1.8,
+      "visibility_competitor_owner": null,
+      "gap_type": null,
+      "gap_type_source": "not_applicable",
+      "gap_type_rationale": null,
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:product-led-crm"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "moderate",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:crm-for-startups",
+      "cluster_label": "CRM for Startups",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.22,
+      "visibility_target_avg_position": 2.1,
+      "visibility_competitor_owner": "HubSpot",
+      "gap_type": "perception",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Attio is built for startups but HubSpot owns the 'startup CRM' narrative in AI answers, despite Attio's product-market fit in that segment.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "peec:brand:hubspot"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:modern-crm-alternative",
+      "cluster_label": "Modern CRM Alternative",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.05,
+      "visibility_target_avg_position": 3.8,
+      "visibility_competitor_owner": "Salesforce",
+      "gap_type": "indexing",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Attio content exists but AI default-routes 'CRM alternative' queries to Salesforce comparison pages rather than surfacing Attio as an alternative.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "peec:brand:salesforce"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:crm-migration",
+      "cluster_label": "CRM Migration",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.03,
+      "visibility_target_avg_position": 4.2,
+      "visibility_competitor_owner": "HubSpot",
+      "gap_type": "volume_frequency",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Very few 'migrate to Attio' articles exist compared to abundant HubSpot/Salesforce migration guides and documentation.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "peec:brand:hubspot"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    },
+    {
+      "cluster_id": "cluster:revops-tools",
+      "cluster_label": "RevOps Tools",
+      "cluster_stage": "consideration",
+      "cluster_prompt_type": "peec_topic",
+      "cluster_prompt_count": null,
+      "visibility_target_share": 0.15,
+      "visibility_target_avg_position": 2.5,
+      "visibility_competitor_owner": "HubSpot",
+      "gap_type": "perception",
+      "gap_type_source": "scope_final",
+      "gap_type_rationale": "Attio has RevOps features but AI associates RevOps tooling with HubSpot Operations Hub rather than Attio's native capabilities.",
+      "confidence_tier": "limited",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "peec:brand:hubspot"
+      ],
+      "input_gate_status": "passed",
+      "evidence_tier": "limited",
+      "publication_status": "diagnostics_only",
+      "recommendation_available": false,
+      "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+      "action_recommendation": null,
+      "action_monitor_prompt": null
+    }
+  ]
+}

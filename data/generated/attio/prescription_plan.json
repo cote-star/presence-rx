@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:attio:2026-04-25"
+  },
+  "summary": {
+    "planned_prompts": 12,
+    "planned_topics": 4,
+    "planned_tags": 6
+  },
+  "planned_topics": [
+    {
+      "operation_id": "op:create_topic:crm-for-startups",
+      "execution_status": "planned",
+      "topic_slug": "crm-for-startups",
+      "name": "bbh-2026-crm-for-startups",
+      "source_cluster_id": "cluster:crm-for-startups",
+      "gap_type": "perception",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:modern-crm-alternative",
+      "execution_status": "planned",
+      "topic_slug": "modern-crm-alternative",
+      "name": "bbh-2026-modern-crm-alternative",
+      "source_cluster_id": "cluster:modern-crm-alternative",
+      "gap_type": "indexing",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:crm-migration",
+      "execution_status": "planned",
+      "topic_slug": "crm-migration",
+      "name": "bbh-2026-crm-migration",
+      "source_cluster_id": "cluster:crm-migration",
+      "gap_type": "volume_frequency",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration"
+      ]
+    },
+    {
+      "operation_id": "op:create_topic:revops-tools",
+      "execution_status": "planned",
+      "topic_slug": "revops-tools",
+      "name": "bbh-2026-revops-tools",
+      "source_cluster_id": "cluster:revops-tools",
+      "gap_type": "perception",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools"
+      ]
+    }
+  ],
+  "planned_tags": [
+    {
+      "operation_id": "op:create_tag:gap-indexing",
+      "execution_status": "planned",
+      "tag_slug": "gap-indexing",
+      "name": "bbh-2026-gap-indexing",
+      "kind": "gap",
+      "description": "Blind spots where owned or credible sources need better AI-answer surfacing."
+    },
+    {
+      "operation_id": "op:create_tag:gap-perception",
+      "execution_status": "planned",
+      "tag_slug": "gap-perception",
+      "name": "bbh-2026-gap-perception",
+      "kind": "gap",
+      "description": "Blind spots where the brand association is missing or weaker than competitors."
+    },
+    {
+      "operation_id": "op:create_tag:gap-volume-frequency",
+      "execution_status": "planned",
+      "tag_slug": "gap-volume-frequency",
+      "name": "bbh-2026-gap-volume-frequency",
+      "kind": "gap",
+      "description": "Blind spots where public proof and repeated category presence are too sparse."
+    },
+    {
+      "operation_id": "op:create_tag:geo-us",
+      "execution_status": "planned",
+      "tag_slug": "geo-us",
+      "name": "bbh-2026-geo-us",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the United States market."
+    },
+    {
+      "operation_id": "op:create_tag:geo-de",
+      "execution_status": "planned",
+      "tag_slug": "geo-de",
+      "name": "bbh-2026-geo-de",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the Germany market."
+    },
+    {
+      "operation_id": "op:create_tag:geo-gb",
+      "execution_status": "planned",
+      "tag_slug": "geo-gb",
+      "name": "bbh-2026-geo-gb",
+      "kind": "geo",
+      "description": "Marks planned operations targeting the Great Britain market."
+    }
+  ],
+  "planned_prompts": [
+    {
+      "operation_id": "op:create_prompt:crm-for-startups:us",
+      "execution_status": "planned",
+      "prompt_slug": "crm-for-startups:us",
+      "text": "Which crm for startups options should buyers consider when they want distinctive alternatives to HubSpot?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "crm-for-startups",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:crm-for-startups",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:crm-for-startups:de",
+      "execution_status": "planned",
+      "prompt_slug": "crm-for-startups:de",
+      "text": "Which crm for startups options should buyers consider when they want distinctive alternatives to HubSpot?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "crm-for-startups",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:crm-for-startups",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:crm-for-startups:gb",
+      "execution_status": "planned",
+      "prompt_slug": "crm-for-startups:gb",
+      "text": "Which crm for startups options should buyers consider when they want distinctive alternatives to HubSpot?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "crm-for-startups",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:crm-for-startups",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:modern-crm-alternative:us",
+      "execution_status": "planned",
+      "prompt_slug": "modern-crm-alternative:us",
+      "text": "Which modern crm alternative options should buyers consider when they want credible alternatives in the category?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "modern-crm-alternative",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:modern-crm-alternative",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:modern-crm-alternative:de",
+      "execution_status": "planned",
+      "prompt_slug": "modern-crm-alternative:de",
+      "text": "Which modern crm alternative options should buyers consider when they want credible alternatives in the category?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "modern-crm-alternative",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:modern-crm-alternative",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:modern-crm-alternative:gb",
+      "execution_status": "planned",
+      "prompt_slug": "modern-crm-alternative:gb",
+      "text": "Which modern crm alternative options should buyers consider when they want credible alternatives in the category?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "modern-crm-alternative",
+      "gap_type": "indexing",
+      "tag_refs": [
+        "gap-indexing",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:modern-crm-alternative",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:crm-migration:us",
+      "execution_status": "planned",
+      "prompt_slug": "crm-migration:us",
+      "text": "Which crm migration options should buyers consider when they want proven alternatives to the market leader?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "crm-migration",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:crm-migration",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:crm-migration:de",
+      "execution_status": "planned",
+      "prompt_slug": "crm-migration:de",
+      "text": "Which crm migration options should buyers consider when they want proven alternatives to the market leader?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "crm-migration",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:crm-migration",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:crm-migration:gb",
+      "execution_status": "planned",
+      "prompt_slug": "crm-migration:gb",
+      "text": "Which crm migration options should buyers consider when they want proven alternatives to the market leader?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "crm-migration",
+      "gap_type": "volume_frequency",
+      "tag_refs": [
+        "gap-volume-frequency",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:crm-migration",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:revops-tools:us",
+      "execution_status": "planned",
+      "prompt_slug": "revops-tools:us",
+      "text": "Which revops tools options should buyers consider when they want distinctive alternatives to HubSpot?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "US",
+      "topic_slug": "revops-tools",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-us"
+      ],
+      "source_cluster_id": "cluster:revops-tools",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:revops-tools:de",
+      "execution_status": "planned",
+      "prompt_slug": "revops-tools:de",
+      "text": "Which revops tools options should buyers consider when they want distinctive alternatives to HubSpot?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "DE",
+      "topic_slug": "revops-tools",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-de"
+      ],
+      "source_cluster_id": "cluster:revops-tools",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools"
+      ]
+    },
+    {
+      "operation_id": "op:create_prompt:revops-tools:gb",
+      "execution_status": "planned",
+      "prompt_slug": "revops-tools:gb",
+      "text": "Which revops tools options should buyers consider when they want distinctive alternatives to HubSpot?",
+      "prompt_language": "en",
+      "prompt_text_source": "templated",
+      "country_code": "GB",
+      "topic_slug": "revops-tools",
+      "gap_type": "perception",
+      "tag_refs": [
+        "gap-perception",
+        "geo-gb"
+      ],
+      "source_cluster_id": "cluster:revops-tools",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools"
+      ]
+    }
+  ]
+}

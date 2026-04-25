@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+    "landscape_version": "competitor_landscape:v1",
+    "used_tavily": false,
+    "used_classification": true
+  },
+  "summary": {
+    "topics": 5,
+    "target_owned": 0,
+    "competitor_owned": 0,
+    "contested": 4
+  },
+  "topics": [
+    {
+      "cluster_id": "cluster:product-led-crm",
+      "cluster_label": "Product-Led CRM",
+      "target_visibility_share": 0.35,
+      "competitor_owner": null,
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "unknown",
+      "proof_source_count": 0,
+      "classification_status": "unclassified",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:product-led-crm"
+      ]
+    },
+    {
+      "cluster_id": "cluster:crm-for-startups",
+      "cluster_label": "CRM for Startups",
+      "target_visibility_share": 0.22,
+      "competitor_owner": "HubSpot",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups",
+        "peec:brand:hubspot",
+        "gemini:analysis:crm-for-startups:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:modern-crm-alternative",
+      "cluster_label": "Modern CRM Alternative",
+      "target_visibility_share": 0.05,
+      "competitor_owner": "Salesforce",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative",
+        "peec:brand:salesforce",
+        "gemini:analysis:modern-crm-alternative:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:crm-migration",
+      "cluster_label": "CRM Migration",
+      "target_visibility_share": 0.03,
+      "competitor_owner": "HubSpot",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration",
+        "peec:brand:hubspot",
+        "gemini:analysis:crm-migration:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:revops-tools",
+      "cluster_label": "RevOps Tools",
+      "target_visibility_share": 0.15,
+      "competitor_owner": "HubSpot",
+      "competitor_visibility_share": null,
+      "visibility_delta": null,
+      "ownership_status": "contested",
+      "proof_source_count": 0,
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools",
+        "peec:brand:hubspot",
+        "gemini:analysis:revops-tools:v1"
+      ]
+    }
+  ]
+}

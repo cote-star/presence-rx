@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-25T00:00:00Z",
+    "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+    "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+    "classifier_version": "gap_classifier:v1",
+    "used_gemini": true,
+    "used_tavily": false
+  },
+  "summary": {
+    "classified_gaps": 4,
+    "confirmed": 4,
+    "provisional": 0,
+    "conflicted": 0,
+    "insufficient": 0
+  },
+  "classified_gaps": [
+    {
+      "cluster_id": "cluster:crm-for-startups",
+      "cluster_label": "CRM for Startups",
+      "provisional_gap_type": "perception",
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "method_signals": [
+        {
+          "method": "peec",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:crm-for-startups",
+            "study_ssot:row:crm-for-startups",
+            "peec:brand:hubspot"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "gemini",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:crm-for-startups",
+            "study_ssot:row:crm-for-startups",
+            "gemini:analysis:crm-for-startups:v1"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "tavily",
+          "signal": "unavailable",
+          "evidence_refs": [],
+          "unavailable_reason": "artifact_not_provided"
+        }
+      ],
+      "method_agreement_score": 1.0,
+      "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "study_ssot:row:crm-for-startups",
+        "peec:brand:hubspot",
+        "gemini:analysis:crm-for-startups:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:modern-crm-alternative",
+      "cluster_label": "Modern CRM Alternative",
+      "provisional_gap_type": "indexing",
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "method_signals": [
+        {
+          "method": "peec",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:modern-crm-alternative",
+            "study_ssot:row:modern-crm-alternative",
+            "peec:brand:salesforce"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "gemini",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:modern-crm-alternative",
+            "study_ssot:row:modern-crm-alternative",
+            "gemini:analysis:modern-crm-alternative:v1"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "tavily",
+          "signal": "unavailable",
+          "evidence_refs": [],
+          "unavailable_reason": "artifact_not_provided"
+        }
+      ],
+      "method_agreement_score": 1.0,
+      "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:modern-crm-alternative",
+        "study_ssot:row:modern-crm-alternative",
+        "peec:brand:salesforce",
+        "gemini:analysis:modern-crm-alternative:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:crm-migration",
+      "cluster_label": "CRM Migration",
+      "provisional_gap_type": "volume_frequency",
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "method_signals": [
+        {
+          "method": "peec",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:crm-migration",
+            "study_ssot:row:crm-migration",
+            "peec:brand:hubspot"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "gemini",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:crm-migration",
+            "study_ssot:row:crm-migration",
+            "gemini:analysis:crm-migration:v1"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "tavily",
+          "signal": "unavailable",
+          "evidence_refs": [],
+          "unavailable_reason": "artifact_not_provided"
+        }
+      ],
+      "method_agreement_score": 1.0,
+      "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-migration",
+        "study_ssot:row:crm-migration",
+        "peec:brand:hubspot",
+        "gemini:analysis:crm-migration:v1"
+      ]
+    },
+    {
+      "cluster_id": "cluster:revops-tools",
+      "cluster_label": "RevOps Tools",
+      "provisional_gap_type": "perception",
+      "classification_status": "confirmed",
+      "confidence_tier": "moderate",
+      "method_signals": [
+        {
+          "method": "peec",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:revops-tools",
+            "study_ssot:row:revops-tools",
+            "peec:brand:hubspot"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "gemini",
+          "signal": "supports",
+          "evidence_refs": [
+            "peec:snapshot:attio:2026-04-25",
+            "peec:topic:revops-tools",
+            "study_ssot:row:revops-tools",
+            "gemini:analysis:revops-tools:v1"
+          ],
+          "unavailable_reason": null
+        },
+        {
+          "method": "tavily",
+          "signal": "unavailable",
+          "evidence_refs": [],
+          "unavailable_reason": "artifact_not_provided"
+        }
+      ],
+      "method_agreement_score": 1.0,
+      "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:revops-tools",
+        "study_ssot:row:revops-tools",
+        "peec:brand:hubspot",
+        "gemini:analysis:revops-tools:v1"
+      ]
+    }
+  ]
+}
