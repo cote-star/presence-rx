@@ -1,123 +1,200 @@
 # Presence Rx
 
+**From AI visibility gaps to earned marketing action, with receipts.**
+
+Presence Rx turns Peec AI visibility data into a marketer-facing decision system. It does not just show where a brand appears in AI answers. It explains why the brand is missing, what kind of problem the gap represents, what to do next, what to monitor, and what the brand has earned the right to claim.
+
 > **Diagnose. Prescribe. Refuse.**
-> *Find your brand's blind spots in AI answers — and prescribe what to fix, what to test, and what not to claim.*
 
-Big Berlin Hack 2026 implementation repo. Track: **Peec AI (locked)**. Briefing: [../AGENT_BRIEFING.md](../AGENT_BRIEFING.md). Battle plan: [../BATTLE_PLAN.md](../BATTLE_PLAN.md).
+## What We Built
 
-## Status
+Presence Rx is an AI marketer workflow for brands navigating AI-mediated discovery.
 
-**MVP pipeline complete.** Track locked, brand locked on **Nothing Phone** (the Invisible Champion: best position 2.4, 20% overall visibility, 4 of 5 topics with blind spots). Full 9-step pipeline executing end-to-end: Peec ingest, Tavily enrichment (40 live web sources), Gemini perception analysis, 3-signal gap classification (all 4 confirmed at STRONG evidence level), claim-checked evidence ledger, priority signals, competitor landscape, action plan, and interactive dashboard.
+Peec shows the visibility signal: where a brand appears, where competitors dominate, and which topics, engines, and sources shape AI answers. Presence Rx adds the decision layer on top:
 
-## Quick Start
+- **Diagnose** strategic gaps across topics, competitors, and AI-answer visibility.
+- **Classify** each gap as a perception, discovery, or attention problem.
+- **Prescribe** the next marketing action by channel, audience, and topic.
+- **Refuse** unsupported ownership claims before they reach the market.
+- **Monitor** recovery through evidence-led prompts and claim boundaries.
+
+The result is a dashboard and evidence pack that a marketer can use immediately: action priorities, conversation blocks, claim checks, evidence receipts, audience guidance, and exportable artifacts.
+
+## Why It Matters
+
+AI answers are becoming a discovery surface for brands. Visibility alone is not enough. A marketer needs to know:
+
+- Is this a real strategic gap or a topic we should ignore?
+- Is the brand missing because of perception, discoverability, or lack of public signal?
+- Which audience and channel should we activate first?
+- What can we safely claim today?
+- What would be an overclaim?
+
+Presence Rx answers those questions with source-of-record discipline. Peec remains the visibility truth. Public evidence, perception analysis, and claim guardrails are layered on top without blurring what came from where.
+
+## Product Surface
+
+The webapp is the primary demo surface.
+
+| Page | What It Does |
+| --- | --- |
+| **Action Brief** | Starts with the user outcome: priority gaps, claims to avoid, where to engage, and who to reach. |
+| **Conversation Blocks** | Explains each topic with visibility, competitor owner, gap type, signal alignment, perception themes, and strategic context. |
+| **Claims & Simulator** | Lets a marketer test claims against evidence. Blocks overclaims and suggests safer wording. |
+| **Charts** | Shows visibility, gap mix, action priority, competitor landscape, and signal profiles. |
+| **Directions** | Shows clearly labeled future-direction previews for audience and channel planning. |
+| **Export** | Downloads the evidence ledger, action brief, and full case data. |
+
+## Case Studies
+
+The dashboard ships with three brand case studies:
+
+- **Nothing Phone** — the core live-evidence story. Strong in smartphone design, but strategically under-recognized for minimalist hardware and wireless audio.
+- **Attio** — a SaaS CRM example showing product-led CRM strength, startup CRM competition, and non-priority migration claims.
+- **BMW** — an automotive example showing driving-dynamics heritage, luxury EV transition gaps, and premium SUV competition.
+
+Nothing Phone includes Tavily public-evidence enrichment with 40 web sources. Attio and BMW demonstrate the same strategic-intent and claim-guardrail system across additional brand categories.
+
+## The Core Demo Moment
+
+Presence Rx can say no.
+
+Example:
+
+> "Nothing Phone is the go-to minimalist tech brand."
+
+Presence Rx blocks the claim because Peec visibility shows the minimalist-hardware association is still owned by Apple in AI answers. It then provides a safer rewrite:
+
+> "Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity."
+
+That is the product's philosophy: not just what to say, but what the brand has earned the right to say.
+
+## How It Works
+
+![Presence Rx architecture](docs/submission-architecture.svg)
+
+For the recording-friendly version, open [docs/submission-architecture.html](docs/submission-architecture.html).
+
+```text
+Brand strategy + audience profile
+        ↓
+Prompt and topic universe
+        ↓
+Peec AI visibility data
+        ↓
+Public proof + perception analysis
+        ↓
+Presence Rx decision engine
+        ↓
+Claim guardrails + action priorities
+        ↓
+Dashboard + evidence ledger + action brief
+```
+
+### Source-of-Record Map
+
+| Layer | Role |
+| --- | --- |
+| **Peec MCP / Peec data** | Source of truth for AI visibility, topics, competitors, positions, and source signals. |
+| **Tavily** | Public web evidence and editorial proof-gap enrichment. |
+| **Gemini analysis layer** | Perception themes, missing associations, and narrative diagnostics. |
+| **Presence Rx** | Strategic status, gap type, action priority, claim ceiling, and safe rewrite logic. |
+| **Next.js webapp** | Marketer-facing dashboard and claim-simulator workflow. |
+
+## Key Concepts
+
+| Concept | Meaning |
+| --- | --- |
+| **Strategic Gap** | A topic the brand wants to be known for, but where AI answers currently favor a competitor or miss the brand. |
+| **Owned Strength** | A topic where the brand already has strong AI visibility and should defend the position. |
+| **Non-Priority** | A monitored topic that is not worth actively fighting for. |
+| **Perception Gap** | The brand exists in the market, but AI associates the desired trait with someone else. |
+| **Discovery Gap** | The brand has relevant content, but AI systems do not retrieve or cite it reliably. |
+| **Attention Gap** | The product or proof exists, but there is not enough public signal for AI answers to surface it. |
+| **Claim Ceiling** | The strongest claim the evidence supports without overstatement. |
+
+## Repository Structure
+
+```text
+presence_rx/              Python pipeline and artifact builders
+tests/                    Contract, behavior, and pipeline tests
+data/generated/           Generated case-study artifacts
+webapp/                   Next.js dashboard
+webapp/public/data/       Dashboard-ready brand data
+docs/                     Method notes, demo scripts, and submission assets
+```
+
+## Run The Dashboard
 
 ```bash
-uv sync --dev              # install dependencies
-make run                   # run full pipeline (outputs: artifacts/local/)
-make test                  # 172 tests
-make lint                  # ruff check
+cd webapp
+npm install
+npm run dev
 ```
 
-Or step-by-step:
+Open the local URL printed by Next.js, usually:
+
+```text
+http://localhost:3000
+```
+
+Build and typecheck:
 
 ```bash
-uv run presence-rx-ingest-peec --seed nothing-phone --out data/generated
-uv run presence-rx-enrich-tavily --study data/generated/study_ssot.json --manifest data/generated/manifest.json --out data/generated --live --yes-confirm-billing
-uv run presence-rx-run-mvp --generated-dir data/generated --dashboard-dir artifacts/local
+cd webapp
+npm run build
+npm run lint
 ```
 
-## Tech Stack
+## Run The Data Pipeline
 
-- **Python 3.11+** with Pydantic (strict contracts), Typer (CLI), Rich (console)
-- **google-genai 1.73.1** (Gemini API for perception analysis)
-- **tavily-python 0.7.23** (public web evidence search)
-- **Plotly.js** (client-side charts in dashboard)
-- **Peec MCP** (source of truth for AI visibility data)
+Install Python dependencies:
 
-## Goal
-
-Presence Verdict Pack via Peec MCP: multi-method analysis, claim checks, gap-type classifier, action brief.
-
-**Primary tagline:** Diagnose. Prescribe. Refuse.
-**Sub-tagline:** Find your brand's blind spots in AI answers.
-
-## Solution Flow
-
-```mermaid
-flowchart TD
-    A[Peec MCP Snapshot<br/>Nothing Phone] --> B[1. Ingest<br/>brand · topic · domain · URL · chat reports]
-    B --> C[2. Tavily Enrichment<br/>public proof · editorial gaps]
-    C --> D[3. Priority Signals<br/>intent fit · citation authority · evidence coverage<br/>signal alignment · action priority]
-    D --> E[4. Competitor Landscape<br/>combined-metric ownership map]
-    E --> F[5. Gap-Type Classifier<br/>perception · indexing · volume_frequency]
-    F --> G[Claim Check<br/>3-signal verification · evidence levels · claims to avoid]
-    G --> H[6. Action Brief<br/>PRESENCE_VERDICT · ACTION_BRIEF<br/>EVIDENCE_LEDGER · manifest]
-    H --> I[Monitoring Setup<br/>create_prompt · create_tag · create_topic]
-    I --> J[Lovable Webapp<br/>aligned with Peec design philosophy]
-    H -.->|sneak peek<br/>concept only| K[/future-directions<br/>Channel Activation · Lift · Spend<br/>Static · Permissioned data outside repo/]
-
-    classDef sharp fill:#fdcb6e,stroke:#e17055,stroke-width:2px,color:#2d3436
-    classDef future fill:#dfe6e9,stroke:#636e72,stroke-dasharray: 5 5,color:#2d3436
-    class F sharp
-    class K future
+```bash
+uv sync --dev
 ```
 
-The **gap-type classifier** (orange, step 5) is the new sharp moment: every blind spot carries a `perception` / `indexing` / `volume_frequency` label that triggers a different intervention class. The **Future Directions** node (dotted, step K) is concept-only on the public surface; the actual channel-activation prototype lives outside this repo (see [FUTURE_DIRECTIONS.md](docs/FUTURE_DIRECTIONS.md)).
+Run the pipeline:
 
-## Core Artifacts
+```bash
+make run
+```
 
-- `PRESENCE_VERDICT.md` - evidence-grade visibility diagnosis with gap-type classification
-- `ACTION_BRIEF.md` - marketer actions grouped by intervention class, with "Claims To Avoid"
-- `EVIDENCE_LEDGER.json` - every claim mapped to sources with blocked claims register
-- `manifest.json` - snapshot metadata, taxonomy versions, pipeline summary, freshness
+Validate generated artifacts:
 
-Optional artifacts: `pipeline_funnel.json`, `source_of_record.json`, `hero_cards.json`, `study_ssot.json`, `cluster_diagnostics.json`
+```bash
+make validate
+```
 
-## Partner Stack
+Run tests and lint:
 
-- Gemini
-- Tavily
-- Lovable (dashboard surface)
-- Peec MCP is the required track tool; eligibility toward the 3-partner minimum must be confirmed with organisers
+```bash
+make test
+make lint
+```
 
-## Submission
+## Generated Outputs
 
-- Public GitHub repo + 2-minute video by Sunday 14:00 CEST.
+Core generated artifacts include:
 
-## Multi-Agent
+- `PRESENCE_VERDICT.md`
+- `ACTION_BRIEF.md`
+- `EVIDENCE_LEDGER.json`
+- `study_ssot.json`
+- `value_added_metrics.json`
+- `competitor_landscape.json`
+- `manifest.json`
 
-See [AGENTS.md](AGENTS.md) for lane assignments and coordination rules.
+The webapp consumes the dashboard-ready JSON files in `webapp/public/data/`.
 
-## Reusable Patterns
+## Submission Notes
 
-See [docs/ANALYTICS_PATTERNS_FOR_PEEC.md](docs/ANALYTICS_PATTERNS_FOR_PEEC.md) for public-safe analytics patterns: evidence ledger, claim checks, prompt universe routing, and the demo proof step.
+- The dashboard is the primary demo surface.
+- Future-direction screens are clearly labeled as illustrative previews.
+- Peec visibility data remains the measurement source of record.
+- Public web evidence is summarized and referenced; raw source text is not copied into the product narrative.
+- Claim checks are evidence-scored and intentionally conservative.
 
-See [docs/TREND_ECON_PATTERNS.md](docs/TREND_ECON_PATTERNS.md) for trend-analytics details: prompt clusters as trend objects, surge vs slow-burn, quality flags, SSOT, and strategic quadrants.
+## Team
 
-See [docs/PARENT_TOPIC_AND_UNSUPERVISED_PATTERNS.md](docs/PARENT_TOPIC_AND_UNSUPERVISED_PATTERNS.md) for parent-topic and unsupervised-topic mechanics: candidate topics, confidence filtering, parent themes, fallback topic sources, and coverage audits.
-
-See [docs/CAMPAIGN_TAXONOMY_FOR_PEEC.md](docs/CAMPAIGN_TAXONOMY_FOR_PEEC.md) for the campaign category/type hierarchy that turns prompt-cluster findings into marketer-facing plays.
-
-See [docs/PLANNING_AND_MEASUREMENT_PATTERNS.md](docs/PLANNING_AND_MEASUREMENT_PATTERNS.md) for scenario-planning, reporting, readiness gates, visible assumptions, and sparse-data behavior.
-
-See [docs/METHOD_GUARDRAILS_AND_EVIDENCE.md](docs/METHOD_GUARDRAILS_AND_EVIDENCE.md) for method ladders, evidence strength tiers, signal alignment, and claim language rules.
-
-See [docs/TERMINOLOGY.md](docs/TERMINOLOGY.md) for the public terminology map used by the dashboard, markdown deliverables, and current documentation.
-
-See [docs/ARTIFACT_CONTRACTS.md](docs/ARTIFACT_CONTRACTS.md) for the initial JSON artifact contracts.
-
-See [docs/END_TO_END_BUILD_GUIDE_AND_STORYBOARD.md](docs/END_TO_END_BUILD_GUIDE_AND_STORYBOARD.md) for the complete build order, data flow, dashboard wireframes, and 2-minute demo storyboard.
-
-See [docs/VALIDATION_REPORT.md](docs/VALIDATION_REPORT.md) for the original validation snapshot; use [docs/PROGRESS.md](docs/PROGRESS.md) and [docs/_STATUS.md](docs/_STATUS.md) for current validation status.
-
-See **[docs/SCOPE_FINAL.md](docs/SCOPE_FINAL.md)** — the locked, rated scope for the build. 22 features across 4 tiers, 6-axis blind-spot model (Topic / Channel / Engine / Geography / Authority / Evidence), eligibility-critical lane explicit, build priority order with submission gates. **Read this first.**
-
-See [docs/INTEGRATION_CHECKLIST.md](docs/INTEGRATION_CHECKLIST.md) for the active integration checklist (auth, brand strategy including custom-project workflow, partner wiring, pipeline build, submission gates).
-
-See [docs/PEEC_MCP_EXPLORATION.md](docs/PEEC_MCP_EXPLORATION.md) for the verified MCP exploration output: project inventory, brand IDs, topic IDs, prompt summary, channel and engine breakdowns, gap URLs, metric definitions, and tool-to-pipeline mapping.
-
-See [docs/FUTURE_DIRECTIONS.md](docs/FUTURE_DIRECTIONS.md) for the channel-activation roadmap (concept-only, sources the static `/future-directions` page in the Lovable webapp).
-
-See [docs/design.md](docs/design.md) for the Peec AI design style guide (tokens captured 2026-04-25) that the Lovable webapp must follow.
-
-See [docs/PUBLIC_SAFETY_CHECKLIST.md](docs/PUBLIC_SAFETY_CHECKLIST.md) before committing, pushing, recording, or making the repo public.
+Built for the Peec AI track at Big Berlin Hack 2026.

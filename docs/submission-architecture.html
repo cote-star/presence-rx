@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presence Rx Architecture</title>
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --ink: #171717;
+      --muted: rgba(23, 23, 23, 0.64);
+      --faint: rgba(23, 23, 23, 0.44);
+      --line: rgba(23, 23, 23, 0.1);
+      --soft: rgba(23, 23, 23, 0.035);
+      --peec: rgb(0, 146, 184);
+      --tavily: #16a34a;
+      --gemini: #4f46e5;
+      --rx: #f97316;
+      --block: #fb2c36;
+      --lovable: #9333ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #f3f3f3;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      background: var(--bg);
+      padding: 68px 80px 38px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 34px;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 58px;
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    .subtitle {
+      margin-top: 16px;
+      font-size: 25px;
+      line-height: 1.35;
+      color: var(--muted);
+      max-width: 1040px;
+    }
+
+    .architecture {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.04fr 1fr 1.14fr 1.02fr;
+      gap: 28px;
+      min-height: 0;
+    }
+
+    .lane {
+      position: relative;
+      min-width: 0;
+      padding: 28px;
+      border-radius: 26px;
+      background: #f8f8f8;
+      box-shadow: inset 0 0 0 1px rgba(23, 23, 23, 0.07);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 26px;
+    }
+
+    .lane h2 {
+      margin: 0;
+      font-size: 23px;
+      line-height: 1.1;
+      font-weight: 760;
+    }
+
+    .stack {
+      display: grid;
+      align-content: space-between;
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .card {
+      position: relative;
+      min-width: 0;
+      border-radius: 20px;
+      background: white;
+      padding: 28px 30px;
+      box-shadow:
+        0 0 0 1px rgba(23, 23, 23, 0.09),
+        0 18px 40px rgba(23, 23, 23, 0.07);
+      overflow: hidden;
+    }
+
+    .card.accent {
+      border-left: 8px solid var(--accent);
+      box-shadow:
+        0 0 0 2px color-mix(in srgb, var(--accent) 70%, transparent),
+        0 18px 40px rgba(23, 23, 23, 0.07);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      font-size: 29px;
+      line-height: 1.1;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
+    .num {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: white;
+      font-size: 17px;
+      line-height: 1;
+      font-weight: 780;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.38;
+      font-weight: 520;
+    }
+
+      .mono {
+      margin-top: 18px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 16px;
+      line-height: 1.3;
+      color: var(--faint);
+      white-space: normal;
+    }
+
+    .mono span {
+      display: block;
+    }
+
+    .input-card {
+      min-height: 152px;
+    }
+
+    .signal-card {
+      min-height: 154px;
+    }
+
+    .peec-card {
+      min-height: 188px;
+      --accent: var(--peec);
+    }
+
+    .tavily-card {
+      --accent: var(--tavily);
+    }
+
+    .gemini-card {
+      --accent: var(--gemini);
+    }
+
+    .decision {
+      --accent: var(--rx);
+      min-height: 424px;
+    }
+
+    .guardrail {
+      --accent: var(--block);
+      min-height: 152px;
+    }
+
+    .lovable {
+      --accent: var(--lovable);
+    }
+
+    .peec-write {
+      --accent: var(--peec);
+    }
+
+    .chips {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: 13px;
+      background: var(--soft);
+      box-shadow: inset 0 0 0 1px rgba(23, 23, 23, 0.07);
+      color: rgba(23, 23, 23, 0.72);
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 650;
+    }
+
+    .arrow {
+      position: absolute;
+      z-index: 2;
+      top: 51%;
+      width: 42px;
+      height: 2px;
+      background: rgba(23, 23, 23, 0.25);
+    }
+
+    .arrow::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 10px solid rgba(23, 23, 23, 0.32);
+      transform: translateY(-50%);
+    }
+
+    .a1 {
+      left: calc(25% - 10px);
+    }
+
+    .a2 {
+      left: calc(50% - 5px);
+    }
+
+    .a3 {
+      left: calc(75% + 5px);
+    }
+
+    footer {
+      min-height: 78px;
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 0 0 1px var(--line), 0 12px 30px rgba(23, 23, 23, 0.06);
+      padding: 18px 28px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .footer-title {
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .footer-chip {
+      min-width: 0;
+      border-radius: 12px;
+      padding: 9px 12px;
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: rgba(23, 23, 23, 0.72);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .c-peec { background: rgba(0, 146, 184, 0.1); }
+    .c-tavily { background: rgba(22, 163, 74, 0.1); }
+    .c-gemini { background: rgba(79, 70, 229, 0.1); }
+    .c-rx { background: rgba(249, 115, 22, 0.12); }
+    .c-lovable { background: rgba(147, 51, 234, 0.1); }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <header>
+      <div>
+        <h1>Presence Rx Architecture</h1>
+        <div class="subtitle">Brand strategy and audience intent become evidence-graded marketing actions.</div>
+      </div>
+    </header>
+
+    <section class="architecture" aria-label="Presence Rx architecture">
+      <div class="arrow a1"></div>
+      <div class="arrow a2"></div>
+      <div class="arrow a3"></div>
+
+      <section class="lane">
+        <h2>Inputs</h2>
+        <div class="stack">
+          <article class="card input-card">
+            <div class="card-title"><span class="num">1</span>Strategy Profile</div>
+            <p>Desired associations, ambition level, and positioning frame.</p>
+          </article>
+          <article class="card input-card">
+            <div class="card-title"><span class="num">2</span>Audience Layer</div>
+            <p>Personas and profiles: design-led buyers, Android switchers, and style-conscious audio users.</p>
+          </article>
+          <article class="card input-card">
+            <div class="card-title"><span class="num">3</span>Prompt Universe</div>
+            <p>Audience questions become measurable topics, prompts, engines, and competitors.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lane">
+        <h2>Signals</h2>
+        <div class="stack">
+          <article class="card accent signal-card peec-card">
+            <div class="card-title">Peec MCP</div>
+            <p>Source of truth for AI visibility across brand, topic, engine, domain, URL, and chat.</p>
+            <div class="mono">20% visibility · #2.4 position</div>
+          </article>
+          <article class="card accent signal-card tavily-card">
+            <div class="card-title">Tavily</div>
+            <p>Public proof, competitor evidence, and editorial gaps from the open web.</p>
+          </article>
+          <article class="card accent signal-card gemini-card">
+            <div class="card-title">Gemini</div>
+            <p>Perception themes and missing brand associations.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lane">
+        <h2>Presence Rx Intelligence</h2>
+        <div class="stack">
+          <article class="card accent decision">
+            <div class="card-title">Decision Engine</div>
+            <p>Combines visibility, public proof, perception, strategy, and audience fit.</p>
+            <div class="chips">
+              <div class="chip">Strategic status</div>
+              <div class="chip">Gap type and fix class</div>
+              <div class="chip">Action priority and competitor owner</div>
+            </div>
+            <div class="mono"><span>validated contracts</span><span>evidence scoring</span></div>
+          </article>
+          <article class="card accent guardrail">
+            <div class="card-title">Claim Guardrail</div>
+            <p>Allowed, needs evidence, blocked, or off-strategy.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lane">
+        <h2>Outputs</h2>
+        <div class="stack">
+          <article class="card accent signal-card lovable">
+            <div class="card-title">Lovable Dashboard</div>
+            <p>Executive workflow for diagnosis, evidence, and claim testing.</p>
+          </article>
+          <article class="card signal-card">
+            <div class="card-title">Verdict Pack</div>
+            <p>Action brief, evidence ledger, safe rewrites, markdown, and JSON.</p>
+          </article>
+          <article class="card accent signal-card peec-write">
+            <div class="card-title">Peec Writes</div>
+            <p>Monitoring prompts and campaign tags for follow-up.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <div class="footer-title">Source of record map</div>
+      <div class="footer-grid">
+        <div class="footer-chip c-peec">Peec = visibility truth</div>
+        <div class="footer-chip c-tavily">Tavily = public proof</div>
+        <div class="footer-chip c-gemini">Gemini = perception</div>
+        <div class="footer-chip c-rx">Presence Rx = decisions</div>
+        <div class="footer-chip c-lovable">Lovable = workflow</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
