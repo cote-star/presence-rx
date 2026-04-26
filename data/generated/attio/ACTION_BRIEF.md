@@ -4,18 +4,25 @@
 
 ## Claims To Avoid
 
+### challenged:crm-for-startups:v1
+
+- **Blocked claim:** Attio is the best CRM for startups, replacing HubSpot
+- **Reason:** OWNERSHIP_OVERCLAIM: Attio has 22% visibility in CRM for Startups while HubSpot owns the topic. Claiming ownership is not supported by Peec data.
+- **Safe rewrite:** Startups that value flexibility over feature bloat choose Attio — a CRM that adapts to your workflow instead of forcing you into someone else’s
+- **Next evidence:** Publish explicit positioning content for this topic
+
 ### challenged:modern-crm-alternative:v1
 
-- **Blocked claim:** Attio is the leading modern crm alternative brand
+- **Blocked claim:** Attio is a modern alternative to Salesforce
 - **Reason:** OWNERSHIP_OVERCLAIM: Attio has 5% visibility in Modern CRM Alternative while Salesforce owns the topic. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.
+- **Safe rewrite:** Attio represents a new generation of CRM — built on real-time enrichment and adaptable data models rather than legacy rigid schemas
 - **Next evidence:** Improve schema markup and structured data for this topic
 
 ### challenged:revops-tools:v1
 
-- **Blocked claim:** Attio is the leading revops tools brand
+- **Blocked claim:** Attio is a complete RevOps platform replacing dedicated tools
 - **Reason:** OWNERSHIP_OVERCLAIM: Attio has 15% visibility in RevOps Tools while HubSpot owns the topic. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility.
+- **Safe rewrite:** RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it
 - **Next evidence:** Publish explicit positioning content for this topic
 
 ## Actions by Intervention Class
@@ -27,7 +34,7 @@
 #### Modern CRM Alternative
 
 - **Visibility:** 5% | **Competitor:** Salesforce
-- **Strategic status:** Strategic Gap (high) — Category-creation narrative
+- **Strategic status:** Strategic Gap (medium) — Reframe as next-gen, not 'alternative to Salesforce'
 - **Evidence Level:** confirmed (moderate)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement
@@ -45,7 +52,7 @@
 #### CRM for Startups
 
 - **Visibility:** 22% | **Competitor:** HubSpot
-- **Strategic status:** Strategic Gap (high) — Primary audience
+- **Strategic status:** Strategic Gap (high) — Don't fight HubSpot head-on; segment the audience
 - **Evidence Level:** confirmed (moderate)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement
@@ -59,7 +66,7 @@
 #### RevOps Tools
 
 - **Visibility:** 15% | **Competitor:** HubSpot
-- **Strategic status:** Strategic Gap (medium) — Key buyer persona
+- **Strategic status:** Strategic Gap (high) — CRM that RevOps teams love, not a RevOps platform
 - **Evidence Level:** confirmed (moderate)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement

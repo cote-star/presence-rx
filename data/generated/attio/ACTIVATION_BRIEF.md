@@ -45,8 +45,8 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 - Peec visibility must show improvement trend
 - Tavily search must find Attio editorial coverage for this topic
 - At least one independent review mentioning Attio + Modern CRM Alternative
-- **Claim to avoid:** Attio is the leading modern crm alternative brand
-- **Safe alternative:** Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.
+- **Claim to avoid:** Attio is a modern alternative to Salesforce
+- **Safe alternative:** Attio represents a new generation of CRM — built on real-time enrichment and adaptable data models rather than legacy rigid schemas
 
 ## Perception Gaps
 
@@ -74,7 +74,7 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 #### FAQ / Search Answer
 
 - **Q:** "Is Attio good for crm for startups?"
-- **A:** Test the Attio association in the CRM for Startups topic; 2 of 2 methods support.
+- **A:** Do not claim Attio ownership of the CRM for Startups topic; HubSpot holds dominant visibility.
 
 #### Audience & Channel
 
@@ -87,6 +87,8 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 - Peec visibility must show improvement trend
 - Tavily search must find Attio editorial coverage for this topic
 - At least one independent review mentioning Attio + CRM for Startups
+- **Claim to avoid:** Attio is the best CRM for startups, replacing HubSpot
+- **Safe alternative:** Startups that value flexibility over feature bloat choose Attio — a CRM that adapts to your workflow instead of forcing you into someone else’s
 
 ### RevOps Tools
 
@@ -125,8 +127,8 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 - Peec visibility must show improvement trend
 - Tavily search must find Attio editorial coverage for this topic
 - At least one independent review mentioning Attio + RevOps Tools
-- **Claim to avoid:** Attio is the leading revops tools brand
-- **Safe alternative:** Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility.
+- **Claim to avoid:** Attio is a complete RevOps platform replacing dedicated tools
+- **Safe alternative:** RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it
 
 ## Attention Gaps
 

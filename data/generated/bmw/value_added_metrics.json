@@ -37,7 +37,8 @@
         "peec:snapshot:bmw:2026-04-25",
         "peec:topic:driving-dynamics"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "emerging_opportunity"
     },
     {
       "cluster_id": "cluster:luxury-ev-transition",
@@ -64,7 +65,8 @@
         "peec:brand:tesla",
         "gemini:analysis:luxury-ev-transition:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:premium-suv-segment",
@@ -91,7 +93,8 @@
         "peec:brand:mercedes-benz",
         "gemini:analysis:premium-suv-segment:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:electric-i-series",
@@ -118,7 +121,8 @@
         "peec:brand:tesla",
         "gemini:analysis:electric-i-series:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:brand-heritage",
@@ -145,7 +149,8 @@
         "peec:brand:mercedes-benz",
         "gemini:analysis:brand-heritage:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "non_priority"
     }
   ]
 }

@@ -30,7 +30,12 @@
         "desired_association": true,
         "strategic_importance": "core",
         "strategic_note": "Heritage stronghold \u2014 defend",
-        "strategic_status": "emerging_opportunity"
+        "strategic_status": "emerging_opportunity",
+        "positioning_frame": "Benchmark driving experience in the luxury segment \u2014 precision engineering with visceral driving pleasure",
+        "ambition_level": "leader",
+        "claim_ceiling": "category_leader",
+        "tempting_claim": "BMW is the only luxury brand that cares about driving dynamics",
+        "safe_claim": "BMW\u2019s engineering philosophy centers on driving dynamics \u2014 a commitment reflected across every model from 3 Series to iX"
       },
       {
         "cluster_id": "cluster:luxury-ev-transition",
@@ -58,9 +63,14 @@
         "action_recommendation": null,
         "action_monitor_prompt": null,
         "desired_association": true,
-        "strategic_importance": "core",
-        "strategic_note": "Critical for future positioning",
-        "strategic_status": "strategic_gap"
+        "strategic_importance": "high",
+        "strategic_note": "Don't chase Tesla's EV framing \u2014 reframe as luxury + electric",
+        "strategic_status": "strategic_gap",
+        "positioning_frame": "Luxury performance heritage entering the electric era \u2014 driving experience first, powertrain follows",
+        "ambition_level": "challenger",
+        "claim_ceiling": "category_challenger",
+        "tempting_claim": "BMW is leading the luxury EV transition",
+        "safe_claim": "BMW brings luxury performance heritage into the electric era \u2014 the driving experience comes first, the powertrain follows"
       },
       {
         "cluster_id": "cluster:premium-suv-segment",
@@ -89,8 +99,13 @@
         "action_monitor_prompt": null,
         "desired_association": true,
         "strategic_importance": "high",
-        "strategic_note": "Revenue-critical segment",
-        "strategic_status": "strategic_gap"
+        "strategic_note": "Differentiate through driving dynamics, not SUV category leadership",
+        "strategic_status": "strategic_gap",
+        "positioning_frame": "X-series combines SUV versatility with driving dynamics no other premium SUV delivers",
+        "ambition_level": "challenger",
+        "claim_ceiling": "category_challenger",
+        "tempting_claim": "BMW leads the premium SUV segment",
+        "safe_claim": "BMW\u2019s X range offers a driving-focused alternative in the premium SUV segment, where competitors prioritize comfort over engagement"
       },
       {
         "cluster_id": "cluster:electric-i-series",
@@ -118,9 +133,14 @@
         "action_recommendation": null,
         "action_monitor_prompt": null,
         "desired_association": true,
-        "strategic_importance": "high",
-        "strategic_note": "EV product line",
-        "strategic_status": "strategic_gap"
+        "strategic_importance": "medium",
+        "strategic_note": "Targeted attribute claims, not category ownership",
+        "strategic_status": "strategic_gap",
+        "positioning_frame": "i4 and iX prove going electric doesn\u2019t mean giving up the BMW driving experience",
+        "ambition_level": "niche_alternative",
+        "claim_ceiling": "credible_alternative",
+        "tempting_claim": "BMW\u2019s i-Series is the best electric car lineup",
+        "safe_claim": "The BMW i4 delivers rear-wheel-drive precision and a driver-focused cockpit in an all-electric package"
       },
       {
         "cluster_id": "cluster:brand-heritage",
@@ -149,8 +169,13 @@
         "action_monitor_prompt": null,
         "desired_association": false,
         "strategic_importance": "low",
-        "strategic_note": "Heritage is given, not a fight",
-        "strategic_status": "non_priority"
+        "strategic_note": "Heritage amplifies other claims, not a standalone fight",
+        "strategic_status": "non_priority",
+        "positioning_frame": "Century of engineering innovation built on one principle: the driver comes first",
+        "ambition_level": "monitor",
+        "claim_ceiling": "supporting_proof",
+        "tempting_claim": "BMW has the richest heritage of any luxury automaker",
+        "safe_claim": "BMW\u2019s motorsport DNA and century of engineering are present in every vehicle \u2014 heritage as capability, not nostalgia"
       }
     ]
   },
@@ -396,7 +421,8 @@
           "peec:snapshot:bmw:2026-04-25",
           "peec:topic:driving-dynamics"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "emerging_opportunity"
       },
       {
         "cluster_id": "cluster:luxury-ev-transition",
@@ -423,7 +449,8 @@
           "peec:brand:tesla",
           "gemini:analysis:luxury-ev-transition:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:premium-suv-segment",
@@ -450,7 +477,8 @@
           "peec:brand:mercedes-benz",
           "gemini:analysis:premium-suv-segment:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:electric-i-series",
@@ -477,7 +505,8 @@
           "peec:brand:tesla",
           "gemini:analysis:electric-i-series:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:brand-heritage",
@@ -504,7 +533,8 @@
           "peec:brand:mercedes-benz",
           "gemini:analysis:brand-heritage:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "non_priority"
       }
     ]
   },
@@ -715,7 +745,7 @@
       },
       {
         "claim_id": "challenged:luxury-ev-transition:v1",
-        "claim": "BMW is the leading luxury ev transition brand",
+        "claim": "BMW is leading the luxury EV transition",
         "status": "blocked",
         "cluster_id": "cluster:luxury-ev-transition",
         "methods": [
@@ -733,7 +763,7 @@
       },
       {
         "claim_id": "challenged:premium-suv-segment:v1",
-        "claim": "BMW is the leading premium suv segment brand",
+        "claim": "BMW leads the premium SUV segment",
         "status": "blocked",
         "cluster_id": "cluster:premium-suv-segment",
         "methods": [
@@ -751,7 +781,7 @@
       },
       {
         "claim_id": "challenged:electric-i-series:v1",
-        "claim": "BMW is the leading electric i-series brand",
+        "claim": "BMW\u2019s i-Series is the best electric car lineup",
         "status": "blocked",
         "cluster_id": "cluster:electric-i-series",
         "methods": [
@@ -878,23 +908,23 @@
     "blocked_claims": [
       {
         "claim_id": "challenged:luxury-ev-transition:v1",
-        "claim": "BMW is the leading luxury ev transition brand",
+        "claim": "BMW is leading the luxury EV transition",
         "blocked_reason": "OWNERSHIP_OVERCLAIM: BMW has 12% visibility in Luxury EV Transition while Tesla owns the topic. Claiming ownership is not supported by Peec data.",
-        "safe_rewrite": "BMW is emerging in the luxury ev transition category, currently behind Tesla in AI visibility.",
+        "safe_rewrite": "BMW brings luxury performance heritage into the electric era \u2014 the driving experience comes first, the powertrain follows",
         "next_evidence_to_collect": "Publish explicit positioning content for this topic"
       },
       {
         "claim_id": "challenged:premium-suv-segment:v1",
-        "claim": "BMW is the leading premium suv segment brand",
+        "claim": "BMW leads the premium SUV segment",
         "blocked_reason": "OWNERSHIP_OVERCLAIM: BMW has 15% visibility in Premium SUV Segment while Mercedes-Benz owns the topic. Claiming ownership is not supported by Peec data.",
-        "safe_rewrite": "BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.",
+        "safe_rewrite": "BMW\u2019s X range offers a driving-focused alternative in the premium SUV segment, where competitors prioritize comfort over engagement",
         "next_evidence_to_collect": "Improve schema markup and structured data for this topic"
       },
       {
         "claim_id": "challenged:electric-i-series:v1",
-        "claim": "BMW is the leading electric i-series brand",
+        "claim": "BMW\u2019s i-Series is the best electric car lineup",
         "blocked_reason": "OWNERSHIP_OVERCLAIM: BMW has 6% visibility in Electric i-Series while Tesla owns the topic. Claiming ownership is not supported by Peec data.",
-        "safe_rewrite": "BMW is emerging in the electric i-series category, currently behind Tesla in AI visibility.",
+        "safe_rewrite": "The BMW i4 delivers rear-wheel-drive precision and a driver-focused cockpit in an all-electric package",
         "next_evidence_to_collect": "Increase editorial and public coverage for this topic"
       }
     ]

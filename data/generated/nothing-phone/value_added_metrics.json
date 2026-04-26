@@ -37,7 +37,8 @@
         "peec:snapshot:nothing-phone:2026-04-25",
         "peec:topic:smartphone-design"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "owned_strength"
     },
     {
       "cluster_id": "cluster:mobile-ecosystem",
@@ -65,7 +66,8 @@
         "gemini:analysis:mobile-ecosystem:v1",
         "tavily:evidence:mobile-ecosystem:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:consumer-tech-innovation",
@@ -93,7 +95,8 @@
         "gemini:analysis:consumer-tech-innovation:v1",
         "tavily:evidence:consumer-tech-innovation:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:minimalist-hardware",
@@ -121,7 +124,8 @@
         "gemini:analysis:minimalist-hardware:v1",
         "tavily:evidence:minimalist-hardware:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:wireless-audio",
@@ -149,7 +153,8 @@
         "gemini:analysis:wireless-audio:v1",
         "tavily:evidence:wireless-audio:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     }
   ]
 }

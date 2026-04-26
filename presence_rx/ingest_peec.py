@@ -70,6 +70,11 @@ class SeedTopic(BaseModel):
     desired_association: bool = True
     strategic_importance: str = "medium"  # core, high, medium, low
     strategic_note: str | None = None
+    positioning_frame: str | None = None
+    ambition_level: str = "challenger"   # leader / challenger / niche_alternative / monitor
+    claim_ceiling: str = "category_challenger"  # category_leader / category_challenger / credible_alternative / supporting_proof / monitor_only
+    tempting_claim: str | None = None
+    safe_claim: str | None = None
 
 
 class SeedEngine(BaseModel):
@@ -264,6 +269,11 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                 desired_association=True,
                 strategic_importance="core",
                 strategic_note="Core identity \u2014 defend",
+                positioning_frame="Design-forward smartphone that turned heads by making the back of a phone interesting",
+                ambition_level="leader",
+                claim_ceiling="category_leader",
+                tempting_claim="Nothing Phone is the leading smartphone design brand",
+                safe_claim="Nothing Phone pioneered transparent, stripped-back smartphone design \u2014 AI answers already reflect that at 72% visibility",
             ),
             SeedTopic(
                 name="Mobile Ecosystem",
@@ -280,8 +290,13 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                     "owned-content retrieval/citation problem, pending Gemini/Tavily confirmation."
                 ),
                 desired_association=True,
-                strategic_importance="medium",
-                strategic_note="Want ecosystem credibility",
+                strategic_importance="low",
+                strategic_note="Want cohesive product family, not platform dominance",
+                positioning_frame="Cohesive product family \u2014 Phone, Ear, Watch \u2014 connected through Nothing OS",
+                ambition_level="niche_alternative",
+                claim_ceiling="credible_alternative",
+                tempting_claim="Nothing Phone offers a leading mobile ecosystem",
+                safe_claim="Nothing is building a cohesive product family \u2014 Phone, Ear, Watch \u2014 connected through Nothing OS, not competing with Apple\u2019s walled garden",
             ),
             SeedTopic(
                 name="Consumer Tech Innovation",
@@ -299,7 +314,12 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                 ),
                 desired_association=True,
                 strategic_importance="high",
-                strategic_note="Want innovation association",
+                strategic_note="Want 'fresh alternative' not 'innovation leader'",
+                positioning_frame="Fresh design philosophy \u2014 not faster chips, but a different perspective on what a phone should be",
+                ambition_level="challenger",
+                claim_ceiling="category_challenger",
+                tempting_claim="Nothing Phone is an innovation leader in consumer technology",
+                safe_claim="Nothing Phone represents a different kind of innovation \u2014 not faster chips, but a fresh perspective on what a smartphone should look and feel like",
             ),
             SeedTopic(
                 name="Minimalist Hardware",
@@ -317,7 +337,12 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                 ),
                 desired_association=True,
                 strategic_importance="core",
-                strategic_note="CORE IDENTITY \u2014 most urgent",
+                strategic_note="CORE IDENTITY \u2014 brand IS minimalism but Apple owns the label",
+                positioning_frame="Built from day one around minimalist design \u2014 transparent materials, Glyph Interface, stripped-back Nothing OS",
+                ambition_level="challenger",
+                claim_ceiling="category_challenger",
+                tempting_claim="Nothing Phone is the go-to minimalist tech brand",
+                safe_claim="Nothing Phone brings a distinctive take on minimalism \u2014 transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity",
             ),
             SeedTopic(
                 name="Wireless Audio",
@@ -335,7 +360,12 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                 ),
                 desired_association=True,
                 strategic_importance="medium",
-                strategic_note="Nothing Ear product line",
+                strategic_note="Feature-rich wireless audio with distinctive transparent design",
+                positioning_frame="Feature-rich wireless audio with Nothing\u2019s transparent design language",
+                ambition_level="niche_alternative",
+                claim_ceiling="credible_alternative",
+                tempting_claim="Nothing Ear is a leading wireless audio brand",
+                safe_claim="Nothing Ear pairs full-featured wireless audio with Nothing\u2019s transparent design language \u2014 a distinctive alternative for style-conscious users",
             ),
         ],
         engines=[
@@ -495,6 +525,11 @@ def attio_seed() -> BrandSeed:
                 desired_association=True,
                 strategic_importance="core",
                 strategic_note="Core positioning",
+                positioning_frame="CRM purpose-built for PLG teams \u2014 real-time enrichment, flexible objects, relationship intelligence",
+                ambition_level="leader",
+                claim_ceiling="category_leader",
+                tempting_claim="Attio is the #1 CRM for all product-led companies",
+                safe_claim="Attio is built from the ground up for product-led workflows \u2014 real-time enrichment, customizable data models, and relationship intelligence",
             ),
             SeedTopic(
                 name="CRM for Startups",
@@ -512,7 +547,12 @@ def attio_seed() -> BrandSeed:
                 ),
                 desired_association=True,
                 strategic_importance="high",
-                strategic_note="Primary audience",
+                strategic_note="Don't fight HubSpot head-on; segment the audience",
+                positioning_frame="CRM built by operators, for operators \u2014 for startups that outgrow spreadsheets but refuse rigid enterprise tooling",
+                ambition_level="challenger",
+                claim_ceiling="category_challenger",
+                tempting_claim="Attio is the best CRM for startups, replacing HubSpot",
+                safe_claim="Startups that value flexibility over feature bloat choose Attio \u2014 a CRM that adapts to your workflow instead of forcing you into someone else\u2019s",
             ),
             SeedTopic(
                 name="Modern CRM Alternative",
@@ -529,8 +569,13 @@ def attio_seed() -> BrandSeed:
                     "Salesforce comparison pages rather than surfacing Attio as an alternative."
                 ),
                 desired_association=True,
-                strategic_importance="high",
-                strategic_note="Category-creation narrative",
+                strategic_importance="medium",
+                strategic_note="Reframe as next-gen, not 'alternative to Salesforce'",
+                positioning_frame="Next-generation CRM \u2014 not an alternative to legacy tools, but a new category",
+                ambition_level="challenger",
+                claim_ceiling="category_challenger",
+                tempting_claim="Attio is a modern alternative to Salesforce",
+                safe_claim="Attio represents a new generation of CRM \u2014 built on real-time enrichment and adaptable data models rather than legacy rigid schemas",
             ),
             SeedTopic(
                 name="CRM Migration",
@@ -549,6 +594,11 @@ def attio_seed() -> BrandSeed:
                 desired_association=False,
                 strategic_importance="low",
                 strategic_note="Not fighting migration wars",
+                positioning_frame="Fast onboarding \u2014 import data and be productive on day one",
+                ambition_level="monitor",
+                claim_ceiling="monitor_only",
+                tempting_claim="Attio is the best tool for migrating from HubSpot",
+                safe_claim="Getting started with Attio is fast \u2014 import your data and be productive in a CRM that adapts to you",
             ),
             SeedTopic(
                 name="RevOps Tools",
@@ -565,8 +615,13 @@ def attio_seed() -> BrandSeed:
                     "HubSpot Operations Hub rather than Attio's native capabilities."
                 ),
                 desired_association=True,
-                strategic_importance="medium",
-                strategic_note="Key buyer persona",
+                strategic_importance="high",
+                strategic_note="CRM that RevOps teams love, not a RevOps platform",
+                positioning_frame="CRM that RevOps teams love \u2014 flexible enough to model any GTM workflow inside the CRM",
+                ambition_level="challenger",
+                claim_ceiling="category_challenger",
+                tempting_claim="Attio is a complete RevOps platform replacing dedicated tools",
+                safe_claim="RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it",
             ),
         ],
         engines=[
@@ -772,6 +827,11 @@ def bmw_seed() -> BrandSeed:
                 desired_association=True,
                 strategic_importance="core",
                 strategic_note="Heritage stronghold \u2014 defend",
+                positioning_frame="Benchmark driving experience in the luxury segment \u2014 precision engineering with visceral driving pleasure",
+                ambition_level="leader",
+                claim_ceiling="category_leader",
+                tempting_claim="BMW is the only luxury brand that cares about driving dynamics",
+                safe_claim="BMW\u2019s engineering philosophy centers on driving dynamics \u2014 a commitment reflected across every model from 3 Series to iX",
             ),
             SeedTopic(
                 name="Luxury EV Transition",
@@ -788,8 +848,13 @@ def bmw_seed() -> BrandSeed:
                     "sidelining BMW's electrification progress in premium segment."
                 ),
                 desired_association=True,
-                strategic_importance="core",
-                strategic_note="Critical for future positioning",
+                strategic_importance="high",
+                strategic_note="Don't chase Tesla's EV framing \u2014 reframe as luxury + electric",
+                positioning_frame="Luxury performance heritage entering the electric era \u2014 driving experience first, powertrain follows",
+                ambition_level="challenger",
+                claim_ceiling="category_challenger",
+                tempting_claim="BMW is leading the luxury EV transition",
+                safe_claim="BMW brings luxury performance heritage into the electric era \u2014 the driving experience comes first, the powertrain follows",
             ),
             SeedTopic(
                 name="Premium SUV Segment",
@@ -807,7 +872,12 @@ def bmw_seed() -> BrandSeed:
                 ),
                 desired_association=True,
                 strategic_importance="high",
-                strategic_note="Revenue-critical segment",
+                strategic_note="Differentiate through driving dynamics, not SUV category leadership",
+                positioning_frame="X-series combines SUV versatility with driving dynamics no other premium SUV delivers",
+                ambition_level="challenger",
+                claim_ceiling="category_challenger",
+                tempting_claim="BMW leads the premium SUV segment",
+                safe_claim="BMW\u2019s X range offers a driving-focused alternative in the premium SUV segment, where competitors prioritize comfort over engagement",
             ),
             SeedTopic(
                 name="Electric i-Series",
@@ -824,8 +894,13 @@ def bmw_seed() -> BrandSeed:
                     "Tesla Model 3/Y volume dominates AI training and retrieval sources."
                 ),
                 desired_association=True,
-                strategic_importance="high",
-                strategic_note="EV product line",
+                strategic_importance="medium",
+                strategic_note="Targeted attribute claims, not category ownership",
+                positioning_frame="i4 and iX prove going electric doesn\u2019t mean giving up the BMW driving experience",
+                ambition_level="niche_alternative",
+                claim_ceiling="credible_alternative",
+                tempting_claim="BMW\u2019s i-Series is the best electric car lineup",
+                safe_claim="The BMW i4 delivers rear-wheel-drive precision and a driver-focused cockpit in an all-electric package",
             ),
             SeedTopic(
                 name="Brand Heritage",
@@ -843,7 +918,12 @@ def bmw_seed() -> BrandSeed:
                 ),
                 desired_association=False,
                 strategic_importance="low",
-                strategic_note="Heritage is given, not a fight",
+                strategic_note="Heritage amplifies other claims, not a standalone fight",
+                positioning_frame="Century of engineering innovation built on one principle: the driver comes first",
+                ambition_level="monitor",
+                claim_ceiling="supporting_proof",
+                tempting_claim="BMW has the richest heritage of any luxury automaker",
+                safe_claim="BMW\u2019s motorsport DNA and century of engineering are present in every vehicle \u2014 heritage as capability, not nostalgia",
             ),
         ],
         engines=[
@@ -1007,6 +1087,11 @@ def build_artifacts(
                 desired_association=topic.desired_association,
                 strategic_importance=topic.strategic_importance,
                 strategic_note=topic.strategic_note,
+                positioning_frame=topic.positioning_frame,
+                ambition_level=topic.ambition_level,
+                claim_ceiling=topic.claim_ceiling,
+                tempting_claim=topic.tempting_claim,
+                safe_claim=topic.safe_claim,
             )
             for topic in seed.topics
         ]

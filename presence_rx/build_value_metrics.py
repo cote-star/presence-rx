@@ -310,6 +310,7 @@ def _row(
             "Mechanical MVP score from Peec visibility gap, method agreement, "
             "Tavily proof coverage, and source score."
         ),
+        strategic_status=study_row.strategic_status,
     )
 
 

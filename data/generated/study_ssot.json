@@ -27,7 +27,12 @@
       "desired_association": true,
       "strategic_importance": "core",
       "strategic_note": "Core identity \u2014 defend",
-      "strategic_status": "owned_strength"
+      "strategic_status": "owned_strength",
+      "positioning_frame": "Design-forward smartphone that turned heads by making the back of a phone interesting",
+      "ambition_level": "leader",
+      "claim_ceiling": "category_leader",
+      "tempting_claim": "Nothing Phone is the leading smartphone design brand",
+      "safe_claim": "Nothing Phone pioneered transparent, stripped-back smartphone design \u2014 AI answers already reflect that at 72% visibility"
     },
     {
       "cluster_id": "cluster:mobile-ecosystem",
@@ -55,9 +60,14 @@
       "action_recommendation": null,
       "action_monitor_prompt": null,
       "desired_association": true,
-      "strategic_importance": "medium",
-      "strategic_note": "Want ecosystem credibility",
-      "strategic_status": "strategic_gap"
+      "strategic_importance": "low",
+      "strategic_note": "Want cohesive product family, not platform dominance",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "Cohesive product family \u2014 Phone, Ear, Watch \u2014 connected through Nothing OS",
+      "ambition_level": "niche_alternative",
+      "claim_ceiling": "credible_alternative",
+      "tempting_claim": "Nothing Phone offers a leading mobile ecosystem",
+      "safe_claim": "Nothing is building a cohesive product family \u2014 Phone, Ear, Watch \u2014 connected through Nothing OS, not competing with Apple\u2019s walled garden"
     },
     {
       "cluster_id": "cluster:consumer-tech-innovation",
@@ -86,8 +96,13 @@
       "action_monitor_prompt": null,
       "desired_association": true,
       "strategic_importance": "high",
-      "strategic_note": "Want innovation association",
-      "strategic_status": "strategic_gap"
+      "strategic_note": "Want 'fresh alternative' not 'innovation leader'",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "Fresh design philosophy \u2014 not faster chips, but a different perspective on what a phone should be",
+      "ambition_level": "challenger",
+      "claim_ceiling": "category_challenger",
+      "tempting_claim": "Nothing Phone is an innovation leader in consumer technology",
+      "safe_claim": "Nothing Phone represents a different kind of innovation \u2014 not faster chips, but a fresh perspective on what a smartphone should look and feel like"
     },
     {
       "cluster_id": "cluster:minimalist-hardware",
@@ -116,8 +131,13 @@
       "action_monitor_prompt": null,
       "desired_association": true,
       "strategic_importance": "core",
-      "strategic_note": "CORE IDENTITY \u2014 most urgent",
-      "strategic_status": "strategic_gap"
+      "strategic_note": "CORE IDENTITY \u2014 brand IS minimalism but Apple owns the label",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "Built from day one around minimalist design \u2014 transparent materials, Glyph Interface, stripped-back Nothing OS",
+      "ambition_level": "challenger",
+      "claim_ceiling": "category_challenger",
+      "tempting_claim": "Nothing Phone is the go-to minimalist tech brand",
+      "safe_claim": "Nothing Phone brings a distinctive take on minimalism \u2014 transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity"
     },
     {
       "cluster_id": "cluster:wireless-audio",
@@ -146,8 +166,13 @@
       "action_monitor_prompt": null,
       "desired_association": true,
       "strategic_importance": "medium",
-      "strategic_note": "Nothing Ear product line",
-      "strategic_status": "strategic_gap"
+      "strategic_note": "Feature-rich wireless audio with distinctive transparent design",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "Feature-rich wireless audio with Nothing\u2019s transparent design language",
+      "ambition_level": "niche_alternative",
+      "claim_ceiling": "credible_alternative",
+      "tempting_claim": "Nothing Ear is a leading wireless audio brand",
+      "safe_claim": "Nothing Ear pairs full-featured wireless audio with Nothing\u2019s transparent design language \u2014 a distinctive alternative for style-conscious users"
     }
   ]
 }

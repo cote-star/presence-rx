@@ -6,23 +6,23 @@
 
 ### challenged:luxury-ev-transition:v1
 
-- **Blocked claim:** BMW is the leading luxury ev transition brand
+- **Blocked claim:** BMW is leading the luxury EV transition
 - **Reason:** OWNERSHIP_OVERCLAIM: BMW has 12% visibility in Luxury EV Transition while Tesla owns the topic. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** BMW is emerging in the luxury ev transition category, currently behind Tesla in AI visibility.
+- **Safe rewrite:** BMW brings luxury performance heritage into the electric era — the driving experience comes first, the powertrain follows
 - **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:premium-suv-segment:v1
 
-- **Blocked claim:** BMW is the leading premium suv segment brand
+- **Blocked claim:** BMW leads the premium SUV segment
 - **Reason:** OWNERSHIP_OVERCLAIM: BMW has 15% visibility in Premium SUV Segment while Mercedes-Benz owns the topic. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.
+- **Safe rewrite:** BMW’s X range offers a driving-focused alternative in the premium SUV segment, where competitors prioritize comfort over engagement
 - **Next evidence:** Improve schema markup and structured data for this topic
 
 ### challenged:electric-i-series:v1
 
-- **Blocked claim:** BMW is the leading electric i-series brand
+- **Blocked claim:** BMW’s i-Series is the best electric car lineup
 - **Reason:** OWNERSHIP_OVERCLAIM: BMW has 6% visibility in Electric i-Series while Tesla owns the topic. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** BMW is emerging in the electric i-series category, currently behind Tesla in AI visibility.
+- **Safe rewrite:** The BMW i4 delivers rear-wheel-drive precision and a driver-focused cockpit in an all-electric package
 - **Next evidence:** Increase editorial and public coverage for this topic
 
 ## Actions by Intervention Class
@@ -34,7 +34,7 @@
 #### Premium SUV Segment
 
 - **Visibility:** 15% | **Competitor:** Mercedes-Benz
-- **Strategic status:** Strategic Gap (high) — Revenue-critical segment
+- **Strategic status:** Strategic Gap (high) — Differentiate through driving dynamics, not SUV category leadership
 - **Evidence Level:** confirmed (moderate)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement
@@ -52,7 +52,7 @@
 #### Luxury EV Transition
 
 - **Visibility:** 12% | **Competitor:** Tesla
-- **Strategic status:** Strategic Gap (core) — Critical for future positioning
+- **Strategic status:** Strategic Gap (high) — Don't chase Tesla's EV framing — reframe as luxury + electric
 - **Evidence Level:** confirmed (moderate)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement
@@ -66,7 +66,7 @@
 #### Brand Heritage
 
 - **Visibility:** 30% | **Competitor:** Mercedes-Benz
-- **Strategic status:** Non-Priority (low) — Heritage is given, not a fight
+- **Strategic status:** Non-Priority (low) — Heritage amplifies other claims, not a standalone fight
 - **Evidence Level:** confirmed (moderate)
 - **Recommended Action:** Monitor
 - **Reason:** Not a strategic priority for this brand
@@ -84,7 +84,7 @@
 #### Electric i-Series
 
 - **Visibility:** 6% | **Competitor:** Tesla
-- **Strategic status:** Strategic Gap (high) — EV product line
+- **Strategic status:** Strategic Gap (medium) — Targeted attribute claims, not category ownership
 - **Evidence Level:** confirmed (moderate)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement

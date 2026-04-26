@@ -46,8 +46,8 @@ Nothing Phone has **4 blind spots** requiring activation across **3 intervention
 - Peec visibility must show improvement trend
 - Tavily search must find Nothing Phone editorial coverage for this topic
 - At least one independent review mentioning Nothing Phone + Mobile Ecosystem
-- **Claim to avoid:** Nothing Phone is the leading mobile ecosystem brand
-- **Safe alternative:** Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.
+- **Claim to avoid:** Nothing Phone offers a leading mobile ecosystem
+- **Safe alternative:** Nothing is building a cohesive product family — Phone, Ear, Watch — connected through Nothing OS, not competing with Apple’s walled garden
 
 ## Perception Gaps
 
@@ -89,8 +89,8 @@ Nothing Phone has **4 blind spots** requiring activation across **3 intervention
 - Peec visibility must show improvement trend
 - Tavily search must find Nothing Phone editorial coverage for this topic
 - At least one independent review mentioning Nothing Phone + Consumer Tech Innovation
-- **Claim to avoid:** Nothing Phone is the leading consumer tech innovation brand
-- **Safe alternative:** Nothing Phone is emerging in the consumer tech innovation category, currently behind Apple in AI visibility.
+- **Claim to avoid:** Nothing Phone is an innovation leader in consumer technology
+- **Safe alternative:** Nothing Phone represents a different kind of innovation — not faster chips, but a fresh perspective on what a smartphone should look and feel like
 
 ### Minimalist Hardware
 
@@ -130,8 +130,8 @@ Nothing Phone has **4 blind spots** requiring activation across **3 intervention
 - Peec visibility must show improvement trend
 - Tavily search must find Nothing Phone editorial coverage for this topic
 - At least one independent review mentioning Nothing Phone + Minimalist Hardware
-- **Claim to avoid:** Nothing Phone is the leading minimalist hardware brand
-- **Safe alternative:** Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.
+- **Claim to avoid:** Nothing Phone is the go-to minimalist tech brand
+- **Safe alternative:** Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity
 
 ## Attention Gaps
 
@@ -173,8 +173,8 @@ Nothing Phone has **4 blind spots** requiring activation across **3 intervention
 - Peec visibility must show improvement trend
 - Tavily search must find Nothing Phone editorial coverage for this topic
 - At least one independent review mentioning Nothing Phone + Wireless Audio
-- **Claim to avoid:** Nothing Phone is the leading wireless audio brand
-- **Safe alternative:** Nothing Phone is emerging in the wireless audio category, currently behind Apple in AI visibility.
+- **Claim to avoid:** Nothing Ear is a leading wireless audio brand
+- **Safe alternative:** Nothing Ear pairs full-featured wireless audio with Nothing’s transparent design language — a distinctive alternative for style-conscious users
 
 ## Data Sources
 

@@ -25,6 +25,11 @@ export interface StudyRow {
   strategic_importance: string;
   strategic_note: string | null;
   strategic_status: string | null;
+  positioning_frame: string | null;
+  ambition_level: string;
+  claim_ceiling: string;
+  tempting_claim: string | null;
+  safe_claim: string | null;
 }
 
 export interface ClassifiedGap {

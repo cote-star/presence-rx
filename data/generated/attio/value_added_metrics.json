@@ -37,7 +37,8 @@
         "peec:snapshot:attio:2026-04-25",
         "peec:topic:product-led-crm"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "emerging_opportunity"
     },
     {
       "cluster_id": "cluster:crm-for-startups",
@@ -64,7 +65,8 @@
         "peec:brand:hubspot",
         "gemini:analysis:crm-for-startups:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:modern-crm-alternative",
@@ -91,7 +93,8 @@
         "peec:brand:salesforce",
         "gemini:analysis:modern-crm-alternative:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:crm-migration",
@@ -118,7 +121,8 @@
         "peec:brand:hubspot",
         "gemini:analysis:crm-migration:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "non_priority"
     },
     {
       "cluster_id": "cluster:revops-tools",
@@ -145,7 +149,8 @@
         "peec:brand:hubspot",
         "gemini:analysis:revops-tools:v1"
       ],
-      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+      "strategic_status": "strategic_gap"
     }
   ]
 }

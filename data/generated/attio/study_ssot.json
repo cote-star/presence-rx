@@ -27,7 +27,12 @@
       "desired_association": true,
       "strategic_importance": "core",
       "strategic_note": "Core positioning",
-      "strategic_status": "emerging_opportunity"
+      "strategic_status": "emerging_opportunity",
+      "positioning_frame": "CRM purpose-built for PLG teams \u2014 real-time enrichment, flexible objects, relationship intelligence",
+      "ambition_level": "leader",
+      "claim_ceiling": "category_leader",
+      "tempting_claim": "Attio is the #1 CRM for all product-led companies",
+      "safe_claim": "Attio is built from the ground up for product-led workflows \u2014 real-time enrichment, customizable data models, and relationship intelligence"
     },
     {
       "cluster_id": "cluster:crm-for-startups",
@@ -56,8 +61,13 @@
       "action_monitor_prompt": null,
       "desired_association": true,
       "strategic_importance": "high",
-      "strategic_note": "Primary audience",
-      "strategic_status": "strategic_gap"
+      "strategic_note": "Don't fight HubSpot head-on; segment the audience",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "CRM built by operators, for operators \u2014 for startups that outgrow spreadsheets but refuse rigid enterprise tooling",
+      "ambition_level": "challenger",
+      "claim_ceiling": "category_challenger",
+      "tempting_claim": "Attio is the best CRM for startups, replacing HubSpot",
+      "safe_claim": "Startups that value flexibility over feature bloat choose Attio \u2014 a CRM that adapts to your workflow instead of forcing you into someone else\u2019s"
     },
     {
       "cluster_id": "cluster:modern-crm-alternative",
@@ -85,9 +95,14 @@
       "action_recommendation": null,
       "action_monitor_prompt": null,
       "desired_association": true,
-      "strategic_importance": "high",
-      "strategic_note": "Category-creation narrative",
-      "strategic_status": "strategic_gap"
+      "strategic_importance": "medium",
+      "strategic_note": "Reframe as next-gen, not 'alternative to Salesforce'",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "Next-generation CRM \u2014 not an alternative to legacy tools, but a new category",
+      "ambition_level": "challenger",
+      "claim_ceiling": "category_challenger",
+      "tempting_claim": "Attio is a modern alternative to Salesforce",
+      "safe_claim": "Attio represents a new generation of CRM \u2014 built on real-time enrichment and adaptable data models rather than legacy rigid schemas"
     },
     {
       "cluster_id": "cluster:crm-migration",
@@ -117,7 +132,12 @@
       "desired_association": false,
       "strategic_importance": "low",
       "strategic_note": "Not fighting migration wars",
-      "strategic_status": "non_priority"
+      "strategic_status": "non_priority",
+      "positioning_frame": "Fast onboarding \u2014 import data and be productive on day one",
+      "ambition_level": "monitor",
+      "claim_ceiling": "monitor_only",
+      "tempting_claim": "Attio is the best tool for migrating from HubSpot",
+      "safe_claim": "Getting started with Attio is fast \u2014 import your data and be productive in a CRM that adapts to you"
     },
     {
       "cluster_id": "cluster:revops-tools",
@@ -145,9 +165,14 @@
       "action_recommendation": null,
       "action_monitor_prompt": null,
       "desired_association": true,
-      "strategic_importance": "medium",
-      "strategic_note": "Key buyer persona",
-      "strategic_status": "strategic_gap"
+      "strategic_importance": "high",
+      "strategic_note": "CRM that RevOps teams love, not a RevOps platform",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "CRM that RevOps teams love \u2014 flexible enough to model any GTM workflow inside the CRM",
+      "ambition_level": "challenger",
+      "claim_ceiling": "category_challenger",
+      "tempting_claim": "Attio is a complete RevOps platform replacing dedicated tools",
+      "safe_claim": "RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it"
     }
   ]
 }

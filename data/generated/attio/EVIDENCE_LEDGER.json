@@ -94,8 +94,26 @@
       "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
     },
     {
+      "claim_id": "challenged:crm-for-startups:v1",
+      "claim": "Attio is the best CRM for startups, replacing HubSpot",
+      "status": "blocked",
+      "cluster_id": "cluster:crm-for-startups",
+      "methods": [
+        "peec"
+      ],
+      "evidence_refs": [
+        "peec:snapshot:attio:2026-04-25",
+        "peec:topic:crm-for-startups",
+        "peec:brand:hubspot"
+      ],
+      "confidence_tier": "blocked",
+      "publication_status": "blocked",
+      "publication_language": "Do not claim Attio ownership of the CRM for Startups topic; HubSpot holds dominant visibility.",
+      "why_not_stronger": "confidence_tier=blocked; Attio visibility (22%) is below the 20% ownership threshold while HubSpot dominates"
+    },
+    {
       "claim_id": "challenged:modern-crm-alternative:v1",
-      "claim": "Attio is the leading modern crm alternative brand",
+      "claim": "Attio is a modern alternative to Salesforce",
       "status": "blocked",
       "cluster_id": "cluster:modern-crm-alternative",
       "methods": [
@@ -113,7 +131,7 @@
     },
     {
       "claim_id": "challenged:revops-tools:v1",
-      "claim": "Attio is the leading revops tools brand",
+      "claim": "Attio is a complete RevOps platform replacing dedicated tools",
       "status": "blocked",
       "cluster_id": "cluster:revops-tools",
       "methods": [
@@ -239,17 +257,24 @@
   ],
   "blocked_claims": [
     {
+      "claim_id": "challenged:crm-for-startups:v1",
+      "claim": "Attio is the best CRM for startups, replacing HubSpot",
+      "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 22% visibility in CRM for Startups while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
+      "safe_rewrite": "Startups that value flexibility over feature bloat choose Attio \u2014 a CRM that adapts to your workflow instead of forcing you into someone else\u2019s",
+      "next_evidence_to_collect": "Publish explicit positioning content for this topic"
+    },
+    {
       "claim_id": "challenged:modern-crm-alternative:v1",
-      "claim": "Attio is the leading modern crm alternative brand",
+      "claim": "Attio is a modern alternative to Salesforce",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 5% visibility in Modern CRM Alternative while Salesforce owns the topic. Claiming ownership is not supported by Peec data.",
-      "safe_rewrite": "Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.",
+      "safe_rewrite": "Attio represents a new generation of CRM \u2014 built on real-time enrichment and adaptable data models rather than legacy rigid schemas",
       "next_evidence_to_collect": "Improve schema markup and structured data for this topic"
     },
     {
       "claim_id": "challenged:revops-tools:v1",
-      "claim": "Attio is the leading revops tools brand",
+      "claim": "Attio is a complete RevOps platform replacing dedicated tools",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 15% visibility in RevOps Tools while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
-      "safe_rewrite": "Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility.",
+      "safe_rewrite": "RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it",
       "next_evidence_to_collect": "Publish explicit positioning content for this topic"
     }
   ]

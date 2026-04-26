@@ -103,6 +103,11 @@ class StudyRow(StrictModel):
     strategic_importance: str = "medium"
     strategic_note: str | None = None
     strategic_status: str | None = None
+    positioning_frame: str | None = None
+    ambition_level: str = "challenger"
+    claim_ceiling: str = "category_challenger"
+    tempting_claim: str | None = None
+    safe_claim: str | None = None
 
     @field_validator("evidence_refs")
     @classmethod
@@ -597,6 +602,7 @@ class ValueMetricRow(StrictModel):
     labeling_source: str = Field(min_length=1)
     evidence_refs: list[str] = Field(default_factory=list)
     rationale: str = Field(min_length=1)
+    strategic_status: str | None = None
 
     @field_validator("evidence_refs")
     @classmethod

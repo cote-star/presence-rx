@@ -74,7 +74,7 @@
     "raw_prompts": 50,
     "clusters": 5,
     "evidence_gated": 4,
-    "actionable_recommendations": 6
+    "actionable_recommendations": 7
   },
   "artifacts": [
     "prompt_universe.json",

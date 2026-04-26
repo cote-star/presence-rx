@@ -55,6 +55,9 @@ export function ClaimSimulator() {
     (r) => r.gap_type && (r.visibility_target_share ?? 0) > 0.1
   );
 
+  // Add a non-priority topic example if one exists
+  const nonPriority = topics.find((r) => !(r.desired_association ?? true));
+
   const EXAMPLE_CLAIMS = [
     blindSpot
       ? `${brandName} is the leading ${blindSpot.cluster_label.toLowerCase()} brand`
@@ -66,6 +69,12 @@ export function ClaimSimulator() {
       ? `${brandName} is the best ${stronghold.cluster_label.toLowerCase()} brand`
       : `${brandName} has the strongest brand presence`,
   ];
+
+  if (nonPriority) {
+    EXAMPLE_CLAIMS.push(
+      `${brandName} is the best ${nonPriority.cluster_label.toLowerCase()} brand`
+    );
+  }
 
   const handleCheck = () => {
     if (!data || !input.trim()) return;
@@ -86,6 +95,11 @@ export function ClaimSimulator() {
     setInput(claim);
     setResult(null);
   };
+
+  // Look up matched row for brand positioning frame
+  const matchedRow = result?.matchedTopic
+    ? topics.find((r) => r.cluster_label === result.matchedTopic)
+    : null;
 
   const style = result ? VERDICT_STYLES[result.verdict] : null;
 
@@ -192,6 +206,17 @@ export function ClaimSimulator() {
                 Suggested safe rewrite
               </div>
               <p className="text-peec-sm font-medium">{result.safeRewrite}</p>
+            </div>
+          )}
+
+          {/* Brand positioning frame from safe_claim */}
+          {matchedRow?.safe_claim && !result.safeRewrite && (
+            <div className="bg-white/60 rounded-peec-lg p-3 border border-peec-hairline">
+              <div className="text-peec-xs text-peec-muted font-medium mb-1 flex items-center gap-1">
+                <ArrowRight size={12} />
+                Brand positioning frame
+              </div>
+              <p className="text-peec-sm font-medium">{matchedRow.safe_claim}</p>
             </div>
           )}
         </div>

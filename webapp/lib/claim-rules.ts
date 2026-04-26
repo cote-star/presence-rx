@@ -55,49 +55,76 @@ export function checkClaim(claimText: string, brandData: BrandData): ClaimResult
     }
   }
 
-  // 3. Check ownership/superlative claims against visibility
+  // 3. Check ownership/superlative claims against CEILING
   const hasOwnership = OWNERSHIP_WORDS.some((w) => lower.includes(w));
-  if (hasOwnership && brandData.study?.rows) {
+
+  if (brandData.study?.rows) {
     for (const row of brandData.study.rows) {
-      if (lower.includes(row.cluster_label.toLowerCase())) {
-        const vis = row.visibility_target_share ?? 0;
-        const competitor = row.visibility_competitor_owner;
+      if (!lower.includes(row.cluster_label.toLowerCase())) continue;
 
-        if (vis < 0.2 && competitor) {
-          return {
-            verdict: "blocked",
-            reason: `${brandData.brand_name} has only ${Math.round(vis * 100)}% visibility in ${row.cluster_label} while ${competitor} dominates. Ownership claims are not supported.`,
-            safeRewrite: `${brandData.brand_name} is emerging in ${row.cluster_label.toLowerCase()}, currently building presence against established competitors.`,
-            matchedTopic: row.cluster_label,
-            visibility: vis,
-            competitor,
-          };
-        }
+      const ceiling = row.claim_ceiling ?? "category_challenger";
+      const strategicStatus = row.strategic_status ?? null;
 
-        if (vis < 0.5) {
-          return {
-            verdict: "needs_evidence",
-            reason: `${brandData.brand_name} has ${Math.round(vis * 100)}% visibility in ${row.cluster_label}. Moderate presence — claim needs additional evidence before publication.`,
-            matchedTopic: row.cluster_label,
-            visibility: vis,
-            competitor: competitor ?? undefined,
-          };
-        }
-
+      // Leadership claims blocked when ceiling doesn't allow it
+      if (hasOwnership && ceiling !== "category_leader") {
         return {
-          verdict: "safe",
-          reason: `${brandData.brand_name} has ${Math.round(vis * 100)}% visibility in ${row.cluster_label}. Strong presence supports this claim.`,
+          verdict: "blocked",
+          reason: `Ownership/leadership claims exceed the allowed claim ceiling for ${row.cluster_label}. This topic's positioning is "${row.ambition_level ?? "challenger"}" — leadership claims are not supported.`,
+          safeRewrite: row.safe_claim ?? `${brandData.brand_name} is building presence in ${row.cluster_label.toLowerCase()}.`,
+          matchedTopic: row.cluster_label,
+          visibility: row.visibility_target_share ?? undefined,
+          competitor: row.visibility_competitor_owner ?? undefined,
+        };
+      }
+
+      // Strategic gap + ownership claim = blocked
+      if (hasOwnership && strategicStatus === "strategic_gap") {
+        const vis = row.visibility_target_share ?? 0;
+        return {
+          verdict: "blocked",
+          reason: `${brandData.brand_name} has ${Math.round(vis * 100)}% visibility in ${row.cluster_label}${row.visibility_competitor_owner ? ` while ${row.visibility_competitor_owner} dominates` : ""}. This is a strategic gap — ownership claims are not yet supported.`,
+          safeRewrite: row.safe_claim ?? `${brandData.brand_name} is emerging in ${row.cluster_label.toLowerCase()}.`,
           matchedTopic: row.cluster_label,
           visibility: vis,
+          competitor: row.visibility_competitor_owner ?? undefined,
+        };
+      }
+
+      // Strategic gap without ownership language = needs evidence
+      if (strategicStatus === "strategic_gap") {
+        return {
+          verdict: "needs_evidence",
+          reason: `${row.cluster_label} is a strategic gap for ${brandData.brand_name}. Directional claims are allowed but need supporting evidence.${row.positioning_frame ? ` Recommended framing: "${row.positioning_frame}"` : ""}`,
+          matchedTopic: row.cluster_label,
+          visibility: row.visibility_target_share ?? undefined,
+        };
+      }
+
+      // Owned strength = safe
+      if (strategicStatus === "owned_strength") {
+        return {
+          verdict: "safe",
+          reason: `${brandData.brand_name} has strong visibility in ${row.cluster_label}. This claim is within the brand's owned territory.`,
+          matchedTopic: row.cluster_label,
+          visibility: row.visibility_target_share ?? undefined,
+        };
+      }
+
+      // Emerging opportunity = needs evidence
+      if (strategicStatus === "emerging_opportunity") {
+        return {
+          verdict: "needs_evidence",
+          reason: `${row.cluster_label} is an emerging opportunity. Claims need additional evidence before publication.`,
+          matchedTopic: row.cluster_label,
+          visibility: row.visibility_target_share ?? undefined,
         };
       }
     }
   }
 
-  // 3. Default
+  // 4. Default: needs evidence
   return {
     verdict: "needs_evidence",
-    reason:
-      "This claim could not be matched to a tracked topic. Collect evidence before using it publicly.",
+    reason: "This claim could not be matched to a tracked topic. Collect evidence before using it publicly.",
   };
 }

@@ -103,7 +103,7 @@
     },
     {
       "claim_id": "challenged:mobile-ecosystem:v1",
-      "claim": "Nothing Phone is the leading mobile ecosystem brand",
+      "claim": "Nothing Phone offers a leading mobile ecosystem",
       "status": "blocked",
       "cluster_id": "cluster:mobile-ecosystem",
       "methods": [
@@ -121,7 +121,7 @@
     },
     {
       "claim_id": "challenged:consumer-tech-innovation:v1",
-      "claim": "Nothing Phone is the leading consumer tech innovation brand",
+      "claim": "Nothing Phone is an innovation leader in consumer technology",
       "status": "blocked",
       "cluster_id": "cluster:consumer-tech-innovation",
       "methods": [
@@ -139,7 +139,7 @@
     },
     {
       "claim_id": "challenged:minimalist-hardware:v1",
-      "claim": "Nothing Phone is the leading minimalist hardware brand",
+      "claim": "Nothing Phone is the go-to minimalist tech brand",
       "status": "blocked",
       "cluster_id": "cluster:minimalist-hardware",
       "methods": [
@@ -157,7 +157,7 @@
     },
     {
       "claim_id": "challenged:wireless-audio:v1",
-      "claim": "Nothing Phone is the leading wireless audio brand",
+      "claim": "Nothing Ear is a leading wireless audio brand",
       "status": "blocked",
       "cluster_id": "cluster:wireless-audio",
       "methods": [
@@ -305,30 +305,30 @@
   "blocked_claims": [
     {
       "claim_id": "challenged:mobile-ecosystem:v1",
-      "claim": "Nothing Phone is the leading mobile ecosystem brand",
+      "claim": "Nothing Phone offers a leading mobile ecosystem",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 12% visibility in Mobile Ecosystem while Apple holds 72%. Claiming ownership is not supported by Peec data.",
-      "safe_rewrite": "Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.",
+      "safe_rewrite": "Nothing is building a cohesive product family \u2014 Phone, Ear, Watch \u2014 connected through Nothing OS, not competing with Apple\u2019s walled garden",
       "next_evidence_to_collect": "Improve schema markup and structured data for this topic"
     },
     {
       "claim_id": "challenged:consumer-tech-innovation:v1",
-      "claim": "Nothing Phone is the leading consumer tech innovation brand",
+      "claim": "Nothing Phone is an innovation leader in consumer technology",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 10% visibility in Consumer Tech Innovation while Apple holds 45%. Claiming ownership is not supported by Peec data.",
-      "safe_rewrite": "Nothing Phone is emerging in the consumer tech innovation category, currently behind Apple in AI visibility.",
+      "safe_rewrite": "Nothing Phone represents a different kind of innovation \u2014 not faster chips, but a fresh perspective on what a smartphone should look and feel like",
       "next_evidence_to_collect": "Publish explicit positioning content for this topic"
     },
     {
       "claim_id": "challenged:minimalist-hardware:v1",
-      "claim": "Nothing Phone is the leading minimalist hardware brand",
+      "claim": "Nothing Phone is the go-to minimalist tech brand",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 6% visibility in Minimalist Hardware while Apple holds 39%. Claiming ownership is not supported by Peec data.",
-      "safe_rewrite": "Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.",
+      "safe_rewrite": "Nothing Phone brings a distinctive take on minimalism \u2014 transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity",
       "next_evidence_to_collect": "Publish explicit positioning content for this topic"
     },
     {
       "claim_id": "challenged:wireless-audio:v1",
-      "claim": "Nothing Phone is the leading wireless audio brand",
+      "claim": "Nothing Ear is a leading wireless audio brand",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 1% visibility in Wireless Audio while Apple holds 53%. Claiming ownership is not supported by Peec data.",
-      "safe_rewrite": "Nothing Phone is emerging in the wireless audio category, currently behind Apple in AI visibility.",
+      "safe_rewrite": "Nothing Ear pairs full-featured wireless audio with Nothing\u2019s transparent design language \u2014 a distinctive alternative for style-conscious users",
       "next_evidence_to_collect": "Increase editorial and public coverage for this topic"
     }
   ]

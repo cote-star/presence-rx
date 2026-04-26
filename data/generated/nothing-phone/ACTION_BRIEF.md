@@ -6,30 +6,30 @@
 
 ### challenged:mobile-ecosystem:v1
 
-- **Blocked claim:** Nothing Phone is the leading mobile ecosystem brand
+- **Blocked claim:** Nothing Phone offers a leading mobile ecosystem
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 12% visibility in Mobile Ecosystem while Apple holds 72%. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.
+- **Safe rewrite:** Nothing is building a cohesive product family — Phone, Ear, Watch — connected through Nothing OS, not competing with Apple’s walled garden
 - **Next evidence:** Improve schema markup and structured data for this topic
 
 ### challenged:consumer-tech-innovation:v1
 
-- **Blocked claim:** Nothing Phone is the leading consumer tech innovation brand
+- **Blocked claim:** Nothing Phone is an innovation leader in consumer technology
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 10% visibility in Consumer Tech Innovation while Apple holds 45%. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** Nothing Phone is emerging in the consumer tech innovation category, currently behind Apple in AI visibility.
+- **Safe rewrite:** Nothing Phone represents a different kind of innovation — not faster chips, but a fresh perspective on what a smartphone should look and feel like
 - **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:minimalist-hardware:v1
 
-- **Blocked claim:** Nothing Phone is the leading minimalist hardware brand
+- **Blocked claim:** Nothing Phone is the go-to minimalist tech brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 6% visibility in Minimalist Hardware while Apple holds 39%. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.
+- **Safe rewrite:** Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity
 - **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:wireless-audio:v1
 
-- **Blocked claim:** Nothing Phone is the leading wireless audio brand
+- **Blocked claim:** Nothing Ear is a leading wireless audio brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 1% visibility in Wireless Audio while Apple holds 53%. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** Nothing Phone is emerging in the wireless audio category, currently behind Apple in AI visibility.
+- **Safe rewrite:** Nothing Ear pairs full-featured wireless audio with Nothing’s transparent design language — a distinctive alternative for style-conscious users
 - **Next evidence:** Increase editorial and public coverage for this topic
 
 ## Actions by Intervention Class
@@ -41,7 +41,7 @@
 #### Mobile Ecosystem
 
 - **Visibility:** 12% | **Competitor:** Apple
-- **Strategic status:** Strategic Gap (medium) — Want ecosystem credibility
+- **Strategic status:** Strategic Gap (low) — Want cohesive product family, not platform dominance
 - **Evidence Level:** confirmed (strong)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement
@@ -60,7 +60,7 @@
 #### Consumer Tech Innovation
 
 - **Visibility:** 10% | **Competitor:** Apple
-- **Strategic status:** Strategic Gap (high) — Want innovation association
+- **Strategic status:** Strategic Gap (high) — Want 'fresh alternative' not 'innovation leader'
 - **Evidence Level:** confirmed (strong)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement
@@ -75,7 +75,7 @@
 #### Minimalist Hardware
 
 - **Visibility:** 6% | **Competitor:** Apple
-- **Strategic status:** Strategic Gap (core) — CORE IDENTITY — most urgent
+- **Strategic status:** Strategic Gap (core) — CORE IDENTITY — brand IS minimalism but Apple owns the label
 - **Evidence Level:** confirmed (strong)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement
@@ -94,7 +94,7 @@
 #### Wireless Audio
 
 - **Visibility:** 1% | **Competitor:** Apple
-- **Strategic status:** Strategic Gap (medium) — Nothing Ear product line
+- **Strategic status:** Strategic Gap (medium) — Feature-rich wireless audio with distinctive transparent design
 - **Evidence Level:** confirmed (strong)
 - **Recommended Action:** Act now
 - **Reason:** Critical strategic gap with strong method agreement

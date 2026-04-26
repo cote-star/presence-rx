@@ -27,7 +27,12 @@
       "desired_association": true,
       "strategic_importance": "core",
       "strategic_note": "Heritage stronghold \u2014 defend",
-      "strategic_status": "emerging_opportunity"
+      "strategic_status": "emerging_opportunity",
+      "positioning_frame": "Benchmark driving experience in the luxury segment \u2014 precision engineering with visceral driving pleasure",
+      "ambition_level": "leader",
+      "claim_ceiling": "category_leader",
+      "tempting_claim": "BMW is the only luxury brand that cares about driving dynamics",
+      "safe_claim": "BMW\u2019s engineering philosophy centers on driving dynamics \u2014 a commitment reflected across every model from 3 Series to iX"
     },
     {
       "cluster_id": "cluster:luxury-ev-transition",
@@ -55,9 +60,14 @@
       "action_recommendation": null,
       "action_monitor_prompt": null,
       "desired_association": true,
-      "strategic_importance": "core",
-      "strategic_note": "Critical for future positioning",
-      "strategic_status": "strategic_gap"
+      "strategic_importance": "high",
+      "strategic_note": "Don't chase Tesla's EV framing \u2014 reframe as luxury + electric",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "Luxury performance heritage entering the electric era \u2014 driving experience first, powertrain follows",
+      "ambition_level": "challenger",
+      "claim_ceiling": "category_challenger",
+      "tempting_claim": "BMW is leading the luxury EV transition",
+      "safe_claim": "BMW brings luxury performance heritage into the electric era \u2014 the driving experience comes first, the powertrain follows"
     },
     {
       "cluster_id": "cluster:premium-suv-segment",
@@ -86,8 +96,13 @@
       "action_monitor_prompt": null,
       "desired_association": true,
       "strategic_importance": "high",
-      "strategic_note": "Revenue-critical segment",
-      "strategic_status": "strategic_gap"
+      "strategic_note": "Differentiate through driving dynamics, not SUV category leadership",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "X-series combines SUV versatility with driving dynamics no other premium SUV delivers",
+      "ambition_level": "challenger",
+      "claim_ceiling": "category_challenger",
+      "tempting_claim": "BMW leads the premium SUV segment",
+      "safe_claim": "BMW\u2019s X range offers a driving-focused alternative in the premium SUV segment, where competitors prioritize comfort over engagement"
     },
     {
       "cluster_id": "cluster:electric-i-series",
@@ -115,9 +130,14 @@
       "action_recommendation": null,
       "action_monitor_prompt": null,
       "desired_association": true,
-      "strategic_importance": "high",
-      "strategic_note": "EV product line",
-      "strategic_status": "strategic_gap"
+      "strategic_importance": "medium",
+      "strategic_note": "Targeted attribute claims, not category ownership",
+      "strategic_status": "strategic_gap",
+      "positioning_frame": "i4 and iX prove going electric doesn\u2019t mean giving up the BMW driving experience",
+      "ambition_level": "niche_alternative",
+      "claim_ceiling": "credible_alternative",
+      "tempting_claim": "BMW\u2019s i-Series is the best electric car lineup",
+      "safe_claim": "The BMW i4 delivers rear-wheel-drive precision and a driver-focused cockpit in an all-electric package"
     },
     {
       "cluster_id": "cluster:brand-heritage",
@@ -146,8 +166,13 @@
       "action_monitor_prompt": null,
       "desired_association": false,
       "strategic_importance": "low",
-      "strategic_note": "Heritage is given, not a fight",
-      "strategic_status": "non_priority"
+      "strategic_note": "Heritage amplifies other claims, not a standalone fight",
+      "strategic_status": "non_priority",
+      "positioning_frame": "Century of engineering innovation built on one principle: the driver comes first",
+      "ambition_level": "monitor",
+      "claim_ceiling": "supporting_proof",
+      "tempting_claim": "BMW has the richest heritage of any luxury automaker",
+      "safe_claim": "BMW\u2019s motorsport DNA and century of engineering are present in every vehicle \u2014 heritage as capability, not nostalgia"
     }
   ]
 }

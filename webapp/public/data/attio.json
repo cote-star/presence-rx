@@ -30,7 +30,12 @@
         "desired_association": true,
         "strategic_importance": "core",
         "strategic_note": "Core positioning",
-        "strategic_status": "emerging_opportunity"
+        "strategic_status": "emerging_opportunity",
+        "positioning_frame": "CRM purpose-built for PLG teams \u2014 real-time enrichment, flexible objects, relationship intelligence",
+        "ambition_level": "leader",
+        "claim_ceiling": "category_leader",
+        "tempting_claim": "Attio is the #1 CRM for all product-led companies",
+        "safe_claim": "Attio is built from the ground up for product-led workflows \u2014 real-time enrichment, customizable data models, and relationship intelligence"
       },
       {
         "cluster_id": "cluster:crm-for-startups",
@@ -59,8 +64,13 @@
         "action_monitor_prompt": null,
         "desired_association": true,
         "strategic_importance": "high",
-        "strategic_note": "Primary audience",
-        "strategic_status": "strategic_gap"
+        "strategic_note": "Don't fight HubSpot head-on; segment the audience",
+        "strategic_status": "strategic_gap",
+        "positioning_frame": "CRM built by operators, for operators \u2014 for startups that outgrow spreadsheets but refuse rigid enterprise tooling",
+        "ambition_level": "challenger",
+        "claim_ceiling": "category_challenger",
+        "tempting_claim": "Attio is the best CRM for startups, replacing HubSpot",
+        "safe_claim": "Startups that value flexibility over feature bloat choose Attio \u2014 a CRM that adapts to your workflow instead of forcing you into someone else\u2019s"
       },
       {
         "cluster_id": "cluster:modern-crm-alternative",
@@ -88,9 +98,14 @@
         "action_recommendation": null,
         "action_monitor_prompt": null,
         "desired_association": true,
-        "strategic_importance": "high",
-        "strategic_note": "Category-creation narrative",
-        "strategic_status": "strategic_gap"
+        "strategic_importance": "medium",
+        "strategic_note": "Reframe as next-gen, not 'alternative to Salesforce'",
+        "strategic_status": "strategic_gap",
+        "positioning_frame": "Next-generation CRM \u2014 not an alternative to legacy tools, but a new category",
+        "ambition_level": "challenger",
+        "claim_ceiling": "category_challenger",
+        "tempting_claim": "Attio is a modern alternative to Salesforce",
+        "safe_claim": "Attio represents a new generation of CRM \u2014 built on real-time enrichment and adaptable data models rather than legacy rigid schemas"
       },
       {
         "cluster_id": "cluster:crm-migration",
@@ -120,7 +135,12 @@
         "desired_association": false,
         "strategic_importance": "low",
         "strategic_note": "Not fighting migration wars",
-        "strategic_status": "non_priority"
+        "strategic_status": "non_priority",
+        "positioning_frame": "Fast onboarding \u2014 import data and be productive on day one",
+        "ambition_level": "monitor",
+        "claim_ceiling": "monitor_only",
+        "tempting_claim": "Attio is the best tool for migrating from HubSpot",
+        "safe_claim": "Getting started with Attio is fast \u2014 import your data and be productive in a CRM that adapts to you"
       },
       {
         "cluster_id": "cluster:revops-tools",
@@ -148,9 +168,14 @@
         "action_recommendation": null,
         "action_monitor_prompt": null,
         "desired_association": true,
-        "strategic_importance": "medium",
-        "strategic_note": "Key buyer persona",
-        "strategic_status": "strategic_gap"
+        "strategic_importance": "high",
+        "strategic_note": "CRM that RevOps teams love, not a RevOps platform",
+        "strategic_status": "strategic_gap",
+        "positioning_frame": "CRM that RevOps teams love \u2014 flexible enough to model any GTM workflow inside the CRM",
+        "ambition_level": "challenger",
+        "claim_ceiling": "category_challenger",
+        "tempting_claim": "Attio is a complete RevOps platform replacing dedicated tools",
+        "safe_claim": "RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it"
       }
     ]
   },
@@ -396,7 +421,8 @@
           "peec:snapshot:attio:2026-04-25",
           "peec:topic:product-led-crm"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "emerging_opportunity"
       },
       {
         "cluster_id": "cluster:crm-for-startups",
@@ -423,7 +449,8 @@
           "peec:brand:hubspot",
           "gemini:analysis:crm-for-startups:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:modern-crm-alternative",
@@ -450,7 +477,8 @@
           "peec:brand:salesforce",
           "gemini:analysis:modern-crm-alternative:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:crm-migration",
@@ -477,7 +505,8 @@
           "peec:brand:hubspot",
           "gemini:analysis:crm-migration:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "non_priority"
       },
       {
         "cluster_id": "cluster:revops-tools",
@@ -504,7 +533,8 @@
           "peec:brand:hubspot",
           "gemini:analysis:revops-tools:v1"
         ],
-        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score.",
+        "strategic_status": "strategic_gap"
       }
     ]
   },
@@ -714,8 +744,26 @@
         "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
       },
       {
+        "claim_id": "challenged:crm-for-startups:v1",
+        "claim": "Attio is the best CRM for startups, replacing HubSpot",
+        "status": "blocked",
+        "cluster_id": "cluster:crm-for-startups",
+        "methods": [
+          "peec"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "peec:brand:hubspot"
+        ],
+        "confidence_tier": "blocked",
+        "publication_status": "blocked",
+        "publication_language": "Do not claim Attio ownership of the CRM for Startups topic; HubSpot holds dominant visibility.",
+        "why_not_stronger": "confidence_tier=blocked; Attio visibility (22%) is below the 20% ownership threshold while HubSpot dominates"
+      },
+      {
         "claim_id": "challenged:modern-crm-alternative:v1",
-        "claim": "Attio is the leading modern crm alternative brand",
+        "claim": "Attio is a modern alternative to Salesforce",
         "status": "blocked",
         "cluster_id": "cluster:modern-crm-alternative",
         "methods": [
@@ -733,7 +781,7 @@
       },
       {
         "claim_id": "challenged:revops-tools:v1",
-        "claim": "Attio is the leading revops tools brand",
+        "claim": "Attio is a complete RevOps platform replacing dedicated tools",
         "status": "blocked",
         "cluster_id": "cluster:revops-tools",
         "methods": [
@@ -859,17 +907,24 @@
     ],
     "blocked_claims": [
       {
+        "claim_id": "challenged:crm-for-startups:v1",
+        "claim": "Attio is the best CRM for startups, replacing HubSpot",
+        "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 22% visibility in CRM for Startups while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
+        "safe_rewrite": "Startups that value flexibility over feature bloat choose Attio \u2014 a CRM that adapts to your workflow instead of forcing you into someone else\u2019s",
+        "next_evidence_to_collect": "Publish explicit positioning content for this topic"
+      },
+      {
         "claim_id": "challenged:modern-crm-alternative:v1",
-        "claim": "Attio is the leading modern crm alternative brand",
+        "claim": "Attio is a modern alternative to Salesforce",
         "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 5% visibility in Modern CRM Alternative while Salesforce owns the topic. Claiming ownership is not supported by Peec data.",
-        "safe_rewrite": "Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.",
+        "safe_rewrite": "Attio represents a new generation of CRM \u2014 built on real-time enrichment and adaptable data models rather than legacy rigid schemas",
         "next_evidence_to_collect": "Improve schema markup and structured data for this topic"
       },
       {
         "claim_id": "challenged:revops-tools:v1",
-        "claim": "Attio is the leading revops tools brand",
+        "claim": "Attio is a complete RevOps platform replacing dedicated tools",
         "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 15% visibility in RevOps Tools while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
-        "safe_rewrite": "Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility.",
+        "safe_rewrite": "RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it",
         "next_evidence_to_collect": "Publish explicit positioning content for this topic"
       }
     ]
@@ -1427,7 +1482,7 @@
       "raw_prompts": 50,
       "clusters": 5,
       "evidence_gated": 4,
-      "actionable_recommendations": 6
+      "actionable_recommendations": 7
     },
     "artifacts": [
       "prompt_universe.json",

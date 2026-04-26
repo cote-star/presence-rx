@@ -55,7 +55,7 @@ def test_challenged_claim_not_generated_for_stronghold() -> None:
 
 
 def test_blocked_claim_has_specific_safe_rewrite() -> None:
-    """safe_rewrite should mention the topic and be cautious."""
+    """safe_rewrite should be brand-voice and cautious (no ownership superlatives)."""
     artifacts = _artifacts()
     results = build_challenged_claims(artifacts.study_ssot, artifacts.manifest)
 
@@ -63,14 +63,11 @@ def test_blocked_claim_has_specific_safe_rewrite() -> None:
         # safe_rewrite must be different from the tempting claim
         assert blocked.safe_rewrite != blocked.claim
 
-        # Must mention the topic area (case-insensitive)
-        assert "emerging" in blocked.safe_rewrite.lower()
-        assert "behind" in blocked.safe_rewrite.lower()
-
         # Must not contain ownership superlatives
         assert "go-to" not in blocked.safe_rewrite
         assert "leading" not in blocked.safe_rewrite
         assert "leads" not in blocked.safe_rewrite
+        assert "#1" not in blocked.safe_rewrite
 
 
 def test_blocked_claim_has_gap_type_specific_next_evidence() -> None:

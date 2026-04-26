@@ -24,7 +24,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 - **Visibility:** 12% | **Position:** 2.8
 - **Gap type:** perception
-- **Strategic status:** Strategic Gap (core) — Critical for future positioning
+- **Strategic status:** Strategic Gap (high) — Don't chase Tesla's EV framing — reframe as luxury + electric
 - **Competitor:** Tesla dominates at N/A vs BMW at 12%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Luxury EV Transition as a provisional diagnostic gap until live Gemini analysis is available.
@@ -34,7 +34,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 - **Visibility:** 15% | **Position:** 2.5
 - **Gap type:** discovery
-- **Strategic status:** Strategic Gap (high) — Revenue-critical segment
+- **Strategic status:** Strategic Gap (high) — Differentiate through driving dynamics, not SUV category leadership
 - **Competitor:** Mercedes-Benz dominates at N/A vs BMW at 15%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Premium SUV Segment as a provisional diagnostic gap until live Gemini analysis is available.
@@ -44,7 +44,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 - **Visibility:** 6% | **Position:** 3.5
 - **Gap type:** attention
-- **Strategic status:** Strategic Gap (high) — EV product line
+- **Strategic status:** Strategic Gap (medium) — Targeted attribute claims, not category ownership
 - **Competitor:** Tesla dominates at N/A vs BMW at 6%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Electric i-Series as a provisional diagnostic gap until live Gemini analysis is available.
@@ -54,7 +54,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 - **Visibility:** 30% | **Position:** 1.8
 - **Gap type:** perception
-- **Strategic status:** Non-Priority (low) — Heritage is given, not a fight
+- **Strategic status:** Non-Priority (low) — Heritage amplifies other claims, not a standalone fight
 - **Competitor:** Mercedes-Benz dominates at N/A vs BMW at 30%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Brand Heritage as a provisional diagnostic gap until live Gemini analysis is available.
@@ -132,9 +132,9 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
-**What claim is unsafe:** "BMW is the leading luxury ev transition brand" → BLOCKED
+**What claim is unsafe:** "BMW is leading the luxury EV transition" → BLOCKED
 
-**What the brand should say instead:** "BMW is emerging in the luxury ev transition category, currently behind Tesla in AI visibility."
+**What the brand should say instead:** "BMW brings luxury performance heritage into the electric era — the driving experience comes first, the powertrain follows"
 
 
 ### Premium Suv Segment
@@ -145,9 +145,9 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
-**What claim is unsafe:** "BMW is the leading premium suv segment brand" → BLOCKED
+**What claim is unsafe:** "BMW leads the premium SUV segment" → BLOCKED
 
-**What the brand should say instead:** "BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility."
+**What the brand should say instead:** "BMW’s X range offers a driving-focused alternative in the premium SUV segment, where competitors prioritize comfort over engagement"
 
 
 ### Electric I Series
@@ -158,9 +158,9 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 
 **What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
-**What claim is unsafe:** "BMW is the leading electric i-series brand" → BLOCKED
+**What claim is unsafe:** "BMW’s i-Series is the best electric car lineup" → BLOCKED
 
-**What the brand should say instead:** "BMW is emerging in the electric i-series category, currently behind Tesla in AI visibility."
+**What the brand should say instead:** "The BMW i4 delivers rear-wheel-drive precision and a driver-focused cockpit in an all-electric package"
 
 
 ## Methodology

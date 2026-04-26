@@ -1,7 +1,7 @@
 {
-  "guardrail_pass_rate_pct": 67,
+  "guardrail_pass_rate_pct": 57,
   "cluster_pass_rate_pct": 100,
   "actionable_recommendations": 4,
   "method_conflict_count": 0,
-  "blocked_claim_count": 2
+  "blocked_claim_count": 3
 }

@@ -28,12 +28,12 @@ def _generate_challenged_claims(study: StudySsot, manifest: Manifest) -> list[di
     """Generate tempting ownership claims from ANY brand's blind spots."""
     claims = []
     for row in study.rows:
-        if row.gap_type and row.visibility_competitor_owner and row.desired_association:
+        if row.gap_type and row.desired_association:
             claims.append({
                 "cluster_id": row.cluster_id,
                 "tempting_claim": (
-                    f"{manifest.brand} is the leading "
-                    f"{row.cluster_label.lower()} brand"
+                    row.tempting_claim
+                    or f"{manifest.brand} is the leading {row.cluster_label.lower()} brand"
                 ),
                 "claim_type": "ownership_superlative",
             })
@@ -109,10 +109,9 @@ def build_challenged_claims(
         if row is None:
             continue
 
-        # Guardrail: block if visibility < 20% AND competitor owner exists
-        if (
-            row.visibility_target_share is not None
-            and row.visibility_target_share < 0.20
+        # Guardrail: block if strategic_gap OR (ceiling below leader AND competitor owns)
+        if row.strategic_status == "strategic_gap" or (
+            row.claim_ceiling not in ("category_leader",)
             and row.visibility_competitor_owner
         ):
             claim_id = f"challenged:{slugify(row.cluster_label)}:v1"
@@ -151,7 +150,7 @@ def build_challenged_claims(
                 claim_id=claim_id,
                 claim=tempting_claim,
                 blocked_reason=reason,
-                safe_rewrite=_safe_rewrite(brand, row.cluster_label, competitor),
+                safe_rewrite=row.safe_claim or _safe_rewrite(brand, row.cluster_label, competitor),
                 next_evidence_to_collect=_next_evidence(row.gap_type),
             )
 

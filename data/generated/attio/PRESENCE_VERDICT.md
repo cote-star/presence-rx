@@ -24,7 +24,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 - **Visibility:** 22% | **Position:** 2.1
 - **Gap type:** perception
-- **Strategic status:** Strategic Gap (high) — Primary audience
+- **Strategic status:** Strategic Gap (high) — Don't fight HubSpot head-on; segment the audience
 - **Competitor:** HubSpot dominates at N/A vs Attio at 22%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat CRM for Startups as a provisional diagnostic gap until live Gemini analysis is available.
@@ -34,7 +34,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 - **Visibility:** 5% | **Position:** 3.8
 - **Gap type:** discovery
-- **Strategic status:** Strategic Gap (high) — Category-creation narrative
+- **Strategic status:** Strategic Gap (medium) — Reframe as next-gen, not 'alternative to Salesforce'
 - **Competitor:** Salesforce dominates at N/A vs Attio at 5%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Modern CRM Alternative as a provisional diagnostic gap until live Gemini analysis is available.
@@ -54,7 +54,7 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 - **Visibility:** 15% | **Position:** 2.5
 - **Gap type:** perception
-- **Strategic status:** Strategic Gap (medium) — Key buyer persona
+- **Strategic status:** Strategic Gap (high) — CRM that RevOps teams love, not a RevOps platform
 - **Competitor:** HubSpot dominates at N/A vs Attio at 15%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat RevOps Tools as a provisional diagnostic gap until live Gemini analysis is available.
@@ -124,6 +124,19 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 **What the brand should say instead:** "Test the Attio association in the RevOps Tools topic; 2 of 2 methods support."
 
 
+### Crm For Startups
+
+**What users ask:** "What's the best crm for startups?"
+
+**Who currently owns the answer:** HubSpot (N/A visibility)
+
+**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
+
+**What claim is unsafe:** "Attio is the best CRM for startups, replacing HubSpot" → BLOCKED
+
+**What the brand should say instead:** "Startups that value flexibility over feature bloat choose Attio — a CRM that adapts to your workflow instead of forcing you into someone else’s"
+
+
 ### Modern Crm Alternative
 
 **What users ask:** "What's the best modern crm alternative?"
@@ -132,9 +145,9 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
-**What claim is unsafe:** "Attio is the leading modern crm alternative brand" → BLOCKED
+**What claim is unsafe:** "Attio is a modern alternative to Salesforce" → BLOCKED
 
-**What the brand should say instead:** "Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility."
+**What the brand should say instead:** "Attio represents a new generation of CRM — built on real-time enrichment and adaptable data models rather than legacy rigid schemas"
 
 
 ### Revops Tools
@@ -145,9 +158,9 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 **What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
 
-**What claim is unsafe:** "Attio is the leading revops tools brand" → BLOCKED
+**What claim is unsafe:** "Attio is a complete RevOps platform replacing dedicated tools" → BLOCKED
 
-**What the brand should say instead:** "Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility."
+**What the brand should say instead:** "RevOps operators choose Attio because its customizable objects let them build exact GTM workflows inside the CRM, not around it"
 
 
 ## Methodology

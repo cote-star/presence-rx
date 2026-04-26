@@ -24,7 +24,7 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 12% | **Position:** 3.8
 - **Gap type:** discovery
-- **Strategic status:** Strategic Gap (medium) — Want ecosystem credibility
+- **Strategic status:** Strategic Gap (low) — Want cohesive product family, not platform dominance
 - **Competitor:** Apple dominates at 72% vs Nothing Phone at 12%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 12% visibility at position 3.8 in Mobile Ecosystem; Tavily shows the topic is associated with Apple platform governance rather than handset brands.
@@ -34,7 +34,7 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 10% | **Position:** 3.7
 - **Gap type:** perception
-- **Strategic status:** Strategic Gap (high) — Want innovation association
+- **Strategic status:** Strategic Gap (high) — Want 'fresh alternative' not 'innovation leader'
 - **Competitor:** Apple dominates at 45% vs Nothing Phone at 10%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 10% visibility at position 3.7 in Consumer Tech Innovation; Tavily shows innovation association in public sources is predominantly tied to Apple.
@@ -44,7 +44,7 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 6% | **Position:** 4.1
 - **Gap type:** perception
-- **Strategic status:** Strategic Gap (core) — CORE IDENTITY — most urgent
+- **Strategic status:** Strategic Gap (core) — CORE IDENTITY — brand IS minimalism but Apple owns the label
 - **Competitor:** Apple dominates at 39% vs Nothing Phone at 6%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 6% visibility at position 4.1 in Minimalist Hardware despite minimalism being core brand identity; Tavily shows public sources reserve the minimalist label for Apple — an ironic gap.
@@ -54,7 +54,7 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 1% | **Position:** 2.0
 - **Gap type:** attention
-- **Strategic status:** Strategic Gap (medium) — Nothing Ear product line
+- **Strategic status:** Strategic Gap (medium) — Feature-rich wireless audio with distinctive transparent design
 - **Competitor:** Apple dominates at 53% vs Nothing Phone at 1%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 1% visibility in Wireless Audio despite Nothing Ear products existing; Tavily shows general wireless audio queries surface Apple AirPods almost exclusively.
@@ -132,9 +132,9 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 **What proof exists:** 10 public sources checked; 3 of 3 methods agree
 
-**What claim is unsafe:** "Nothing Phone is the leading mobile ecosystem brand" → BLOCKED
+**What claim is unsafe:** "Nothing Phone offers a leading mobile ecosystem" → BLOCKED
 
-**What the brand should say instead:** "Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility."
+**What the brand should say instead:** "Nothing is building a cohesive product family — Phone, Ear, Watch — connected through Nothing OS, not competing with Apple’s walled garden"
 
 
 ### Consumer Tech Innovation
@@ -145,9 +145,9 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 **What proof exists:** 10 public sources checked; 3 of 3 methods agree
 
-**What claim is unsafe:** "Nothing Phone is the leading consumer tech innovation brand" → BLOCKED
+**What claim is unsafe:** "Nothing Phone is an innovation leader in consumer technology" → BLOCKED
 
-**What the brand should say instead:** "Nothing Phone is emerging in the consumer tech innovation category, currently behind Apple in AI visibility."
+**What the brand should say instead:** "Nothing Phone represents a different kind of innovation — not faster chips, but a fresh perspective on what a smartphone should look and feel like"
 
 
 ### Minimalist Hardware
@@ -158,9 +158,9 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 **What proof exists:** 10 public sources checked; 3 of 3 methods agree
 
-**What claim is unsafe:** "Nothing Phone is the leading minimalist hardware brand" → BLOCKED
+**What claim is unsafe:** "Nothing Phone is the go-to minimalist tech brand" → BLOCKED
 
-**What the brand should say instead:** "Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility."
+**What the brand should say instead:** "Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity"
 
 
 ### Wireless Audio
@@ -171,9 +171,9 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 **What proof exists:** 10 public sources checked; 3 of 3 methods agree
 
-**What claim is unsafe:** "Nothing Phone is the leading wireless audio brand" → BLOCKED
+**What claim is unsafe:** "Nothing Ear is a leading wireless audio brand" → BLOCKED
 
-**What the brand should say instead:** "Nothing Phone is emerging in the wireless audio category, currently behind Apple in AI visibility."
+**What the brand should say instead:** "Nothing Ear pairs full-featured wireless audio with Nothing’s transparent design language — a distinctive alternative for style-conscious users"
 
 
 ## Methodology

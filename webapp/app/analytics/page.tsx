@@ -21,10 +21,6 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
-  ScatterChart,
-  Scatter,
-  ZAxis,
-  ReferenceLine,
 } from "recharts";
 
 /* ── colour map (raw hex for Recharts) ──────────────────────── */
@@ -151,25 +147,7 @@ export default function AnalyticsPage() {
     Stronghold: STRONGHOLD_COLOR,
   };
 
-  // 4b. Opportunity vs Evidence scatter data — colored by strategic status
-  const scatterData = metricsRows.map((m) => ({
-    name: m.cluster_label,
-    opportunity: m.opportunity_score,
-    evidence: m.proof_strength_score,
-    visibility: Math.round((rows.find((r) => r.cluster_id === m.cluster_id)?.visibility_target_share ?? 0) * 100),
-    gapType: m.gap_type,
-    fill: (() => {
-      const row = rows.find(r => r.cluster_id === m.cluster_id);
-      const status = row?.strategic_status ?? null;
-      if (status === "strategic_gap") return "#FB2C36";
-      if (status === "emerging_opportunity") return "rgb(234,88,12)";
-      if (status === "non_priority") return "rgb(156,163,175)";
-      if (status === "owned_strength") return "rgb(22,163,74)";
-      return "rgb(0,146,184)";
-    })(),
-  }));
-
-  // 5. Radar chart data
+  // 5. Radar chart data (Topic Signal Profile)
   const radarAxes = [
     { key: "relevance_score", label: "Intent Fit" },
     { key: "source_trust_score", label: "Citation Authority" },
@@ -406,93 +384,14 @@ export default function AnalyticsPage() {
         </FadeSlide>
       </div>
 
-      {/* Row 3: Opportunity vs Evidence Scatter — full width */}
+      {/* Row 3: Topic Signal Profile — full width */}
       <FadeSlide delay={350}>
         <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
           <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
-            Action Priority vs Evidence Coverage
+            Topic Signal Profile
           </h2>
           <p className="text-peec-sm text-peec-muted mb-4">
-            Top-right = act now. Bottom-right = build evidence first. Top-left = maintain. Bottom-left = monitor.
-          </p>
-          {scatterData.length > 0 ? (
-            <ResponsiveContainer width="100%" height={360}>
-              <ScatterChart margin={{ top: 16, right: 16, bottom: 16, left: 16 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(23,23,23,0.08)" />
-                <XAxis
-                  type="number"
-                  dataKey="opportunity"
-                  name="Action Priority"
-                  domain={[0, 100]}
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 12, fill: "rgba(23,23,23,0.6)" }}
-                  label={{ value: "Action Priority →", position: "insideBottomRight", offset: -5, fontSize: 12, fill: "rgba(23,23,23,0.5)" }}
-                />
-                <YAxis
-                  type="number"
-                  dataKey="evidence"
-                  name="Evidence Coverage"
-                  domain={[0, 100]}
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 12, fill: "rgba(23,23,23,0.6)" }}
-                  label={{ value: "Evidence Coverage →", angle: -90, position: "insideLeft", offset: 10, fontSize: 12, fill: "rgba(23,23,23,0.5)" }}
-                />
-                <ZAxis type="number" dataKey="visibility" range={[80, 400]} name="Visibility" />
-                <ReferenceLine x={50} stroke="rgba(23,23,23,0.15)" strokeDasharray="4 4" />
-                <ReferenceLine y={50} stroke="rgba(23,23,23,0.15)" strokeDasharray="4 4" />
-                <Tooltip
-                  content={({ active, payload }: any) => {
-                    if (!active || !payload?.length) return null;
-                    const d = payload[0]?.payload;
-                    if (!d) return null;
-                    return (
-                      <div className="bg-white rounded-peec-lg shadow-peec-ring p-3 text-peec-sm border border-peec-hairline">
-                        <div className="font-semibold mb-1">{d.name}</div>
-                        <div>Action Priority: <strong>{d.opportunity}</strong></div>
-                        <div>Evidence Coverage: <strong>{d.evidence}</strong></div>
-                        <div>Visibility: <strong>{d.visibility}%</strong></div>
-                        <div className="text-peec-muted mt-1">
-                          {d.opportunity >= 50 && d.evidence >= 50 && "→ Act now"}
-                          {d.opportunity >= 50 && d.evidence < 50 && "→ Build evidence first"}
-                          {d.opportunity < 50 && d.evidence >= 50 && "→ Maintain"}
-                          {d.opportunity < 50 && d.evidence < 50 && "→ Monitor"}
-                        </div>
-                      </div>
-                    );
-                  }}
-                />
-                <Scatter data={scatterData} shape={(props: any) => {
-                  const { cx, cy, payload } = props;
-                  const r = Math.max(6, Math.min(20, payload.visibility / 5));
-                  return (
-                    <g>
-                      <circle cx={cx} cy={cy} r={r} fill={payload.fill} opacity={0.7} stroke={payload.fill} strokeWidth={1.5} />
-                      <text x={cx} y={cy - r - 4} textAnchor="middle" fontSize={11} fill="rgba(23,23,23,0.7)">
-                        {payload.name.length > 16 ? payload.name.slice(0, 14) + "…" : payload.name}
-                      </text>
-                    </g>
-                  );
-                }} />
-              </ScatterChart>
-            </ResponsiveContainer>
-          ) : (
-            <div className="flex items-center justify-center h-[360px] text-peec-muted">
-              No metric data available.
-            </div>
-          )}
-        </div>
-      </FadeSlide>
-
-      {/* Row 4: Radar Chart — full width */}
-      <FadeSlide delay={400}>
-        <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
-          <h2 className="text-peec-lg font-semibold tracking-tight mb-4">
-            Multi-Axis Comparison
-          </h2>
-          <p className="text-peec-sm text-peec-muted mb-4">
-            Five axes: Intent Fit, Citation Authority, Evidence Coverage, Signal Alignment, Action Priority. One polygon per topic.
+            How each topic scores across five signals. Larger area = stronger overall position.
           </p>
           <ResponsiveContainer width="100%" height={420}>
             <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>

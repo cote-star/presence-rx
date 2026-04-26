@@ -45,8 +45,8 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - Peec visibility must show improvement trend
 - Tavily search must find BMW editorial coverage for this topic
 - At least one independent review mentioning BMW + Premium SUV Segment
-- **Claim to avoid:** BMW is the leading premium suv segment brand
-- **Safe alternative:** BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.
+- **Claim to avoid:** BMW leads the premium SUV segment
+- **Safe alternative:** BMW’s X range offers a driving-focused alternative in the premium SUV segment, where competitors prioritize comfort over engagement
 
 ## Perception Gaps
 
@@ -87,8 +87,8 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - Peec visibility must show improvement trend
 - Tavily search must find BMW editorial coverage for this topic
 - At least one independent review mentioning BMW + Luxury EV Transition
-- **Claim to avoid:** BMW is the leading luxury ev transition brand
-- **Safe alternative:** BMW is emerging in the luxury ev transition category, currently behind Tesla in AI visibility.
+- **Claim to avoid:** BMW is leading the luxury EV transition
+- **Safe alternative:** BMW brings luxury performance heritage into the electric era — the driving experience comes first, the powertrain follows
 
 ### Brand Heritage
 
@@ -167,8 +167,8 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - Peec visibility must show improvement trend
 - Tavily search must find BMW editorial coverage for this topic
 - At least one independent review mentioning BMW + Electric i-Series
-- **Claim to avoid:** BMW is the leading electric i-series brand
-- **Safe alternative:** BMW is emerging in the electric i-series category, currently behind Tesla in AI visibility.
+- **Claim to avoid:** BMW’s i-Series is the best electric car lineup
+- **Safe alternative:** The BMW i4 delivers rear-wheel-drive precision and a driver-focused cockpit in an all-electric package
 
 ## Data Sources
 
