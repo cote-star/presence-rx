@@ -68,6 +68,17 @@ export function strategicStatusColor(status: string | null): string {
   return status ? colors[status] || "gray-400" : "gray-400";
 }
 
+/** Raw hex/rgb color for chart libraries (Recharts). */
+export function strategicStatusHex(status: string | null): string {
+  const colors: Record<string, string> = {
+    strategic_gap: "#FB2C36",
+    emerging_opportunity: "rgb(234,88,12)",
+    non_priority: "rgb(156,163,175)",
+    owned_strength: "rgb(22,163,74)",
+  };
+  return status ? colors[status] || "rgb(0,146,184)" : "rgb(22,163,74)";
+}
+
 export function strategicStatusBgColor(status: string | null): string {
   const colors: Record<string, string> = {
     strategic_gap: "pill-red-bg",

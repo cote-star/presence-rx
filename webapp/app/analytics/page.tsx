@@ -23,26 +23,36 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 
-/* ── colour map (raw hex for Recharts) ──────────────────────── */
+/* ── Unified color system ────────────────────────────────────── */
+
+// Strategic status colors (decision-oriented: "what does this mean?")
+const STATUS_COLORS: Record<string, string> = {
+  strategic_gap: "#FB2C36",
+  emerging_opportunity: "rgb(234,88,12)",
+  non_priority: "rgb(156,163,175)",
+  owned_strength: "rgb(22,163,74)",
+};
+
+// Gap type colors (taxonomy: "what kind of fix?")
 const GAP_COLORS: Record<string, string> = {
   perception: "#FB2C36",
   indexing: "rgb(234,88,12)",
   volume_frequency: "rgb(124,58,237)",
 };
 const STRONGHOLD_COLOR = "rgb(22,163,74)";
+
+// Competitor comparison
 const BRAND_COLOR = "rgb(22,163,74)";
-const COMPETITOR_COLOR = "#FB2C36";
-const PIE_COLORS = [STRONGHOLD_COLOR, "rgb(234,88,12)", "rgb(124,58,237)", "rgb(0,146,184)"];
+const COMPETITOR_COLOR = "rgba(23,23,23,0.35)";
+
+// Radar: muted palette per topic (max 5)
 const RADAR_COLORS = [
-  "rgb(79,70,229)",
-  "#FB2C36",
-  "rgb(234,88,12)",
-  "rgb(124,58,237)",
-  "rgb(0,146,184)",
+  "rgb(79,70,229)", "#FB2C36", "rgb(234,88,12)",
+  "rgb(124,58,237)", "rgb(0,146,184)",
 ];
 
-function barColor(gapType: string | null): string {
-  return gapType ? GAP_COLORS[gapType] ?? "rgb(0,146,184)" : STRONGHOLD_COLOR;
+function statusColor(status: string | null): string {
+  return status ? STATUS_COLORS[status] ?? "rgb(0,146,184)" : STRONGHOLD_COLOR;
 }
 
 /* ── fade-slide wrapper ─────────────────────────────────────── */
@@ -110,20 +120,22 @@ export default function AnalyticsPage() {
   const metricsRows = data.metrics?.rows ?? [];
   const landscape = data.landscape?.topics ?? [];
 
-  // 1. Visibility bar chart data
+  // 1. Visibility bar chart — colored by strategic status
   const visData = rows.map((r) => ({
     name: r.cluster_label,
     visibility: Math.round((r.visibility_target_share ?? 0) * 100),
-    fill: barColor(r.gap_type),
-    gapType: r.gap_type,
+    fill: statusColor(r.strategic_status ?? null),
   }));
 
-  // 2. Action priority bar chart data
-  const priorityData = metricsRows.map((m) => ({
-    name: m.cluster_label,
-    opportunity_score: m.opportunity_score,
-    fill: barColor(m.gap_type),
-  }));
+  // 2. Action priority — colored by strategic status
+  const priorityData = metricsRows.map((m) => {
+    const row = rows.find((r) => r.cluster_id === m.cluster_id);
+    return {
+      name: m.cluster_label,
+      opportunity_score: m.opportunity_score,
+      fill: statusColor(row?.strategic_status ?? null),
+    };
+  });
 
   // 3. Competitor landscape data
   const competitorData = landscape.map((t) => ({
@@ -163,37 +175,16 @@ export default function AnalyticsPage() {
     return point;
   });
 
-  // Legend items for strategic statuses
-  const legendItems = [
-    { label: "Strategic Gap", color: "#FB2C36" },
-    { label: "Emerging Opportunity", color: "rgb(234,88,12)" },
-    { label: "Non-Priority", color: "rgb(156,163,175)" },
-    { label: "Owned Strength", color: "rgb(22,163,74)" },
-  ];
-
   return (
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <span className="inline-flex items-center px-2 py-0.5 rounded-peec-md text-peec-sm font-medium bg-pill-indigo-bg text-pill-indigo mb-2">
-          Analytics
-        </span>
         <h1 className="text-2xl font-semibold tracking-tight">
-          {data.brand_name} — Visual Analytics
+          {data.brand_name} — Analytics
         </h1>
-        <p className="text-peec-muted mt-1 max-w-2xl">
-          Interactive charts showing visibility distribution, action priorities, competitive landscape, and classification outcomes.
+        <p className="text-peec-muted mt-1 max-w-xl">
+          Visual breakdown of visibility, priorities, competition, and topic composition.
         </p>
-      </div>
-
-      {/* Gap type legend */}
-      <div className="flex items-center gap-4 text-peec-sm">
-        {legendItems.map((item) => (
-          <div key={item.label} className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full" style={{ background: item.color }} />
-            <span className="text-peec-muted">{item.label}</span>
-          </div>
-        ))}
       </div>
 
       {/* Row 1: Visibility + Action Priority */}
@@ -201,9 +192,15 @@ export default function AnalyticsPage() {
         {/* 1. Visibility Bar Chart */}
         <FadeSlide delay={0}>
           <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
-            <h2 className="text-peec-lg font-semibold tracking-tight mb-4">
+            <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
               Visibility by Topic
             </h2>
+            <p className="text-peec-xs text-peec-muted mb-3">Where the brand appears across tracked AI-answer topics.</p>
+            <div className="flex gap-3 mb-2 text-peec-xs">
+              {[["Strategic Gap","#FB2C36"],["Opportunity","rgb(234,88,12)"],["Non-Priority","rgb(156,163,175)"],["Owned","rgb(22,163,74)"]].map(([l,c])=>(
+                <span key={l} className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{background:c}}/><span className="text-peec-muted">{l}</span></span>
+              ))}
+            </div>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={visData} margin={{ top: 8, right: 8, bottom: 32, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(23,23,23,0.08)" />
@@ -234,9 +231,10 @@ export default function AnalyticsPage() {
         {/* 2. Action Priority Bar Chart */}
         <FadeSlide delay={100}>
           <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
-            <h2 className="text-peec-lg font-semibold tracking-tight mb-4">
-              Action Priority Score
+            <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
+              Action Priority
             </h2>
+            <p className="text-peec-xs text-peec-muted mb-3">Which topics need action based on strategic importance and evidence.</p>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={priorityData} margin={{ top: 8, right: 8, bottom: 32, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(23,23,23,0.08)" />
@@ -269,9 +267,10 @@ export default function AnalyticsPage() {
         {/* 3. Competitor Landscape Grouped Bars */}
         <FadeSlide delay={200}>
           <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
-            <h2 className="text-peec-lg font-semibold tracking-tight mb-4">
+            <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
               Competitor Landscape
             </h2>
+            <p className="text-peec-xs text-peec-muted mb-3">Whether competitors own the answer space for each topic.</p>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={competitorData} margin={{ top: 8, right: 8, bottom: 32, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(23,23,23,0.08)" />
@@ -334,7 +333,7 @@ export default function AnalyticsPage() {
             <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
               Gap Mix
             </h2>
-            <p className="text-peec-sm text-peec-muted mb-4">Distribution of gap types across tracked topics</p>
+            <p className="text-peec-xs text-peec-muted mb-3">What type of intervention each topic needs.</p>
             {gapMixData.length > 0 ? (
               <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
@@ -350,7 +349,7 @@ export default function AnalyticsPage() {
                     label={({ name, value }: any) => `${name}: ${value}`}
                   >
                     {gapMixData.map((entry, idx) => (
-                      <Cell key={idx} fill={GAP_MIX_COLORS[entry.name] || PIE_COLORS[idx % PIE_COLORS.length]} />
+                      <Cell key={idx} fill={GAP_MIX_COLORS[entry.name] || "rgb(0,146,184)"} />
                     ))}
                   </Pie>
                   <Tooltip
@@ -390,8 +389,8 @@ export default function AnalyticsPage() {
           <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
             Topic Signal Profile
           </h2>
-          <p className="text-peec-sm text-peec-muted mb-4">
-            How each topic scores across five signals. Larger area = stronger overall position.
+          <p className="text-peec-xs text-peec-muted mb-3">
+            How each topic scores across five signals. Larger area = stronger position.
           </p>
           <ResponsiveContainer width="100%" height={420}>
             <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
