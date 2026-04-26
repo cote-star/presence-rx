@@ -6,6 +6,49 @@
 
 Nothing Phone has **4 blind spots** requiring activation across **3 intervention classes**.
 
+## Discovery Gaps
+
+### Mobile Ecosystem
+
+**Gap:** Nothing Phone wants to be known for Mobile Ecosystem but AI associates it with Apple dominates mobile ecosystem discourse in regulatory, academic, and editorial sources as the defining mobile ecosystem operator.
+
+#### Owned Content Brief
+
+- **What to create:** Dedicated mobile ecosystem page with structured data and explicit brand positioning
+- **Where:** Nothing Phone website, blog, documentation
+- **Key language:** Use explicit "Mobile Ecosystem" keywords that AI systems index
+- **Missing association to address:** Nothing Phone as ecosystem participant with nothing.community and cross-device line (Phone, Ear, Headphone)
+- **Missing association to address:** Nothing OS as differentiated Android-based software layer with ecosystem continuity
+
+#### Earned Media Angle
+
+- **Pitch:** "Nothing Phone as the new mobile ecosystem contender -- data shows 12% vs Apple as current AI answer owner"
+- **Target outlets:** nothing.community, www.consumerreports.org, www.reddit.com, www.trustpilot.com
+
+#### Comparison Page
+
+- **Title template:** "Nothing Phone vs Apple: Mobile Ecosystem comparison"
+- **Must include:** Feature matrix, pricing, user testimonials, independent benchmarks
+
+#### FAQ / Search Answer
+
+- **Q:** "Is Nothing Phone good for mobile ecosystem?"
+- **A:** Do not claim Nothing Phone ownership of the Mobile Ecosystem topic; Apple holds dominant visibility.
+
+#### Audience & Channel
+
+- **Audiences:** design-conscious buyers, tech enthusiasts, Android switchers, minimalism seekers
+- **Channels:** editorial, ugc, owned, youtube, reddit
+- **Journey stage:** awareness, consideration, comparison, purchase
+
+#### Proof Needed Before Publication
+
+- Peec visibility must show improvement trend
+- Tavily search must find Nothing Phone editorial coverage for this topic
+- At least one independent review mentioning Nothing Phone + Mobile Ecosystem
+- **Claim to avoid:** Nothing Phone is the leading mobile ecosystem brand
+- **Safe alternative:** Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.
+
 ## Perception Gaps
 
 ### Consumer Tech Innovation
@@ -89,49 +132,6 @@ Nothing Phone has **4 blind spots** requiring activation across **3 intervention
 - At least one independent review mentioning Nothing Phone + Minimalist Hardware
 - **Claim to avoid:** Nothing Phone is the leading minimalist hardware brand
 - **Safe alternative:** Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.
-
-## Discovery Gaps
-
-### Mobile Ecosystem
-
-**Gap:** Nothing Phone wants to be known for Mobile Ecosystem but AI associates it with Apple dominates mobile ecosystem discourse in regulatory, academic, and editorial sources as the defining mobile ecosystem operator.
-
-#### Owned Content Brief
-
-- **What to create:** Dedicated mobile ecosystem page with structured data and explicit brand positioning
-- **Where:** Nothing Phone website, blog, documentation
-- **Key language:** Use explicit "Mobile Ecosystem" keywords that AI systems index
-- **Missing association to address:** Nothing Phone as ecosystem participant with nothing.community and cross-device line (Phone, Ear, Headphone)
-- **Missing association to address:** Nothing OS as differentiated Android-based software layer with ecosystem continuity
-
-#### Earned Media Angle
-
-- **Pitch:** "Nothing Phone as the new mobile ecosystem contender -- data shows 12% vs Apple as current AI answer owner"
-- **Target outlets:** nothing.community, www.consumerreports.org, www.reddit.com, www.trustpilot.com
-
-#### Comparison Page
-
-- **Title template:** "Nothing Phone vs Apple: Mobile Ecosystem comparison"
-- **Must include:** Feature matrix, pricing, user testimonials, independent benchmarks
-
-#### FAQ / Search Answer
-
-- **Q:** "Is Nothing Phone good for mobile ecosystem?"
-- **A:** Do not claim Nothing Phone ownership of the Mobile Ecosystem topic; Apple holds dominant visibility.
-
-#### Audience & Channel
-
-- **Audiences:** design-conscious buyers, tech enthusiasts, Android switchers, minimalism seekers
-- **Channels:** editorial, ugc, owned, youtube, reddit
-- **Journey stage:** awareness, consideration, comparison, purchase
-
-#### Proof Needed Before Publication
-
-- Peec visibility must show improvement trend
-- Tavily search must find Nothing Phone editorial coverage for this topic
-- At least one independent review mentioning Nothing Phone + Mobile Ecosystem
-- **Claim to avoid:** Nothing Phone is the leading mobile ecosystem brand
-- **Safe alternative:** Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.
 
 ## Attention Gaps
 

@@ -6,6 +6,48 @@
 
 BMW has **4 blind spots** requiring activation across **3 intervention classes**.
 
+## Discovery Gaps
+
+### Premium SUV Segment
+
+**Gap:** BMW wants to be known for Premium SUV Segment but AI associates it with Mercedes-Benz is the Peec-visible owner
+
+#### Owned Content Brief
+
+- **What to create:** Dedicated premium suv segment page with structured data and explicit brand positioning
+- **Where:** BMW website, blog, documentation
+- **Key language:** Use explicit "Premium SUV Segment" keywords that AI systems index
+- **Missing association to address:** clear premium suv segment proof surfaced in AI answers
+
+#### Earned Media Angle
+
+- **Pitch:** "BMW as the new premium suv segment contender -- data shows 15% vs Mercedes-Benz as current AI answer owner"
+- **Target outlets:** Tech editorial, independent review sites
+
+#### Comparison Page
+
+- **Title template:** "BMW vs Mercedes-Benz: Premium SUV Segment comparison"
+- **Must include:** Feature matrix, pricing, user testimonials, independent benchmarks
+
+#### FAQ / Search Answer
+
+- **Q:** "Is BMW good for premium suv segment?"
+- **A:** Do not claim BMW ownership of the Premium SUV Segment topic; Mercedes-Benz holds dominant visibility.
+
+#### Audience & Channel
+
+- **Audiences:** luxury buyers, EV considerers, driving enthusiasts, premium SUV shoppers, brand loyalists
+- **Channels:** automotive_editorial, ev_media, youtube, dealer_content, owned
+- **Journey stage:** awareness, consideration, comparison, test_drive, purchase
+
+#### Proof Needed Before Publication
+
+- Peec visibility must show improvement trend
+- Tavily search must find BMW editorial coverage for this topic
+- At least one independent review mentioning BMW + Premium SUV Segment
+- **Claim to avoid:** BMW is the leading premium suv segment brand
+- **Safe alternative:** BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.
+
 ## Perception Gaps
 
 ### Luxury EV Transition
@@ -85,48 +127,6 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - Peec visibility must show improvement trend
 - Tavily search must find BMW editorial coverage for this topic
 - At least one independent review mentioning BMW + Brand Heritage
-
-## Discovery Gaps
-
-### Premium SUV Segment
-
-**Gap:** BMW wants to be known for Premium SUV Segment but AI associates it with Mercedes-Benz is the Peec-visible owner
-
-#### Owned Content Brief
-
-- **What to create:** Dedicated premium suv segment page with structured data and explicit brand positioning
-- **Where:** BMW website, blog, documentation
-- **Key language:** Use explicit "Premium SUV Segment" keywords that AI systems index
-- **Missing association to address:** clear premium suv segment proof surfaced in AI answers
-
-#### Earned Media Angle
-
-- **Pitch:** "BMW as the new premium suv segment contender -- data shows 15% vs Mercedes-Benz as current AI answer owner"
-- **Target outlets:** Tech editorial, independent review sites
-
-#### Comparison Page
-
-- **Title template:** "BMW vs Mercedes-Benz: Premium SUV Segment comparison"
-- **Must include:** Feature matrix, pricing, user testimonials, independent benchmarks
-
-#### FAQ / Search Answer
-
-- **Q:** "Is BMW good for premium suv segment?"
-- **A:** Do not claim BMW ownership of the Premium SUV Segment topic; Mercedes-Benz holds dominant visibility.
-
-#### Audience & Channel
-
-- **Audiences:** luxury buyers, EV considerers, driving enthusiasts, premium SUV shoppers, brand loyalists
-- **Channels:** automotive_editorial, ev_media, youtube, dealer_content, owned
-- **Journey stage:** awareness, consideration, comparison, test_drive, purchase
-
-#### Proof Needed Before Publication
-
-- Peec visibility must show improvement trend
-- Tavily search must find BMW editorial coverage for this topic
-- At least one independent review mentioning BMW + Premium SUV Segment
-- **Claim to avoid:** BMW is the leading premium suv segment brand
-- **Safe alternative:** BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.
 
 ## Attention Gaps
 

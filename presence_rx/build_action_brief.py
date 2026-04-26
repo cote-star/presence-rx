@@ -111,6 +111,17 @@ def build_action_brief(
             lines.append(f"#### {row.cluster_label}\n")
             lines.append(f"- **Visibility:** {vis} | **Competitor:** {competitor}")
 
+            # Strategic status badge
+            if row.strategic_status:
+                from presence_rx.display_labels import human_strategic_status
+
+                status_label = human_strategic_status(row.strategic_status)
+                importance = row.strategic_importance or "medium"
+                note_part = f" \u2014 {row.strategic_note}" if row.strategic_note else ""
+                lines.append(
+                    f"- **Strategic status:** {status_label} ({importance}){note_part}"
+                )
+
             # Classification
             gap_info = next(
                 (g for g in classified if g.cluster_id == row.cluster_id), None

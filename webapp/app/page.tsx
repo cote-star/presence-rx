@@ -1,14 +1,16 @@
 "use client";
 
 import { useBrand } from "@/hooks/useBrand";
-import { humanGapType, humanDecision, gapTypeColor } from "@/lib/display-labels";
+import { humanGapType, humanDecision, gapTypeColor, humanStrategicStatus, strategicStatusColor, strategicStatusBgColor } from "@/lib/display-labels";
 import {
   AlertTriangle,
   ArrowRight,
+  ChevronDown,
   Shield,
   Target,
   TrendingUp,
 } from "lucide-react";
+import { useState } from "react";
 
 function MetricCard({
   label,
@@ -52,6 +54,7 @@ function Pill({
 
 export default function ActionBriefPage() {
   const { data, config, loading } = useBrand();
+  const [showNonPriority, setShowNonPriority] = useState(false);
 
   if (loading || !data) {
     return (
@@ -109,11 +112,16 @@ export default function ActionBriefPage() {
       ).toFixed(1)
     : "0";
 
-  // Group blind spots by gap type
+  // Group blind spots by gap type, separating non-priority
   const gapGroups: Record<string, typeof rows> = {};
+  const nonPriorityRows: typeof rows = [];
   blindSpots.forEach((r) => {
-    const key = r.gap_type!;
-    (gapGroups[key] = gapGroups[key] || []).push(r);
+    if (!(r.desired_association ?? true)) {
+      nonPriorityRows.push(r);
+    } else {
+      const key = r.gap_type!;
+      (gapGroups[key] = gapGroups[key] || []).push(r);
+    }
   });
 
   const INTERVENTION: Record<string, string> = {
@@ -246,11 +254,21 @@ export default function ActionBriefPage() {
                     className="bg-white rounded-peec-xl shadow-peec-ring p-4 space-y-3"
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="font-semibold">{row.cluster_label}</h3>
+                      <div className="flex items-center gap-2">
+                        <h3 className="font-semibold">{row.cluster_label}</h3>
+                        {(row.strategic_status ?? null) && (
+                          <span className={`px-2 py-0.5 rounded-peec-md text-peec-sm font-medium bg-${strategicStatusBgColor(row.strategic_status)} text-${strategicStatusColor(row.strategic_status)}`}>
+                            {humanStrategicStatus(row.strategic_status)}
+                          </span>
+                        )}
+                      </div>
                       <span className="px-2 py-0.5 rounded-peec-md text-peec-sm font-medium bg-pill-green-bg text-pill-green">
                         {humanDecision(m?.decision_bucket ?? "monitor")}
                       </span>
                     </div>
+                    {row.strategic_note && (
+                      <p className="text-peec-xs text-peec-muted italic">{row.strategic_note}</p>
+                    )}
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                       <div className="bg-peec-tint rounded-peec-lg p-2">
                         <div className="text-peec-xs text-peec-muted">
@@ -295,6 +313,87 @@ export default function ActionBriefPage() {
           </div>
         );
       })}
+
+      {/* Non-Priority Topics (collapsed) */}
+      {nonPriorityRows.length > 0 && (
+        <div className="space-y-3">
+          <button
+            onClick={() => setShowNonPriority(!showNonPriority)}
+            className="flex items-center gap-2 pb-2 border-b border-peec-hairline w-full text-left"
+          >
+            <ChevronDown
+              size={16}
+              className={`text-peec-muted transition-transform ${showNonPriority ? "rotate-0" : "-rotate-90"}`}
+            />
+            <h2 className="text-peec-lg font-semibold tracking-tight text-gray-400">
+              Non-Priority Topics ({nonPriorityRows.length})
+            </h2>
+          </button>
+          {showNonPriority && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {nonPriorityRows.map((row) => {
+                const m = metricsMap[row.cluster_id];
+                const l = landscapeMap[row.cluster_id];
+                const competitor =
+                  l?.competitor_owner ?? row.visibility_competitor_owner ?? "N/A";
+                const vis = Math.round(
+                  (row.visibility_target_share ?? 0) * 100
+                );
+
+                return (
+                  <div
+                    key={row.cluster_id}
+                    className="bg-white rounded-peec-xl shadow-peec-ring p-4 space-y-3 opacity-50"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <h3 className="font-semibold text-gray-400">{row.cluster_label}</h3>
+                        <span className="px-2 py-0.5 rounded-peec-md text-peec-sm font-medium bg-gray-100 text-gray-400">
+                          Non-Priority
+                        </span>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-peec-md text-peec-sm font-medium bg-pill-green-bg text-pill-green">
+                        {humanDecision(m?.decision_bucket ?? "monitor")}
+                      </span>
+                    </div>
+                    {row.strategic_note && (
+                      <p className="text-peec-xs text-peec-muted italic">{row.strategic_note}</p>
+                    )}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      <div className="bg-peec-tint rounded-peec-lg p-2">
+                        <div className="text-peec-xs text-peec-muted">
+                          Action Priority
+                        </div>
+                        <div className="font-semibold text-lg">
+                          {m?.opportunity_score ?? 0}
+                        </div>
+                      </div>
+                      <div className="bg-peec-tint rounded-peec-lg p-2">
+                        <div className="text-peec-xs text-peec-muted">
+                          {data.brand_name}
+                        </div>
+                        <div className="font-semibold text-lg">{vis}%</div>
+                      </div>
+                      <div className="bg-peec-tint rounded-peec-lg p-2">
+                        <div className="text-peec-xs text-peec-muted">
+                          Owner
+                        </div>
+                        <div className="font-semibold text-sm truncate">
+                          {competitor}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-peec-sm text-gray-400">
+                      <strong>Next move:</strong>{" "}
+                      {m?.recommended_next_move ?? "Monitor this cluster."}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Influence Map — Where to Engage */}
       {config && (

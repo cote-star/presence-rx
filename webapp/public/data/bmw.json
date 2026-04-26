@@ -26,7 +26,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "core",
+        "strategic_note": "Heritage stronghold \u2014 defend",
+        "strategic_status": "emerging_opportunity"
       },
       {
         "cluster_id": "cluster:luxury-ev-transition",
@@ -52,7 +56,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "core",
+        "strategic_note": "Critical for future positioning",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:premium-suv-segment",
@@ -78,7 +86,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "high",
+        "strategic_note": "Revenue-critical segment",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:electric-i-series",
@@ -104,7 +116,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "high",
+        "strategic_note": "EV product line",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:brand-heritage",
@@ -130,7 +146,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": false,
+        "strategic_importance": "low",
+        "strategic_note": "Heritage is given, not a fight",
+        "strategic_status": "non_priority"
       }
     ]
   },
@@ -386,8 +406,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "act_now",
+        "decision_bucket_reason": "Critical strategic gap with strong method agreement",
         "primary_gap": "MISSING_ASSOCIATION",
         "recommended_next_move": "Publish explicit luxury ev transition positioning content and monitor AI adoption.",
         "relevance_score": 72,
@@ -413,8 +433,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "act_now",
+        "decision_bucket_reason": "Critical strategic gap with strong method agreement",
         "primary_gap": "RETRIEVAL_NOT_CITATION",
         "recommended_next_move": "Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.",
         "relevance_score": 68,
@@ -440,8 +460,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "act_now",
+        "decision_bucket_reason": "Critical strategic gap with strong method agreement",
         "primary_gap": "MISSING_PUBLIC_VOLUME",
         "recommended_next_move": "Seed sustained electric i-series proof across editorial and owned surfaces.",
         "relevance_score": 81,
@@ -467,8 +487,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "monitor",
+        "decision_bucket_reason": "Not a strategic priority for this brand",
         "primary_gap": "MISSING_ASSOCIATION",
         "recommended_next_move": "Publish explicit brand heritage positioning content and monitor AI adoption.",
         "relevance_score": 54,

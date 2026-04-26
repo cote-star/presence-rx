@@ -151,14 +151,22 @@ export default function AnalyticsPage() {
     Stronghold: STRONGHOLD_COLOR,
   };
 
-  // 4b. Opportunity vs Evidence scatter data
+  // 4b. Opportunity vs Evidence scatter data — colored by strategic status
   const scatterData = metricsRows.map((m) => ({
     name: m.cluster_label,
     opportunity: m.opportunity_score,
     evidence: m.proof_strength_score,
     visibility: Math.round((rows.find((r) => r.cluster_id === m.cluster_id)?.visibility_target_share ?? 0) * 100),
     gapType: m.gap_type,
-    fill: m.gap_type ? GAP_COLORS[m.gap_type] ?? "rgb(0,146,184)" : STRONGHOLD_COLOR,
+    fill: (() => {
+      const row = rows.find(r => r.cluster_id === m.cluster_id);
+      const status = row?.strategic_status ?? null;
+      if (status === "strategic_gap") return "#FB2C36";
+      if (status === "emerging_opportunity") return "rgb(234,88,12)";
+      if (status === "non_priority") return "rgb(156,163,175)";
+      if (status === "owned_strength") return "rgb(22,163,74)";
+      return "rgb(0,146,184)";
+    })(),
   }));
 
   // 5. Radar chart data
@@ -177,12 +185,12 @@ export default function AnalyticsPage() {
     return point;
   });
 
-  // Legend items for gap types
+  // Legend items for strategic statuses
   const legendItems = [
-    { label: "Stronghold", color: STRONGHOLD_COLOR },
-    { label: "Perception", color: GAP_COLORS.perception },
-    { label: "Discovery", color: GAP_COLORS.indexing },
-    { label: "Attention", color: GAP_COLORS.volume_frequency },
+    { label: "Strategic Gap", color: "#FB2C36" },
+    { label: "Emerging Opportunity", color: "rgb(234,88,12)" },
+    { label: "Non-Priority", color: "rgb(156,163,175)" },
+    { label: "Owned Strength", color: "rgb(22,163,74)" },
   ];
 
   return (

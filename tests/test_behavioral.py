@@ -395,7 +395,8 @@ def test_action_brief_groups_topics_by_gap_type():
         prescription=prescription,
     )
 
-    # Find the Perception section and verify it contains the right topics
+    # Find the gap-type sections and verify they contain the right topics.
+    # The action brief emits sections in order: Discovery, Perception, Attention.
     perception_header = "### Perception Gaps"
     indexing_header = "### Discovery Gaps"
     volume_header = "### Attention Gaps"
@@ -404,10 +405,18 @@ def test_action_brief_groups_topics_by_gap_type():
     assert indexing_header in md, f"Missing section: {indexing_header}"
     assert volume_header in md, f"Missing section: {volume_header}"
 
-    # Perception section should list Minimalist Hardware and Consumer Tech Innovation
-    perception_start = md.index(perception_header)
     indexing_start = md.index(indexing_header)
-    perception_section = md[perception_start:indexing_start]
+    perception_start = md.index(perception_header)
+    volume_start = md.index(volume_header)
+
+    # Discovery section: between Discovery header and Perception header
+    discovery_section = md[indexing_start:perception_start]
+    assert "Mobile Ecosystem" in discovery_section, (
+        "Mobile Ecosystem should be in the Discovery section"
+    )
+
+    # Perception section: between Perception header and Attention header
+    perception_section = md[perception_start:volume_start]
     assert "Minimalist Hardware" in perception_section, (
         "Minimalist Hardware should be in the Perception section"
     )
@@ -415,14 +424,7 @@ def test_action_brief_groups_topics_by_gap_type():
         "Consumer Tech Innovation should be in the Perception section"
     )
 
-    # Discovery section should list Mobile Ecosystem
-    volume_start = md.index(volume_header)
-    discovery_section = md[indexing_start:volume_start]
-    assert "Mobile Ecosystem" in discovery_section, (
-        "Mobile Ecosystem should be in the Discovery section"
-    )
-
-    # Volume section should list Wireless Audio
+    # Attention section: from Attention header to end
     volume_section = md[volume_start:]
     assert "Wireless Audio" in volume_section, (
         "Wireless Audio should be in the Attention section"

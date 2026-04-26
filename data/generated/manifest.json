@@ -29,8 +29,8 @@
     "tavily": {
       "snapshot_id": null,
       "prompt_count": null,
-      "query_count": 8,
-      "source_count": 40,
+      "query_count": 0,
+      "source_count": 0,
       "analysis_runs": null,
       "dashboard_url": null
     },
@@ -39,7 +39,7 @@
       "prompt_count": null,
       "query_count": null,
       "source_count": null,
-      "analysis_runs": 4,
+      "analysis_runs": 0,
       "dashboard_url": null
     },
     "lovable": {
@@ -52,15 +52,15 @@
     }
   },
   "confidence_counts": {
-    "strong": 4,
+    "strong": 0,
     "moderate": 1,
-    "limited": 0,
+    "limited": 4,
     "blocked": 0
   },
   "quality_counts": {
-    "strong": 4,
+    "strong": 0,
     "moderate": 1,
-    "limited": 0,
+    "limited": 4,
     "blocked": 0
   },
   "unavailable_reason_counts": {
@@ -78,8 +78,8 @@
   "pipeline_summary": {
     "raw_prompts": 50,
     "clusters": 5,
-    "evidence_gated": 4,
-    "actionable_recommendations": 8
+    "evidence_gated": 0,
+    "actionable_recommendations": 0
   },
   "artifacts": [
     "prompt_universe.json",
@@ -87,13 +87,6 @@
     "manifest.json",
     "source_of_record.json",
     "pipeline_funnel.json",
-    "hero_cards.json",
-    "gemini_analysis.json",
-    "tavily_evidence.json",
-    "gap_classification.json",
-    "EVIDENCE_LEDGER.json",
-    "value_added_metrics.json",
-    "competitor_landscape.json",
-    "prescription_plan.json"
+    "hero_cards.json"
   ]
 }

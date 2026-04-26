@@ -34,6 +34,25 @@
 
 ## Actions by Intervention Class
 
+### Discovery Gaps (Mobile Ecosystem)
+
+**Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
+
+#### Mobile Ecosystem
+
+- **Visibility:** 12% | **Competitor:** Apple
+- **Strategic status:** Strategic Gap (medium) — Want ecosystem credibility
+- **Evidence Level:** confirmed (strong)
+- **Recommended Action:** Act now
+- **Reason:** Critical strategic gap with strong method agreement
+- **Recommended next move:** Test schema, canonical source pages, and ecosystem prompts after the next Peec snapshot.
+- **Action Priority:** 85/100
+- **Publication language:** Prioritize testing the Nothing Phone association in the Mobile Ecosystem topic; 3 of 3 methods support.
+- **AI perception:** AI frames mobile ecosystem as platform-control topic dominated by Apple and Google
+- **AI perception:** Nothing Phone appears only through device reviews, not as ecosystem player
+- **Missing association:** Nothing Phone as ecosystem participant with nothing.community and cross-device line (Phone, Ear, Headphone)
+- **Missing association:** Nothing OS as differentiated Android-based software layer with ecosystem continuity
+
 ### Perception Gaps (Consumer Tech Innovation, Minimalist Hardware)
 
 **Intervention class:** Positioning + messaging correction; reframing content with explicit trait language
@@ -41,9 +60,10 @@
 #### Consumer Tech Innovation
 
 - **Visibility:** 10% | **Competitor:** Apple
+- **Strategic status:** Strategic Gap (high) — Want innovation association
 - **Evidence Level:** confirmed (strong)
 - **Recommended Action:** Act now
-- **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
+- **Reason:** Critical strategic gap with strong method agreement
 - **Recommended next move:** Publish explicit innovation proof and monitor whether AI answers adopt that association.
 - **Action Priority:** 85/100
 - **Publication language:** Prioritize testing the Nothing Phone association in the Consumer Tech Innovation topic; 3 of 3 methods support.
@@ -55,9 +75,10 @@
 #### Minimalist Hardware
 
 - **Visibility:** 6% | **Competitor:** Apple
+- **Strategic status:** Strategic Gap (core) — CORE IDENTITY — most urgent
 - **Evidence Level:** confirmed (strong)
 - **Recommended Action:** Act now
-- **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
+- **Reason:** Critical strategic gap with strong method agreement
 - **Recommended next move:** Publish minimalist-hardware positioning content and rerun this prompt cluster.
 - **Action Priority:** 87/100
 - **Publication language:** Prioritize testing the Nothing Phone association in the Minimalist Hardware topic; 3 of 3 methods support.
@@ -66,24 +87,6 @@
 - **Missing association:** Nothing Phone transparent-back Glyph-light design as defining hardware minimalism
 - **Missing association:** Nothing brand philosophy (pure instinct design, stripped-back UI) as deliberate minimalist position
 
-### Discovery Gaps (Mobile Ecosystem)
-
-**Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
-
-#### Mobile Ecosystem
-
-- **Visibility:** 12% | **Competitor:** Apple
-- **Evidence Level:** confirmed (strong)
-- **Recommended Action:** Act now
-- **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
-- **Recommended next move:** Test schema, canonical source pages, and ecosystem prompts after the next Peec snapshot.
-- **Action Priority:** 85/100
-- **Publication language:** Prioritize testing the Nothing Phone association in the Mobile Ecosystem topic; 3 of 3 methods support.
-- **AI perception:** AI frames mobile ecosystem as platform-control topic dominated by Apple and Google
-- **AI perception:** Nothing Phone appears only through device reviews, not as ecosystem player
-- **Missing association:** Nothing Phone as ecosystem participant with nothing.community and cross-device line (Phone, Ear, Headphone)
-- **Missing association:** Nothing OS as differentiated Android-based software layer with ecosystem continuity
-
 ### Attention Gaps (Wireless Audio)
 
 **Intervention class:** Content creation + distribution + amplification; sustained editorial outreach; UGC seeding
@@ -91,9 +94,10 @@
 #### Wireless Audio
 
 - **Visibility:** 1% | **Competitor:** Apple
+- **Strategic status:** Strategic Gap (medium) — Nothing Ear product line
 - **Evidence Level:** confirmed (strong)
 - **Recommended Action:** Act now
-- **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
+- **Reason:** Critical strategic gap with strong method agreement
 - **Recommended next move:** Seed sustained wireless-audio proof across editorial and owned surfaces.
 - **Action Priority:** 84/100
 - **Publication language:** Prioritize testing the Nothing Phone association in the Wireless Audio topic; 3 of 3 methods support.

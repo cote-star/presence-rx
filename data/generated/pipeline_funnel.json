@@ -23,24 +23,6 @@
       "count": 4,
       "dropped_count": 0,
       "drop_reasons": {}
-    },
-    {
-      "stage": "evidence_gated",
-      "count": 4,
-      "dropped_count": 0,
-      "drop_reasons": {}
-    },
-    {
-      "stage": "claims_generated",
-      "count": 8,
-      "dropped_count": 0,
-      "drop_reasons": {}
-    },
-    {
-      "stage": "prescriptions_planned",
-      "count": 12,
-      "dropped_count": 0,
-      "drop_reasons": {}
     }
   ]
 }

@@ -47,3 +47,33 @@ export function gapTypeBgColor(gapType: string | null): string {
   };
   return gapType ? colors[gapType] || "pill-cyan-bg" : "pill-green-bg";
 }
+
+export function humanStrategicStatus(status: string | null): string {
+  const labels: Record<string, string> = {
+    strategic_gap: "Strategic Gap",
+    emerging_opportunity: "Emerging Opportunity",
+    non_priority: "Non-Priority",
+    owned_strength: "Owned Strength",
+  };
+  return status ? labels[status] || status : "Unknown";
+}
+
+export function strategicStatusColor(status: string | null): string {
+  const colors: Record<string, string> = {
+    strategic_gap: "pill-red",
+    emerging_opportunity: "pill-orange",
+    non_priority: "gray-400",
+    owned_strength: "pill-green",
+  };
+  return status ? colors[status] || "gray-400" : "gray-400";
+}
+
+export function strategicStatusBgColor(status: string | null): string {
+  const colors: Record<string, string> = {
+    strategic_gap: "pill-red-bg",
+    emerging_opportunity: "pill-orange-bg",
+    non_priority: "gray-100",
+    owned_strength: "pill-green-bg",
+  };
+  return status ? colors[status] || "gray-100" : "gray-100";
+}

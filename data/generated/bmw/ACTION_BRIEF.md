@@ -27,6 +27,24 @@
 
 ## Actions by Intervention Class
 
+### Discovery Gaps (Premium SUV Segment)
+
+**Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
+
+#### Premium SUV Segment
+
+- **Visibility:** 15% | **Competitor:** Mercedes-Benz
+- **Strategic status:** Strategic Gap (high) — Revenue-critical segment
+- **Evidence Level:** confirmed (moderate)
+- **Recommended Action:** Act now
+- **Reason:** Critical strategic gap with strong method agreement
+- **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.
+- **Action Priority:** 57/100
+- **Publication language:** Test the BMW association in the Premium SUV Segment topic; 2 of 2 methods support.
+- **AI perception:** premium suv segment discoverability
+- **AI perception:** owned content surfacing
+- **Missing association:** clear premium suv segment proof surfaced in AI answers
+
 ### Perception Gaps (Luxury EV Transition, Brand Heritage)
 
 **Intervention class:** Positioning + messaging correction; reframing content with explicit trait language
@@ -34,9 +52,10 @@
 #### Luxury EV Transition
 
 - **Visibility:** 12% | **Competitor:** Tesla
+- **Strategic status:** Strategic Gap (core) — Critical for future positioning
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
+- **Recommended Action:** Act now
+- **Reason:** Critical strategic gap with strong method agreement
 - **Recommended next move:** Publish explicit luxury ev transition positioning content and monitor AI adoption.
 - **Action Priority:** 59/100
 - **Publication language:** Test the BMW association in the Luxury EV Transition topic; 2 of 2 methods support.
@@ -47,32 +66,16 @@
 #### Brand Heritage
 
 - **Visibility:** 30% | **Competitor:** Mercedes-Benz
+- **Strategic status:** Non-Priority (low) — Heritage is given, not a fight
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
+- **Recommended Action:** Monitor
+- **Reason:** Not a strategic priority for this brand
 - **Recommended next move:** Publish explicit brand heritage positioning content and monitor AI adoption.
 - **Action Priority:** 52/100
 - **Publication language:** Test the BMW association in the Brand Heritage topic; 2 of 2 methods support.
 - **AI perception:** brand heritage association
 - **AI perception:** category positioning
 - **Missing association:** brand heritage association
-
-### Discovery Gaps (Premium SUV Segment)
-
-**Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
-
-#### Premium SUV Segment
-
-- **Visibility:** 15% | **Competitor:** Mercedes-Benz
-- **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
-- **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.
-- **Action Priority:** 57/100
-- **Publication language:** Test the BMW association in the Premium SUV Segment topic; 2 of 2 methods support.
-- **AI perception:** premium suv segment discoverability
-- **AI perception:** owned content surfacing
-- **Missing association:** clear premium suv segment proof surfaced in AI answers
 
 ### Attention Gaps (Electric i-Series)
 
@@ -81,9 +84,10 @@
 #### Electric i-Series
 
 - **Visibility:** 6% | **Competitor:** Tesla
+- **Strategic status:** Strategic Gap (high) — EV product line
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
+- **Recommended Action:** Act now
+- **Reason:** Critical strategic gap with strong method agreement
 - **Recommended next move:** Seed sustained electric i-series proof across editorial and owned surfaces.
 - **Action Priority:** 62/100
 - **Publication language:** Test the BMW association in the Electric i-Series topic; 2 of 2 methods support.

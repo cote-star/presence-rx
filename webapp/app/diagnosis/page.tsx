@@ -6,8 +6,12 @@ import {
   humanDecision,
   gapTypeColor,
   gapTypeBgColor,
+  humanStrategicStatus,
+  strategicStatusColor,
+  strategicStatusBgColor,
 } from "@/lib/display-labels";
-import { Eye, Users, CheckCircle2, Compass, Lightbulb, Shield } from "lucide-react";
+import { Eye, Users, CheckCircle2, Compass, Lightbulb, Shield, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 function Pill({
   children,
@@ -29,6 +33,7 @@ function Pill({
 
 export default function DiagnosisPage() {
   const { data, loading } = useBrand();
+  const [showNonPriority, setShowNonPriority] = useState(false);
 
   if (loading || !data) {
     return (
@@ -63,6 +68,8 @@ export default function DiagnosisPage() {
   );
 
   const blindSpotRows = rows.filter((r) => r.gap_type);
+  const priorityRows = rows.filter((r) => (r.desired_association ?? true));
+  const nonPriorityCardRows = rows.filter((r) => !(r.desired_association ?? true));
 
   return (
     <div className="space-y-6">
@@ -72,7 +79,7 @@ export default function DiagnosisPage() {
           Diagnosis
         </span>
         <h1 className="text-2xl font-semibold tracking-tight">
-          Blind Spot Decision Cards
+          Conversation Blocks
         </h1>
         <p className="text-peec-muted mt-1 max-w-2xl">
           Each topic is classified by gap type, verified across independent
@@ -80,9 +87,9 @@ export default function DiagnosisPage() {
         </p>
       </div>
 
-      {/* Decision Cards for all 5 topics */}
+      {/* Decision Cards for priority topics */}
       <div className="grid grid-cols-1 gap-4">
-        {rows.map((row) => {
+        {priorityRows.map((row) => {
           const m = metricsMap[row.cluster_id];
           const c = classifiedMap[row.cluster_id];
           const l = landscapeMap[row.cluster_id];
@@ -114,6 +121,14 @@ export default function DiagnosisPage() {
                   >
                     {humanGapType(row.gap_type)}
                   </Pill>
+                  {(row.strategic_status ?? null) && (
+                    <Pill
+                      color={strategicStatusBgColor(row.strategic_status)}
+                      textColor={strategicStatusColor(row.strategic_status)}
+                    >
+                      {humanStrategicStatus(row.strategic_status)}
+                    </Pill>
+                  )}
                 </div>
                 {m && (
                   <Pill color="pill-cyan-bg" textColor="pill-cyan">
@@ -211,6 +226,17 @@ export default function DiagnosisPage() {
                 </div>
               )}
 
+              {/* Strategic Context */}
+              {(row.strategic_note || !(row.desired_association ?? true)) && (
+                <div className="border border-peec-hairline rounded-peec-lg p-3 bg-peec-tint/50">
+                  <div className="text-peec-xs font-semibold text-peec-muted">Strategic Context</div>
+                  {row.strategic_note && <p className="text-peec-sm">{row.strategic_note}</p>}
+                  {!(row.desired_association ?? true) && (
+                    <p className="text-peec-sm text-gray-400">This topic is intentionally deprioritized.</p>
+                  )}
+                </div>
+              )}
+
               {/* Stronghold banner */}
               {isStronghold && (
                 <div className="bg-pill-green-bg border border-pill-green/20 rounded-peec-lg p-3 flex items-center gap-2 text-pill-green text-peec-sm font-medium">
@@ -223,6 +249,107 @@ export default function DiagnosisPage() {
           );
         })}
       </div>
+
+      {/* Non-Priority Topics */}
+      {nonPriorityCardRows.length > 0 && (
+        <div className="space-y-3">
+          <button
+            onClick={() => setShowNonPriority(!showNonPriority)}
+            className="flex items-center gap-2 pb-2 border-b border-peec-hairline w-full text-left"
+          >
+            <ChevronDown
+              size={16}
+              className={`text-peec-muted transition-transform ${showNonPriority ? "rotate-0" : "-rotate-90"}`}
+            />
+            <h2 className="text-peec-lg font-semibold tracking-tight text-gray-400">
+              Non-Priority ({nonPriorityCardRows.length})
+            </h2>
+          </button>
+          {showNonPriority && (
+            <div className="grid grid-cols-1 gap-4">
+              {nonPriorityCardRows.map((row) => {
+                const m = metricsMap[row.cluster_id];
+                const c = classifiedMap[row.cluster_id];
+                const l = landscapeMap[row.cluster_id];
+                const gf = geminiFindingsMap[row.cluster_id];
+                const isStronghold = !row.gap_type;
+                const vis = Math.round((row.visibility_target_share ?? 0) * 100);
+                const competitor =
+                  l?.competitor_owner ?? row.visibility_competitor_owner ?? "None";
+                const agreementPct = c
+                  ? Math.round(c.method_agreement_score * 100)
+                  : m
+                    ? Math.round(m.method_agreement_score * 100)
+                    : 0;
+
+                return (
+                  <div
+                    key={row.cluster_id}
+                    className="bg-white rounded-peec-xl shadow-peec-ring p-5 space-y-4 opacity-50"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <h3 className="text-lg font-semibold text-gray-400">{row.cluster_label}</h3>
+                        <Pill color="gray-100" textColor="gray-400">
+                          Non-Priority
+                        </Pill>
+                      </div>
+                      {m && (
+                        <Pill color="pill-cyan-bg" textColor="pill-cyan">
+                          {humanDecision(m.decision_bucket)}
+                        </Pill>
+                      )}
+                    </div>
+
+                    <div className="grid grid-cols-4 gap-3">
+                      <div className="bg-peec-tint rounded-peec-lg p-3">
+                        <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
+                          <Eye size={12} />
+                          Visibility
+                        </div>
+                        <div className="text-lg font-semibold">{vis}%</div>
+                      </div>
+                      <div className="bg-peec-tint rounded-peec-lg p-3">
+                        <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
+                          <Users size={12} />
+                          Competitor Owner
+                        </div>
+                        <div className="text-sm font-semibold truncate">
+                          {competitor}
+                        </div>
+                      </div>
+                      <div className="bg-peec-tint rounded-peec-lg p-3">
+                        <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
+                          <CheckCircle2 size={12} />
+                          Classification
+                        </div>
+                        <div className="text-sm font-semibold capitalize">
+                          {c?.classification_status ?? (isStronghold ? "N/A" : "Pending")}
+                        </div>
+                      </div>
+                      <div className="bg-peec-tint rounded-peec-lg p-3">
+                        <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
+                          <Compass size={12} />
+                          Signal Alignment
+                        </div>
+                        <div className="text-lg font-semibold">{agreementPct}%</div>
+                      </div>
+                    </div>
+
+                    {row.strategic_note && (
+                      <div className="border border-peec-hairline rounded-peec-lg p-3 bg-peec-tint/50">
+                        <div className="text-peec-xs font-semibold text-peec-muted">Strategic Context</div>
+                        <p className="text-peec-sm">{row.strategic_note}</p>
+                        <p className="text-peec-sm text-gray-400">This topic is intentionally deprioritized.</p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Perception Analysis Table */}
       {blindSpotRows.length > 0 && (

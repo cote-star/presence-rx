@@ -17,12 +17,14 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 72% | **Position:** 1.9
 - **Gap type:** stronghold
+- **Strategic status:** Owned Strength (core) — Core identity — defend
 - **Action Priority:** 29/100 | **Recommended Action:** Monitor | **Trend:** stronghold
 
 ### Mobile Ecosystem
 
 - **Visibility:** 12% | **Position:** 3.8
 - **Gap type:** discovery
+- **Strategic status:** Strategic Gap (medium) — Want ecosystem credibility
 - **Competitor:** Apple dominates at 72% vs Nothing Phone at 12%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 12% visibility at position 3.8 in Mobile Ecosystem; Tavily shows the topic is associated with Apple platform governance rather than handset brands.
@@ -32,6 +34,7 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 10% | **Position:** 3.7
 - **Gap type:** perception
+- **Strategic status:** Strategic Gap (high) — Want innovation association
 - **Competitor:** Apple dominates at 45% vs Nothing Phone at 10%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 10% visibility at position 3.7 in Consumer Tech Innovation; Tavily shows innovation association in public sources is predominantly tied to Apple.
@@ -41,6 +44,7 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 6% | **Position:** 4.1
 - **Gap type:** perception
+- **Strategic status:** Strategic Gap (core) — CORE IDENTITY — most urgent
 - **Competitor:** Apple dominates at 39% vs Nothing Phone at 6%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 6% visibility at position 4.1 in Minimalist Hardware despite minimalism being core brand identity; Tavily shows public sources reserve the minimalist label for Apple — an ironic gap.
@@ -50,6 +54,7 @@ Nothing Phone has **5 tracked topics**, of which **1 is a stronghold** and **4 a
 
 - **Visibility:** 1% | **Position:** 2.0
 - **Gap type:** attention
+- **Strategic status:** Strategic Gap (medium) — Nothing Ear product line
 - **Competitor:** Apple dominates at 53% vs Nothing Phone at 1%
 - **Classification:** confirmed (strong) | **Signal Alignment:** 100%
 - **Diagnostic:** In Peec data, Nothing Phone holds 1% visibility in Wireless Audio despite Nothing Ear products existing; Tavily shows general wireless audio queries surface Apple AirPods almost exclusively.

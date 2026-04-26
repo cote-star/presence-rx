@@ -23,7 +23,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "core",
+      "strategic_note": "Heritage stronghold \u2014 defend",
+      "strategic_status": "emerging_opportunity"
     },
     {
       "cluster_id": "cluster:luxury-ev-transition",
@@ -49,7 +53,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "core",
+      "strategic_note": "Critical for future positioning",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:premium-suv-segment",
@@ -75,7 +83,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "high",
+      "strategic_note": "Revenue-critical segment",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:electric-i-series",
@@ -101,7 +113,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "high",
+      "strategic_note": "EV product line",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:brand-heritage",
@@ -127,7 +143,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": false,
+      "strategic_importance": "low",
+      "strategic_note": "Heritage is given, not a fight",
+      "strategic_status": "non_priority"
     }
   ]
 }

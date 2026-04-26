@@ -172,6 +172,15 @@ def _decision_bucket(
     proof_strength_score: int,
     method_agreement_score: int,
 ) -> tuple[str, str]:
+    # Strategic intent overrides
+    strategic_status = getattr(row, "strategic_status", None)
+    if strategic_status == "non_priority":
+        return "monitor", "Not a strategic priority for this brand"
+    if strategic_status == "strategic_gap" and method_agreement_score >= 66:
+        return "act_now", "Critical strategic gap with strong method agreement"
+    if strategic_status == "owned_strength":
+        return "monitor", "Defend this anchor position"
+
     if classification_status == "conflicted":
         return "block", "Partner methods conflict; keep the claim out of publication."
     if row.gap_type is None:

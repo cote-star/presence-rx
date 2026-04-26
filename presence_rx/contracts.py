@@ -99,6 +99,10 @@ class StudyRow(StrictModel):
     unavailable_reason: str | None = None
     action_recommendation: str | None = None
     action_monitor_prompt: str | None = None
+    desired_association: bool = True
+    strategic_importance: str = "medium"
+    strategic_note: str | None = None
+    strategic_status: str | None = None
 
     @field_validator("evidence_refs")
     @classmethod

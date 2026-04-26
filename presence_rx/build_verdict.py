@@ -87,7 +87,7 @@ def build_presence_verdict(
     for row in rows:
         vis_pct = f"{(row.visibility_target_share or 0) * 100:.0f}%"
         pos = f"{row.visibility_target_avg_position or 0:.1f}"
-        from presence_rx.display_labels import human_gap_type
+        from presence_rx.display_labels import human_gap_type, human_strategic_status
 
         gap = human_gap_type(row.gap_type)
         competitor = row.visibility_competitor_owner or "N/A"
@@ -95,6 +95,15 @@ def build_presence_verdict(
         lines.append(f"### {row.cluster_label}\n")
         lines.append(f"- **Visibility:** {vis_pct} | **Position:** {pos}")
         lines.append(f"- **Gap type:** {gap}")
+
+        # Strategic status badge
+        if row.strategic_status:
+            status_label = human_strategic_status(row.strategic_status)
+            importance = row.strategic_importance or "medium"
+            note_part = f" \u2014 {row.strategic_note}" if row.strategic_note else ""
+            lines.append(
+                f"- **Strategic status:** {status_label} ({importance}){note_part}"
+            )
         if row.visibility_competitor_owner:
             lt = landscape_map.get(row.cluster_id)
             comp_vis = (

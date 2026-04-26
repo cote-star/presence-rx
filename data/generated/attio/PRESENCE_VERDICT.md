@@ -17,43 +17,48 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 
 - **Visibility:** 35% | **Position:** 1.8
 - **Gap type:** stronghold
+- **Strategic status:** Emerging Opportunity (core) — Core positioning
 - **Action Priority:** 14/100 | **Recommended Action:** Monitor | **Trend:** stronghold
 
 ### CRM for Startups
 
 - **Visibility:** 22% | **Position:** 2.1
 - **Gap type:** perception
+- **Strategic status:** Strategic Gap (high) — Primary audience
 - **Competitor:** HubSpot dominates at N/A vs Attio at 22%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat CRM for Startups as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 54/100 | **Recommended Action:** Test next | **Trend:** evidence gap
+- **Action Priority:** 54/100 | **Recommended Action:** Act now | **Trend:** evidence gap
 
 ### Modern CRM Alternative
 
 - **Visibility:** 5% | **Position:** 3.8
 - **Gap type:** discovery
+- **Strategic status:** Strategic Gap (high) — Category-creation narrative
 - **Competitor:** Salesforce dominates at N/A vs Attio at 5%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Modern CRM Alternative as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 63/100 | **Recommended Action:** Test next | **Trend:** evidence gap
+- **Action Priority:** 63/100 | **Recommended Action:** Act now | **Trend:** evidence gap
 
 ### CRM Migration
 
 - **Visibility:** 3% | **Position:** 4.2
 - **Gap type:** attention
+- **Strategic status:** Non-Priority (low) — Not fighting migration wars
 - **Competitor:** HubSpot dominates at N/A vs Attio at 3%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat CRM Migration as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 65/100 | **Recommended Action:** Test next | **Trend:** evidence gap
+- **Action Priority:** 65/100 | **Recommended Action:** Monitor | **Trend:** evidence gap
 
 ### RevOps Tools
 
 - **Visibility:** 15% | **Position:** 2.5
 - **Gap type:** perception
+- **Strategic status:** Strategic Gap (medium) — Key buyer persona
 - **Competitor:** HubSpot dominates at N/A vs Attio at 15%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat RevOps Tools as a provisional diagnostic gap until live Gemini analysis is available.
-- **Action Priority:** 57/100 | **Recommended Action:** Test next | **Trend:** evidence gap
+- **Action Priority:** 57/100 | **Recommended Action:** Act now | **Trend:** evidence gap
 
 ## Gap-Type Summary
 
@@ -130,19 +135,6 @@ Attio has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind
 **What claim is unsafe:** "Attio is the leading modern crm alternative brand" → BLOCKED
 
 **What the brand should say instead:** "Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility."
-
-
-### Crm Migration
-
-**What users ask:** "What's the best crm migration?"
-
-**Who currently owns the answer:** HubSpot (N/A visibility)
-
-**What proof exists:** Tavily: not available for this case study; 2 of 3 methods agree
-
-**What claim is unsafe:** "Attio is the leading crm migration brand" → BLOCKED
-
-**What the brand should say instead:** "Attio is emerging in the crm migration category, currently behind HubSpot in AI visibility."
 
 
 ### Revops Tools

@@ -11,13 +11,6 @@
 - **Safe rewrite:** Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.
 - **Next evidence:** Improve schema markup and structured data for this topic
 
-### challenged:crm-migration:v1
-
-- **Blocked claim:** Attio is the leading crm migration brand
-- **Reason:** OWNERSHIP_OVERCLAIM: Attio has 3% visibility in CRM Migration while HubSpot owns the topic. Claiming ownership is not supported by Peec data.
-- **Safe rewrite:** Attio is emerging in the crm migration category, currently behind HubSpot in AI visibility.
-- **Next evidence:** Increase editorial and public coverage for this topic
-
 ### challenged:revops-tools:v1
 
 - **Blocked claim:** Attio is the leading revops tools brand
@@ -27,6 +20,24 @@
 
 ## Actions by Intervention Class
 
+### Discovery Gaps (Modern CRM Alternative)
+
+**Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
+
+#### Modern CRM Alternative
+
+- **Visibility:** 5% | **Competitor:** Salesforce
+- **Strategic status:** Strategic Gap (high) — Category-creation narrative
+- **Evidence Level:** confirmed (moderate)
+- **Recommended Action:** Act now
+- **Reason:** Critical strategic gap with strong method agreement
+- **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.
+- **Action Priority:** 63/100
+- **Publication language:** Test the Attio association in the Modern CRM Alternative topic; 2 of 2 methods support.
+- **AI perception:** modern crm alternative discoverability
+- **AI perception:** owned content surfacing
+- **Missing association:** clear modern crm alternative proof surfaced in AI answers
+
 ### Perception Gaps (CRM for Startups, RevOps Tools)
 
 **Intervention class:** Positioning + messaging correction; reframing content with explicit trait language
@@ -34,9 +45,10 @@
 #### CRM for Startups
 
 - **Visibility:** 22% | **Competitor:** HubSpot
+- **Strategic status:** Strategic Gap (high) — Primary audience
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
+- **Recommended Action:** Act now
+- **Reason:** Critical strategic gap with strong method agreement
 - **Recommended next move:** Publish explicit crm for startups positioning content and monitor AI adoption.
 - **Action Priority:** 54/100
 - **Publication language:** Test the Attio association in the CRM for Startups topic; 2 of 2 methods support.
@@ -47,32 +59,16 @@
 #### RevOps Tools
 
 - **Visibility:** 15% | **Competitor:** HubSpot
+- **Strategic status:** Strategic Gap (medium) — Key buyer persona
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
+- **Recommended Action:** Act now
+- **Reason:** Critical strategic gap with strong method agreement
 - **Recommended next move:** Publish explicit revops tools positioning content and monitor AI adoption.
 - **Action Priority:** 57/100
 - **Publication language:** Test the Attio association in the RevOps Tools topic; 2 of 2 methods support.
 - **AI perception:** revops tools association
 - **AI perception:** category positioning
 - **Missing association:** revops tools association
-
-### Discovery Gaps (Modern CRM Alternative)
-
-**Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
-
-#### Modern CRM Alternative
-
-- **Visibility:** 5% | **Competitor:** Salesforce
-- **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
-- **Recommended next move:** Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.
-- **Action Priority:** 63/100
-- **Publication language:** Test the Attio association in the Modern CRM Alternative topic; 2 of 2 methods support.
-- **AI perception:** modern crm alternative discoverability
-- **AI perception:** owned content surfacing
-- **Missing association:** clear modern crm alternative proof surfaced in AI answers
 
 ### Attention Gaps (CRM Migration)
 
@@ -81,9 +77,10 @@
 #### CRM Migration
 
 - **Visibility:** 3% | **Competitor:** HubSpot
+- **Strategic status:** Non-Priority (low) — Not fighting migration wars
 - **Evidence Level:** confirmed (moderate)
-- **Recommended Action:** Test next
-- **Reason:** The signal is plausible but needs public proof before action.
+- **Recommended Action:** Monitor
+- **Reason:** Not a strategic priority for this brand
 - **Recommended next move:** Seed sustained crm migration proof across editorial and owned surfaces.
 - **Action Priority:** 65/100
 - **Publication language:** Test the Attio association in the CRM Migration topic; 2 of 2 methods support.

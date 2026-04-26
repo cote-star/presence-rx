@@ -26,7 +26,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "core",
+        "strategic_note": "Core positioning",
+        "strategic_status": "emerging_opportunity"
       },
       {
         "cluster_id": "cluster:crm-for-startups",
@@ -52,7 +56,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "high",
+        "strategic_note": "Primary audience",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:modern-crm-alternative",
@@ -78,7 +86,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "high",
+        "strategic_note": "Category-creation narrative",
+        "strategic_status": "strategic_gap"
       },
       {
         "cluster_id": "cluster:crm-migration",
@@ -104,7 +116,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": false,
+        "strategic_importance": "low",
+        "strategic_note": "Not fighting migration wars",
+        "strategic_status": "non_priority"
       },
       {
         "cluster_id": "cluster:revops-tools",
@@ -130,7 +146,11 @@
         "recommendation_available": false,
         "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
         "action_recommendation": null,
-        "action_monitor_prompt": null
+        "action_monitor_prompt": null,
+        "desired_association": true,
+        "strategic_importance": "medium",
+        "strategic_note": "Key buyer persona",
+        "strategic_status": "strategic_gap"
       }
     ]
   },
@@ -386,8 +406,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "act_now",
+        "decision_bucket_reason": "Critical strategic gap with strong method agreement",
         "primary_gap": "MISSING_ASSOCIATION",
         "recommended_next_move": "Publish explicit crm for startups positioning content and monitor AI adoption.",
         "relevance_score": 61,
@@ -413,8 +433,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "act_now",
+        "decision_bucket_reason": "Critical strategic gap with strong method agreement",
         "primary_gap": "RETRIEVAL_NOT_CITATION",
         "recommended_next_move": "Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.",
         "relevance_score": 83,
@@ -440,8 +460,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "monitor",
+        "decision_bucket_reason": "Not a strategic priority for this brand",
         "primary_gap": "MISSING_PUBLIC_VOLUME",
         "recommended_next_move": "Seed sustained crm migration proof across editorial and owned surfaces.",
         "relevance_score": 87,
@@ -467,8 +487,8 @@
         "trend_label": "proof_gap",
         "trend_zone": "proof_gap",
         "zone_basis": "proof_coverage",
-        "decision_bucket": "test_next",
-        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "decision_bucket": "act_now",
+        "decision_bucket_reason": "Critical strategic gap with strong method agreement",
         "primary_gap": "MISSING_ASSOCIATION",
         "recommended_next_move": "Publish explicit revops tools positioning content and monitor AI adoption.",
         "relevance_score": 68,
@@ -712,24 +732,6 @@
         "why_not_stronger": "confidence_tier=blocked; Attio visibility (5%) is below the 20% ownership threshold while Salesforce dominates"
       },
       {
-        "claim_id": "challenged:crm-migration:v1",
-        "claim": "Attio is the leading crm migration brand",
-        "status": "blocked",
-        "cluster_id": "cluster:crm-migration",
-        "methods": [
-          "peec"
-        ],
-        "evidence_refs": [
-          "peec:snapshot:attio:2026-04-25",
-          "peec:topic:crm-migration",
-          "peec:brand:hubspot"
-        ],
-        "confidence_tier": "blocked",
-        "publication_status": "blocked",
-        "publication_language": "Do not claim Attio ownership of the CRM Migration topic; HubSpot holds dominant visibility.",
-        "why_not_stronger": "confidence_tier=blocked; Attio visibility (3%) is below the 20% ownership threshold while HubSpot dominates"
-      },
-      {
         "claim_id": "challenged:revops-tools:v1",
         "claim": "Attio is the leading revops tools brand",
         "status": "blocked",
@@ -862,13 +864,6 @@
         "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 5% visibility in Modern CRM Alternative while Salesforce owns the topic. Claiming ownership is not supported by Peec data.",
         "safe_rewrite": "Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.",
         "next_evidence_to_collect": "Improve schema markup and structured data for this topic"
-      },
-      {
-        "claim_id": "challenged:crm-migration:v1",
-        "claim": "Attio is the leading crm migration brand",
-        "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 3% visibility in CRM Migration while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
-        "safe_rewrite": "Attio is emerging in the crm migration category, currently behind HubSpot in AI visibility.",
-        "next_evidence_to_collect": "Increase editorial and public coverage for this topic"
       },
       {
         "claim_id": "challenged:revops-tools:v1",
@@ -1432,7 +1427,7 @@
       "raw_prompts": 50,
       "clusters": 5,
       "evidence_gated": 4,
-      "actionable_recommendations": 7
+      "actionable_recommendations": 6
     },
     "artifacts": [
       "prompt_universe.json",

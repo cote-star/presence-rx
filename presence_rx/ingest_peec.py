@@ -35,6 +35,7 @@ from presence_rx.contracts import (
     StudySsot,
     TavilyEvidence,
 )
+from presence_rx.display_labels import compute_strategic_status
 
 console = Console()
 
@@ -66,6 +67,9 @@ class SeedTopic(BaseModel):
     owner_visibility: float | None = None
     gap_type: str | None = None
     gap_type_rationale: str | None = None
+    desired_association: bool = True
+    strategic_importance: str = "medium"  # core, high, medium, low
+    strategic_note: str | None = None
 
 
 class SeedEngine(BaseModel):
@@ -257,6 +261,9 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                 verdict="STRONGHOLD",
                 competitor_owner=None,
                 owner_visibility=None,
+                desired_association=True,
+                strategic_importance="core",
+                strategic_note="Core identity \u2014 defend",
             ),
             SeedTopic(
                 name="Mobile Ecosystem",
@@ -272,6 +279,9 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                     "Scope-locked provisional label: current docs frame Mobile Ecosystem as an "
                     "owned-content retrieval/citation problem, pending Gemini/Tavily confirmation."
                 ),
+                desired_association=True,
+                strategic_importance="medium",
+                strategic_note="Want ecosystem credibility",
             ),
             SeedTopic(
                 name="Consumer Tech Innovation",
@@ -287,6 +297,9 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                     "Scope-locked provisional label: innovation association appears weak in the "
                     "Peec snapshot, pending Gemini/Tavily confirmation."
                 ),
+                desired_association=True,
+                strategic_importance="high",
+                strategic_note="Want innovation association",
             ),
             SeedTopic(
                 name="Minimalist Hardware",
@@ -302,6 +315,9 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                     "Scope-locked provisional label from SCOPE_FINAL: brand identity is "
                     "minimalism, but AI-answer visibility is owned by Apple in this topic."
                 ),
+                desired_association=True,
+                strategic_importance="core",
+                strategic_note="CORE IDENTITY \u2014 most urgent",
             ),
             SeedTopic(
                 name="Wireless Audio",
@@ -317,6 +333,9 @@ def nothing_phone_seed() -> NothingPhoneSeed:
                     "Scope-locked provisional label from SCOPE_FINAL: Nothing Ear exists, but "
                     "category presence is near-zero in the Peec snapshot."
                 ),
+                desired_association=True,
+                strategic_importance="medium",
+                strategic_note="Nothing Ear product line",
             ),
         ],
         engines=[
@@ -473,6 +492,9 @@ def attio_seed() -> BrandSeed:
                 verdict="STRONGHOLD",
                 competitor_owner=None,
                 owner_visibility=None,
+                desired_association=True,
+                strategic_importance="core",
+                strategic_note="Core positioning",
             ),
             SeedTopic(
                 name="CRM for Startups",
@@ -488,6 +510,9 @@ def attio_seed() -> BrandSeed:
                     "Attio is built for startups but HubSpot owns the 'startup CRM' narrative "
                     "in AI answers, despite Attio's product-market fit in that segment."
                 ),
+                desired_association=True,
+                strategic_importance="high",
+                strategic_note="Primary audience",
             ),
             SeedTopic(
                 name="Modern CRM Alternative",
@@ -503,6 +528,9 @@ def attio_seed() -> BrandSeed:
                     "Attio content exists but AI default-routes 'CRM alternative' queries to "
                     "Salesforce comparison pages rather than surfacing Attio as an alternative."
                 ),
+                desired_association=True,
+                strategic_importance="high",
+                strategic_note="Category-creation narrative",
             ),
             SeedTopic(
                 name="CRM Migration",
@@ -518,6 +546,9 @@ def attio_seed() -> BrandSeed:
                     "Very few 'migrate to Attio' articles exist compared to abundant "
                     "HubSpot/Salesforce migration guides and documentation."
                 ),
+                desired_association=False,
+                strategic_importance="low",
+                strategic_note="Not fighting migration wars",
             ),
             SeedTopic(
                 name="RevOps Tools",
@@ -533,6 +564,9 @@ def attio_seed() -> BrandSeed:
                     "Attio has RevOps features but AI associates RevOps tooling with "
                     "HubSpot Operations Hub rather than Attio's native capabilities."
                 ),
+                desired_association=True,
+                strategic_importance="medium",
+                strategic_note="Key buyer persona",
             ),
         ],
         engines=[
@@ -735,6 +769,9 @@ def bmw_seed() -> BrandSeed:
                 verdict="STRONGHOLD",
                 competitor_owner=None,
                 owner_visibility=None,
+                desired_association=True,
+                strategic_importance="core",
+                strategic_note="Heritage stronghold \u2014 defend",
             ),
             SeedTopic(
                 name="Luxury EV Transition",
@@ -750,6 +787,9 @@ def bmw_seed() -> BrandSeed:
                     "BMW has i4/iX but AI frames 'luxury EV' as Tesla Model S/X territory, "
                     "sidelining BMW's electrification progress in premium segment."
                 ),
+                desired_association=True,
+                strategic_importance="core",
+                strategic_note="Critical for future positioning",
             ),
             SeedTopic(
                 name="Premium SUV Segment",
@@ -765,6 +805,9 @@ def bmw_seed() -> BrandSeed:
                     "BMW X-series exists but AI defaults to Mercedes GLE/GLC for premium "
                     "SUV queries; BMW content is not surfacing in retrieval."
                 ),
+                desired_association=True,
+                strategic_importance="high",
+                strategic_note="Revenue-critical segment",
             ),
             SeedTopic(
                 name="Electric i-Series",
@@ -780,6 +823,9 @@ def bmw_seed() -> BrandSeed:
                     "BMW i4 and iX exist but sparse editorial coverage compared to "
                     "Tesla Model 3/Y volume dominates AI training and retrieval sources."
                 ),
+                desired_association=True,
+                strategic_importance="high",
+                strategic_note="EV product line",
             ),
             SeedTopic(
                 name="Brand Heritage",
@@ -795,6 +841,9 @@ def bmw_seed() -> BrandSeed:
                     "Both have strong heritage but AI increasingly associates 'luxury heritage' "
                     "with Mercedes over BMW, eroding a historically shared narrative."
                 ),
+                desired_association=False,
+                strategic_importance="low",
+                strategic_note="Heritage is given, not a fight",
             ),
         ],
         engines=[
@@ -949,6 +998,15 @@ def build_artifacts(
                 publication_status="diagnostics_only",
                 recommendation_available=False,
                 unavailable_reason=PROMPT_COUNT_UNAVAILABLE,
+                strategic_status=compute_strategic_status(
+                    desired=topic.desired_association,
+                    visibility=topic.visibility,
+                    competitor_owner=topic.competitor_owner,
+                    strategic_importance=topic.strategic_importance,
+                ),
+                desired_association=topic.desired_association,
+                strategic_importance=topic.strategic_importance,
+                strategic_note=topic.strategic_note,
             )
             for topic in seed.topics
         ]

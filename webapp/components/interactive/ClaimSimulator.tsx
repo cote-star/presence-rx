@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { checkClaim, type ClaimResult } from "@/lib/claim-rules";
 import { useBrand } from "@/hooks/useBrand";
-import { ShieldCheck, ShieldAlert, ShieldOff, ArrowRight } from "lucide-react";
+import { ShieldCheck, ShieldAlert, ShieldOff, ShieldMinus, ArrowRight } from "lucide-react";
 
 const VERDICT_STYLES: Record<
   string,
@@ -29,6 +29,13 @@ const VERDICT_STYLES: Record<
     border: "border-pill-red/20",
     label: "Blocked",
     Icon: ShieldOff,
+  },
+  off_strategy: {
+    bg: "bg-gray-100",
+    text: "text-gray-400",
+    border: "border-gray-300/20",
+    label: "Off-Strategy",
+    Icon: ShieldMinus,
   },
 };
 

@@ -28,7 +28,7 @@ def _generate_challenged_claims(study: StudySsot, manifest: Manifest) -> list[di
     """Generate tempting ownership claims from ANY brand's blind spots."""
     claims = []
     for row in study.rows:
-        if row.gap_type and row.visibility_competitor_owner:
+        if row.gap_type and row.visibility_competitor_owner and row.desired_association:
             claims.append({
                 "cluster_id": row.cluster_id,
                 "tempting_claim": (

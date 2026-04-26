@@ -23,7 +23,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "core",
+      "strategic_note": "Core identity \u2014 defend",
+      "strategic_status": "owned_strength"
     },
     {
       "cluster_id": "cluster:mobile-ecosystem",
@@ -49,7 +53,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "medium",
+      "strategic_note": "Want ecosystem credibility",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:consumer-tech-innovation",
@@ -75,7 +83,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "high",
+      "strategic_note": "Want innovation association",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:minimalist-hardware",
@@ -101,7 +113,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "core",
+      "strategic_note": "CORE IDENTITY \u2014 most urgent",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:wireless-audio",
@@ -127,7 +143,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "medium",
+      "strategic_note": "Nothing Ear product line",
+      "strategic_status": "strategic_gap"
     }
   ]
 }

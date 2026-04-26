@@ -1,7 +1,7 @@
 // Deterministic claim guardrail logic — no LLM calls
 import type { BrandData } from "./types";
 
-export type ClaimVerdict = "safe" | "needs_evidence" | "blocked";
+export type ClaimVerdict = "safe" | "needs_evidence" | "blocked" | "off_strategy";
 
 export interface ClaimResult {
   verdict: ClaimVerdict;
@@ -42,7 +42,20 @@ export function checkClaim(claimText: string, brandData: BrandData): ClaimResult
     }
   }
 
-  // 2. Check ownership/superlative claims against visibility
+  // 2. Check if claim targets a non-priority topic
+  if (brandData.study?.rows) {
+    for (const row of brandData.study.rows) {
+      if (lower.includes(row.cluster_label.toLowerCase()) && !(row.desired_association ?? true)) {
+        return {
+          verdict: "off_strategy",
+          reason: `${row.cluster_label} is not a strategic priority for ${brandData.brand_name}. ${row.strategic_note || "This topic is intentionally deprioritized."}`,
+          matchedTopic: row.cluster_label,
+        };
+      }
+    }
+  }
+
+  // 3. Check ownership/superlative claims against visibility
   const hasOwnership = OWNERSHIP_WORDS.some((w) => lower.includes(w));
   if (hasOwnership && brandData.study?.rows) {
     for (const row of brandData.study.rows) {

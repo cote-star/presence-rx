@@ -56,3 +56,33 @@ def human_decision(bucket: str) -> str:
 def human_trend(label: str) -> str:
     """Return human-friendly trend label."""
     return TREND_LABELS.get(label, label.replace("_", " "))
+
+
+def compute_strategic_status(
+    desired: bool,
+    visibility: float,
+    competitor_owner: str | None,
+    strategic_importance: str,
+) -> str:
+    """Compute the 4-status strategic classification."""
+    if not desired:
+        return "non_priority"
+    if visibility >= 0.50 and not competitor_owner:
+        return "owned_strength"
+    if competitor_owner and strategic_importance in ("core", "high"):
+        return "strategic_gap"
+    if visibility < 0.20 and competitor_owner:
+        return "strategic_gap"
+    return "emerging_opportunity"
+
+
+STRATEGIC_STATUS_LABELS: dict[str, str] = {
+    "strategic_gap": "Strategic Gap",
+    "emerging_opportunity": "Emerging Opportunity",
+    "non_priority": "Non-Priority",
+    "owned_strength": "Owned Strength",
+}
+
+
+def human_strategic_status(status: str | None) -> str:
+    return STRATEGIC_STATUS_LABELS.get(status or "", status or "Unknown")

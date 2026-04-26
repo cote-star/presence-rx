@@ -112,24 +112,6 @@
       "why_not_stronger": "confidence_tier=blocked; Attio visibility (5%) is below the 20% ownership threshold while Salesforce dominates"
     },
     {
-      "claim_id": "challenged:crm-migration:v1",
-      "claim": "Attio is the leading crm migration brand",
-      "status": "blocked",
-      "cluster_id": "cluster:crm-migration",
-      "methods": [
-        "peec"
-      ],
-      "evidence_refs": [
-        "peec:snapshot:attio:2026-04-25",
-        "peec:topic:crm-migration",
-        "peec:brand:hubspot"
-      ],
-      "confidence_tier": "blocked",
-      "publication_status": "blocked",
-      "publication_language": "Do not claim Attio ownership of the CRM Migration topic; HubSpot holds dominant visibility.",
-      "why_not_stronger": "confidence_tier=blocked; Attio visibility (3%) is below the 20% ownership threshold while HubSpot dominates"
-    },
-    {
       "claim_id": "challenged:revops-tools:v1",
       "claim": "Attio is the leading revops tools brand",
       "status": "blocked",
@@ -262,13 +244,6 @@
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 5% visibility in Modern CRM Alternative while Salesforce owns the topic. Claiming ownership is not supported by Peec data.",
       "safe_rewrite": "Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.",
       "next_evidence_to_collect": "Improve schema markup and structured data for this topic"
-    },
-    {
-      "claim_id": "challenged:crm-migration:v1",
-      "claim": "Attio is the leading crm migration brand",
-      "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 3% visibility in CRM Migration while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
-      "safe_rewrite": "Attio is emerging in the crm migration category, currently behind HubSpot in AI visibility.",
-      "next_evidence_to_collect": "Increase editorial and public coverage for this topic"
     },
     {
       "claim_id": "challenged:revops-tools:v1",

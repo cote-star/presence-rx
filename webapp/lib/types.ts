@@ -21,6 +21,10 @@ export interface StudyRow {
   unavailable_reason: string | null;
   action_recommendation: string | null;
   action_monitor_prompt: string | null;
+  desired_association: boolean;
+  strategic_importance: string;
+  strategic_note: string | null;
+  strategic_status: string | null;
 }
 
 export interface ClassifiedGap {
@@ -83,6 +87,7 @@ export interface MetricRow {
   labeling_source: string;
   evidence_refs: string[];
   rationale: string;
+  strategic_status: string | null;
 }
 
 export interface CompetitorTopic {

@@ -23,7 +23,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "core",
+      "strategic_note": "Core positioning",
+      "strategic_status": "emerging_opportunity"
     },
     {
       "cluster_id": "cluster:crm-for-startups",
@@ -49,7 +53,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "high",
+      "strategic_note": "Primary audience",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:modern-crm-alternative",
@@ -75,7 +83,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "high",
+      "strategic_note": "Category-creation narrative",
+      "strategic_status": "strategic_gap"
     },
     {
       "cluster_id": "cluster:crm-migration",
@@ -101,7 +113,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": false,
+      "strategic_importance": "low",
+      "strategic_note": "Not fighting migration wars",
+      "strategic_status": "non_priority"
     },
     {
       "cluster_id": "cluster:revops-tools",
@@ -127,7 +143,11 @@
       "recommendation_available": false,
       "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
       "action_recommendation": null,
-      "action_monitor_prompt": null
+      "action_monitor_prompt": null,
+      "desired_association": true,
+      "strategic_importance": "medium",
+      "strategic_note": "Key buyer persona",
+      "strategic_status": "strategic_gap"
     }
   ]
 }
