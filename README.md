@@ -1,138 +1,116 @@
 # Presence Rx
 
-### Find your brand's blind spots in AI answers — with receipts at every step.
-
----
-
-AI answers are the new discovery surface. When someone asks ChatGPT, Gemini, or Perplexity for a product recommendation, your brand is either in the answer or it isn't.
-
-**Presence Rx** turns that signal into a marketing decision system.
-
-It doesn't just show where you appear. It tells you *why* you're missing, *what kind* of problem it is, *what to do next*, and *what you've earned the right to claim* — backed by evidence, not assumptions.
+### AI visibility gaps into evidence-backed marketing decisions: where to act, what to claim, and what to refuse.
 
 > **Diagnose. Prescribe. Refuse.**
 
 ---
 
+## It Can Say No
+
+A marketer types into the claim simulator:
+
+> *"Nothing Phone is the go-to minimalist tech brand."*
+
+Presence Rx **blocks the claim**. Peec visibility data shows Nothing Phone has 6% visibility in Minimalist Hardware while Apple holds 39%. Claiming ownership is not supported by the evidence.
+
+Then it provides a safer rewrite the marketer can actually use:
+
+> *"Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity."*
+
+Not just what to say — what the brand has **earned the right to say**.
+
+![Claim blocked by Presence Rx](docs/screenshot-claim-blocked.png)
+
+---
+
 ## The Problem
 
-A brand marketer today faces a new kind of blind spot:
+AI answers are the new discovery surface. When someone asks ChatGPT, Gemini, or Perplexity for a product recommendation, your brand is either in the answer or it isn't.
 
 - *"We rank #1 when mentioned, but only 20% of AI answers mention us at all."*
 - *"AI says we're innovative, but associates our core trait with a competitor."*
 - *"Our product exists, but AI can't find it."*
 
-Visibility data tells you *where* the gap is. It doesn't tell you what kind of gap it is, what to do about it, or what you can safely say externally. That's what Presence Rx adds.
+Visibility data tells you *where* the gap is. It doesn't tell you what kind of gap, what to do about it, or what you can safely claim. That's what Presence Rx adds.
+
+![Presence Rx dashboard](docs/screenshot-hero.png)
 
 ---
 
-## What Presence Rx Does
+## The Workflow
 
-| | |
-|---|---|
-| **Diagnose** | Classify each gap as a perception, discovery, or attention problem |
-| **Prescribe** | Recommend the next marketing action by channel, audience, and topic |
-| **Refuse** | Block unsupported ownership claims before they reach the market |
-| **Monitor** | Track recovery through evidence-led prompts and claim boundaries |
+Presence Rx is one workflow, not six separate dashboards. Each step answers the next question a marketer asks.
 
-Every recommendation comes with a source-of-record trail: what Peec measured, what public evidence confirms, and where the two agree or disagree.
+**Diagnose the gap** — Is this a perception problem, a discovery problem, or an attention problem? Each topic gets a classification, not just a score.
 
----
+**Understand the reason** — Who owns this topic in AI answers? What do AI models associate with your brand versus the competitor? Where does perception diverge from intent?
 
-## The Demo Moment
+**Choose where to engage** — Which channels and audiences should activate first, based on gap type and evidence, not generic best practices?
 
-Presence Rx can say **no**.
+**Test the claim** — Type any marketing message into the claim simulator. It checks ownership language against actual visibility and blocks overclaims before they reach the market.
 
-A marketer types:
-
-> *"Nothing Phone is the go-to minimalist tech brand."*
-
-Presence Rx **blocks the claim** — because Peec visibility data shows the minimalist-hardware association is still owned by Apple in AI answers. Then it provides a safer rewrite:
-
-> *"Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity."*
-
-That's the product philosophy: not just what to say, but what the brand has **earned the right to say**.
+**Export the receipts** — Download the evidence ledger, action brief, and full case data. Every recommendation traces back to a named source.
 
 ---
 
-## The Product
+## The Flagship Case: Nothing Phone
 
-Six pages, one workflow. Every screen answers a marketer's question.
+**The Invisible Champion.** Ranks #1 when mentioned (position 2.4) but appears in only 20% of AI answers. The brand is strong — it's just invisible.
 
-**Action Brief** — *What should I do first?*
-Priority gaps, claims to avoid, where to engage, who to reach.
+Presence Rx diagnosed four strategic gaps across perception, discovery, and attention. It blocked four marketing claims that overstate ownership. It prescribed channel-specific actions and provided evidence-bounded alternatives for every blocked claim.
 
-**Conversation Blocks** — *What's actually happening in AI answers?*
-Each topic with visibility, competitor owner, gap type, signal alignment, perception themes, and strategic context.
+This case includes live Peec MCP visibility data, 40 Tavily web-evidence sources, and Gemini perception analysis across all gap topics.
 
-**Claims & Simulator** — *What can I safely say?*
-Test any marketing claim against evidence. Blocked claims get a reason and a safer rewrite.
-
-**Charts** — *Show me the data.*
-Visibility, gap mix, action priority, competitor landscape, and topic signal profiles.
-
-**Directions** — *Where is this going?*
-Audience engagement signals and channel allocation previews, labeled as modeled projections.
-
-**Export** — *Give me the receipts.*
-Download the evidence ledger, action brief, and full case data.
-
----
-
-## Case Studies
-
-Three brands, three market contexts.
-
-### Nothing Phone — The Invisible Champion
-Ranks #1 when mentioned but appears in only 20% of AI answers. Strong in smartphone design, strategically under-recognized for minimalist hardware and wireless audio. Includes 40 Tavily web-evidence sources and Gemini perception analysis.
-
-### Attio — The Modern Challenger
-A SaaS CRM loved by operators but invisible in AI-mediated discovery dominated by Salesforce and HubSpot. Product-led CRM positioning, startup competition, and evidence-bounded claims.
-
-### BMW — Heritage vs. Electrification
-Strong legacy brand with driving-dynamics reputation, but Tesla dominates AI answers about EVs. Luxury EV transition gap, premium SUV competition, and heritage defense.
+**Also ships with:** Attio (SaaS CRM — invisible against Salesforce/HubSpot) and BMW (automotive — Tesla dominates EV answers). Same pipeline, same guardrails, different market.
 
 ---
 
 ## Architecture
 
-![Presence Rx architecture](docs/submission-architecture.svg)
+```
+Brand strategy + audience config
+            |
+    Peec AI (visibility truth via MCP)
+            |
+    Tavily (public web evidence)
+            |
+    Gemini (perception analysis)
+            |
+    Presence Rx decision engine
+            |
+    Claim guardrails + action priorities
+            |
+    Dashboard + evidence ledger + exports
+```
 
-```
-Brand strategy + audience profile
-        |
-Prompt and topic universe
-        |
-Peec AI visibility data (source of truth)
-        |
-Public proof + perception analysis
-        |
-Presence Rx decision engine
-        |
-Claim guardrails + action priorities
-        |
-Dashboard + evidence ledger + action brief
-```
+![Presence Rx architecture](docs/submission-architecture.svg)
 
 ### Source-of-Record Discipline
 
-| Source | Role |
-|--------|------|
-| **Peec AI** | Visibility truth — topics, positions, competitors, engine coverage |
-| **Tavily** | Public web evidence — editorial citations, proof-gap enrichment |
+| Source | What It Provides |
+|--------|-----------------|
+| **Peec AI** | Visibility truth — topics, positions, competitors, engine coverage, source signals |
+| **Tavily** | Public web evidence — editorial citations, proof-gap enrichment, 40+ sources |
 | **Gemini** | Perception analysis — themes, missing associations, narrative diagnostics |
-| **Presence Rx** | Decision layer — strategic status, gap classification, claim ceilings, safe rewrites |
+| **Presence Rx** | Decision layer — gap classification, claim ceilings, safe rewrites, action priorities |
 
-Every metric in the dashboard traces back to a named source. The system never blends signals without attribution.
+Every metric traces to a named source. The system never blends signals without attribution.
+
+### What We Deliberately Do Not Claim
+
+- Presence Rx does not replace Peec. Peec is the measurement source of record.
+- Engagement scores on the Directions page are modeled projections, not measured audience behavior. They are clearly labeled.
+- The claim simulator is evidence-scored and intentionally conservative. It would rather block a borderline claim than let an overclaim through.
 
 ---
 
 ## Glossary
 
-| Concept | What It Means for a Marketer |
-|---------|------------------------------|
-| **Strategic Gap** | A topic you want to own, but AI answers currently favor a competitor |
-| **Owned Strength** | A topic where you already dominate — defend it |
+| Concept | What It Means |
+|---------|--------------|
+| **Strategic Gap** | A topic you want to own, but AI answers favor a competitor |
+| **Owned Strength** | A topic you already dominate — defend it |
 | **Perception Gap** | AI describes you with wrong or outdated traits |
 | **Discovery Gap** | AI can't find you despite your content existing |
 | **Attention Gap** | Not enough recent signal for AI to surface you |
@@ -154,8 +132,7 @@ Open [localhost:3000](http://localhost:3000). Select a brand. Start diagnosing.
 ```bash
 # Pipeline
 uv sync --dev
-make run
-make validate
+make run && make validate
 
 # Verify
 cd webapp && npm run build && npm run lint
@@ -176,4 +153,4 @@ make test && make lint
 ---
 
 **Solo build by Amit Prusty + AI agents.**
-Peec AI track, Big Berlin Hack 2026. Berlin, April 25–26.
+Peec AI track, Big Berlin Hack 2026. Berlin, April 25-26.
