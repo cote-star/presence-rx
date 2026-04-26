@@ -52,6 +52,7 @@ export function BrandProvider({ children }: { children: ReactNode }) {
   const loadBrand = useCallback(
     async (caseId: string) => {
       setLoading(true);
+      setData(null);
 
       // Check cache
       if (cache[caseId]) {
@@ -66,6 +67,8 @@ export function BrandProvider({ children }: { children: ReactNode }) {
           fetch(`${base}/data/${caseId}.json`),
           fetch(`${base}/data/${caseId}-config.json`),
         ]);
+
+        if (!dataRes.ok) { setLoading(false); return; }
 
         const brandData: BrandData = await dataRes.json();
         setData(brandData);

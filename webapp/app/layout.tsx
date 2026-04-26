@@ -12,7 +12,7 @@ const geistSans = localFont({
 export const metadata: Metadata = {
   title: "Presence Rx — AI Visibility Diagnosis",
   description:
-    "Diagnose how brands show up in AI-mediated discovery. Find blind spots, check claims, prescribe actions.",
+    "Diagnose how brands show up in AI-mediated discovery. Find strategic gaps, check claims, prescribe actions.",
 };
 
 export default function RootLayout({

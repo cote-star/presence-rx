@@ -22,7 +22,7 @@ const NAV_GROUPS = [
   {
     label: "Diagnosis",
     items: [
-      { href: "/diagnosis", label: "Blind Spots", icon: Search },
+      { href: "/diagnosis", label: "Conversation Blocks", icon: Search },
     ],
   },
   {

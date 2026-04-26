@@ -47,34 +47,21 @@ export function ClaimSimulator() {
 
   const brandName = data?.brand_name ?? "brand";
 
-  // Generate examples from actual study topics
+  // Generate examples from actual study topics (brand-voice aware)
   const topics = data?.study?.rows ?? [];
-  const blindSpot = topics.find((r) => r.gap_type && r.visibility_competitor_owner);
-  const stronghold = topics.find((r) => !r.gap_type);
-  const midTopic = topics.find(
-    (r) => r.gap_type && (r.visibility_target_share ?? 0) > 0.1
-  );
 
-  // Add a non-priority topic example if one exists
-  const nonPriority = topics.find((r) => !(r.desired_association ?? true));
-
-  const EXAMPLE_CLAIMS = [
-    blindSpot
-      ? `${brandName} is the leading ${blindSpot.cluster_label.toLowerCase()} brand`
-      : `${brandName} is the market leader`,
-    midTopic
-      ? `${brandName} is emerging in ${midTopic.cluster_label.toLowerCase()}`
-      : `${brandName} is growing rapidly`,
-    stronghold
-      ? `${brandName} is the best ${stronghold.cluster_label.toLowerCase()} brand`
-      : `${brandName} has the strongest brand presence`,
-  ];
-
-  if (nonPriority) {
-    EXAMPLE_CLAIMS.push(
-      `${brandName} is the best ${nonPriority.cluster_label.toLowerCase()} brand`
-    );
+  const examples: string[] = [];
+  const strategicGap = topics.find((r) => r.strategic_status === "strategic_gap" && r.tempting_claim);
+  if (strategicGap?.tempting_claim) examples.push(strategicGap.tempting_claim);
+  const stronghold = topics.find((r) => !r.gap_type && r.safe_claim);
+  if (stronghold?.safe_claim) examples.push(stronghold.safe_claim.slice(0, 80));
+  const nonPriority = topics.find((r) => !(r.desired_association ?? true) && r.tempting_claim);
+  if (nonPriority?.tempting_claim) examples.push(nonPriority.tempting_claim);
+  if (!examples.length) {
+    const bs = topics.find((r) => r.gap_type);
+    examples.push(bs ? `${brandName} is the leading ${bs.cluster_label.toLowerCase()} brand` : `${brandName} is the market leader`);
   }
+  const EXAMPLE_CLAIMS = examples;
 
   const handleCheck = () => {
     if (!data || !input.trim()) return;

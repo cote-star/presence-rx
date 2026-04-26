@@ -88,8 +88,15 @@ export default function EvidencePage() {
   const claims = data.ledger?.claims ?? [];
   const blockedClaims = data.ledger?.blocked_claims ?? [];
   const evidence = data.ledger?.evidence ?? [];
+  const studyRows = data.study?.rows ?? [];
+
+  // Build set of non-priority cluster IDs
+  const nonPriorityClusterIds = new Set(
+    studyRows.filter((r) => !(r.desired_association ?? true)).map((r) => r.cluster_id)
+  );
 
   const directionalClaims = claims.filter((c) => c.status === "directional");
+  const activeDirectionalClaims = directionalClaims.filter((c) => !nonPriorityClusterIds.has(c.cluster_id));
   const blockedClaimsList = claims.filter((c) => c.status === "blocked");
 
   // Unique methods used across all claims
@@ -126,8 +133,8 @@ export default function EvidencePage() {
         />
         <MetricCard
           label="Directional claims"
-          value={String(directionalClaims.length)}
-          sub="Safe for publication"
+          value={String(activeDirectionalClaims.length)}
+          sub="Active-topic, safe for publication"
           icon={ArrowUpRight}
         />
         <MetricCard
@@ -177,6 +184,7 @@ export default function EvidencePage() {
               {claims.map((claim) => {
                 const isDirectional = claim.status === "directional";
                 const isBlocked = claim.status === "blocked";
+                const isNonPriority = nonPriorityClusterIds.has(claim.cluster_id);
 
                 return (
                   <tr
@@ -186,6 +194,11 @@ export default function EvidencePage() {
                     <td className="p-3">
                       <div className="font-medium">
                         {cleanClaimText(claim.claim)}
+                        {isNonPriority && (
+                          <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-peec-md text-peec-xs font-medium bg-gray-100 text-gray-400">
+                            Monitor only
+                          </span>
+                        )}
                       </div>
                     </td>
                     <td className="p-3">

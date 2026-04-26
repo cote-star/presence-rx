@@ -75,6 +75,7 @@ export default function ActionBriefPage() {
 
   const rows = data.study.rows;
   const blindSpots = rows.filter((r) => r.gap_type);
+  const activeGaps = rows.filter((r) => r.gap_type && (r.desired_association ?? true));
   const strongholds = rows.filter((r) => !r.gap_type);
   const metrics = data.metrics?.rows ?? [];
   const metricsMap = Object.fromEntries(metrics.map((m) => [m.cluster_id, m]));
@@ -165,7 +166,7 @@ export default function ActionBriefPage() {
         />
         <MetricCard
           label="Confirmed gaps"
-          value={`${confirmed} / ${blindSpots.length}`}
+          value={`${confirmed} / ${activeGaps.length}`}
           sub={`${methodCount}-method classifier`}
         />
         <MetricCard
@@ -405,7 +406,7 @@ export default function ActionBriefPage() {
             Channels to activate for {data.brand_name} based on gap analysis and
             brand configuration.
           </p>
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
             {config.channels_to_activate.map((channel) => (
               <div
                 key={channel}
@@ -415,7 +416,7 @@ export default function ActionBriefPage() {
                   {channel.replace(/_/g, " ")}
                 </div>
                 <div className="text-peec-xs text-peec-muted mt-1">
-                  {blindSpots.length} gaps
+                  {activeGaps.length} gaps
                 </div>
               </div>
             ))}

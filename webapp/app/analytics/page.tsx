@@ -102,11 +102,11 @@ export default function AnalyticsPage() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-48 bg-peec-tint rounded animate-pulse" />
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <ChartSkeleton height={340} />
           <ChartSkeleton height={340} />
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <ChartSkeleton height={340} />
           <ChartSkeleton height={340} />
         </div>
@@ -188,7 +188,7 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Row 1: Visibility + Action Priority */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* 1. Visibility Bar Chart */}
         <FadeSlide delay={0}>
           <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
@@ -263,7 +263,7 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Row 2: Competitor Landscape + Method Outcomes */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* 3. Competitor Landscape Grouped Bars */}
         <FadeSlide delay={200}>
           <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">

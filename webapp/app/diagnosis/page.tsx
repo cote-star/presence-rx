@@ -138,7 +138,7 @@ export default function DiagnosisPage() {
               </div>
 
               {/* Row 2: Key metrics */}
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="bg-peec-tint rounded-peec-lg p-3">
                   <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
                     <Eye size={12} />
@@ -301,7 +301,7 @@ export default function DiagnosisPage() {
                       )}
                     </div>
 
-                    <div className="grid grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       <div className="bg-peec-tint rounded-peec-lg p-3">
                         <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
                           <Eye size={12} />
@@ -351,8 +351,8 @@ export default function DiagnosisPage() {
         </div>
       )}
 
-      {/* Perception Analysis Table */}
-      {blindSpotRows.length > 0 && (
+      {/* Perception Analysis Table — priority topics only */}
+      {blindSpotRows.filter((r) => (r.desired_association ?? true)).length > 0 && (
         <div className="space-y-3">
           <h2 className="text-peec-lg font-semibold tracking-tight border-b border-peec-hairline pb-2">
             Perception Analysis Table
@@ -383,7 +383,7 @@ export default function DiagnosisPage() {
                 </tr>
               </thead>
               <tbody>
-                {blindSpotRows.map((row) => {
+                {blindSpotRows.filter((r) => (r.desired_association ?? true)).map((row) => {
                   const gf = geminiFindingsMap[row.cluster_id];
                   return (
                     <tr

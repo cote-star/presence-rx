@@ -45,7 +45,10 @@ export function checkClaim(claimText: string, brandData: BrandData): ClaimResult
   // 2. Check if claim targets a non-priority topic
   if (brandData.study?.rows) {
     for (const row of brandData.study.rows) {
-      if (lower.includes(row.cluster_label.toLowerCase()) && !(row.desired_association ?? true)) {
+      const topicWords = row.cluster_label.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+      const topicMatch = lower.includes(row.cluster_label.toLowerCase()) || topicWords.some(w => lower.includes(w));
+      if (!topicMatch) continue;
+      if (!(row.desired_association ?? true)) {
         return {
           verdict: "off_strategy",
           reason: `${row.cluster_label} is not a strategic priority for ${brandData.brand_name}. ${row.strategic_note || "This topic is intentionally deprioritized."}`,
@@ -60,7 +63,9 @@ export function checkClaim(claimText: string, brandData: BrandData): ClaimResult
 
   if (brandData.study?.rows) {
     for (const row of brandData.study.rows) {
-      if (!lower.includes(row.cluster_label.toLowerCase())) continue;
+      const topicWords = row.cluster_label.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+      const topicMatch = lower.includes(row.cluster_label.toLowerCase()) || topicWords.some(w => lower.includes(w));
+      if (!topicMatch) continue;
 
       const ceiling = row.claim_ceiling ?? "category_challenger";
       const strategicStatus = row.strategic_status ?? null;
