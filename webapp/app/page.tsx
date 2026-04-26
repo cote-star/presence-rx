@@ -57,7 +57,7 @@ export default function ActionBriefPage() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-64 bg-peec-tint rounded animate-pulse" />
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
@@ -144,7 +144,7 @@ export default function ActionBriefPage() {
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         <MetricCard
           label="Avg visibility"
           value={`${avgVis}%`}
@@ -230,7 +230,7 @@ export default function ActionBriefPage() {
             <p className="text-peec-sm text-peec-muted">
               <strong>Intervention:</strong> {INTERVENTION[gapType]}
             </p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {gapRows.map((row) => {
                 const m = metricsMap[row.cluster_id];
                 const l = landscapeMap[row.cluster_id];
@@ -251,7 +251,7 @@ export default function ActionBriefPage() {
                         {humanDecision(m?.decision_bucket ?? "monitor")}
                       </span>
                     </div>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                       <div className="bg-peec-tint rounded-peec-lg p-2">
                         <div className="text-peec-xs text-peec-muted">
                           Action Priority
@@ -330,7 +330,7 @@ export default function ActionBriefPage() {
           <h2 className="text-peec-lg font-semibold tracking-tight">
             Who to Reach
           </h2>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {config.audience_segments.map((segment) => (
               <div
                 key={segment}

@@ -9,21 +9,21 @@
 - **Blocked claim:** Attio is the leading modern crm alternative brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Attio has 5% visibility in Modern CRM Alternative while Salesforce owns the topic. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.
-- **Next evidence:** Improve schema markup
+- **Next evidence:** Improve schema markup and structured data for this topic
 
 ### challenged:crm-migration:v1
 
 - **Blocked claim:** Attio is the leading crm migration brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Attio has 3% visibility in CRM Migration while HubSpot owns the topic. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Attio is emerging in the crm migration category, currently behind HubSpot in AI visibility.
-- **Next evidence:** Increase editorial coverage
+- **Next evidence:** Increase editorial and public coverage for this topic
 
 ### challenged:revops-tools:v1
 
 - **Blocked claim:** Attio is the leading revops tools brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Attio has 15% visibility in RevOps Tools while HubSpot owns the topic. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility.
-- **Next evidence:** Publish explicit minimalist positioning content
+- **Next evidence:** Publish explicit positioning content for this topic
 
 ## Actions by Intervention Class
 

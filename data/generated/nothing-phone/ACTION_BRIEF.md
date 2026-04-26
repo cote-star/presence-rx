@@ -9,28 +9,28 @@
 - **Blocked claim:** Nothing Phone is the leading mobile ecosystem brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 12% visibility in Mobile Ecosystem while Apple holds 72%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.
-- **Next evidence:** Improve schema markup
+- **Next evidence:** Improve schema markup and structured data for this topic
 
 ### challenged:consumer-tech-innovation:v1
 
 - **Blocked claim:** Nothing Phone is the leading consumer tech innovation brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 10% visibility in Consumer Tech Innovation while Apple holds 45%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the consumer tech innovation category, currently behind Apple in AI visibility.
-- **Next evidence:** Publish explicit minimalist positioning content
+- **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:minimalist-hardware:v1
 
 - **Blocked claim:** Nothing Phone is the leading minimalist hardware brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 6% visibility in Minimalist Hardware while Apple holds 39%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.
-- **Next evidence:** Publish explicit minimalist positioning content
+- **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:wireless-audio:v1
 
 - **Blocked claim:** Nothing Phone is the leading wireless audio brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 1% visibility in Wireless Audio while Apple holds 53%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the wireless audio category, currently behind Apple in AI visibility.
-- **Next evidence:** Increase editorial coverage
+- **Next evidence:** Increase editorial and public coverage for this topic
 
 ## Actions by Intervention Class
 

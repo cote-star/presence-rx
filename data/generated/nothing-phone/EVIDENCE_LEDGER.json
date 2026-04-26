@@ -308,28 +308,28 @@
       "claim": "Nothing Phone is the leading mobile ecosystem brand",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 12% visibility in Mobile Ecosystem while Apple holds 72%. Claiming ownership is not supported by Peec data.",
       "safe_rewrite": "Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.",
-      "next_evidence_to_collect": "Improve schema markup"
+      "next_evidence_to_collect": "Improve schema markup and structured data for this topic"
     },
     {
       "claim_id": "challenged:consumer-tech-innovation:v1",
       "claim": "Nothing Phone is the leading consumer tech innovation brand",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 10% visibility in Consumer Tech Innovation while Apple holds 45%. Claiming ownership is not supported by Peec data.",
       "safe_rewrite": "Nothing Phone is emerging in the consumer tech innovation category, currently behind Apple in AI visibility.",
-      "next_evidence_to_collect": "Publish explicit minimalist positioning content"
+      "next_evidence_to_collect": "Publish explicit positioning content for this topic"
     },
     {
       "claim_id": "challenged:minimalist-hardware:v1",
       "claim": "Nothing Phone is the leading minimalist hardware brand",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 6% visibility in Minimalist Hardware while Apple holds 39%. Claiming ownership is not supported by Peec data.",
       "safe_rewrite": "Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.",
-      "next_evidence_to_collect": "Publish explicit minimalist positioning content"
+      "next_evidence_to_collect": "Publish explicit positioning content for this topic"
     },
     {
       "claim_id": "challenged:wireless-audio:v1",
       "claim": "Nothing Phone is the leading wireless audio brand",
       "blocked_reason": "OWNERSHIP_OVERCLAIM: Nothing Phone has 1% visibility in Wireless Audio while Apple holds 53%. Claiming ownership is not supported by Peec data.",
       "safe_rewrite": "Nothing Phone is emerging in the wireless audio category, currently behind Apple in AI visibility.",
-      "next_evidence_to_collect": "Increase editorial coverage"
+      "next_evidence_to_collect": "Increase editorial and public coverage for this topic"
     }
   ]
 }

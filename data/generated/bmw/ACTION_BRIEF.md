@@ -9,21 +9,21 @@
 - **Blocked claim:** BMW is the leading luxury ev transition brand
 - **Reason:** OWNERSHIP_OVERCLAIM: BMW has 12% visibility in Luxury EV Transition while Tesla owns the topic. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** BMW is emerging in the luxury ev transition category, currently behind Tesla in AI visibility.
-- **Next evidence:** Publish explicit minimalist positioning content
+- **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:premium-suv-segment:v1
 
 - **Blocked claim:** BMW is the leading premium suv segment brand
 - **Reason:** OWNERSHIP_OVERCLAIM: BMW has 15% visibility in Premium SUV Segment while Mercedes-Benz owns the topic. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.
-- **Next evidence:** Improve schema markup
+- **Next evidence:** Improve schema markup and structured data for this topic
 
 ### challenged:electric-i-series:v1
 
 - **Blocked claim:** BMW is the leading electric i-series brand
 - **Reason:** OWNERSHIP_OVERCLAIM: BMW has 6% visibility in Electric i-Series while Tesla owns the topic. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** BMW is emerging in the electric i-series category, currently behind Tesla in AI visibility.
-- **Next evidence:** Increase editorial coverage
+- **Next evidence:** Increase editorial and public coverage for this topic
 
 ## Actions by Intervention Class
 

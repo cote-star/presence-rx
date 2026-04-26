@@ -40,10 +40,24 @@ export function ClaimSimulator() {
 
   const brandName = data?.brand_name ?? "brand";
 
+  // Generate examples from actual study topics
+  const topics = data?.study?.rows ?? [];
+  const blindSpot = topics.find((r) => r.gap_type && r.visibility_competitor_owner);
+  const stronghold = topics.find((r) => !r.gap_type);
+  const midTopic = topics.find(
+    (r) => r.gap_type && (r.visibility_target_share ?? 0) > 0.1
+  );
+
   const EXAMPLE_CLAIMS = [
-    `${brandName} is the leading minimalist hardware brand`,
-    `${brandName} is emerging in wireless audio`,
-    `${brandName} is the best smartphone design brand`,
+    blindSpot
+      ? `${brandName} is the leading ${blindSpot.cluster_label.toLowerCase()} brand`
+      : `${brandName} is the market leader`,
+    midTopic
+      ? `${brandName} is emerging in ${midTopic.cluster_label.toLowerCase()}`
+      : `${brandName} is growing rapidly`,
+    stronghold
+      ? `${brandName} is the best ${stronghold.cluster_label.toLowerCase()} brand`
+      : `${brandName} has the strongest brand presence`,
   ];
 
   const handleCheck = () => {

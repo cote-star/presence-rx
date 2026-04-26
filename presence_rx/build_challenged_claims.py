@@ -41,9 +41,9 @@ def _generate_challenged_claims(study: StudySsot, manifest: Manifest) -> list[di
 
 
 _NEXT_EVIDENCE_BY_GAP_TYPE: dict[GapType, str] = {
-    GapType.PERCEPTION: "Publish explicit minimalist positioning content",
-    GapType.INDEXING: "Improve schema markup",
-    GapType.VOLUME_FREQUENCY: "Increase editorial coverage",
+    GapType.PERCEPTION: "Publish explicit positioning content for this topic",
+    GapType.INDEXING: "Improve schema markup and structured data for this topic",
+    GapType.VOLUME_FREQUENCY: "Increase editorial and public coverage for this topic",
 }
 
 _DEFAULT_NEXT_EVIDENCE = "Collect additional Peec snapshots to establish trend"

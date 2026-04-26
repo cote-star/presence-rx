@@ -88,7 +88,7 @@ def test_blocked_claim_has_gap_type_specific_next_evidence() -> None:
     # Wireless Audio has gap_type=volume_frequency
     audio = by_cluster.get("cluster:wireless-audio")
     assert audio is not None
-    assert "editorial coverage" in audio.next_evidence_to_collect.lower()
+    assert "coverage" in audio.next_evidence_to_collect.lower()
 
     # Consumer Tech Innovation has gap_type=perception
     innovation = by_cluster.get("cluster:consumer-tech-innovation")

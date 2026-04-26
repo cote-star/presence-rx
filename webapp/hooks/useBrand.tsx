@@ -37,13 +37,16 @@ export function BrandProvider({ children }: { children: ReactNode }) {
   const [cache, setCache] = useState<Record<string, BrandData>>({});
   const [configCache, setConfigCache] = useState<Record<string, BrandConfig>>({});
 
+  // Resolve basePath for data fetches (works on GitHub Pages /presence-rx/)
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   // Load brand registry on mount
   useEffect(() => {
-    fetch("/data/brands.json")
+    fetch(`${base}/data/brands.json`)
       .then((r) => r.json())
       .then((d) => setBrands(d.brands || []))
       .catch(() => setBrands(["nothing-phone", "attio", "bmw"]));
-  }, []);
+  }, [base]);
 
   // Load brand data when switching
   const loadBrand = useCallback(
@@ -60,8 +63,8 @@ export function BrandProvider({ children }: { children: ReactNode }) {
 
       try {
         const [dataRes, configRes] = await Promise.all([
-          fetch(`/data/${caseId}.json`),
-          fetch(`/data/${caseId}-config.json`),
+          fetch(`${base}/data/${caseId}.json`),
+          fetch(`${base}/data/${caseId}-config.json`),
         ]);
 
         const brandData: BrandData = await dataRes.json();

@@ -55,14 +55,14 @@ const JOURNEY_STAGES_FALLBACK = ["Awareness", "Consideration", "Comparison", "Pu
 function generateAudienceCards(segments: string[], stages: string[]) {
   const scores = [78, 62, 55, 43, 85, 71, 48, 66];
   const actions = [
-    "Amplify design narrative in tech media",
-    "Seed comparison content on YouTube",
-    "Strengthen ecosystem integration messaging",
-    "Increase review volume on Reddit",
-    "Partner with minimalist lifestyle creators",
-    "Expand presence in audio-focused channels",
+    "Amplify brand narrative in category media",
+    "Seed comparison content on review platforms",
+    "Strengthen product positioning messaging",
+    "Increase review volume in target communities",
+    "Partner with category-relevant creators",
+    "Expand presence in high-intent channels",
     "Target with aspirational brand positioning",
-    "Drive hands-on demo content",
+    "Drive hands-on product demo content",
   ];
   return segments.map((segment, i) => ({
     name: segment,
