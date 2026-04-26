@@ -1,0 +1,12 @@
+{
+  "case_id": "nothing-phone",
+  "brand_name": "Nothing Phone",
+  "category": "consumer_electronics",
+  "peec_project_id": "or_faaa7625-bc84-4f64-a754-a412d423c641",
+  "competitors": ["Apple", "Google", "Samsung", "Pixel", "Sony", "Bose", "Xiaomi", "OnePlus", "Logitech"],
+  "audience_segments": ["design-conscious buyers", "tech enthusiasts", "Android switchers", "minimalism seekers"],
+  "buying_journey_stages": ["awareness", "consideration", "comparison", "purchase"],
+  "priority_topics": ["Smartphone Design", "Mobile Ecosystem", "Consumer Tech Innovation", "Minimalist Hardware", "Wireless Audio"],
+  "known_market_tension": "Invisible champion: ranks #1 when mentioned (position 2.4) but only 20% of AI answers mention it at all",
+  "channels_to_activate": ["editorial", "ugc", "owned", "youtube", "reddit"]
+}

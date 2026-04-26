@@ -1,0 +1,12 @@
+{
+  "case_id": "bmw",
+  "brand_name": "BMW",
+  "category": "automotive",
+  "peec_project_id": "or_52698861-707c-4006-bc7e-3563aad6cd44",
+  "competitors": ["Tesla", "Mercedes-Benz", "Audi", "Porsche", "Lexus", "Volvo", "Genesis", "Rivian", "Lucid", "Hyundai", "Toyota", "Volkswagen"],
+  "audience_segments": ["luxury buyers", "EV considerers", "driving enthusiasts", "premium SUV shoppers", "brand loyalists"],
+  "buying_journey_stages": ["awareness", "consideration", "comparison", "test_drive", "purchase"],
+  "priority_topics": ["Luxury EV Transition", "Driving Dynamics", "Premium SUV Segment", "Electric i-Series", "Brand Heritage"],
+  "known_market_tension": "Heritage vs electrification: strong legacy brand with driving dynamics reputation, but Tesla dominates AI answers about EVs and BMW's i-series is underrepresented",
+  "channels_to_activate": ["automotive_editorial", "ev_media", "youtube", "dealer_content", "owned"]
+}

@@ -1,0 +1,1453 @@
+{
+  "brand_name": "Attio",
+  "case_id": "attio",
+  "study": {
+    "rows": [
+      {
+        "cluster_id": "cluster:product-led-crm",
+        "cluster_label": "Product-Led CRM",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.35,
+        "visibility_target_avg_position": 1.8,
+        "visibility_competitor_owner": null,
+        "gap_type": null,
+        "gap_type_source": "not_applicable",
+        "gap_type_rationale": null,
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:product-led-crm"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "moderate",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:crm-for-startups",
+        "cluster_label": "CRM for Startups",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.22,
+        "visibility_target_avg_position": 2.1,
+        "visibility_competitor_owner": "HubSpot",
+        "gap_type": "perception",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "Attio is built for startups but HubSpot owns the 'startup CRM' narrative in AI answers, despite Attio's product-market fit in that segment.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "peec:brand:hubspot"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:modern-crm-alternative",
+        "cluster_label": "Modern CRM Alternative",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.05,
+        "visibility_target_avg_position": 3.8,
+        "visibility_competitor_owner": "Salesforce",
+        "gap_type": "indexing",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "Attio content exists but AI default-routes 'CRM alternative' queries to Salesforce comparison pages rather than surfacing Attio as an alternative.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "peec:brand:salesforce"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:crm-migration",
+        "cluster_label": "CRM Migration",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.03,
+        "visibility_target_avg_position": 4.2,
+        "visibility_competitor_owner": "HubSpot",
+        "gap_type": "volume_frequency",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "Very few 'migrate to Attio' articles exist compared to abundant HubSpot/Salesforce migration guides and documentation.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "peec:brand:hubspot"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:revops-tools",
+        "cluster_label": "RevOps Tools",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.15,
+        "visibility_target_avg_position": 2.5,
+        "visibility_competitor_owner": "HubSpot",
+        "gap_type": "perception",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "Attio has RevOps features but AI associates RevOps tooling with HubSpot Operations Hub rather than Attio's native capabilities.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "peec:brand:hubspot"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      }
+    ]
+  },
+  "classification": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+      "classifier_version": "gap_classifier:v1",
+      "used_gemini": true,
+      "used_tavily": false
+    },
+    "summary": {
+      "classified_gaps": 4,
+      "confirmed": 4,
+      "provisional": 0,
+      "conflicted": 0,
+      "insufficient": 0
+    },
+    "classified_gaps": [
+      {
+        "cluster_id": "cluster:crm-for-startups",
+        "cluster_label": "CRM for Startups",
+        "provisional_gap_type": "perception",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:crm-for-startups",
+              "study_ssot:row:crm-for-startups",
+              "peec:brand:hubspot"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:crm-for-startups",
+              "study_ssot:row:crm-for-startups",
+              "gemini:analysis:crm-for-startups:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-for-startups:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:modern-crm-alternative",
+        "cluster_label": "Modern CRM Alternative",
+        "provisional_gap_type": "indexing",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:modern-crm-alternative",
+              "study_ssot:row:modern-crm-alternative",
+              "peec:brand:salesforce"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:modern-crm-alternative",
+              "study_ssot:row:modern-crm-alternative",
+              "gemini:analysis:modern-crm-alternative:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative",
+          "peec:brand:salesforce",
+          "gemini:analysis:modern-crm-alternative:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:crm-migration",
+        "cluster_label": "CRM Migration",
+        "provisional_gap_type": "volume_frequency",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:crm-migration",
+              "study_ssot:row:crm-migration",
+              "peec:brand:hubspot"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:crm-migration",
+              "study_ssot:row:crm-migration",
+              "gemini:analysis:crm-migration:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-migration:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:revops-tools",
+        "cluster_label": "RevOps Tools",
+        "provisional_gap_type": "perception",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:revops-tools",
+              "study_ssot:row:revops-tools",
+              "peec:brand:hubspot"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:attio:2026-04-25",
+              "peec:topic:revops-tools",
+              "study_ssot:row:revops-tools",
+              "gemini:analysis:revops-tools:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools",
+          "peec:brand:hubspot",
+          "gemini:analysis:revops-tools:v1"
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+      "metrics_version": "value_added_metrics:v1",
+      "used_gemini": true,
+      "used_tavily": false,
+      "used_classification": true
+    },
+    "summary": {
+      "rows": 5,
+      "average_opportunity_score": 51,
+      "contested_rows": 0,
+      "proof_gap_rows": 4
+    },
+    "rows": [
+      {
+        "cluster_id": "cluster:product-led-crm",
+        "cluster_label": "Product-Led CRM",
+        "gap_type": null,
+        "parent_topic": "category_authority",
+        "trend_label": "stronghold",
+        "trend_zone": "stronghold",
+        "zone_basis": "single_snapshot_visibility",
+        "decision_bucket": "monitor",
+        "decision_bucket_reason": "The target brand already owns this prompt cluster.",
+        "primary_gap": "NONE_STRONGHOLD",
+        "recommended_next_move": "Maintain monitoring and use this cluster as the comparison baseline.",
+        "relevance_score": 35,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 0,
+        "opportunity_score": 14,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:product-led-crm"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:crm-for-startups",
+        "cluster_label": "CRM for Startups",
+        "gap_type": "perception",
+        "parent_topic": "brand_association",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "MISSING_ASSOCIATION",
+        "recommended_next_move": "Publish explicit crm for startups positioning content and monitor AI adoption.",
+        "relevance_score": 61,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 54,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-for-startups:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:modern-crm-alternative",
+        "cluster_label": "Modern CRM Alternative",
+        "gap_type": "indexing",
+        "parent_topic": "content_discoverability",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "RETRIEVAL_NOT_CITATION",
+        "recommended_next_move": "Test schema, canonical source pages, and monitoring prompts for Modern CRM Alternative.",
+        "relevance_score": 83,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 63,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative",
+          "peec:brand:salesforce",
+          "gemini:analysis:modern-crm-alternative:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:crm-migration",
+        "cluster_label": "CRM Migration",
+        "gap_type": "volume_frequency",
+        "parent_topic": "category_presence",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "MISSING_PUBLIC_VOLUME",
+        "recommended_next_move": "Seed sustained crm migration proof across editorial and owned surfaces.",
+        "relevance_score": 87,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 65,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-migration:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:revops-tools",
+        "cluster_label": "RevOps Tools",
+        "gap_type": "perception",
+        "parent_topic": "brand_association",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "MISSING_ASSOCIATION",
+        "recommended_next_move": "Publish explicit revops tools positioning content and monitor AI adoption.",
+        "relevance_score": 68,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 57,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools",
+          "peec:brand:hubspot",
+          "gemini:analysis:revops-tools:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      }
+    ]
+  },
+  "landscape": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+      "landscape_version": "competitor_landscape:v1",
+      "used_tavily": false,
+      "used_classification": true
+    },
+    "summary": {
+      "topics": 5,
+      "target_owned": 0,
+      "competitor_owned": 0,
+      "contested": 4
+    },
+    "topics": [
+      {
+        "cluster_id": "cluster:product-led-crm",
+        "cluster_label": "Product-Led CRM",
+        "target_visibility_share": 0.35,
+        "competitor_owner": null,
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "unknown",
+        "proof_source_count": 0,
+        "classification_status": "unclassified",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:product-led-crm"
+        ]
+      },
+      {
+        "cluster_id": "cluster:crm-for-startups",
+        "cluster_label": "CRM for Startups",
+        "target_visibility_share": 0.22,
+        "competitor_owner": "HubSpot",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-for-startups:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:modern-crm-alternative",
+        "cluster_label": "Modern CRM Alternative",
+        "target_visibility_share": 0.05,
+        "competitor_owner": "Salesforce",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative",
+          "peec:brand:salesforce",
+          "gemini:analysis:modern-crm-alternative:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:crm-migration",
+        "cluster_label": "CRM Migration",
+        "target_visibility_share": 0.03,
+        "competitor_owner": "HubSpot",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-migration:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:revops-tools",
+        "cluster_label": "RevOps Tools",
+        "target_visibility_share": 0.15,
+        "competitor_owner": "HubSpot",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools",
+          "peec:brand:hubspot",
+          "gemini:analysis:revops-tools:v1"
+        ]
+      }
+    ]
+  },
+  "ledger": {
+    "metadata": {
+      "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+      "ledger_template_version": "evidence_ledger:v1",
+      "used_classification": true,
+      "classifier_version": "gap_classifier:v1"
+    },
+    "generated_at": "2026-04-25T00:00:00Z",
+    "brand": "Attio",
+    "claims": [
+      {
+        "claim_id": "claim:attio:crm-for-startups:v1",
+        "claim": "Attio has a perception blind spot in CRM for Startups; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:crm-for-startups",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-for-startups:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the Attio association in the CRM for Startups topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "claim:attio:modern-crm-alternative:v1",
+        "claim": "Attio has an indexing blind spot in Modern CRM Alternative; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:modern-crm-alternative",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative",
+          "peec:brand:salesforce",
+          "gemini:analysis:modern-crm-alternative:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the Attio association in the Modern CRM Alternative topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "claim:attio:crm-migration:v1",
+        "claim": "Attio has a volume / frequency blind spot in CRM Migration; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:crm-migration",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration",
+          "peec:brand:hubspot",
+          "gemini:analysis:crm-migration:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the Attio association in the CRM Migration topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "claim:attio:revops-tools:v1",
+        "claim": "Attio has a perception blind spot in RevOps Tools; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:revops-tools",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools",
+          "peec:brand:hubspot",
+          "gemini:analysis:revops-tools:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the Attio association in the RevOps Tools topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "challenged:modern-crm-alternative:v1",
+        "claim": "Attio is the leading modern crm alternative brand",
+        "status": "blocked",
+        "cluster_id": "cluster:modern-crm-alternative",
+        "methods": [
+          "peec"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "peec:brand:salesforce"
+        ],
+        "confidence_tier": "blocked",
+        "publication_status": "blocked",
+        "publication_language": "Do not claim Attio ownership of the Modern CRM Alternative topic; Salesforce holds dominant visibility.",
+        "why_not_stronger": "confidence_tier=blocked; Attio visibility (5%) is below the 20% ownership threshold while Salesforce dominates"
+      },
+      {
+        "claim_id": "challenged:crm-migration:v1",
+        "claim": "Attio is the leading crm migration brand",
+        "status": "blocked",
+        "cluster_id": "cluster:crm-migration",
+        "methods": [
+          "peec"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "peec:brand:hubspot"
+        ],
+        "confidence_tier": "blocked",
+        "publication_status": "blocked",
+        "publication_language": "Do not claim Attio ownership of the CRM Migration topic; HubSpot holds dominant visibility.",
+        "why_not_stronger": "confidence_tier=blocked; Attio visibility (3%) is below the 20% ownership threshold while HubSpot dominates"
+      },
+      {
+        "claim_id": "challenged:revops-tools:v1",
+        "claim": "Attio is the leading revops tools brand",
+        "status": "blocked",
+        "cluster_id": "cluster:revops-tools",
+        "methods": [
+          "peec"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "peec:brand:hubspot"
+        ],
+        "confidence_tier": "blocked",
+        "publication_status": "blocked",
+        "publication_language": "Do not claim Attio ownership of the RevOps Tools topic; HubSpot holds dominant visibility.",
+        "why_not_stronger": "confidence_tier=blocked; Attio visibility (15%) is below the 20% ownership threshold while HubSpot dominates"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_ref": "peec:snapshot:attio:2026-04-25",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:snapshot:attio:2026-04-25.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:crm-for-startups",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:crm-for-startups.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:crm-for-startups",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:crm-for-startups.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:brand:hubspot",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:brand:hubspot.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:crm-for-startups:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:crm-for-startups:v1.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:modern-crm-alternative",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:modern-crm-alternative.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:modern-crm-alternative",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:modern-crm-alternative.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:brand:salesforce",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:brand:salesforce.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:modern-crm-alternative:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:modern-crm-alternative:v1.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:crm-migration",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:crm-migration.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:crm-migration",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:crm-migration.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:crm-migration:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:crm-migration:v1.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:revops-tools",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:revops-tools.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:revops-tools",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:revops-tools.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:revops-tools:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:revops-tools:v1.",
+        "url": null,
+        "confidence": null
+      }
+    ],
+    "blocked_claims": [
+      {
+        "claim_id": "challenged:modern-crm-alternative:v1",
+        "claim": "Attio is the leading modern crm alternative brand",
+        "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 5% visibility in Modern CRM Alternative while Salesforce owns the topic. Claiming ownership is not supported by Peec data.",
+        "safe_rewrite": "Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.",
+        "next_evidence_to_collect": "Improve schema markup"
+      },
+      {
+        "claim_id": "challenged:crm-migration:v1",
+        "claim": "Attio is the leading crm migration brand",
+        "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 3% visibility in CRM Migration while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
+        "safe_rewrite": "Attio is emerging in the crm migration category, currently behind HubSpot in AI visibility.",
+        "next_evidence_to_collect": "Increase editorial coverage"
+      },
+      {
+        "claim_id": "challenged:revops-tools:v1",
+        "claim": "Attio is the leading revops tools brand",
+        "blocked_reason": "OWNERSHIP_OVERCLAIM: Attio has 15% visibility in RevOps Tools while HubSpot owns the topic. Claiming ownership is not supported by Peec data.",
+        "safe_rewrite": "Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility.",
+        "next_evidence_to_collect": "Publish explicit minimalist positioning content"
+      }
+    ]
+  },
+  "prescription": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:attio:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:attio:2026-04-25"
+    },
+    "summary": {
+      "planned_prompts": 12,
+      "planned_topics": 4,
+      "planned_tags": 6
+    },
+    "planned_topics": [
+      {
+        "operation_id": "op:create_topic:crm-for-startups",
+        "execution_status": "planned",
+        "topic_slug": "crm-for-startups",
+        "name": "bbh-2026-crm-for-startups",
+        "source_cluster_id": "cluster:crm-for-startups",
+        "gap_type": "perception",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups"
+        ]
+      },
+      {
+        "operation_id": "op:create_topic:modern-crm-alternative",
+        "execution_status": "planned",
+        "topic_slug": "modern-crm-alternative",
+        "name": "bbh-2026-modern-crm-alternative",
+        "source_cluster_id": "cluster:modern-crm-alternative",
+        "gap_type": "indexing",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative"
+        ]
+      },
+      {
+        "operation_id": "op:create_topic:crm-migration",
+        "execution_status": "planned",
+        "topic_slug": "crm-migration",
+        "name": "bbh-2026-crm-migration",
+        "source_cluster_id": "cluster:crm-migration",
+        "gap_type": "volume_frequency",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration"
+        ]
+      },
+      {
+        "operation_id": "op:create_topic:revops-tools",
+        "execution_status": "planned",
+        "topic_slug": "revops-tools",
+        "name": "bbh-2026-revops-tools",
+        "source_cluster_id": "cluster:revops-tools",
+        "gap_type": "perception",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools"
+        ]
+      }
+    ],
+    "planned_tags": [
+      {
+        "operation_id": "op:create_tag:gap-indexing",
+        "execution_status": "planned",
+        "tag_slug": "gap-indexing",
+        "name": "bbh-2026-gap-indexing",
+        "kind": "gap",
+        "description": "Blind spots where owned or credible sources need better AI-answer surfacing."
+      },
+      {
+        "operation_id": "op:create_tag:gap-perception",
+        "execution_status": "planned",
+        "tag_slug": "gap-perception",
+        "name": "bbh-2026-gap-perception",
+        "kind": "gap",
+        "description": "Blind spots where the brand association is missing or weaker than competitors."
+      },
+      {
+        "operation_id": "op:create_tag:gap-volume-frequency",
+        "execution_status": "planned",
+        "tag_slug": "gap-volume-frequency",
+        "name": "bbh-2026-gap-volume-frequency",
+        "kind": "gap",
+        "description": "Blind spots where public proof and repeated category presence are too sparse."
+      },
+      {
+        "operation_id": "op:create_tag:geo-us",
+        "execution_status": "planned",
+        "tag_slug": "geo-us",
+        "name": "bbh-2026-geo-us",
+        "kind": "geo",
+        "description": "Marks planned operations targeting the United States market."
+      },
+      {
+        "operation_id": "op:create_tag:geo-de",
+        "execution_status": "planned",
+        "tag_slug": "geo-de",
+        "name": "bbh-2026-geo-de",
+        "kind": "geo",
+        "description": "Marks planned operations targeting the Germany market."
+      },
+      {
+        "operation_id": "op:create_tag:geo-gb",
+        "execution_status": "planned",
+        "tag_slug": "geo-gb",
+        "name": "bbh-2026-geo-gb",
+        "kind": "geo",
+        "description": "Marks planned operations targeting the Great Britain market."
+      }
+    ],
+    "planned_prompts": [
+      {
+        "operation_id": "op:create_prompt:crm-for-startups:us",
+        "execution_status": "planned",
+        "prompt_slug": "crm-for-startups:us",
+        "text": "Which crm for startups options should buyers consider when they want distinctive alternatives to HubSpot?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "crm-for-startups",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:crm-for-startups",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:crm-for-startups:de",
+        "execution_status": "planned",
+        "prompt_slug": "crm-for-startups:de",
+        "text": "Which crm for startups options should buyers consider when they want distinctive alternatives to HubSpot?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "crm-for-startups",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:crm-for-startups",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:crm-for-startups:gb",
+        "execution_status": "planned",
+        "prompt_slug": "crm-for-startups:gb",
+        "text": "Which crm for startups options should buyers consider when they want distinctive alternatives to HubSpot?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "crm-for-startups",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:crm-for-startups",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:modern-crm-alternative:us",
+        "execution_status": "planned",
+        "prompt_slug": "modern-crm-alternative:us",
+        "text": "Which modern crm alternative options should buyers consider when they want credible alternatives in the category?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "modern-crm-alternative",
+        "gap_type": "indexing",
+        "tag_refs": [
+          "gap-indexing",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:modern-crm-alternative",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:modern-crm-alternative:de",
+        "execution_status": "planned",
+        "prompt_slug": "modern-crm-alternative:de",
+        "text": "Which modern crm alternative options should buyers consider when they want credible alternatives in the category?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "modern-crm-alternative",
+        "gap_type": "indexing",
+        "tag_refs": [
+          "gap-indexing",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:modern-crm-alternative",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:modern-crm-alternative:gb",
+        "execution_status": "planned",
+        "prompt_slug": "modern-crm-alternative:gb",
+        "text": "Which modern crm alternative options should buyers consider when they want credible alternatives in the category?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "modern-crm-alternative",
+        "gap_type": "indexing",
+        "tag_refs": [
+          "gap-indexing",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:modern-crm-alternative",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:crm-migration:us",
+        "execution_status": "planned",
+        "prompt_slug": "crm-migration:us",
+        "text": "Which crm migration options should buyers consider when they want proven alternatives to the market leader?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "crm-migration",
+        "gap_type": "volume_frequency",
+        "tag_refs": [
+          "gap-volume-frequency",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:crm-migration",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:crm-migration:de",
+        "execution_status": "planned",
+        "prompt_slug": "crm-migration:de",
+        "text": "Which crm migration options should buyers consider when they want proven alternatives to the market leader?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "crm-migration",
+        "gap_type": "volume_frequency",
+        "tag_refs": [
+          "gap-volume-frequency",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:crm-migration",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:crm-migration:gb",
+        "execution_status": "planned",
+        "prompt_slug": "crm-migration:gb",
+        "text": "Which crm migration options should buyers consider when they want proven alternatives to the market leader?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "crm-migration",
+        "gap_type": "volume_frequency",
+        "tag_refs": [
+          "gap-volume-frequency",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:crm-migration",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:revops-tools:us",
+        "execution_status": "planned",
+        "prompt_slug": "revops-tools:us",
+        "text": "Which revops tools options should buyers consider when they want distinctive alternatives to HubSpot?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "revops-tools",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:revops-tools",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:revops-tools:de",
+        "execution_status": "planned",
+        "prompt_slug": "revops-tools:de",
+        "text": "Which revops tools options should buyers consider when they want distinctive alternatives to HubSpot?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "revops-tools",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:revops-tools",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:revops-tools:gb",
+        "execution_status": "planned",
+        "prompt_slug": "revops-tools:gb",
+        "text": "Which revops tools options should buyers consider when they want distinctive alternatives to HubSpot?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "revops-tools",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:revops-tools",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools"
+        ]
+      }
+    ]
+  },
+  "tavily": null,
+  "gemini": {
+    "findings": [
+      {
+        "finding_id": "gemini:analysis:crm-for-startups:v1",
+        "cluster_id": "cluster:crm-for-startups",
+        "cluster_label": "CRM for Startups",
+        "gap_type": "perception",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "crm for startups association",
+          "category positioning"
+        ],
+        "missing_associations": [
+          "crm for startups association"
+        ],
+        "competitor_association": "HubSpot is the Peec-visible owner",
+        "safe_scenario_wording": "Treat CRM for Startups as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-for-startups",
+          "study_ssot:row:crm-for-startups",
+          "gemini:analysis:crm-for-startups:v1"
+        ]
+      },
+      {
+        "finding_id": "gemini:analysis:modern-crm-alternative:v1",
+        "cluster_id": "cluster:modern-crm-alternative",
+        "cluster_label": "Modern CRM Alternative",
+        "gap_type": "indexing",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "modern crm alternative discoverability",
+          "owned content surfacing"
+        ],
+        "missing_associations": [
+          "clear modern crm alternative proof surfaced in AI answers"
+        ],
+        "competitor_association": "Salesforce is the Peec-visible owner",
+        "safe_scenario_wording": "Treat Modern CRM Alternative as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:modern-crm-alternative",
+          "study_ssot:row:modern-crm-alternative",
+          "gemini:analysis:modern-crm-alternative:v1"
+        ]
+      },
+      {
+        "finding_id": "gemini:analysis:crm-migration:v1",
+        "cluster_id": "cluster:crm-migration",
+        "cluster_label": "CRM Migration",
+        "gap_type": "volume_frequency",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "crm migration presence",
+          "category coverage depth"
+        ],
+        "missing_associations": [
+          "repeated crm migration association"
+        ],
+        "competitor_association": "HubSpot is the Peec-visible owner",
+        "safe_scenario_wording": "Treat CRM Migration as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:crm-migration",
+          "study_ssot:row:crm-migration",
+          "gemini:analysis:crm-migration:v1"
+        ]
+      },
+      {
+        "finding_id": "gemini:analysis:revops-tools:v1",
+        "cluster_id": "cluster:revops-tools",
+        "cluster_label": "RevOps Tools",
+        "gap_type": "perception",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "revops tools association",
+          "category positioning"
+        ],
+        "missing_associations": [
+          "revops tools association"
+        ],
+        "competitor_association": "HubSpot is the Peec-visible owner",
+        "safe_scenario_wording": "Treat RevOps Tools as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:attio:2026-04-25",
+          "peec:topic:revops-tools",
+          "study_ssot:row:revops-tools",
+          "gemini:analysis:revops-tools:v1"
+        ]
+      }
+    ],
+    "summary": {
+      "analyzed_rows": 4,
+      "supported_gap_types": 4,
+      "conflicted_gap_types": 0,
+      "insufficient_gap_types": 0
+    }
+  },
+  "manifest": {
+    "brand": "Attio",
+    "competitors": [
+      "Salesforce",
+      "HubSpot",
+      "Pipedrive",
+      "Monday CRM"
+    ],
+    "generated_at": "2026-04-25T00:00:00Z",
+    "artifact_version": "0.2.0-step2",
+    "taxonomy_version": "2026-04-25-demo",
+    "campaign_type_mapping_version": null,
+    "peec_snapshot_id": "peec:snapshot:attio:2026-04-25",
+    "published": false,
+    "sources": {
+      "peec_mcp": {
+        "snapshot_id": "peec:snapshot:attio:2026-04-25",
+        "prompt_count": 50,
+        "query_count": null,
+        "source_count": null,
+        "analysis_runs": null,
+        "dashboard_url": null
+      },
+      "tavily": {
+        "snapshot_id": null,
+        "prompt_count": null,
+        "query_count": 0,
+        "source_count": 0,
+        "analysis_runs": null,
+        "dashboard_url": null
+      },
+      "gemini": {
+        "snapshot_id": null,
+        "prompt_count": null,
+        "query_count": null,
+        "source_count": null,
+        "analysis_runs": 4,
+        "dashboard_url": null
+      },
+      "lovable": {
+        "snapshot_id": null,
+        "prompt_count": null,
+        "query_count": null,
+        "source_count": null,
+        "analysis_runs": null,
+        "dashboard_url": null
+      }
+    },
+    "confidence_counts": {
+      "strong": 0,
+      "moderate": 5,
+      "limited": 0,
+      "blocked": 0
+    },
+    "quality_counts": {
+      "strong": 0,
+      "moderate": 5,
+      "limited": 0,
+      "blocked": 0
+    },
+    "unavailable_reason_counts": {
+      "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED": 5
+    },
+    "freshness": {
+      "status": "docs_grounded_seed",
+      "generated_at": "2026-04-25T00:00:00Z",
+      "newer_snapshot_available": false
+    },
+    "comparability": {
+      "comparable_to_previous": false,
+      "reason": "First generated baseline from MCP-verified docs."
+    },
+    "pipeline_summary": {
+      "raw_prompts": 50,
+      "clusters": 5,
+      "evidence_gated": 4,
+      "actionable_recommendations": 7
+    },
+    "artifacts": [
+      "prompt_universe.json",
+      "study_ssot.json",
+      "manifest.json",
+      "source_of_record.json",
+      "pipeline_funnel.json",
+      "hero_cards.json",
+      "gemini_analysis.json",
+      "tavily_evidence.json",
+      "gap_classification.json",
+      "EVIDENCE_LEDGER.json",
+      "value_added_metrics.json",
+      "competitor_landscape.json",
+      "prescription_plan.json"
+    ]
+  }
+}

@@ -1,0 +1,1460 @@
+{
+  "brand_name": "BMW",
+  "case_id": "bmw",
+  "study": {
+    "rows": [
+      {
+        "cluster_id": "cluster:driving-dynamics",
+        "cluster_label": "Driving Dynamics",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.45,
+        "visibility_target_avg_position": 1.5,
+        "visibility_competitor_owner": null,
+        "gap_type": null,
+        "gap_type_source": "not_applicable",
+        "gap_type_rationale": null,
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:driving-dynamics"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "moderate",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:luxury-ev-transition",
+        "cluster_label": "Luxury EV Transition",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.12,
+        "visibility_target_avg_position": 2.8,
+        "visibility_competitor_owner": "Tesla",
+        "gap_type": "perception",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "BMW has i4/iX but AI frames 'luxury EV' as Tesla Model S/X territory, sidelining BMW's electrification progress in premium segment.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "peec:brand:tesla"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:premium-suv-segment",
+        "cluster_label": "Premium SUV Segment",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.15,
+        "visibility_target_avg_position": 2.5,
+        "visibility_competitor_owner": "Mercedes-Benz",
+        "gap_type": "indexing",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "BMW X-series exists but AI defaults to Mercedes GLE/GLC for premium SUV queries; BMW content is not surfacing in retrieval.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "peec:brand:mercedes-benz"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:electric-i-series",
+        "cluster_label": "Electric i-Series",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.06,
+        "visibility_target_avg_position": 3.5,
+        "visibility_competitor_owner": "Tesla",
+        "gap_type": "volume_frequency",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "BMW i4 and iX exist but sparse editorial coverage compared to Tesla Model 3/Y volume dominates AI training and retrieval sources.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "peec:brand:tesla"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      },
+      {
+        "cluster_id": "cluster:brand-heritage",
+        "cluster_label": "Brand Heritage",
+        "cluster_stage": "consideration",
+        "cluster_prompt_type": "peec_topic",
+        "cluster_prompt_count": null,
+        "visibility_target_share": 0.3,
+        "visibility_target_avg_position": 1.8,
+        "visibility_competitor_owner": "Mercedes-Benz",
+        "gap_type": "perception",
+        "gap_type_source": "scope_final",
+        "gap_type_rationale": "Both have strong heritage but AI increasingly associates 'luxury heritage' with Mercedes over BMW, eroding a historically shared narrative.",
+        "confidence_tier": "limited",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "peec:brand:mercedes-benz"
+        ],
+        "input_gate_status": "passed",
+        "evidence_tier": "limited",
+        "publication_status": "diagnostics_only",
+        "recommendation_available": false,
+        "unavailable_reason": "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED",
+        "action_recommendation": null,
+        "action_monitor_prompt": null
+      }
+    ]
+  },
+  "classification": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+      "classifier_version": "gap_classifier:v1",
+      "used_gemini": true,
+      "used_tavily": false
+    },
+    "summary": {
+      "classified_gaps": 4,
+      "confirmed": 4,
+      "provisional": 0,
+      "conflicted": 0,
+      "insufficient": 0
+    },
+    "classified_gaps": [
+      {
+        "cluster_id": "cluster:luxury-ev-transition",
+        "cluster_label": "Luxury EV Transition",
+        "provisional_gap_type": "perception",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:luxury-ev-transition",
+              "study_ssot:row:luxury-ev-transition",
+              "peec:brand:tesla"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:luxury-ev-transition",
+              "study_ssot:row:luxury-ev-transition",
+              "gemini:analysis:luxury-ev-transition:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition",
+          "peec:brand:tesla",
+          "gemini:analysis:luxury-ev-transition:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:premium-suv-segment",
+        "cluster_label": "Premium SUV Segment",
+        "provisional_gap_type": "indexing",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:premium-suv-segment",
+              "study_ssot:row:premium-suv-segment",
+              "peec:brand:mercedes-benz"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:premium-suv-segment",
+              "study_ssot:row:premium-suv-segment",
+              "gemini:analysis:premium-suv-segment:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:premium-suv-segment:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:electric-i-series",
+        "cluster_label": "Electric i-Series",
+        "provisional_gap_type": "volume_frequency",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:electric-i-series",
+              "study_ssot:row:electric-i-series",
+              "peec:brand:tesla"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:electric-i-series",
+              "study_ssot:row:electric-i-series",
+              "gemini:analysis:electric-i-series:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series",
+          "peec:brand:tesla",
+          "gemini:analysis:electric-i-series:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:brand-heritage",
+        "cluster_label": "Brand Heritage",
+        "provisional_gap_type": "perception",
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "method_signals": [
+          {
+            "method": "peec",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:brand-heritage",
+              "study_ssot:row:brand-heritage",
+              "peec:brand:mercedes-benz"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "gemini",
+            "signal": "supports",
+            "evidence_refs": [
+              "peec:snapshot:bmw:2026-04-25",
+              "peec:topic:brand-heritage",
+              "study_ssot:row:brand-heritage",
+              "gemini:analysis:brand-heritage:v1"
+            ],
+            "unavailable_reason": null
+          },
+          {
+            "method": "tavily",
+            "signal": "unavailable",
+            "evidence_refs": [],
+            "unavailable_reason": "artifact_not_provided"
+          }
+        ],
+        "method_agreement_score": 1.0,
+        "classification_rationale": "Peec(supports) + Gemini(supports) + Tavily(unavailable) - 2 of 2 available methods support; 0 conflicts.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:brand-heritage:v1"
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+      "metrics_version": "value_added_metrics:v1",
+      "used_gemini": true,
+      "used_tavily": false,
+      "used_classification": true
+    },
+    "summary": {
+      "rows": 5,
+      "average_opportunity_score": 50,
+      "contested_rows": 0,
+      "proof_gap_rows": 4
+    },
+    "rows": [
+      {
+        "cluster_id": "cluster:driving-dynamics",
+        "cluster_label": "Driving Dynamics",
+        "gap_type": null,
+        "parent_topic": "category_authority",
+        "trend_label": "stronghold",
+        "trend_zone": "stronghold",
+        "zone_basis": "single_snapshot_visibility",
+        "decision_bucket": "monitor",
+        "decision_bucket_reason": "The target brand already owns this prompt cluster.",
+        "primary_gap": "NONE_STRONGHOLD",
+        "recommended_next_move": "Maintain monitoring and use this cluster as the comparison baseline.",
+        "relevance_score": 45,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 0,
+        "opportunity_score": 18,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:driving-dynamics"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:luxury-ev-transition",
+        "cluster_label": "Luxury EV Transition",
+        "gap_type": "perception",
+        "parent_topic": "brand_association",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "MISSING_ASSOCIATION",
+        "recommended_next_move": "Publish explicit luxury ev transition positioning content and monitor AI adoption.",
+        "relevance_score": 72,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 59,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition",
+          "peec:brand:tesla",
+          "gemini:analysis:luxury-ev-transition:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:premium-suv-segment",
+        "cluster_label": "Premium SUV Segment",
+        "gap_type": "indexing",
+        "parent_topic": "content_discoverability",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "RETRIEVAL_NOT_CITATION",
+        "recommended_next_move": "Test schema, canonical source pages, and monitoring prompts for Premium SUV Segment.",
+        "relevance_score": 68,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 57,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:premium-suv-segment:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:electric-i-series",
+        "cluster_label": "Electric i-Series",
+        "gap_type": "volume_frequency",
+        "parent_topic": "category_presence",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "MISSING_PUBLIC_VOLUME",
+        "recommended_next_move": "Seed sustained electric i-series proof across editorial and owned surfaces.",
+        "relevance_score": 81,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 62,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series",
+          "peec:brand:tesla",
+          "gemini:analysis:electric-i-series:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      },
+      {
+        "cluster_id": "cluster:brand-heritage",
+        "cluster_label": "Brand Heritage",
+        "gap_type": "perception",
+        "parent_topic": "brand_association",
+        "trend_label": "proof_gap",
+        "trend_zone": "proof_gap",
+        "zone_basis": "proof_coverage",
+        "decision_bucket": "test_next",
+        "decision_bucket_reason": "The signal is plausible but needs public proof before action.",
+        "primary_gap": "MISSING_ASSOCIATION",
+        "recommended_next_move": "Publish explicit brand heritage positioning content and monitor AI adoption.",
+        "relevance_score": 54,
+        "source_trust_score": 0,
+        "proof_strength_score": 0,
+        "method_agreement_score": 100,
+        "opportunity_score": 52,
+        "labeling_source": "peec_mcp+gemini+tavily+derived",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:brand-heritage:v1"
+        ],
+        "rationale": "Mechanical MVP score from Peec visibility gap, method agreement, Tavily proof coverage, and source score."
+      }
+    ]
+  },
+  "landscape": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+      "landscape_version": "competitor_landscape:v1",
+      "used_tavily": false,
+      "used_classification": true
+    },
+    "summary": {
+      "topics": 5,
+      "target_owned": 0,
+      "competitor_owned": 0,
+      "contested": 4
+    },
+    "topics": [
+      {
+        "cluster_id": "cluster:driving-dynamics",
+        "cluster_label": "Driving Dynamics",
+        "target_visibility_share": 0.45,
+        "competitor_owner": null,
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "unknown",
+        "proof_source_count": 0,
+        "classification_status": "unclassified",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:driving-dynamics"
+        ]
+      },
+      {
+        "cluster_id": "cluster:luxury-ev-transition",
+        "cluster_label": "Luxury EV Transition",
+        "target_visibility_share": 0.12,
+        "competitor_owner": "Tesla",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition",
+          "peec:brand:tesla",
+          "gemini:analysis:luxury-ev-transition:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:premium-suv-segment",
+        "cluster_label": "Premium SUV Segment",
+        "target_visibility_share": 0.15,
+        "competitor_owner": "Mercedes-Benz",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:premium-suv-segment:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:electric-i-series",
+        "cluster_label": "Electric i-Series",
+        "target_visibility_share": 0.06,
+        "competitor_owner": "Tesla",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series",
+          "peec:brand:tesla",
+          "gemini:analysis:electric-i-series:v1"
+        ]
+      },
+      {
+        "cluster_id": "cluster:brand-heritage",
+        "cluster_label": "Brand Heritage",
+        "target_visibility_share": 0.3,
+        "competitor_owner": "Mercedes-Benz",
+        "competitor_visibility_share": null,
+        "visibility_delta": null,
+        "ownership_status": "contested",
+        "proof_source_count": 0,
+        "classification_status": "confirmed",
+        "confidence_tier": "moderate",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:brand-heritage:v1"
+        ]
+      }
+    ]
+  },
+  "ledger": {
+    "metadata": {
+      "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+      "ledger_template_version": "evidence_ledger:v1",
+      "used_classification": true,
+      "classifier_version": "gap_classifier:v1"
+    },
+    "generated_at": "2026-04-25T00:00:00Z",
+    "brand": "BMW",
+    "claims": [
+      {
+        "claim_id": "claim:bmw:luxury-ev-transition:v1",
+        "claim": "BMW has a perception blind spot in Luxury EV Transition; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:luxury-ev-transition",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition",
+          "peec:brand:tesla",
+          "gemini:analysis:luxury-ev-transition:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the BMW association in the Luxury EV Transition topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "claim:bmw:premium-suv-segment:v1",
+        "claim": "BMW has an indexing blind spot in Premium SUV Segment; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:premium-suv-segment",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:premium-suv-segment:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the BMW association in the Premium SUV Segment topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "claim:bmw:electric-i-series:v1",
+        "claim": "BMW has a volume / frequency blind spot in Electric i-Series; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:electric-i-series",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series",
+          "peec:brand:tesla",
+          "gemini:analysis:electric-i-series:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the BMW association in the Electric i-Series topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "claim:bmw:brand-heritage:v1",
+        "claim": "BMW has a perception blind spot in Brand Heritage; evidence is moderate.",
+        "status": "directional",
+        "cluster_id": "cluster:brand-heritage",
+        "methods": [
+          "peec",
+          "gemini"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage",
+          "peec:brand:mercedes-benz",
+          "gemini:analysis:brand-heritage:v1"
+        ],
+        "confidence_tier": "moderate",
+        "publication_status": "directional_with_caveat",
+        "publication_language": "Test the BMW association in the Brand Heritage topic; 2 of 2 methods support.",
+        "why_not_stronger": "confidence_tier=moderate; needs reviewed multi-method support with no conflicts to reach strong"
+      },
+      {
+        "claim_id": "challenged:luxury-ev-transition:v1",
+        "claim": "BMW is the leading luxury ev transition brand",
+        "status": "blocked",
+        "cluster_id": "cluster:luxury-ev-transition",
+        "methods": [
+          "peec"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "peec:brand:tesla"
+        ],
+        "confidence_tier": "blocked",
+        "publication_status": "blocked",
+        "publication_language": "Do not claim BMW ownership of the Luxury EV Transition topic; Tesla holds dominant visibility.",
+        "why_not_stronger": "confidence_tier=blocked; BMW visibility (12%) is below the 20% ownership threshold while Tesla dominates"
+      },
+      {
+        "claim_id": "challenged:premium-suv-segment:v1",
+        "claim": "BMW is the leading premium suv segment brand",
+        "status": "blocked",
+        "cluster_id": "cluster:premium-suv-segment",
+        "methods": [
+          "peec"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "peec:brand:mercedes-benz"
+        ],
+        "confidence_tier": "blocked",
+        "publication_status": "blocked",
+        "publication_language": "Do not claim BMW ownership of the Premium SUV Segment topic; Mercedes-Benz holds dominant visibility.",
+        "why_not_stronger": "confidence_tier=blocked; BMW visibility (15%) is below the 20% ownership threshold while Mercedes-Benz dominates"
+      },
+      {
+        "claim_id": "challenged:electric-i-series:v1",
+        "claim": "BMW is the leading electric i-series brand",
+        "status": "blocked",
+        "cluster_id": "cluster:electric-i-series",
+        "methods": [
+          "peec"
+        ],
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "peec:brand:tesla"
+        ],
+        "confidence_tier": "blocked",
+        "publication_status": "blocked",
+        "publication_language": "Do not claim BMW ownership of the Electric i-Series topic; Tesla holds dominant visibility.",
+        "why_not_stronger": "confidence_tier=blocked; BMW visibility (6%) is below the 20% ownership threshold while Tesla dominates"
+      }
+    ],
+    "evidence": [
+      {
+        "evidence_ref": "peec:snapshot:bmw:2026-04-25",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:snapshot:bmw:2026-04-25.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:luxury-ev-transition",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:luxury-ev-transition.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:luxury-ev-transition",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:luxury-ev-transition.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:brand:tesla",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:brand:tesla.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:luxury-ev-transition:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:luxury-ev-transition:v1.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:premium-suv-segment",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:premium-suv-segment.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:premium-suv-segment",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:premium-suv-segment.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:brand:mercedes-benz",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:brand:mercedes-benz.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:premium-suv-segment:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:premium-suv-segment:v1.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:electric-i-series",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:electric-i-series.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:electric-i-series",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:electric-i-series.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:electric-i-series:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:electric-i-series:v1.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "peec:topic:brand-heritage",
+        "source_type": "peec_mcp",
+        "summary": "Peec reference carried from Step 7 classification: peec:topic:brand-heritage.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "study_ssot:row:brand-heritage",
+        "source_type": "derived",
+        "summary": "Derived study reference carried from Step 7 classification: study_ssot:row:brand-heritage.",
+        "url": null,
+        "confidence": null
+      },
+      {
+        "evidence_ref": "gemini:analysis:brand-heritage:v1",
+        "source_type": "gemini",
+        "summary": "Gemini finding reference carried from Step 7 classification: gemini:analysis:brand-heritage:v1.",
+        "url": null,
+        "confidence": null
+      }
+    ],
+    "blocked_claims": [
+      {
+        "claim_id": "challenged:luxury-ev-transition:v1",
+        "claim": "BMW is the leading luxury ev transition brand",
+        "blocked_reason": "OWNERSHIP_OVERCLAIM: BMW has 12% visibility in Luxury EV Transition while Tesla owns the topic. Claiming ownership is not supported by Peec data.",
+        "safe_rewrite": "BMW is emerging in the luxury ev transition category, currently behind Tesla in AI visibility.",
+        "next_evidence_to_collect": "Publish explicit minimalist positioning content"
+      },
+      {
+        "claim_id": "challenged:premium-suv-segment:v1",
+        "claim": "BMW is the leading premium suv segment brand",
+        "blocked_reason": "OWNERSHIP_OVERCLAIM: BMW has 15% visibility in Premium SUV Segment while Mercedes-Benz owns the topic. Claiming ownership is not supported by Peec data.",
+        "safe_rewrite": "BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.",
+        "next_evidence_to_collect": "Improve schema markup"
+      },
+      {
+        "claim_id": "challenged:electric-i-series:v1",
+        "claim": "BMW is the leading electric i-series brand",
+        "blocked_reason": "OWNERSHIP_OVERCLAIM: BMW has 6% visibility in Electric i-Series while Tesla owns the topic. Claiming ownership is not supported by Peec data.",
+        "safe_rewrite": "BMW is emerging in the electric i-series category, currently behind Tesla in AI visibility.",
+        "next_evidence_to_collect": "Increase editorial coverage"
+      }
+    ]
+  },
+  "prescription": {
+    "metadata": {
+      "generated_at": "2026-04-25T00:00:00Z",
+      "source_manifest_ref": "peec:snapshot:bmw:2026-04-25",
+      "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25"
+    },
+    "summary": {
+      "planned_prompts": 12,
+      "planned_topics": 4,
+      "planned_tags": 6
+    },
+    "planned_topics": [
+      {
+        "operation_id": "op:create_topic:luxury-ev-transition",
+        "execution_status": "planned",
+        "topic_slug": "luxury-ev-transition",
+        "name": "bbh-2026-luxury-ev-transition",
+        "source_cluster_id": "cluster:luxury-ev-transition",
+        "gap_type": "perception",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition"
+        ]
+      },
+      {
+        "operation_id": "op:create_topic:premium-suv-segment",
+        "execution_status": "planned",
+        "topic_slug": "premium-suv-segment",
+        "name": "bbh-2026-premium-suv-segment",
+        "source_cluster_id": "cluster:premium-suv-segment",
+        "gap_type": "indexing",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment"
+        ]
+      },
+      {
+        "operation_id": "op:create_topic:electric-i-series",
+        "execution_status": "planned",
+        "topic_slug": "electric-i-series",
+        "name": "bbh-2026-electric-i-series",
+        "source_cluster_id": "cluster:electric-i-series",
+        "gap_type": "volume_frequency",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series"
+        ]
+      },
+      {
+        "operation_id": "op:create_topic:brand-heritage",
+        "execution_status": "planned",
+        "topic_slug": "brand-heritage",
+        "name": "bbh-2026-brand-heritage",
+        "source_cluster_id": "cluster:brand-heritage",
+        "gap_type": "perception",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage"
+        ]
+      }
+    ],
+    "planned_tags": [
+      {
+        "operation_id": "op:create_tag:gap-indexing",
+        "execution_status": "planned",
+        "tag_slug": "gap-indexing",
+        "name": "bbh-2026-gap-indexing",
+        "kind": "gap",
+        "description": "Blind spots where owned or credible sources need better AI-answer surfacing."
+      },
+      {
+        "operation_id": "op:create_tag:gap-perception",
+        "execution_status": "planned",
+        "tag_slug": "gap-perception",
+        "name": "bbh-2026-gap-perception",
+        "kind": "gap",
+        "description": "Blind spots where the brand association is missing or weaker than competitors."
+      },
+      {
+        "operation_id": "op:create_tag:gap-volume-frequency",
+        "execution_status": "planned",
+        "tag_slug": "gap-volume-frequency",
+        "name": "bbh-2026-gap-volume-frequency",
+        "kind": "gap",
+        "description": "Blind spots where public proof and repeated category presence are too sparse."
+      },
+      {
+        "operation_id": "op:create_tag:geo-us",
+        "execution_status": "planned",
+        "tag_slug": "geo-us",
+        "name": "bbh-2026-geo-us",
+        "kind": "geo",
+        "description": "Marks planned operations targeting the United States market."
+      },
+      {
+        "operation_id": "op:create_tag:geo-de",
+        "execution_status": "planned",
+        "tag_slug": "geo-de",
+        "name": "bbh-2026-geo-de",
+        "kind": "geo",
+        "description": "Marks planned operations targeting the Germany market."
+      },
+      {
+        "operation_id": "op:create_tag:geo-gb",
+        "execution_status": "planned",
+        "tag_slug": "geo-gb",
+        "name": "bbh-2026-geo-gb",
+        "kind": "geo",
+        "description": "Marks planned operations targeting the Great Britain market."
+      }
+    ],
+    "planned_prompts": [
+      {
+        "operation_id": "op:create_prompt:luxury-ev-transition:us",
+        "execution_status": "planned",
+        "prompt_slug": "luxury-ev-transition:us",
+        "text": "Which luxury ev transition options should buyers consider when they want distinctive alternatives to Tesla?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "luxury-ev-transition",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:luxury-ev-transition",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:luxury-ev-transition:de",
+        "execution_status": "planned",
+        "prompt_slug": "luxury-ev-transition:de",
+        "text": "Which luxury ev transition options should buyers consider when they want distinctive alternatives to Tesla?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "luxury-ev-transition",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:luxury-ev-transition",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:luxury-ev-transition:gb",
+        "execution_status": "planned",
+        "prompt_slug": "luxury-ev-transition:gb",
+        "text": "Which luxury ev transition options should buyers consider when they want distinctive alternatives to Tesla?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "luxury-ev-transition",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:luxury-ev-transition",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:premium-suv-segment:us",
+        "execution_status": "planned",
+        "prompt_slug": "premium-suv-segment:us",
+        "text": "Which premium suv segment options should buyers consider when they want credible alternatives in the category?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "premium-suv-segment",
+        "gap_type": "indexing",
+        "tag_refs": [
+          "gap-indexing",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:premium-suv-segment",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:premium-suv-segment:de",
+        "execution_status": "planned",
+        "prompt_slug": "premium-suv-segment:de",
+        "text": "Which premium suv segment options should buyers consider when they want credible alternatives in the category?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "premium-suv-segment",
+        "gap_type": "indexing",
+        "tag_refs": [
+          "gap-indexing",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:premium-suv-segment",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:premium-suv-segment:gb",
+        "execution_status": "planned",
+        "prompt_slug": "premium-suv-segment:gb",
+        "text": "Which premium suv segment options should buyers consider when they want credible alternatives in the category?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "premium-suv-segment",
+        "gap_type": "indexing",
+        "tag_refs": [
+          "gap-indexing",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:premium-suv-segment",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:electric-i-series:us",
+        "execution_status": "planned",
+        "prompt_slug": "electric-i-series:us",
+        "text": "Which electric i-series options should buyers consider when they want proven alternatives to the market leader?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "electric-i-series",
+        "gap_type": "volume_frequency",
+        "tag_refs": [
+          "gap-volume-frequency",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:electric-i-series",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:electric-i-series:de",
+        "execution_status": "planned",
+        "prompt_slug": "electric-i-series:de",
+        "text": "Which electric i-series options should buyers consider when they want proven alternatives to the market leader?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "electric-i-series",
+        "gap_type": "volume_frequency",
+        "tag_refs": [
+          "gap-volume-frequency",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:electric-i-series",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:electric-i-series:gb",
+        "execution_status": "planned",
+        "prompt_slug": "electric-i-series:gb",
+        "text": "Which electric i-series options should buyers consider when they want proven alternatives to the market leader?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "electric-i-series",
+        "gap_type": "volume_frequency",
+        "tag_refs": [
+          "gap-volume-frequency",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:electric-i-series",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:brand-heritage:us",
+        "execution_status": "planned",
+        "prompt_slug": "brand-heritage:us",
+        "text": "Which brand heritage options should buyers consider when they want distinctive alternatives to Mercedes-Benz?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "US",
+        "topic_slug": "brand-heritage",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-us"
+        ],
+        "source_cluster_id": "cluster:brand-heritage",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:brand-heritage:de",
+        "execution_status": "planned",
+        "prompt_slug": "brand-heritage:de",
+        "text": "Which brand heritage options should buyers consider when they want distinctive alternatives to Mercedes-Benz?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "DE",
+        "topic_slug": "brand-heritage",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-de"
+        ],
+        "source_cluster_id": "cluster:brand-heritage",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage"
+        ]
+      },
+      {
+        "operation_id": "op:create_prompt:brand-heritage:gb",
+        "execution_status": "planned",
+        "prompt_slug": "brand-heritage:gb",
+        "text": "Which brand heritage options should buyers consider when they want distinctive alternatives to Mercedes-Benz?",
+        "prompt_language": "en",
+        "prompt_text_source": "templated",
+        "country_code": "GB",
+        "topic_slug": "brand-heritage",
+        "gap_type": "perception",
+        "tag_refs": [
+          "gap-perception",
+          "geo-gb"
+        ],
+        "source_cluster_id": "cluster:brand-heritage",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage"
+        ]
+      }
+    ]
+  },
+  "tavily": null,
+  "gemini": {
+    "findings": [
+      {
+        "finding_id": "gemini:analysis:luxury-ev-transition:v1",
+        "cluster_id": "cluster:luxury-ev-transition",
+        "cluster_label": "Luxury EV Transition",
+        "gap_type": "perception",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "luxury ev transition association",
+          "category positioning"
+        ],
+        "missing_associations": [
+          "luxury ev transition association"
+        ],
+        "competitor_association": "Tesla is the Peec-visible owner",
+        "safe_scenario_wording": "Treat Luxury EV Transition as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:luxury-ev-transition",
+          "study_ssot:row:luxury-ev-transition",
+          "gemini:analysis:luxury-ev-transition:v1"
+        ]
+      },
+      {
+        "finding_id": "gemini:analysis:premium-suv-segment:v1",
+        "cluster_id": "cluster:premium-suv-segment",
+        "cluster_label": "Premium SUV Segment",
+        "gap_type": "indexing",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "premium suv segment discoverability",
+          "owned content surfacing"
+        ],
+        "missing_associations": [
+          "clear premium suv segment proof surfaced in AI answers"
+        ],
+        "competitor_association": "Mercedes-Benz is the Peec-visible owner",
+        "safe_scenario_wording": "Treat Premium SUV Segment as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:premium-suv-segment",
+          "study_ssot:row:premium-suv-segment",
+          "gemini:analysis:premium-suv-segment:v1"
+        ]
+      },
+      {
+        "finding_id": "gemini:analysis:electric-i-series:v1",
+        "cluster_id": "cluster:electric-i-series",
+        "cluster_label": "Electric i-Series",
+        "gap_type": "volume_frequency",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "electric i-series presence",
+          "category coverage depth"
+        ],
+        "missing_associations": [
+          "repeated electric i-series association"
+        ],
+        "competitor_association": "Tesla is the Peec-visible owner",
+        "safe_scenario_wording": "Treat Electric i-Series as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:electric-i-series",
+          "study_ssot:row:electric-i-series",
+          "gemini:analysis:electric-i-series:v1"
+        ]
+      },
+      {
+        "finding_id": "gemini:analysis:brand-heritage:v1",
+        "cluster_id": "cluster:brand-heritage",
+        "cluster_label": "Brand Heritage",
+        "gap_type": "perception",
+        "source_of_record": "gemini",
+        "perception_themes": [
+          "brand heritage association",
+          "category positioning"
+        ],
+        "missing_associations": [
+          "brand heritage association"
+        ],
+        "competitor_association": "Mercedes-Benz is the Peec-visible owner",
+        "safe_scenario_wording": "Treat Brand Heritage as a provisional diagnostic gap until live Gemini analysis is available.",
+        "gap_type_support": "supports",
+        "rationale": "Local deterministic substitute used because live Gemini quota was unavailable; replace with a live Gemini run before public claims.",
+        "evidence_refs": [
+          "peec:snapshot:bmw:2026-04-25",
+          "peec:topic:brand-heritage",
+          "study_ssot:row:brand-heritage",
+          "gemini:analysis:brand-heritage:v1"
+        ]
+      }
+    ],
+    "summary": {
+      "analyzed_rows": 4,
+      "supported_gap_types": 4,
+      "conflicted_gap_types": 0,
+      "insufficient_gap_types": 0
+    }
+  },
+  "manifest": {
+    "brand": "BMW",
+    "competitors": [
+      "Tesla",
+      "Mercedes-Benz",
+      "Audi",
+      "Porsche",
+      "Lexus",
+      "Volvo",
+      "Genesis",
+      "Rivian",
+      "Lucid",
+      "Hyundai",
+      "Toyota"
+    ],
+    "generated_at": "2026-04-25T00:00:00Z",
+    "artifact_version": "0.2.0-step2",
+    "taxonomy_version": "2026-04-25-demo",
+    "campaign_type_mapping_version": null,
+    "peec_snapshot_id": "peec:snapshot:bmw:2026-04-25",
+    "published": false,
+    "sources": {
+      "peec_mcp": {
+        "snapshot_id": "peec:snapshot:bmw:2026-04-25",
+        "prompt_count": 50,
+        "query_count": null,
+        "source_count": null,
+        "analysis_runs": null,
+        "dashboard_url": null
+      },
+      "tavily": {
+        "snapshot_id": null,
+        "prompt_count": null,
+        "query_count": 0,
+        "source_count": 0,
+        "analysis_runs": null,
+        "dashboard_url": null
+      },
+      "gemini": {
+        "snapshot_id": null,
+        "prompt_count": null,
+        "query_count": null,
+        "source_count": null,
+        "analysis_runs": 4,
+        "dashboard_url": null
+      },
+      "lovable": {
+        "snapshot_id": null,
+        "prompt_count": null,
+        "query_count": null,
+        "source_count": null,
+        "analysis_runs": null,
+        "dashboard_url": null
+      }
+    },
+    "confidence_counts": {
+      "strong": 0,
+      "moderate": 5,
+      "limited": 0,
+      "blocked": 0
+    },
+    "quality_counts": {
+      "strong": 0,
+      "moderate": 5,
+      "limited": 0,
+      "blocked": 0
+    },
+    "unavailable_reason_counts": {
+      "PROMPT_COUNT_BY_TOPIC_UNAVAILABLE_IN_DOCS_GROUNDED_SEED": 5
+    },
+    "freshness": {
+      "status": "docs_grounded_seed",
+      "generated_at": "2026-04-25T00:00:00Z",
+      "newer_snapshot_available": false
+    },
+    "comparability": {
+      "comparable_to_previous": false,
+      "reason": "First generated baseline from MCP-verified docs."
+    },
+    "pipeline_summary": {
+      "raw_prompts": 50,
+      "clusters": 5,
+      "evidence_gated": 4,
+      "actionable_recommendations": 7
+    },
+    "artifacts": [
+      "prompt_universe.json",
+      "study_ssot.json",
+      "manifest.json",
+      "source_of_record.json",
+      "pipeline_funnel.json",
+      "hero_cards.json",
+      "gemini_analysis.json",
+      "tavily_evidence.json",
+      "gap_classification.json",
+      "EVIDENCE_LEDGER.json",
+      "value_added_metrics.json",
+      "competitor_landscape.json",
+      "prescription_plan.json"
+    ]
+  }
+}
