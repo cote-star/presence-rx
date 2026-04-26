@@ -28,8 +28,8 @@ OUTPUT_NAME = "ACTION_BRIEF.md"
 
 GAP_TYPE_NAMES = {
     GapType.PERCEPTION: "Perception",
-    GapType.INDEXING: "Indexing",
-    GapType.VOLUME_FREQUENCY: "Volume / Frequency",
+    GapType.INDEXING: "Discovery",
+    GapType.VOLUME_FREQUENCY: "Attention",
 }
 
 INTERVENTION_CLASS = {

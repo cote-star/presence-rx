@@ -26,8 +26,8 @@ OUTPUT_NAME = "ACTIVATION_BRIEF.md"
 
 GAP_TYPE_SECTION_NAMES = {
     GapType.PERCEPTION: "Perception Gaps",
-    GapType.INDEXING: "Indexing Gaps",
-    GapType.VOLUME_FREQUENCY: "Volume / Frequency Gaps",
+    GapType.INDEXING: "Discovery Gaps",
+    GapType.VOLUME_FREQUENCY: "Attention Gaps",
 }
 
 

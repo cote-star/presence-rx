@@ -46,7 +46,7 @@ def test_activation_brief_groups_by_gap_type() -> None:
         brand_config=brand_config,
     )
     assert "Perception Gaps" in content
-    assert "Indexing Gaps" in content
+    assert "Discovery Gaps" in content
 
 
 def test_activation_brief_uses_brand_config_channels() -> None:

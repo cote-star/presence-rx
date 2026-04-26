@@ -18,6 +18,8 @@ Public-facing labels used in the dashboard, markdown deliverables, and documenta
 | prescription | Prescriptions | Action Plan | User-facing action output |
 | value_added_metrics | Value-added metrics | Priority Signals | Not consulting jargon |
 | proof_gap | Proof gap | Evidence Gap | Standard term |
+| indexing (gap_type) | Indexing | Discovery | Content exists but AI doesn't surface it |
+| volume_frequency (gap_type) | Volume / Frequency | Attention | Product exists but public signal is sparse |
 
 ## Peec-Standard Terms (keep unchanged)
 

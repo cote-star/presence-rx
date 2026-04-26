@@ -632,7 +632,7 @@
       },
       {
         "claim_id": "claim:attio:modern-crm-alternative:v1",
-        "claim": "Attio has an indexing blind spot in Modern CRM Alternative; evidence is moderate.",
+        "claim": "Attio has a discovery blind spot in Modern CRM Alternative; evidence is moderate.",
         "status": "directional",
         "cluster_id": "cluster:modern-crm-alternative",
         "methods": [
@@ -653,7 +653,7 @@
       },
       {
         "claim_id": "claim:attio:crm-migration:v1",
-        "claim": "Attio has a volume / frequency blind spot in CRM Migration; evidence is moderate.",
+        "claim": "Attio has an attention blind spot in CRM Migration; evidence is moderate.",
         "status": "directional",
         "cluster_id": "cluster:crm-migration",
         "methods": [

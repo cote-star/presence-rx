@@ -57,7 +57,7 @@
 - **AI perception:** category positioning
 - **Missing association:** brand heritage association
 
-### Indexing Gaps (Premium SUV Segment)
+### Discovery Gaps (Premium SUV Segment)
 
 **Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
 
@@ -74,7 +74,7 @@
 - **AI perception:** owned content surfacing
 - **Missing association:** clear premium suv segment proof surfaced in AI answers
 
-### Volume / Frequency Gaps (Electric i-Series)
+### Attention Gaps (Electric i-Series)
 
 **Intervention class:** Content creation + distribution + amplification; sustained editorial outreach; UGC seeding
 
@@ -100,8 +100,8 @@
 | Topic | Gap Type | Source Cluster |
 |-------|----------|----------------|
 | bbh-2026-luxury-ev-transition | perception | cluster:luxury-ev-transition |
-| bbh-2026-premium-suv-segment | indexing | cluster:premium-suv-segment |
-| bbh-2026-electric-i-series | volume / frequency | cluster:electric-i-series |
+| bbh-2026-premium-suv-segment | discovery | cluster:premium-suv-segment |
+| bbh-2026-electric-i-series | attention | cluster:electric-i-series |
 | bbh-2026-brand-heritage | perception | cluster:brand-heritage |
 
 ### Planned Prompts (sample)
@@ -111,9 +111,9 @@
 | Which luxury ev transition options should buyers consider when they want distinc... | US | perception |
 | Which luxury ev transition options should buyers consider when they want distinc... | DE | perception |
 | Which luxury ev transition options should buyers consider when they want distinc... | GB | perception |
-| Which premium suv segment options should buyers consider when they want credible... | US | indexing |
-| Which premium suv segment options should buyers consider when they want credible... | DE | indexing |
-| Which premium suv segment options should buyers consider when they want credible... | GB | indexing |
+| Which premium suv segment options should buyers consider when they want credible... | US | discovery |
+| Which premium suv segment options should buyers consider when they want credible... | DE | discovery |
+| Which premium suv segment options should buyers consider when they want credible... | GB | discovery |
 | *...and 6 more* | | |
 
 ### Planned Tags

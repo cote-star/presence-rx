@@ -90,7 +90,7 @@ Nothing Phone has **4 blind spots** requiring activation across **3 intervention
 - **Claim to avoid:** Nothing Phone is the leading minimalist hardware brand
 - **Safe alternative:** Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.
 
-## Indexing Gaps
+## Discovery Gaps
 
 ### Mobile Ecosystem
 
@@ -133,7 +133,7 @@ Nothing Phone has **4 blind spots** requiring activation across **3 intervention
 - **Claim to avoid:** Nothing Phone is the leading mobile ecosystem brand
 - **Safe alternative:** Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.
 
-## Volume / Frequency Gaps
+## Attention Gaps
 
 ### Wireless Audio
 

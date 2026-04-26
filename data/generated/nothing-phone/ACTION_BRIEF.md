@@ -66,7 +66,7 @@
 - **Missing association:** Nothing Phone transparent-back Glyph-light design as defining hardware minimalism
 - **Missing association:** Nothing brand philosophy (pure instinct design, stripped-back UI) as deliberate minimalist position
 
-### Indexing Gaps (Mobile Ecosystem)
+### Discovery Gaps (Mobile Ecosystem)
 
 **Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
 
@@ -84,7 +84,7 @@
 - **Missing association:** Nothing Phone as ecosystem participant with nothing.community and cross-device line (Phone, Ear, Headphone)
 - **Missing association:** Nothing OS as differentiated Android-based software layer with ecosystem continuity
 
-### Volume / Frequency Gaps (Wireless Audio)
+### Attention Gaps (Wireless Audio)
 
 **Intervention class:** Content creation + distribution + amplification; sustained editorial outreach; UGC seeding
 
@@ -110,18 +110,18 @@
 
 | Topic | Gap Type | Source Cluster |
 |-------|----------|----------------|
-| bbh-2026-mobile-ecosystem | indexing | cluster:mobile-ecosystem |
+| bbh-2026-mobile-ecosystem | discovery | cluster:mobile-ecosystem |
 | bbh-2026-consumer-tech-innovation | perception | cluster:consumer-tech-innovation |
 | bbh-2026-minimalist-hardware | perception | cluster:minimalist-hardware |
-| bbh-2026-wireless-audio | volume / frequency | cluster:wireless-audio |
+| bbh-2026-wireless-audio | attention | cluster:wireless-audio |
 
 ### Planned Prompts (sample)
 
 | Prompt | Country | Gap Type |
 |--------|---------|----------|
-| Which mobile ecosystem options should buyers consider when they want credible al... | US | indexing |
-| Which mobile ecosystem options should buyers consider when they want credible al... | DE | indexing |
-| Which mobile ecosystem options should buyers consider when they want credible al... | GB | indexing |
+| Which mobile ecosystem options should buyers consider when they want credible al... | US | discovery |
+| Which mobile ecosystem options should buyers consider when they want credible al... | DE | discovery |
+| Which mobile ecosystem options should buyers consider when they want credible al... | GB | discovery |
 | Which consumer tech innovation options should buyers consider when they want dis... | US | perception |
 | Which consumer tech innovation options should buyers consider when they want dis... | DE | perception |
 | Which consumer tech innovation options should buyers consider when they want dis... | GB | perception |

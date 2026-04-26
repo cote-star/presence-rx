@@ -8,15 +8,15 @@ from __future__ import annotations
 
 GAP_TYPE_LABELS: dict[str | None, str] = {
     "perception": "perception",
-    "indexing": "indexing",
-    "volume_frequency": "volume / frequency",
+    "indexing": "discovery",
+    "volume_frequency": "attention",
     None: "stronghold",
 }
 
 GAP_TYPE_ARTICLE: dict[str | None, str] = {
     "perception": "a perception",
-    "indexing": "an indexing",
-    "volume_frequency": "a volume / frequency",
+    "indexing": "a discovery",
+    "volume_frequency": "an attention",
     None: "",
 }
 

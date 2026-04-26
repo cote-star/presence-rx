@@ -48,8 +48,8 @@ def test_action_brief_groups_by_gap_type() -> None:
         metrics=metrics,
     )
     assert "### Perception Gaps" in content
-    assert "### Indexing Gaps" in content
-    assert "### Volume / Frequency Gaps" in content
+    assert "### Discovery Gaps" in content
+    assert "### Attention Gaps" in content
 
 
 def test_action_brief_includes_prescription_data() -> None:

@@ -3,8 +3,8 @@
 export function humanGapType(gapType: string | null): string {
   const labels: Record<string, string> = {
     perception: "Perception",
-    indexing: "Indexing",
-    volume_frequency: "Volume / Frequency",
+    indexing: "Discovery",
+    volume_frequency: "Attention",
   };
   return gapType ? labels[gapType] || gapType : "Stronghold";
 }

@@ -1373,8 +1373,8 @@ document.getElementById('cards').innerHTML = [
 const GAP_TYPE_ORDER = ['perception', 'indexing', 'volume_frequency'];
 const GAP_TYPE_NAMES = {
   perception: 'Perception',
-  indexing: 'Indexing',
-  volume_frequency: 'Volume / Frequency'
+  indexing: 'Discovery',
+  volume_frequency: 'Attention'
 };
 const INTERVENTION_CLASS = {
   perception: 'Positioning + messaging correction; reframing content with explicit trait language',
@@ -3015,8 +3015,8 @@ const plotConfig = { displayModeBar: false, responsive: true };
 const GAP_TYPE_ORDER = ['perception', 'indexing', 'volume_frequency'];
 const GAP_TYPE_NAMES = {
   perception: 'Perception',
-  indexing: 'Indexing',
-  volume_frequency: 'Volume / Frequency'
+  indexing: 'Discovery',
+  volume_frequency: 'Attention'
 };
 const INTERVENTION_CLASS = {
   perception: 'Positioning + messaging correction; reframing content with explicit trait language',

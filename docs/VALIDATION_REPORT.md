@@ -2,6 +2,8 @@
 
 Date: 2026-04-25 (Saturday afternoon, post-lock)
 
+> Historical planning snapshot. For current test counts, artifact status, and public terminology, use `docs/PROGRESS.md`, `docs/_STATUS.md`, and `docs/TERMINOLOGY.md`.
+
 ## Current State
 
 The Peec repo is locked, planned, and partially data-validated. It contains:
@@ -10,7 +12,7 @@ The Peec repo is locked, planned, and partially data-validated. It contains:
 - agent coordination notes and locked lane assignments
 - public-safe methodology docs
 - artifact contracts
-- guardrail rules
+- claim-check rules
 - campaign and parent-topic taxonomy guidance
 - end-to-end build guide and demo storyboard
 - public-safety checklist
@@ -41,7 +43,7 @@ It does not yet contain application code, generated artifacts, or a wired Lovabl
 | README positioning | pass | Status reflects locked scope; SCOPE_FINAL is the first link. |
 | Build guide | pass with gap | End-to-end flow, build order, dashboard wireframes, demo script documented. Channel / engine pipeline branches still need to be merged into the single-axis build guide. |
 | Artifact contracts | pass with implementation gap | Contracts present and schema examples polished. No generator code yet. |
-| Guardrails | pass with implementation gap | Rules coherent and method ladder documented. Need code and tests. |
+| Claim checks | pass with implementation gap | Rules coherent and method ladder documented. Need code and tests. |
 | Partner tech eligibility | open | Gemini + Tavily + Lovable promoted to Tier 1 (eligibility-critical) in SCOPE_FINAL with Entire fallback by Saturday 17:00. Lovable not yet integrated. Confirm Peec MCP eligibility with organisers. |
 | Public safety | pass for docs | Sensitive-name scan and ASCII scan are clean across README, agent files, and docs. Re-run on every generated artifact. |
 | Generated outputs | missing | No `PRESENCE_VERDICT.md`, `ACTION_BRIEF.md`, `EVIDENCE_LEDGER.json`, or `manifest.json` yet. |

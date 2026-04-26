@@ -86,7 +86,7 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 - **Claim to avoid:** Attio is the leading revops tools brand
 - **Safe alternative:** Attio is emerging in the revops tools category, currently behind HubSpot in AI visibility.
 
-## Indexing Gaps
+## Discovery Gaps
 
 ### Modern CRM Alternative
 
@@ -128,7 +128,7 @@ Attio has **4 blind spots** requiring activation across **3 intervention classes
 - **Claim to avoid:** Attio is the leading modern crm alternative brand
 - **Safe alternative:** Attio is emerging in the modern crm alternative category, currently behind Salesforce in AI visibility.
 
-## Volume / Frequency Gaps
+## Attention Gaps
 
 ### CRM Migration
 

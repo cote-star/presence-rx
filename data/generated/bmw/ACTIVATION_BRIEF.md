@@ -86,7 +86,7 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - Tavily search must find BMW editorial coverage for this topic
 - At least one independent review mentioning BMW + Brand Heritage
 
-## Indexing Gaps
+## Discovery Gaps
 
 ### Premium SUV Segment
 
@@ -128,7 +128,7 @@ BMW has **4 blind spots** requiring activation across **3 intervention classes**
 - **Claim to avoid:** BMW is the leading premium suv segment brand
 - **Safe alternative:** BMW is emerging in the premium suv segment category, currently behind Mercedes-Benz in AI visibility.
 
-## Volume / Frequency Gaps
+## Attention Gaps
 
 ### Electric i-Series
 

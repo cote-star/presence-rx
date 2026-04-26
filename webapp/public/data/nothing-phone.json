@@ -643,7 +643,7 @@
     "claims": [
       {
         "claim_id": "claim:nothing-phone:mobile-ecosystem:v1",
-        "claim": "Nothing Phone has an indexing blind spot in Mobile Ecosystem; evidence is strong.",
+        "claim": "Nothing Phone has a discovery blind spot in Mobile Ecosystem; evidence is strong.",
         "status": "directional",
         "cluster_id": "cluster:mobile-ecosystem",
         "methods": [
@@ -712,7 +712,7 @@
       },
       {
         "claim_id": "claim:nothing-phone:wireless-audio:v1",
-        "claim": "Nothing Phone has a volume / frequency blind spot in Wireless Audio; evidence is strong.",
+        "claim": "Nothing Phone has an attention blind spot in Wireless Audio; evidence is strong.",
         "status": "directional",
         "cluster_id": "cluster:wireless-audio",
         "methods": [

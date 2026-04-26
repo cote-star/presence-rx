@@ -31,7 +31,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 ### Premium SUV Segment
 
 - **Visibility:** 15% | **Position:** 2.5
-- **Gap type:** indexing
+- **Gap type:** discovery
 - **Competitor:** Mercedes-Benz dominates at N/A vs BMW at 15%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Premium SUV Segment as a provisional diagnostic gap until live Gemini analysis is available.
@@ -40,7 +40,7 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 ### Electric i-Series
 
 - **Visibility:** 6% | **Position:** 3.5
-- **Gap type:** volume / frequency
+- **Gap type:** attention
 - **Competitor:** Tesla dominates at N/A vs BMW at 6%
 - **Classification:** confirmed (moderate) | **Signal Alignment:** 100%
 - **Diagnostic:** Treat Electric i-Series as a provisional diagnostic gap until live Gemini analysis is available.
@@ -61,8 +61,8 @@ BMW has **5 tracked topics**, of which **1 is a stronghold** and **4 are blind s
 |-------|-----------|----------|--------|----------------|-----------------|-----------------|
 | Driving Dynamics | 45% | stronghold | N/A | moderate | N/A | 18 |
 | Luxury EV Transition | 12% | perception | confirmed | moderate | 100% | 59 |
-| Premium SUV Segment | 15% | indexing | confirmed | moderate | 100% | 57 |
-| Electric i-Series | 6% | volume / frequency | confirmed | moderate | 100% | 62 |
+| Premium SUV Segment | 15% | discovery | confirmed | moderate | 100% | 57 |
+| Electric i-Series | 6% | attention | confirmed | moderate | 100% | 62 |
 | Brand Heritage | 30% | perception | confirmed | moderate | 100% | 52 |
 
 ## Evidence Chain

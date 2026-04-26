@@ -57,7 +57,7 @@
 - **AI perception:** category positioning
 - **Missing association:** revops tools association
 
-### Indexing Gaps (Modern CRM Alternative)
+### Discovery Gaps (Modern CRM Alternative)
 
 **Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
 
@@ -74,7 +74,7 @@
 - **AI perception:** owned content surfacing
 - **Missing association:** clear modern crm alternative proof surfaced in AI answers
 
-### Volume / Frequency Gaps (CRM Migration)
+### Attention Gaps (CRM Migration)
 
 **Intervention class:** Content creation + distribution + amplification; sustained editorial outreach; UGC seeding
 
@@ -100,8 +100,8 @@
 | Topic | Gap Type | Source Cluster |
 |-------|----------|----------------|
 | bbh-2026-crm-for-startups | perception | cluster:crm-for-startups |
-| bbh-2026-modern-crm-alternative | indexing | cluster:modern-crm-alternative |
-| bbh-2026-crm-migration | volume / frequency | cluster:crm-migration |
+| bbh-2026-modern-crm-alternative | discovery | cluster:modern-crm-alternative |
+| bbh-2026-crm-migration | attention | cluster:crm-migration |
 | bbh-2026-revops-tools | perception | cluster:revops-tools |
 
 ### Planned Prompts (sample)
@@ -111,9 +111,9 @@
 | Which crm for startups options should buyers consider when they want distinctive... | US | perception |
 | Which crm for startups options should buyers consider when they want distinctive... | DE | perception |
 | Which crm for startups options should buyers consider when they want distinctive... | GB | perception |
-| Which modern crm alternative options should buyers consider when they want credi... | US | indexing |
-| Which modern crm alternative options should buyers consider when they want credi... | DE | indexing |
-| Which modern crm alternative options should buyers consider when they want credi... | GB | indexing |
+| Which modern crm alternative options should buyers consider when they want credi... | US | discovery |
+| Which modern crm alternative options should buyers consider when they want credi... | DE | discovery |
+| Which modern crm alternative options should buyers consider when they want credi... | GB | discovery |
 | *...and 6 more* | | |
 
 ### Planned Tags

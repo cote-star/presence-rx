@@ -53,6 +53,34 @@ Output:
   - Risk note: "Budget split is a planning hypothesis grounded in external priors, not a causal proof."
 ```
 
+## Multimodal Recommendation Context
+
+The future webapp should turn each action-brief recommendation into a visual context pack. The user should not only read "publish proof" or "fix indexing"; they should see the surfaces, audiences, and example assets that make the recommendation operational.
+
+For each gap, render:
+
+| Context block | What the user sees | Evidence posture |
+|---|---|---|
+| Influence map | Owned pages, earned publishers, creator/video surfaces, community threads, retailer/review surfaces, and Peec monitor prompts connected to the gap | Peec/Tavily-backed where available; illustrative where marked |
+| Place-to-engage cards | Concrete places to act: review sites, YouTube comparisons, Reddit threads, product pages, FAQ modules, schema blocks, category explainers | Uses Peec source/action data when available; otherwise mock preview |
+| Audience card | Buyer segment, intent stage, likely question, objection, and desired association shift | Brand config + Peec topic context |
+| Content mock | Example page module, creator brief, comparison outline, editorial pitch, FAQ answer, or community prompt | Mocked unless linked to generated artifacts |
+| Multimodal prompt pack | Text, image, video, and search prompts to brief creators or test retrieval | Public-safe generated examples |
+| Measurement hook | Peec topic/tag/prompt to rerun after activation | Pipeline-backed |
+
+Example for a perception gap:
+
+```text
+Gap: Minimalist Hardware
+Audience: design-conscious Android buyers
+Places to engage: design press, YouTube phone reviews, nothing.tech design page, Reddit buyer threads
+Content mock: "Why transparent minimalist hardware changes phone interaction" page module
+Measurement hook: rerun minimalist/design-first phone prompts in Peec after publication
+Safe claim: "Nothing Phone has an opportunity to strengthen minimalist-hardware association"; do not claim category leadership until Peec visibility supports it.
+```
+
+Mocked examples are allowed in the public future-direction page if they are clearly labeled. The rule is simple: show the *shape* of the activation workflow publicly, keep any licensed benchmark data or engagement-specific calibration outside the repo.
+
 ## Five-Channel Taxonomy
 
 Activation is split across five channel categories — clearer than a binary "editorial vs UGC" framing:
@@ -77,6 +105,26 @@ The webapp page would render an example like the table below. **The numbers show
 | Consumer Tech Innovation | Perception | Earned / editorial | 5% |
 
 These percentages are **illustrative**. The production version would derive them from the gap-weighted activation planner using external benchmark priors.
+
+## Brand-Lift and Audience Engagement Preview
+
+The activation layer can also show a brand-lift planning view. This should be framed as a planning hypothesis, not a measured outcome.
+
+Public-safe preview modules:
+
+- **Brand-lift hypothesis:** what association should move, for which audience, after which asset goes live.
+- **Channel optimization:** channel priority by gap type using illustrative shares, not permissioned spend exports.
+- **Audience engagement plan:** segment -> intent -> channel -> message -> evidence -> Peec monitor prompt.
+- **Creative examples:** mocked page blocks, social/video briefs, creator talking points, and FAQ modules.
+- **Measurement loop:** Peec prompts and tags that would prove whether the association or source presence improved.
+
+Example:
+
+| Gap | Audience | Channel | Engagement asset | Peec measurement |
+|---|---|---|---|---|
+| Minimalist Hardware | Design-conscious Android buyers | Earned design press + owned design page | Editorial pitch + page module mock | Monitor design-first/minimalist phone prompts |
+| Mobile Ecosystem | Switchers comparing ecosystems | Owned canonical page + FAQ schema | Ecosystem compatibility explainer | Monitor ecosystem alternative prompts |
+| Wireless Audio | Android audio buyers | Creator/YouTube + review outreach | Creator brief + comparison outline | Monitor wireless audio recommendation prompts |
 
 ## What's Out of Scope for the Public Repo
 

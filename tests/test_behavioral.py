@@ -397,8 +397,8 @@ def test_action_brief_groups_topics_by_gap_type():
 
     # Find the Perception section and verify it contains the right topics
     perception_header = "### Perception Gaps"
-    indexing_header = "### Indexing Gaps"
-    volume_header = "### Volume / Frequency Gaps"
+    indexing_header = "### Discovery Gaps"
+    volume_header = "### Attention Gaps"
 
     assert perception_header in md, f"Missing section: {perception_header}"
     assert indexing_header in md, f"Missing section: {indexing_header}"
@@ -425,7 +425,7 @@ def test_action_brief_groups_topics_by_gap_type():
     # Volume section should list Wireless Audio
     volume_section = md[volume_start:]
     assert "Wireless Audio" in volume_section, (
-        "Wireless Audio should be in the Volume / Frequency section"
+        "Wireless Audio should be in the Attention section"
     )
 
 
