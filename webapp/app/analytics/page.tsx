@@ -164,8 +164,8 @@ export default function AnalyticsPage() {
   const legendItems = [
     { label: "Stronghold", color: STRONGHOLD_COLOR },
     { label: "Perception", color: GAP_COLORS.perception },
-    { label: "Indexing", color: GAP_COLORS.indexing },
-    { label: "Volume / Frequency", color: GAP_COLORS.volume_frequency },
+    { label: "Discovery", color: GAP_COLORS.indexing },
+    { label: "Attention", color: GAP_COLORS.volume_frequency },
   ];
 
   return (

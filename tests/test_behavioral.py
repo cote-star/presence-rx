@@ -370,10 +370,10 @@ def test_full_pipeline_produces_expected_artifact_counts():
 
 
 def test_action_brief_groups_topics_by_gap_type():
-    """Perception section has Minimalist+Innovation, Indexing has Mobile, Volume has Wireless.
+    """Perception section has Minimalist+Innovation, Discovery has Mobile, Attention has Wireless.
 
     WHY: The action brief groups blind spots by intervention class
-    (perception, indexing, volume_frequency).  If topics land in the
+    (perception, discovery, attention).  If topics land in the
     wrong section, the recommended actions will be wrong.
     """
     artifacts = _artifacts()
@@ -415,11 +415,11 @@ def test_action_brief_groups_topics_by_gap_type():
         "Consumer Tech Innovation should be in the Perception section"
     )
 
-    # Indexing section should list Mobile Ecosystem
+    # Discovery section should list Mobile Ecosystem
     volume_start = md.index(volume_header)
-    indexing_section = md[indexing_start:volume_start]
-    assert "Mobile Ecosystem" in indexing_section, (
-        "Mobile Ecosystem should be in the Indexing section"
+    discovery_section = md[indexing_start:volume_start]
+    assert "Mobile Ecosystem" in discovery_section, (
+        "Mobile Ecosystem should be in the Discovery section"
     )
 
     # Volume section should list Wireless Audio

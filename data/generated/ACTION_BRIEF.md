@@ -9,28 +9,28 @@
 - **Blocked claim:** Nothing Phone is the leading mobile ecosystem brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 12% visibility in Mobile Ecosystem while Apple holds 72%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the mobile ecosystem category, currently behind Apple in AI visibility.
-- **Next evidence:** Improve schema markup
+- **Next evidence:** Improve schema markup and structured data for this topic
 
 ### challenged:consumer-tech-innovation:v1
 
 - **Blocked claim:** Nothing Phone is the leading consumer tech innovation brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 10% visibility in Consumer Tech Innovation while Apple holds 45%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the consumer tech innovation category, currently behind Apple in AI visibility.
-- **Next evidence:** Publish explicit minimalist positioning content
+- **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:minimalist-hardware:v1
 
 - **Blocked claim:** Nothing Phone is the leading minimalist hardware brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 6% visibility in Minimalist Hardware while Apple holds 39%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the minimalist hardware category, currently behind Apple in AI visibility.
-- **Next evidence:** Publish explicit minimalist positioning content
+- **Next evidence:** Publish explicit positioning content for this topic
 
 ### challenged:wireless-audio:v1
 
 - **Blocked claim:** Nothing Phone is the leading wireless audio brand
 - **Reason:** OWNERSHIP_OVERCLAIM: Nothing Phone has 1% visibility in Wireless Audio while Apple holds 53%. Claiming ownership is not supported by Peec data.
 - **Safe rewrite:** Nothing Phone is emerging in the wireless audio category, currently behind Apple in AI visibility.
-- **Next evidence:** Increase editorial coverage
+- **Next evidence:** Increase editorial and public coverage for this topic
 
 ## Actions by Intervention Class
 
@@ -42,7 +42,7 @@
 
 - **Visibility:** 10% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Publish explicit innovation proof and monitor whether AI answers adopt that association.
 - **Action Priority:** 85/100
@@ -56,7 +56,7 @@
 
 - **Visibility:** 6% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Publish minimalist-hardware positioning content and rerun this prompt cluster.
 - **Action Priority:** 87/100
@@ -66,7 +66,7 @@
 - **Missing association:** Nothing Phone transparent-back Glyph-light design as defining hardware minimalism
 - **Missing association:** Nothing brand philosophy (pure instinct design, stripped-back UI) as deliberate minimalist position
 
-### Indexing Gaps (Mobile Ecosystem)
+### Discovery Gaps (Mobile Ecosystem)
 
 **Intervention class:** Schema markup, structured data, AI-citation optimization, source-of-truth canonicalization
 
@@ -74,7 +74,7 @@
 
 - **Visibility:** 12% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Test schema, canonical source pages, and ecosystem prompts after the next Peec snapshot.
 - **Action Priority:** 85/100
@@ -84,7 +84,7 @@
 - **Missing association:** Nothing Phone as ecosystem participant with nothing.community and cross-device line (Phone, Ear, Headphone)
 - **Missing association:** Nothing OS as differentiated Android-based software layer with ecosystem continuity
 
-### Volume / Frequency Gaps (Wireless Audio)
+### Attention Gaps (Wireless Audio)
 
 **Intervention class:** Content creation + distribution + amplification; sustained editorial outreach; UGC seeding
 
@@ -92,7 +92,7 @@
 
 - **Visibility:** 1% | **Competitor:** Apple
 - **Evidence Level:** confirmed (strong)
-- **Recommended Action:** act_now
+- **Recommended Action:** Act now
 - **Reason:** Peec, Gemini, and Tavily agree on a clear prompt-cluster gap.
 - **Recommended next move:** Seed sustained wireless-audio proof across editorial and owned surfaces.
 - **Action Priority:** 84/100
@@ -110,18 +110,18 @@
 
 | Topic | Gap Type | Source Cluster |
 |-------|----------|----------------|
-| bbh-2026-mobile-ecosystem | indexing | cluster:mobile-ecosystem |
+| bbh-2026-mobile-ecosystem | discovery | cluster:mobile-ecosystem |
 | bbh-2026-consumer-tech-innovation | perception | cluster:consumer-tech-innovation |
 | bbh-2026-minimalist-hardware | perception | cluster:minimalist-hardware |
-| bbh-2026-wireless-audio | volume_frequency | cluster:wireless-audio |
+| bbh-2026-wireless-audio | attention | cluster:wireless-audio |
 
 ### Planned Prompts (sample)
 
 | Prompt | Country | Gap Type |
 |--------|---------|----------|
-| Which mobile ecosystem options should buyers consider when they want credible al... | US | indexing |
-| Which mobile ecosystem options should buyers consider when they want credible al... | DE | indexing |
-| Which mobile ecosystem options should buyers consider when they want credible al... | GB | indexing |
+| Which mobile ecosystem options should buyers consider when they want credible al... | US | discovery |
+| Which mobile ecosystem options should buyers consider when they want credible al... | DE | discovery |
+| Which mobile ecosystem options should buyers consider when they want credible al... | GB | discovery |
 | Which consumer tech innovation options should buyers consider when they want dis... | US | perception |
 | Which consumer tech innovation options should buyers consider when they want dis... | DE | perception |
 | Which consumer tech innovation options should buyers consider when they want dis... | GB | perception |
