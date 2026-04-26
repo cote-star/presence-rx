@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { useBrand } from "@/hooks/useBrand";
 import { humanGapType, gapTypeColor, gapTypeBgColor } from "@/lib/display-labels";
 import { ClaimSimulator } from "@/components/interactive/ClaimSimulator";
-import { FileCheck, ArrowUpRight, ShieldOff, Beaker, Search } from "lucide-react";
+import { FileCheck, ArrowUpRight, ShieldOff, Beaker, Search, Eye } from "lucide-react";
+import { TermTooltip } from "@/components/interactive/TermTooltip";
 
 function MetricCard({
   label,
@@ -21,6 +23,7 @@ function MetricCard({
       <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted font-medium">
         <Icon size={12} />
         {label}
+        <TermTooltip term={label} />
       </div>
       <div>
         <div className="text-2xl font-semibold tracking-tight tabular-nums">
@@ -66,13 +69,14 @@ function cleanPublicationLanguage(text: string): string {
 
 export default function EvidencePage() {
   const { data, loading } = useBrand();
+  const [claimFilter, setClaimFilter] = useState<string | null>(null);
 
   if (loading || !data) {
     return (
       <div className="space-y-6">
         <div className="h-8 w-64 bg-peec-tint rounded animate-pulse" />
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          {[...Array(5)].map((_, i) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {[...Array(6)].map((_, i) => (
             <div
               key={i}
               className="h-28 bg-peec-tint rounded-peec-xl animate-pulse"
@@ -106,6 +110,23 @@ export default function EvidencePage() {
   // Unique sources checked
   const sourceCount = evidence.length;
 
+  // Monitor-only claims
+  const monitorOnlyClaims = claims.filter((c) => nonPriorityClusterIds.has(c.cluster_id));
+
+  // Filtered claims based on active card filter
+  const filteredClaims =
+    claimFilter === null
+      ? claims
+      : claimFilter === "all"
+        ? claims
+        : claimFilter === "directional"
+          ? claims.filter((c) => c.status === "directional" && !nonPriorityClusterIds.has(c.cluster_id))
+          : claimFilter === "blocked"
+            ? claims.filter((c) => c.status === "blocked")
+            : claimFilter === "monitor"
+              ? claims.filter((c) => nonPriorityClusterIds.has(c.cluster_id))
+              : claims;
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -118,31 +139,57 @@ export default function EvidencePage() {
         </h1>
         <p className="text-peec-muted mt-1 max-w-2xl">
           Every claim is tracked with evidence level, publication status, and
-          deterministic guardrails. Test your own claims with the simulator
+          evidence guardrails. Test your own claims with the simulator
           below.
         </p>
       </div>
 
       {/* Evidence Summary */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-        <MetricCard
-          label="Claims reviewed"
-          value={String(claims.length)}
-          sub="Total ledger entries"
-          icon={FileCheck}
-        />
-        <MetricCard
-          label="Directional claims"
-          value={String(activeDirectionalClaims.length)}
-          sub="Active-topic, safe for publication"
-          icon={ArrowUpRight}
-        />
-        <MetricCard
-          label="Blocked claims"
-          value={String(blockedClaimsList.length)}
-          sub="Ownership overclaims"
-          icon={ShieldOff}
-        />
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <button
+          onClick={() => setClaimFilter(claimFilter === "all" ? null : "all")}
+          className={`text-left w-full rounded-peec-xl transition-all ${claimFilter === "all" ? "ring-2 ring-pill-indigo" : ""}`}
+        >
+          <MetricCard
+            label="Claims reviewed"
+            value={String(claims.length)}
+            sub="Total ledger entries"
+            icon={FileCheck}
+          />
+        </button>
+        <button
+          onClick={() => setClaimFilter(claimFilter === "directional" ? null : "directional")}
+          className={`text-left w-full rounded-peec-xl transition-all ${claimFilter === "directional" ? "ring-2 ring-pill-green" : ""}`}
+        >
+          <MetricCard
+            label="Directional claims"
+            value={String(activeDirectionalClaims.length)}
+            sub="Active-topic, safe for publication"
+            icon={ArrowUpRight}
+          />
+        </button>
+        <button
+          onClick={() => setClaimFilter(claimFilter === "blocked" ? null : "blocked")}
+          className={`text-left w-full rounded-peec-xl transition-all ${claimFilter === "blocked" ? "ring-2 ring-pill-red" : ""}`}
+        >
+          <MetricCard
+            label="Blocked claims"
+            value={String(blockedClaimsList.length)}
+            sub="Ownership overclaims"
+            icon={ShieldOff}
+          />
+        </button>
+        <button
+          onClick={() => setClaimFilter(claimFilter === "monitor" ? null : "monitor")}
+          className={`text-left w-full rounded-peec-xl transition-all ${claimFilter === "monitor" ? "ring-2 ring-gray-400" : ""}`}
+        >
+          <MetricCard
+            label="Monitor only"
+            value={String(monitorOnlyClaims.length)}
+            sub="Deprioritized topics"
+            icon={Eye}
+          />
+        </button>
         <MetricCard
           label="Methods used"
           value={String(allMethods.size)}
@@ -162,6 +209,19 @@ export default function EvidencePage() {
         <h2 className="text-peec-lg font-semibold tracking-tight border-b border-peec-hairline pb-2">
           Claims Ledger
         </h2>
+        {claimFilter && (
+          <div className="flex items-center gap-2">
+            <span className="text-peec-sm text-peec-muted">
+              Filtered: {claimFilter} ({filteredClaims.length})
+            </span>
+            <button
+              onClick={() => setClaimFilter(null)}
+              className="text-peec-xs text-pill-indigo hover:underline"
+            >
+              Clear
+            </button>
+          </div>
+        )}
         <div className="bg-white rounded-peec-xl shadow-peec-ring overflow-hidden">
           <table className="w-full text-peec-sm">
             <thead>
@@ -173,18 +233,39 @@ export default function EvidencePage() {
                   Status
                 </th>
                 <th className="text-left p-3 font-medium text-peec-muted w-28">
-                  Evidence Level
+                  <span className="flex items-center">Evidence Level<TermTooltip term="Evidence Level" /></span>
                 </th>
                 <th className="text-left p-3 font-medium text-peec-muted w-48">
-                  Publication Language
+                  <span className="flex items-center">Publication Language<TermTooltip term="Publication language" /></span>
                 </th>
               </tr>
             </thead>
             <tbody>
-              {claims.map((claim) => {
+              {filteredClaims.map((claim) => {
                 const isDirectional = claim.status === "directional";
                 const isBlocked = claim.status === "blocked";
                 const isNonPriority = nonPriorityClusterIds.has(claim.cluster_id);
+                const displayStatus = isNonPriority
+                  ? "Monitor only"
+                  : claim.status === "directional"
+                    ? "Directional"
+                    : claim.status === "blocked"
+                      ? "Blocked"
+                      : claim.status;
+                const statusColor = isNonPriority
+                  ? "gray-100"
+                  : isDirectional
+                    ? "pill-green-bg"
+                    : isBlocked
+                      ? "pill-red-bg"
+                      : "peec-tint";
+                const statusTextColor = isNonPriority
+                  ? "gray-400"
+                  : isDirectional
+                    ? "pill-green"
+                    : isBlocked
+                      ? "pill-red"
+                      : "peec-muted";
 
                 return (
                   <tr
@@ -194,23 +275,14 @@ export default function EvidencePage() {
                     <td className="p-3">
                       <div className="font-medium">
                         {cleanClaimText(claim.claim)}
-                        {isNonPriority && (
-                          <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-peec-md text-peec-xs font-medium bg-gray-100 text-gray-400">
-                            Monitor only
-                          </span>
-                        )}
                       </div>
                     </td>
                     <td className="p-3">
                       <Pill
-                        color={isDirectional ? "pill-green-bg" : isBlocked ? "pill-red-bg" : "peec-tint"}
-                        textColor={isDirectional ? "pill-green" : isBlocked ? "pill-red" : "peec-muted"}
+                        color={statusColor}
+                        textColor={statusTextColor}
                       >
-                        {claim.status === "directional"
-                          ? "Directional"
-                          : claim.status === "blocked"
-                            ? "Blocked"
-                            : claim.status}
+                        {displayStatus}
                       </Pill>
                     </td>
                     <td className="p-3">

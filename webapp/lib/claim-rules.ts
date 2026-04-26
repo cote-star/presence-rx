@@ -1,4 +1,4 @@
-// Deterministic claim guardrail logic — no LLM calls
+// Evidence-scored claim guardrail logic — no LLM calls.
 import type { BrandData } from "./types";
 
 export type ClaimVerdict = "safe" | "needs_evidence" | "blocked" | "off_strategy";
@@ -32,11 +32,15 @@ export function checkClaim(claimText: string, brandData: BrandData): ClaimResult
     for (const bc of brandData.ledger.blocked_claims) {
       const claimWords = bc.claim.toLowerCase().split(" ").slice(0, 5).join(" ");
       if (lower.includes(claimWords) || lower.includes(bc.claim.toLowerCase())) {
+        const claimTopicSlug = bc.claim_id.split(":")[1];
+        const matchedRow = brandData.study?.rows.find(
+          (row) => row.cluster_id === `cluster:${claimTopicSlug}`
+        );
         return {
           verdict: "blocked",
           reason: bc.blocked_reason,
           safeRewrite: bc.safe_rewrite,
-          matchedTopic: bc.claim_id,
+          matchedTopic: matchedRow?.cluster_label,
         };
       }
     }

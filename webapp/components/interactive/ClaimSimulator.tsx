@@ -51,7 +51,14 @@ export function ClaimSimulator() {
   const topics = data?.study?.rows ?? [];
 
   const examples: string[] = [];
-  const strategicGap = topics.find((r) => r.strategic_status === "strategic_gap" && r.tempting_claim);
+  const importanceRank: Record<string, number> = { core: 0, high: 1, medium: 2, low: 3 };
+  const strategicGap = topics
+    .filter((r) => r.strategic_status === "strategic_gap" && r.tempting_claim)
+    .sort(
+      (a, b) =>
+        (importanceRank[a.strategic_importance ?? "medium"] ?? 2) -
+        (importanceRank[b.strategic_importance ?? "medium"] ?? 2)
+    )[0];
   if (strategicGap?.tempting_claim) examples.push(strategicGap.tempting_claim);
   const stronghold = topics.find((r) => !r.gap_type && r.safe_claim);
   if (stronghold?.safe_claim) examples.push(stronghold.safe_claim.slice(0, 80));
@@ -97,8 +104,8 @@ export function ClaimSimulator() {
           Claim Simulator
         </h3>
         <p className="text-peec-sm text-peec-muted mt-0.5">
-          Test a marketing claim against live visibility data. No API call
-          needed — verdicts are deterministic.
+          Test a marketing claim against the brand&apos;s visibility data. No API
+          call needed — verdicts are evidence-scored.
         </p>
       </div>
 
@@ -161,9 +168,9 @@ export function ClaimSimulator() {
             >
               {style.label}
             </span>
-            {result.matchedTopic && (
+            {matchedRow && (
               <span className="text-peec-xs text-peec-muted ml-auto">
-                Matched topic: {result.matchedTopic}
+                Matched topic: {matchedRow.cluster_label}
               </span>
             )}
           </div>

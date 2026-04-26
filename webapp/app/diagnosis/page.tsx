@@ -12,6 +12,7 @@ import {
 } from "@/lib/display-labels";
 import { Eye, Users, CheckCircle2, Compass, Lightbulb, Shield, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { TermTooltip } from "@/components/interactive/TermTooltip";
 
 function Pill({
   children,
@@ -143,6 +144,7 @@ export default function DiagnosisPage() {
                   <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
                     <Eye size={12} />
                     Visibility
+                    <TermTooltip term="Visibility" />
                   </div>
                   <div className="text-lg font-semibold">{vis}%</div>
                 </div>
@@ -168,6 +170,7 @@ export default function DiagnosisPage() {
                   <div className="flex items-center gap-1.5 text-peec-xs text-peec-muted mb-1">
                     <Compass size={12} />
                     Signal Alignment
+                    <TermTooltip term="Signal Alignment" />
                   </div>
                   <div className="text-lg font-semibold">{agreementPct}%</div>
                 </div>
@@ -177,7 +180,7 @@ export default function DiagnosisPage() {
               {m && (
                 <div className="bg-peec-tint rounded-peec-lg p-3 space-y-1">
                   <div className="text-peec-sm">
-                    <strong>Action Priority:</strong> {m.opportunity_score} / 100
+                    <strong>Action Priority:</strong><TermTooltip term="Action Priority" /> {m.opportunity_score} / 100
                   </div>
                   <div className="text-peec-sm">
                     <Lightbulb
@@ -228,7 +231,7 @@ export default function DiagnosisPage() {
 
               {/* Strategic Context */}
               {(row.strategic_note || !(row.desired_association ?? true)) && (
-                <div className="border border-peec-hairline rounded-peec-lg p-3 bg-peec-tint/50">
+                <div className="rounded-peec-lg p-3 border-l-2 border-peec-muted/30 bg-white">
                   <div className="text-peec-xs font-semibold text-peec-muted">Strategic Context</div>
                   {row.strategic_note && <p className="text-peec-sm">{row.strategic_note}</p>}
                   {!(row.desired_association ?? true) && (
@@ -337,7 +340,7 @@ export default function DiagnosisPage() {
                     </div>
 
                     {row.strategic_note && (
-                      <div className="border border-peec-hairline rounded-peec-lg p-3 bg-peec-tint/50">
+                      <div className="rounded-peec-lg p-3 border-l-2 border-peec-muted/30 bg-white">
                         <div className="text-peec-xs font-semibold text-peec-muted">Strategic Context</div>
                         <p className="text-peec-sm">{row.strategic_note}</p>
                         <p className="text-peec-sm text-gray-400">This topic is intentionally deprioritized.</p>

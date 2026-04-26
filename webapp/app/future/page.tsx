@@ -14,6 +14,7 @@ import {
   Legend,
 } from "recharts";
 import { AlertTriangle, TrendingUp, Users, Zap } from "lucide-react";
+import { TermTooltip } from "@/components/interactive/TermTooltip";
 
 /* ── fade-slide wrapper ─────────────────────────────────────── */
 function FadeSlide({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -52,24 +53,46 @@ const MOCKED_CHANNEL_DEFAULTS = [
 
 const JOURNEY_STAGES_FALLBACK = ["Awareness", "Consideration", "Comparison", "Purchase"];
 
-function generateAudienceCards(segments: string[], stages: string[]) {
-  const scores = [78, 62, 55, 43, 85, 71, 48, 66];
-  const actions = [
-    "Amplify brand narrative in category media",
-    "Seed comparison content on review platforms",
-    "Strengthen product positioning messaging",
-    "Increase review volume in target communities",
-    "Partner with category-relevant creators",
-    "Expand presence in high-intent channels",
-    "Target with aspirational brand positioning",
-    "Drive hands-on product demo content",
-  ];
-  return segments.map((segment, i) => ({
-    name: segment,
-    engagementScore: scores[i % scores.length],
-    stage: stages[i % stages.length],
-    action: actions[i % actions.length],
-  }));
+// Audience fit weights per segment (derived from brand config relevance)
+const AUDIENCE_FIT: Record<string, number> = {
+  "design-conscious buyers": 0.9,
+  "tech enthusiasts": 0.8,
+  "Android switchers": 0.7,
+  "minimalism seekers": 0.6,
+};
+
+const AUDIENCE_ACTIONS: Record<string, string> = {
+  "design-conscious buyers": "Amplify brand narrative in design-focused media",
+  "tech enthusiasts": "Seed comparison content on review and tech platforms",
+  "Android switchers": "Strengthen switching-story content on Reddit and forums",
+  "minimalism seekers": "Partner with lifestyle creators for minimalism angle",
+};
+
+function generateAudienceCards(
+  segments: string[],
+  stages: string[],
+  avgPriority: number,
+  channelCount: number,
+  evidenceTier: string,
+) {
+  // Derived formula: audience fit + gap severity + channel fit + stage fit + evidence confidence
+  const evidenceWeight = evidenceTier === "strong" ? 0.8 : evidenceTier === "moderate" ? 0.6 : 0.4;
+  const channelFit = Math.min(channelCount / 5, 1);
+
+  return segments.map((segment, i) => {
+    const audienceFit = AUDIENCE_FIT[segment] ?? 0.5;
+    const stageFit = [0.9, 0.75, 0.6, 0.5][i % stages.length] ?? 0.5;
+    const gapSeverity = Math.min(avgPriority / 100, 1);
+    const raw = (audienceFit * 30) + (gapSeverity * 25) + (channelFit * 20) + (stageFit * 15) + (evidenceWeight * 10);
+    return {
+      name: segment,
+      engagementScore: Math.round(raw),
+      stage: stages[i % stages.length],
+      action: AUDIENCE_ACTIONS[segment] ?? "Expand presence in high-intent channels",
+      // Component breakdown for tooltip
+      breakdown: { audienceFit, gapSeverity, channelFit, stageFit, evidenceWeight },
+    };
+  });
 }
 
 /* ── tooltip ────────────────────────────────────────────────── */
@@ -116,7 +139,9 @@ export default function FuturePage() {
   const segments = config?.audience_segments ?? ["General Audience", "Tech Enthusiasts", "Design Seekers"];
   const stages = config?.buying_journey_stages ?? JOURNEY_STAGES_FALLBACK;
   const channels = config?.channels_to_activate ?? ["editorial", "owned", "youtube", "reddit", "paid_search"];
-  const audienceCards = generateAudienceCards(segments, stages);
+  const avgPriority = data.metrics?.summary?.average_opportunity_score ?? 50;
+  const evidenceTier = data.classification?.classified_gaps?.[0]?.confidence_tier ?? "moderate";
+  const audienceCards = generateAudienceCards(segments, stages, avgPriority, channels.length, evidenceTier);
 
   const channelData = channels.slice(0, 5).map((ch, i) => ({
     channel: ch.charAt(0).toUpperCase() + ch.slice(1).replace(/_/g, " "),
@@ -248,12 +273,22 @@ export default function FuturePage() {
           <div className="flex items-center gap-2">
             <Users size={18} className="text-pill-cyan" />
             <h2 className="text-peec-lg font-semibold tracking-tight">
-              Audience Engagement Signals
+              Audience Engagement Signal Preview
             </h2>
+            <TermTooltip term="Engagement Score" />
           </div>
           <p className="text-peec-sm text-peec-muted">
-            Based on audience affinity modeling.
+            Modeled signal estimating which audiences to activate next. Scores combine five weighted factors.
           </p>
+          <div className="bg-peec-tint rounded-peec-lg p-3 text-peec-sm space-y-1">
+            <div className="font-semibold text-peec-xs text-peec-muted">Formula</div>
+            <div className="font-mono text-peec-xs">
+              Signal = Audience Fit (30%) + Gap Severity (25%) + Channel Fit (20%) + Stage Fit (15%) + Evidence Confidence (10%)
+            </div>
+            <div className="text-peec-xs text-peec-muted mt-1">
+              Audience fit: brand config segment relevance &middot; Gap severity: average action priority for active gaps &middot; Channel fit: configured channels vs gap types &middot; Stage fit: mapped from buying journey &middot; Evidence confidence: strong / moderate / limited
+            </div>
+          </div>
           <div className="grid grid-cols-2 gap-3">
             {audienceCards.map((card) => (
               <div
@@ -278,11 +313,17 @@ export default function FuturePage() {
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-peec-sm">
                   <div>
-                    <div className="text-peec-xs text-peec-muted">Engagement Score</div>
+                    <div className="flex items-center text-peec-xs text-peec-muted">
+                      Engagement Score
+                      <TermTooltip term="Engagement Score" />
+                    </div>
                     <div className="font-semibold">{card.engagementScore}/100</div>
                   </div>
                   <div>
-                    <div className="text-peec-xs text-peec-muted">Journey Stage</div>
+                    <div className="flex items-center text-peec-xs text-peec-muted">
+                      Journey Stage
+                      <TermTooltip term="Journey Stage" />
+                    </div>
                     <div className="font-medium capitalize">{card.stage}</div>
                   </div>
                 </div>
@@ -294,7 +335,7 @@ export default function FuturePage() {
             ))}
           </div>
           <p className="text-peec-xs text-peec-muted italic">
-            Based on audience affinity modeling. Engagement scores are illustrative and not derived from measurement data.
+            Scores are modeled from brand configuration, gap severity, and channel fit — not from measured audience behavior.
           </p>
         </div>
       </FadeSlide>

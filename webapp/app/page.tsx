@@ -4,13 +4,18 @@ import { useBrand } from "@/hooks/useBrand";
 import { humanGapType, humanDecision, gapTypeColor, humanStrategicStatus, strategicStatusColor, strategicStatusBgColor } from "@/lib/display-labels";
 import {
   AlertTriangle,
-  ArrowRight,
   ChevronDown,
+  ChevronRight,
   Shield,
   Target,
-  TrendingUp,
+  Newspaper,
+  MessageSquare,
+  Globe,
+  Video,
+  Users,
 } from "lucide-react";
 import { useState } from "react";
+import { TermTooltip } from "@/components/interactive/TermTooltip";
 
 function MetricCard({
   label,
@@ -23,7 +28,10 @@ function MetricCard({
 }) {
   return (
     <div className="bg-white rounded-peec-xl shadow-peec-ring p-4 flex flex-col justify-between min-h-[112px]">
-      <div className="text-peec-xs text-peec-muted font-medium">{label}</div>
+      <div className="flex items-center text-peec-xs text-peec-muted font-medium">
+        {label}
+        <TermTooltip term={label} />
+      </div>
       <div>
         <div className="text-2xl font-semibold tracking-tight tabular-nums">
           {value}
@@ -55,6 +63,8 @@ function Pill({
 export default function ActionBriefPage() {
   const { data, config, loading } = useBrand();
   const [showNonPriority, setShowNonPriority] = useState(false);
+  const [expandedChannel, setExpandedChannel] = useState<string | null>(null);
+  const [expandedAudience, setExpandedAudience] = useState<string | null>(null);
 
   if (loading || !data) {
     return (
@@ -123,6 +133,82 @@ export default function ActionBriefPage() {
       const key = r.gap_type!;
       (gapGroups[key] = gapGroups[key] || []).push(r);
     }
+  });
+
+  // Channel profiles for "Where to Engage" cards
+  const CHANNEL_PROFILES: Record<string, { bestFor: string; why: string; play: string; icon: typeof Newspaper }> = {
+    editorial: {
+      bestFor: "Perception + Attention",
+      why: "AI answers cite reviewers and comparison pages.",
+      play: "Pitch product proof points to review lists and comparison articles.",
+      icon: Newspaper,
+    },
+    ugc: {
+      bestFor: "Attention + Discovery",
+      why: "AI models weight community discussion and authentic user content.",
+      play: "Seed authentic content on forums and social platforms.",
+      icon: MessageSquare,
+    },
+    owned: {
+      bestFor: "Discovery + Perception",
+      why: "Structured data on owned properties helps AI retrieval and citation.",
+      play: "Strengthen schema markup and product page structured data.",
+      icon: Globe,
+    },
+    youtube: {
+      bestFor: "Perception + Attention",
+      why: "Video content influences AI training data and citation patterns.",
+      play: "Partner with category-relevant creators for product deep dives.",
+      icon: Video,
+    },
+    reddit: {
+      bestFor: "Attention + Discovery",
+      why: "Reddit threads are heavily cited in AI-generated answers.",
+      play: "Monitor and participate in relevant subreddit discussions.",
+      icon: MessageSquare,
+    },
+  };
+
+  // Audience profiles for "Who to Reach" cards
+  const AUDIENCE_PROFILES: Record<string, { messageAngle: string; topics: string[]; channels: string[]; claimBoundary: string }> = {
+    "design-conscious buyers": {
+      messageAngle: "Distinctive transparent minimalism",
+      topics: ["Minimalist Hardware", "Smartphone Design"],
+      channels: ["editorial", "youtube"],
+      claimBoundary: "Distinctive alternative, not category leader",
+    },
+    "tech enthusiasts": {
+      messageAngle: "Innovation-first ecosystem thinking",
+      topics: ["Consumer Tech Innovation", "Mobile Ecosystem"],
+      channels: ["youtube", "reddit", "ugc"],
+      claimBoundary: "Innovative challenger, not market dominant",
+    },
+    "Android switchers": {
+      messageAngle: "A refreshing alternative with unique design language",
+      topics: ["Mobile Ecosystem", "Consumer Tech Innovation"],
+      channels: ["reddit", "editorial"],
+      claimBoundary: "Best design-forward Android option, not best spec sheet",
+    },
+    "minimalism seekers": {
+      messageAngle: "Technology that disappears into your life",
+      topics: ["Minimalist Hardware", "Wireless Audio"],
+      channels: ["owned", "editorial"],
+      claimBoundary: "Most intentional design philosophy, not most features",
+    },
+  };
+
+  // Count topics per channel based on gap types (map gap type to best channels)
+  const GAP_CHANNEL_MAP: Record<string, string[]> = {
+    perception: ["editorial", "youtube", "owned"],
+    indexing: ["owned", "ugc", "reddit"],
+    volume_frequency: ["ugc", "youtube", "reddit"],
+  };
+  const channelTopicCounts: Record<string, number> = {};
+  activeGaps.forEach((r) => {
+    const channels = GAP_CHANNEL_MAP[r.gap_type!] ?? [];
+    channels.forEach((ch) => {
+      channelTopicCounts[ch] = (channelTopicCounts[ch] || 0) + 1;
+    });
   });
 
   const INTERVENTION: Record<string, string> = {
@@ -272,8 +358,9 @@ export default function ActionBriefPage() {
                     )}
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                       <div className="bg-peec-tint rounded-peec-lg p-2">
-                        <div className="text-peec-xs text-peec-muted">
+                        <div className="flex items-center text-peec-xs text-peec-muted">
                           Action Priority
+                          <TermTooltip term="Action Priority" />
                         </div>
                         <div className="font-semibold text-lg">
                           {m?.opportunity_score ?? 0}
@@ -286,8 +373,9 @@ export default function ActionBriefPage() {
                         <div className="font-semibold text-lg">{vis}%</div>
                       </div>
                       <div className="bg-peec-tint rounded-peec-lg p-2">
-                        <div className="text-peec-xs text-peec-muted">
+                        <div className="flex items-center text-peec-xs text-peec-muted">
                           Owner
+                          <TermTooltip term="Owner" />
                         </div>
                         <div className="font-semibold text-sm truncate">
                           {competitor}
@@ -362,8 +450,9 @@ export default function ActionBriefPage() {
                     )}
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                       <div className="bg-peec-tint rounded-peec-lg p-2">
-                        <div className="text-peec-xs text-peec-muted">
+                        <div className="flex items-center text-peec-xs text-peec-muted">
                           Action Priority
+                          <TermTooltip term="Action Priority" />
                         </div>
                         <div className="font-semibold text-lg">
                           {m?.opportunity_score ?? 0}
@@ -376,8 +465,9 @@ export default function ActionBriefPage() {
                         <div className="font-semibold text-lg">{vis}%</div>
                       </div>
                       <div className="bg-peec-tint rounded-peec-lg p-2">
-                        <div className="text-peec-xs text-peec-muted">
+                        <div className="flex items-center text-peec-xs text-peec-muted">
                           Owner
+                          <TermTooltip term="Owner" />
                         </div>
                         <div className="font-semibold text-sm truncate">
                           {competitor}
@@ -406,20 +496,69 @@ export default function ActionBriefPage() {
             Channels to activate for {data.brand_name} based on gap analysis and
             brand configuration.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-            {config.channels_to_activate.map((channel) => (
-              <div
-                key={channel}
-                className="bg-peec-tint rounded-peec-lg p-3 text-center"
-              >
-                <div className="font-medium text-sm capitalize">
-                  {channel.replace(/_/g, " ")}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {config.channels_to_activate.map((channel) => {
+              const profile = CHANNEL_PROFILES[channel];
+              const Icon = profile?.icon ?? Globe;
+              const topicCount = channelTopicCounts[channel] ?? 0;
+              const isExpanded = expandedChannel === channel;
+              return (
+                <div key={channel}>
+                  <button
+                    onClick={() => setExpandedChannel(isExpanded ? null : channel)}
+                    className={`w-full text-left bg-peec-tint rounded-peec-lg p-4 space-y-2 transition-all hover:shadow-peec-ring ${
+                      isExpanded ? "ring-2 ring-pill-indigo" : ""
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Icon size={16} className="text-pill-indigo" />
+                        <span className="font-semibold text-sm capitalize">
+                          {channel.replace(/_/g, " ")}
+                        </span>
+                      </div>
+                      <ChevronRight
+                        size={14}
+                        className={`text-peec-muted transition-transform ${isExpanded ? "rotate-90" : ""}`}
+                      />
+                    </div>
+                    {profile && (
+                      <>
+                        <div className="text-peec-xs text-peec-muted">
+                          Best for: <span className="font-medium text-peec-fg">{profile.bestFor}</span>
+                        </div>
+                        {topicCount > 0 && (
+                          <div className="text-peec-xs text-pill-indigo font-medium">
+                            {topicCount} linked {topicCount === 1 ? "topic" : "topics"}
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </button>
+                  {isExpanded && profile && (
+                    <div className="mt-2 bg-white border border-peec-hairline rounded-peec-lg p-4 space-y-2 animate-in slide-in-from-top-1 duration-200">
+                      <div className="text-peec-sm">
+                        <span className="font-semibold">Why:</span>{" "}
+                        {profile.why}
+                      </div>
+                      <div className="text-peec-sm">
+                        <span className="font-semibold">Recommended play:</span>{" "}
+                        {profile.play}
+                      </div>
+                      {activeGaps.filter((r) => (GAP_CHANNEL_MAP[r.gap_type!] ?? []).includes(channel)).length > 0 && (
+                        <div className="text-peec-sm">
+                          <span className="font-semibold">Target topics:</span>{" "}
+                          {activeGaps
+                            .filter((r) => (GAP_CHANNEL_MAP[r.gap_type!] ?? []).includes(channel))
+                            .map((r) => r.cluster_label)
+                            .join(", ")}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
-                <div className="text-peec-xs text-peec-muted mt-1">
-                  {activeGaps.length} gaps
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
@@ -430,23 +569,64 @@ export default function ActionBriefPage() {
           <h2 className="text-peec-lg font-semibold tracking-tight">
             Who to Reach
           </h2>
+          <p className="text-peec-sm text-peec-muted">
+            Target audience segments and how to engage them based on gap analysis.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {config.audience_segments.map((segment) => (
-              <div
-                key={segment}
-                className="bg-peec-tint rounded-peec-lg p-3 flex items-center gap-3"
-              >
-                <TrendingUp size={18} className="text-pill-indigo" />
-                <div>
-                  <div className="font-medium text-sm capitalize">
-                    {segment}
-                  </div>
-                  <div className="text-peec-xs text-peec-muted">
-                    {config.buying_journey_stages.join(" → ")}
-                  </div>
+            {config.audience_segments.map((segment) => {
+              const profile = AUDIENCE_PROFILES[segment];
+              const isExpanded = expandedAudience === segment;
+              return (
+                <div key={segment}>
+                  <button
+                    onClick={() => setExpandedAudience(isExpanded ? null : segment)}
+                    className={`w-full text-left bg-peec-tint rounded-peec-lg p-3 flex items-center gap-3 transition-all hover:shadow-peec-ring ${
+                      isExpanded ? "ring-2 ring-pill-indigo" : ""
+                    }`}
+                  >
+                    <Users size={18} className="text-pill-indigo shrink-0" />
+                    <div className="flex-1 min-w-0">
+                      <div className="font-medium text-sm capitalize">
+                        {segment}
+                      </div>
+                      {profile ? (
+                        <div className="text-peec-xs text-peec-muted truncate">
+                          {profile.messageAngle}
+                        </div>
+                      ) : (
+                        <div className="text-peec-xs text-peec-muted">
+                          {config.buying_journey_stages.join(" → ")}
+                        </div>
+                      )}
+                    </div>
+                    <ChevronRight
+                      size={14}
+                      className={`text-peec-muted transition-transform shrink-0 ${isExpanded ? "rotate-90" : ""}`}
+                    />
+                  </button>
+                  {isExpanded && profile && (
+                    <div className="mt-2 bg-white border border-peec-hairline rounded-peec-lg p-4 space-y-2 animate-in slide-in-from-top-1 duration-200">
+                      <div className="text-peec-sm">
+                        <span className="font-semibold">Message angle:</span>{" "}
+                        {profile.messageAngle}
+                      </div>
+                      <div className="text-peec-sm">
+                        <span className="font-semibold">Relevant topics:</span>{" "}
+                        {profile.topics.join(", ")}
+                      </div>
+                      <div className="text-peec-sm">
+                        <span className="font-semibold">Channels to use:</span>{" "}
+                        {profile.channels.map((c) => c.replace(/_/g, " ")).join(", ")}
+                      </div>
+                      <div className="text-peec-sm">
+                        <span className="font-semibold">Claim boundary:</span>{" "}
+                        <span className="text-peec-muted">{profile.claimBoundary}</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
