@@ -71,7 +71,7 @@ export default function EvidencePage() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-64 bg-peec-tint rounded animate-pulse" />
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
@@ -117,7 +117,7 @@ export default function EvidencePage() {
       </div>
 
       {/* Evidence Summary */}
-      <div className="grid grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         <MetricCard
           label="Claims reviewed"
           value={String(claims.length)}

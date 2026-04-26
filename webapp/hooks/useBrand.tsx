@@ -82,7 +82,7 @@ export function BrandProvider({ children }: { children: ReactNode }) {
         setLoading(false);
       }
     },
-    [cache, configCache]
+    [cache, configCache, base]
   );
 
   // Load initial brand

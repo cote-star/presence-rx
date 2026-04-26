@@ -67,7 +67,7 @@ export default function ExportPage() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-48 bg-peec-tint rounded animate-pulse" />
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
@@ -96,7 +96,7 @@ export default function ExportPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* 1. Presence Verdict */}
         <ExportCard
           icon={FileText}
