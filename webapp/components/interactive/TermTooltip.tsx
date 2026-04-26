@@ -108,16 +108,18 @@ export function TermTooltip({ term }: { term: string }) {
 
   return (
     <span ref={ref} className="relative inline-flex items-center ml-1">
-      <button
-        type="button"
+      <span
+        role="button"
+        tabIndex={0}
         aria-label={`What is ${term}?`}
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={(e) => { e.stopPropagation(); setOpen((prev) => !prev); }}
+        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); setOpen((prev) => !prev); } }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
-        className="text-peec-muted hover:text-pill-indigo transition-colors"
+        className="text-peec-muted hover:text-pill-indigo transition-colors cursor-pointer"
       >
         <HelpCircle size={13} />
-      </button>
+      </span>
       {open && (
         <div
           ref={tooltipRef}

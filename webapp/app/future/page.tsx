@@ -53,20 +53,20 @@ const MOCKED_CHANNEL_DEFAULTS = [
 
 const JOURNEY_STAGES_FALLBACK = ["Awareness", "Consideration", "Comparison", "Purchase"];
 
-// Audience fit weights per segment (derived from brand config relevance)
-const AUDIENCE_FIT: Record<string, number> = {
-  "design-conscious buyers": 0.9,
-  "tech enthusiasts": 0.8,
-  "Android switchers": 0.7,
-  "minimalism seekers": 0.6,
-};
+// Audience fit weights — decreasing by index, highest-priority segment first
+const AUDIENCE_FIT_SEQUENCE = [0.9, 0.8, 0.7, 0.6, 0.55, 0.5, 0.45, 0.4];
 
-const AUDIENCE_ACTIONS: Record<string, string> = {
-  "design-conscious buyers": "Amplify brand narrative in design-focused media",
-  "tech enthusiasts": "Seed comparison content on review and tech platforms",
-  "Android switchers": "Strengthen switching-story content on Reddit and forums",
-  "minimalism seekers": "Partner with lifestyle creators for minimalism angle",
-};
+// Generic action templates keyed by index
+const AUDIENCE_ACTION_TEMPLATES = [
+  "Amplify brand narrative in category-relevant media",
+  "Seed comparison content on review and evaluation platforms",
+  "Strengthen positioning content on community channels",
+  "Partner with niche creators for targeted messaging",
+  "Expand presence in high-intent discovery channels",
+  "Drive hands-on product content and demos",
+  "Build thought leadership in specialist publications",
+  "Increase review and testimonial volume",
+];
 
 function generateAudienceCards(
   segments: string[],
@@ -80,7 +80,7 @@ function generateAudienceCards(
   const channelFit = Math.min(channelCount / 5, 1);
 
   return segments.map((segment, i) => {
-    const audienceFit = AUDIENCE_FIT[segment] ?? 0.5;
+    const audienceFit = AUDIENCE_FIT_SEQUENCE[i % AUDIENCE_FIT_SEQUENCE.length];
     const stageFit = [0.9, 0.75, 0.6, 0.5][i % stages.length] ?? 0.5;
     const gapSeverity = Math.min(avgPriority / 100, 1);
     const raw = (audienceFit * 30) + (gapSeverity * 25) + (channelFit * 20) + (stageFit * 15) + (evidenceWeight * 10);
@@ -88,8 +88,7 @@ function generateAudienceCards(
       name: segment,
       engagementScore: Math.round(raw),
       stage: stages[i % stages.length],
-      action: AUDIENCE_ACTIONS[segment] ?? "Expand presence in high-intent channels",
-      // Component breakdown for tooltip
+      action: AUDIENCE_ACTION_TEMPLATES[i % AUDIENCE_ACTION_TEMPLATES.length],
       breakdown: { audienceFit, gapSeverity, channelFit, stageFit, evidenceWeight },
     };
   });

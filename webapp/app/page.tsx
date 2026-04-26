@@ -135,73 +135,58 @@ export default function ActionBriefPage() {
     }
   });
 
-  // Channel profiles for "Where to Engage" cards
-  const CHANNEL_PROFILES: Record<string, { bestFor: string; why: string; play: string; icon: typeof Newspaper }> = {
-    editorial: {
-      bestFor: "Perception + Attention",
-      why: "AI answers cite reviewers and comparison pages.",
-      play: "Pitch product proof points to review lists and comparison articles.",
-      icon: Newspaper,
-    },
-    ugc: {
-      bestFor: "Attention + Discovery",
-      why: "AI models weight community discussion and authentic user content.",
-      play: "Seed authentic content on forums and social platforms.",
-      icon: MessageSquare,
-    },
-    owned: {
-      bestFor: "Discovery + Perception",
-      why: "Structured data on owned properties helps AI retrieval and citation.",
-      play: "Strengthen schema markup and product page structured data.",
-      icon: Globe,
-    },
-    youtube: {
-      bestFor: "Perception + Attention",
-      why: "Video content influences AI training data and citation patterns.",
-      play: "Partner with category-relevant creators for product deep dives.",
-      icon: Video,
-    },
-    reddit: {
-      bestFor: "Attention + Discovery",
-      why: "Reddit threads are heavily cited in AI-generated answers.",
-      play: "Monitor and participate in relevant subreddit discussions.",
-      icon: MessageSquare,
-    },
+  // Channel profiles — known channels + generic fallback for any brand
+  const KNOWN_CHANNELS: Record<string, { bestFor: string; why: string; play: string; icon: typeof Newspaper }> = {
+    editorial:          { bestFor: "Perception + Attention",  why: "AI answers cite reviewers and comparison pages.",                    play: "Pitch product proof points to review lists and comparison articles.",    icon: Newspaper },
+    ugc:                { bestFor: "Attention + Discovery",   why: "AI models weight community discussion and authentic user content.",  play: "Seed authentic content on forums and social platforms.",                 icon: MessageSquare },
+    owned:              { bestFor: "Discovery + Perception",  why: "Structured data on owned properties helps AI retrieval and citation.", play: "Strengthen schema markup and product page structured data.",           icon: Globe },
+    youtube:            { bestFor: "Perception + Attention",  why: "Video content influences AI training data and citation patterns.",   play: "Partner with category-relevant creators for product deep dives.",        icon: Video },
+    reddit:             { bestFor: "Attention + Discovery",   why: "Reddit threads are heavily cited in AI-generated answers.",          play: "Monitor and participate in relevant subreddit discussions.",              icon: MessageSquare },
+    comparison_sites:   { bestFor: "Discovery + Perception",  why: "Comparison pages are top-cited sources in AI purchase answers.",     play: "Ensure the brand appears on major comparison and review aggregators.",   icon: Globe },
+    g2:                 { bestFor: "Discovery + Perception",  why: "G2 reviews are heavily cited by AI for B2B software recommendations.", play: "Grow verified review volume and respond to competitor positioning.",  icon: Newspaper },
+    product_hunt:       { bestFor: "Attention + Perception",  why: "Product Hunt launches seed AI training data for new products.",      play: "Maintain active presence and collect community endorsements.",            icon: MessageSquare },
+    community:          { bestFor: "Attention + Discovery",   why: "Community forums generate authentic signals AI models weigh highly.", play: "Build and engage brand community on relevant platforms.",                icon: Users },
+    automotive_editorial: { bestFor: "Perception + Attention", why: "Automotive press is the top-cited source for vehicle AI answers.", play: "Brief automotive journalists on key differentiators and test opportunities.", icon: Newspaper },
+    ev_media:           { bestFor: "Perception + Discovery",  why: "EV-specialist media shapes AI answers about electric vehicles.",     play: "Position EV credentials with specialist reviewers and range tests.",     icon: Newspaper },
+    dealer_content:     { bestFor: "Discovery + Attention",   why: "Dealer and configurator pages feed AI retrieval for purchase queries.", play: "Ensure dealer pages have structured data and current inventory.",     icon: Globe },
   };
+  function getChannelProfile(channel: string) {
+    if (KNOWN_CHANNELS[channel]) return KNOWN_CHANNELS[channel];
+    // Generic fallback for any unknown channel
+    const label = channel.replace(/_/g, " ");
+    return {
+      bestFor: "Discovery + Attention",
+      why: `${label.charAt(0).toUpperCase() + label.slice(1)} content is indexed by AI models and can influence brand visibility.`,
+      play: `Strengthen ${data!.brand_name} presence on ${label} with targeted content.`,
+      icon: Globe as typeof Newspaper,
+    };
+  }
 
-  // Audience profiles for "Who to Reach" cards
-  const AUDIENCE_PROFILES: Record<string, { messageAngle: string; topics: string[]; channels: string[]; claimBoundary: string }> = {
-    "design-conscious buyers": {
-      messageAngle: "Distinctive transparent minimalism",
-      topics: ["Minimalist Hardware", "Smartphone Design"],
-      channels: ["editorial", "youtube"],
-      claimBoundary: "Distinctive alternative, not category leader",
-    },
-    "tech enthusiasts": {
-      messageAngle: "Innovation-first ecosystem thinking",
-      topics: ["Consumer Tech Innovation", "Mobile Ecosystem"],
-      channels: ["youtube", "reddit", "ugc"],
-      claimBoundary: "Innovative challenger, not market dominant",
-    },
-    "Android switchers": {
-      messageAngle: "A refreshing alternative with unique design language",
-      topics: ["Mobile Ecosystem", "Consumer Tech Innovation"],
-      channels: ["reddit", "editorial"],
-      claimBoundary: "Best design-forward Android option, not best spec sheet",
-    },
-    "minimalism seekers": {
-      messageAngle: "Technology that disappears into your life",
-      topics: ["Minimalist Hardware", "Wireless Audio"],
-      channels: ["owned", "editorial"],
-      claimBoundary: "Most intentional design philosophy, not most features",
-    },
-  };
+  // Audience profiles — derive from config + gap data for any brand
+  function getAudienceProfile(segment: string, index: number) {
+    const priorityTopics = config?.priority_topics ?? [];
+    const channelList = config?.channels_to_activate ?? [];
+    // Rotate topics across audience segments
+    const topicSlice = priorityTopics.length > 0
+      ? [priorityTopics[index % priorityTopics.length], priorityTopics[(index + 1) % priorityTopics.length]].filter((t, i, a) => a.indexOf(t) === i)
+      : [];
+    // Rotate channels
+    const channelSlice = channelList.length > 0
+      ? [channelList[index % channelList.length], channelList[(index + 1) % channelList.length]].filter((t, i, a) => a.indexOf(t) === i)
+      : [];
+    return {
+      messageAngle: `${data!.brand_name} for ${segment}`,
+      topics: topicSlice,
+      channels: channelSlice,
+      claimBoundary: `Strong contender for ${segment}, evidence-bounded`,
+    };
+  }
 
   // Count topics per channel based on gap types (map gap type to best channels)
   const GAP_CHANNEL_MAP: Record<string, string[]> = {
-    perception: ["editorial", "youtube", "owned"],
-    indexing: ["owned", "ugc", "reddit"],
-    volume_frequency: ["ugc", "youtube", "reddit"],
+    perception: ["editorial", "youtube", "owned", "automotive_editorial", "ev_media", "comparison_sites", "g2"],
+    indexing: ["owned", "ugc", "reddit", "comparison_sites", "g2", "product_hunt", "dealer_content"],
+    volume_frequency: ["ugc", "youtube", "reddit", "community", "product_hunt", "ev_media", "dealer_content"],
   };
   const channelTopicCounts: Record<string, number> = {};
   activeGaps.forEach((r) => {
@@ -498,8 +483,8 @@ export default function ActionBriefPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {config.channels_to_activate.map((channel) => {
-              const profile = CHANNEL_PROFILES[channel];
-              const Icon = profile?.icon ?? Globe;
+              const profile = getChannelProfile(channel);
+              const Icon = profile.icon;
               const topicCount = channelTopicCounts[channel] ?? 0;
               const isExpanded = expandedChannel === channel;
               return (
@@ -522,20 +507,16 @@ export default function ActionBriefPage() {
                         className={`text-peec-muted transition-transform ${isExpanded ? "rotate-90" : ""}`}
                       />
                     </div>
-                    {profile && (
-                      <>
-                        <div className="text-peec-xs text-peec-muted">
-                          Best for: <span className="font-medium text-peec-fg">{profile.bestFor}</span>
-                        </div>
-                        {topicCount > 0 && (
-                          <div className="text-peec-xs text-pill-indigo font-medium">
-                            {topicCount} linked {topicCount === 1 ? "topic" : "topics"}
-                          </div>
-                        )}
-                      </>
+                    <div className="text-peec-xs text-peec-muted">
+                      Best for: <span className="font-medium text-peec-fg">{profile.bestFor}</span>
+                    </div>
+                    {topicCount > 0 && (
+                      <div className="text-peec-xs text-pill-indigo font-medium">
+                        {topicCount} linked {topicCount === 1 ? "topic" : "topics"}
+                      </div>
                     )}
                   </button>
-                  {isExpanded && profile && (
+                  {isExpanded && (
                     <div className="mt-2 bg-white border border-peec-hairline rounded-peec-lg p-4 space-y-2 animate-in slide-in-from-top-1 duration-200">
                       <div className="text-peec-sm">
                         <span className="font-semibold">Why:</span>{" "}
@@ -573,8 +554,8 @@ export default function ActionBriefPage() {
             Target audience segments and how to engage them based on gap analysis.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {config.audience_segments.map((segment) => {
-              const profile = AUDIENCE_PROFILES[segment];
+            {config.audience_segments.map((segment, segIdx) => {
+              const profile = getAudienceProfile(segment, segIdx);
               const isExpanded = expandedAudience === segment;
               return (
                 <div key={segment}>
@@ -589,22 +570,16 @@ export default function ActionBriefPage() {
                       <div className="font-medium text-sm capitalize">
                         {segment}
                       </div>
-                      {profile ? (
-                        <div className="text-peec-xs text-peec-muted truncate">
-                          {profile.messageAngle}
-                        </div>
-                      ) : (
-                        <div className="text-peec-xs text-peec-muted">
-                          {config.buying_journey_stages.join(" → ")}
-                        </div>
-                      )}
+                      <div className="text-peec-xs text-peec-muted truncate">
+                        {profile.messageAngle}
+                      </div>
                     </div>
                     <ChevronRight
                       size={14}
                       className={`text-peec-muted transition-transform shrink-0 ${isExpanded ? "rotate-90" : ""}`}
                     />
                   </button>
-                  {isExpanded && profile && (
+                  {isExpanded && (
                     <div className="mt-2 bg-white border border-peec-hairline rounded-peec-lg p-4 space-y-2 animate-in slide-in-from-top-1 duration-200">
                       <div className="text-peec-sm">
                         <span className="font-semibold">Message angle:</span>{" "}
