@@ -1,6 +1,6 @@
 # Presence Rx
 
-### AI visibility gaps into evidence-backed marketing decisions: where to act, what to claim, and what to refuse.
+### Turn AI visibility gaps into evidence-backed marketing decisions: where to act, what to claim, and what to refuse.
 
 > **Diagnose. Prescribe. Refuse.**
 
@@ -32,7 +32,7 @@ AI answers are the new discovery surface. When someone asks ChatGPT, Gemini, or 
 - *"AI says we're innovative, but associates our core trait with a competitor."*
 - *"Our product exists, but AI can't find it."*
 
-Visibility data tells you *where* the gap is. It doesn't tell you what kind of gap, what to do about it, or what you can safely claim. That's what Presence Rx adds.
+[Peec AI](https://peec.ai) tells you *where* the gap is — which topics, engines, and competitors shape AI answers. Presence Rx adds the decision layer: what kind of gap, what to do about it, and what you can safely claim.
 
 ![Presence Rx dashboard](docs/screenshot-hero.png)
 
@@ -67,22 +67,6 @@ This case includes live Peec MCP visibility data, 40 Tavily web-evidence sources
 ---
 
 ## Architecture
-
-```
-Brand strategy + audience config
-            |
-    Peec AI (visibility truth via MCP)
-            |
-    Tavily (public web evidence)
-            |
-    Gemini (perception analysis)
-            |
-    Presence Rx decision engine
-            |
-    Claim guardrails + action priorities
-            |
-    Dashboard + evidence ledger + exports
-```
 
 ![Presence Rx architecture](docs/submission-architecture.svg)
 
@@ -152,5 +136,5 @@ make test && make lint
 
 ---
 
-**Solo build by Amit Prusty + AI agents.**
+**Solo build by Amit Prusty with AI-assisted development.**
 Peec AI track, Big Berlin Hack 2026. Berlin, April 25-26.
