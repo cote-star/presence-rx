@@ -1,200 +1,179 @@
 # Presence Rx
 
-**From AI visibility gaps to earned marketing action, with receipts.**
+### Find your brand's blind spots in AI answers — with receipts at every step.
 
-Presence Rx turns Peec AI visibility data into a marketer-facing decision system. It does not just show where a brand appears in AI answers. It explains why the brand is missing, what kind of problem the gap represents, what to do next, what to monitor, and what the brand has earned the right to claim.
+---
+
+AI answers are the new discovery surface. When someone asks ChatGPT, Gemini, or Perplexity for a product recommendation, your brand is either in the answer or it isn't.
+
+**Presence Rx** turns that signal into a marketing decision system.
+
+It doesn't just show where you appear. It tells you *why* you're missing, *what kind* of problem it is, *what to do next*, and *what you've earned the right to claim* — backed by evidence, not assumptions.
 
 > **Diagnose. Prescribe. Refuse.**
 
-## What We Built
+---
 
-Presence Rx is an AI marketer workflow for brands navigating AI-mediated discovery.
+## The Problem
 
-Peec shows the visibility signal: where a brand appears, where competitors dominate, and which topics, engines, and sources shape AI answers. Presence Rx adds the decision layer on top:
+A brand marketer today faces a new kind of blind spot:
 
-- **Diagnose** strategic gaps across topics, competitors, and AI-answer visibility.
-- **Classify** each gap as a perception, discovery, or attention problem.
-- **Prescribe** the next marketing action by channel, audience, and topic.
-- **Refuse** unsupported ownership claims before they reach the market.
-- **Monitor** recovery through evidence-led prompts and claim boundaries.
+- *"We rank #1 when mentioned, but only 20% of AI answers mention us at all."*
+- *"AI says we're innovative, but associates our core trait with a competitor."*
+- *"Our product exists, but AI can't find it."*
 
-The result is a dashboard and evidence pack that a marketer can use immediately: action priorities, conversation blocks, claim checks, evidence receipts, audience guidance, and exportable artifacts.
+Visibility data tells you *where* the gap is. It doesn't tell you what kind of gap it is, what to do about it, or what you can safely say externally. That's what Presence Rx adds.
 
-## Why It Matters
+---
 
-AI answers are becoming a discovery surface for brands. Visibility alone is not enough. A marketer needs to know:
+## What Presence Rx Does
 
-- Is this a real strategic gap or a topic we should ignore?
-- Is the brand missing because of perception, discoverability, or lack of public signal?
-- Which audience and channel should we activate first?
-- What can we safely claim today?
-- What would be an overclaim?
+| | |
+|---|---|
+| **Diagnose** | Classify each gap as a perception, discovery, or attention problem |
+| **Prescribe** | Recommend the next marketing action by channel, audience, and topic |
+| **Refuse** | Block unsupported ownership claims before they reach the market |
+| **Monitor** | Track recovery through evidence-led prompts and claim boundaries |
 
-Presence Rx answers those questions with source-of-record discipline. Peec remains the visibility truth. Public evidence, perception analysis, and claim guardrails are layered on top without blurring what came from where.
+Every recommendation comes with a source-of-record trail: what Peec measured, what public evidence confirms, and where the two agree or disagree.
 
-## Product Surface
+---
 
-The webapp is the primary demo surface.
+## The Demo Moment
 
-| Page | What It Does |
-| --- | --- |
-| **Action Brief** | Starts with the user outcome: priority gaps, claims to avoid, where to engage, and who to reach. |
-| **Conversation Blocks** | Explains each topic with visibility, competitor owner, gap type, signal alignment, perception themes, and strategic context. |
-| **Claims & Simulator** | Lets a marketer test claims against evidence. Blocks overclaims and suggests safer wording. |
-| **Charts** | Shows visibility, gap mix, action priority, competitor landscape, and signal profiles. |
-| **Directions** | Shows clearly labeled future-direction previews for audience and channel planning. |
-| **Export** | Downloads the evidence ledger, action brief, and full case data. |
+Presence Rx can say **no**.
+
+A marketer types:
+
+> *"Nothing Phone is the go-to minimalist tech brand."*
+
+Presence Rx **blocks the claim** — because Peec visibility data shows the minimalist-hardware association is still owned by Apple in AI answers. Then it provides a safer rewrite:
+
+> *"Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity."*
+
+That's the product philosophy: not just what to say, but what the brand has **earned the right to say**.
+
+---
+
+## The Product
+
+Six pages, one workflow. Every screen answers a marketer's question.
+
+**Action Brief** — *What should I do first?*
+Priority gaps, claims to avoid, where to engage, who to reach.
+
+**Conversation Blocks** — *What's actually happening in AI answers?*
+Each topic with visibility, competitor owner, gap type, signal alignment, perception themes, and strategic context.
+
+**Claims & Simulator** — *What can I safely say?*
+Test any marketing claim against evidence. Blocked claims get a reason and a safer rewrite.
+
+**Charts** — *Show me the data.*
+Visibility, gap mix, action priority, competitor landscape, and topic signal profiles.
+
+**Directions** — *Where is this going?*
+Audience engagement signals and channel allocation previews, labeled as modeled projections.
+
+**Export** — *Give me the receipts.*
+Download the evidence ledger, action brief, and full case data.
+
+---
 
 ## Case Studies
 
-The dashboard ships with three brand case studies:
+Three brands, three market contexts.
 
-- **Nothing Phone** — the core live-evidence story. Strong in smartphone design, but strategically under-recognized for minimalist hardware and wireless audio.
-- **Attio** — a SaaS CRM example showing product-led CRM strength, startup CRM competition, and non-priority migration claims.
-- **BMW** — an automotive example showing driving-dynamics heritage, luxury EV transition gaps, and premium SUV competition.
+### Nothing Phone — The Invisible Champion
+Ranks #1 when mentioned but appears in only 20% of AI answers. Strong in smartphone design, strategically under-recognized for minimalist hardware and wireless audio. Includes 40 Tavily web-evidence sources and Gemini perception analysis.
 
-Nothing Phone includes Tavily public-evidence enrichment with 40 web sources. Attio and BMW demonstrate the same strategic-intent and claim-guardrail system across additional brand categories.
+### Attio — The Modern Challenger
+A SaaS CRM loved by operators but invisible in AI-mediated discovery dominated by Salesforce and HubSpot. Product-led CRM positioning, startup competition, and evidence-bounded claims.
 
-## The Core Demo Moment
+### BMW — Heritage vs. Electrification
+Strong legacy brand with driving-dynamics reputation, but Tesla dominates AI answers about EVs. Luxury EV transition gap, premium SUV competition, and heritage defense.
 
-Presence Rx can say no.
+---
 
-Example:
-
-> "Nothing Phone is the go-to minimalist tech brand."
-
-Presence Rx blocks the claim because Peec visibility shows the minimalist-hardware association is still owned by Apple in AI answers. It then provides a safer rewrite:
-
-> "Nothing Phone brings a distinctive take on minimalism — transparent, stripped-back, intentionally different. The gap between brand intent and AI perception is the opportunity."
-
-That is the product's philosophy: not just what to say, but what the brand has earned the right to say.
-
-## How It Works
+## Architecture
 
 ![Presence Rx architecture](docs/submission-architecture.svg)
 
-For the recording-friendly version, open [docs/submission-architecture.html](docs/submission-architecture.html).
-
-```text
+```
 Brand strategy + audience profile
-        ↓
+        |
 Prompt and topic universe
-        ↓
-Peec AI visibility data
-        ↓
+        |
+Peec AI visibility data (source of truth)
+        |
 Public proof + perception analysis
-        ↓
+        |
 Presence Rx decision engine
-        ↓
+        |
 Claim guardrails + action priorities
-        ↓
+        |
 Dashboard + evidence ledger + action brief
 ```
 
-### Source-of-Record Map
+### Source-of-Record Discipline
 
-| Layer | Role |
-| --- | --- |
-| **Peec MCP / Peec data** | Source of truth for AI visibility, topics, competitors, positions, and source signals. |
-| **Tavily** | Public web evidence and editorial proof-gap enrichment. |
-| **Gemini analysis layer** | Perception themes, missing associations, and narrative diagnostics. |
-| **Presence Rx** | Strategic status, gap type, action priority, claim ceiling, and safe rewrite logic. |
-| **Next.js webapp** | Marketer-facing dashboard and claim-simulator workflow. |
+| Source | Role |
+|--------|------|
+| **Peec AI** | Visibility truth — topics, positions, competitors, engine coverage |
+| **Tavily** | Public web evidence — editorial citations, proof-gap enrichment |
+| **Gemini** | Perception analysis — themes, missing associations, narrative diagnostics |
+| **Presence Rx** | Decision layer — strategic status, gap classification, claim ceilings, safe rewrites |
 
-## Key Concepts
+Every metric in the dashboard traces back to a named source. The system never blends signals without attribution.
 
-| Concept | Meaning |
-| --- | --- |
-| **Strategic Gap** | A topic the brand wants to be known for, but where AI answers currently favor a competitor or miss the brand. |
-| **Owned Strength** | A topic where the brand already has strong AI visibility and should defend the position. |
-| **Non-Priority** | A monitored topic that is not worth actively fighting for. |
-| **Perception Gap** | The brand exists in the market, but AI associates the desired trait with someone else. |
-| **Discovery Gap** | The brand has relevant content, but AI systems do not retrieve or cite it reliably. |
-| **Attention Gap** | The product or proof exists, but there is not enough public signal for AI answers to surface it. |
-| **Claim Ceiling** | The strongest claim the evidence supports without overstatement. |
+---
 
-## Repository Structure
+## Glossary
 
-```text
-presence_rx/              Python pipeline and artifact builders
-tests/                    Contract, behavior, and pipeline tests
-data/generated/           Generated case-study artifacts
-webapp/                   Next.js dashboard
-webapp/public/data/       Dashboard-ready brand data
-docs/                     Method notes, demo scripts, and submission assets
-```
+| Concept | What It Means for a Marketer |
+|---------|------------------------------|
+| **Strategic Gap** | A topic you want to own, but AI answers currently favor a competitor |
+| **Owned Strength** | A topic where you already dominate — defend it |
+| **Perception Gap** | AI describes you with wrong or outdated traits |
+| **Discovery Gap** | AI can't find you despite your content existing |
+| **Attention Gap** | Not enough recent signal for AI to surface you |
+| **Claim Ceiling** | The strongest claim the evidence supports without overstatement |
 
-## Run The Dashboard
+---
+
+## Run It
 
 ```bash
-cd webapp
-npm install
-npm run dev
+cd webapp && npm install && npm run dev
 ```
 
-Open the local URL printed by Next.js, usually:
+Open [localhost:3000](http://localhost:3000). Select a brand. Start diagnosing.
 
-```text
-http://localhost:3000
-```
-
-Build and typecheck:
+<details>
+<summary>Data pipeline and verification</summary>
 
 ```bash
-cd webapp
-npm run build
-npm run lint
-```
-
-## Run The Data Pipeline
-
-Install Python dependencies:
-
-```bash
+# Pipeline
 uv sync --dev
-```
-
-Run the pipeline:
-
-```bash
 make run
-```
-
-Validate generated artifacts:
-
-```bash
 make validate
+
+# Verify
+cd webapp && npm run build && npm run lint
+make test && make lint
 ```
 
-Run tests and lint:
+</details>
 
-```bash
-make test
-make lint
-```
+---
 
-## Generated Outputs
+## Built With
 
-Core generated artifacts include:
+[Peec AI](https://peec.ai) — AI visibility data via MCP |
+[Gemini](https://deepmind.google/technologies/gemini/) — perception analysis and gap classification |
+[Tavily](https://tavily.com) — public web evidence enrichment |
+[Next.js](https://nextjs.org) + [Recharts](https://recharts.org) — dashboard
 
-- `PRESENCE_VERDICT.md`
-- `ACTION_BRIEF.md`
-- `EVIDENCE_LEDGER.json`
-- `study_ssot.json`
-- `value_added_metrics.json`
-- `competitor_landscape.json`
-- `manifest.json`
+---
 
-The webapp consumes the dashboard-ready JSON files in `webapp/public/data/`.
-
-## Submission Notes
-
-- The dashboard is the primary demo surface.
-- Future-direction screens are clearly labeled as illustrative previews.
-- Peec visibility data remains the measurement source of record.
-- Public web evidence is summarized and referenced; raw source text is not copied into the product narrative.
-- Claim checks are evidence-scored and intentionally conservative.
-
-## Team
-
-Built for the Peec AI track at Big Berlin Hack 2026.
+**Solo build by Amit Prusty + AI agents.**
+Peec AI track, Big Berlin Hack 2026. Berlin, April 25–26.

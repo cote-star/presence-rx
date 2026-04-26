@@ -76,3 +76,16 @@ notebooks/executed/
 
 # Agent local working files
 .clau[d]e/
+
+# Scratch / experiment folders
+agentic_persona_pipeline/
+attio-snapshot.md
+
+# Working planning docs (not submission)
+docs/_PLAN.md
+docs/_STATUS.md
+docs/_TASKS.md
+docs/MVP_END_TO_END_PLAN.md
+docs/MVP_PROGRESS_REPORT.md
+docs/MVP_TASKS.md
+docs/PROGRESS.md
