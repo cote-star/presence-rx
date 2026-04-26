@@ -1370,7 +1370,7 @@ document.getElementById('cards').innerHTML = [
 `).join('');
 
 // --- Action Brief ---
-const GAP_TYPE_ORDER = ['perception', 'indexing', 'volume_frequency'];
+const GAP_TYPE_ORDER = ['indexing', 'perception', 'volume_frequency'];
 const GAP_TYPE_NAMES = {
   perception: 'Perception',
   indexing: 'Discovery',
@@ -3012,7 +3012,7 @@ const plotLayoutBase = {
 
 const plotConfig = { displayModeBar: false, responsive: true };
 
-const GAP_TYPE_ORDER = ['perception', 'indexing', 'volume_frequency'];
+const GAP_TYPE_ORDER = ['indexing', 'perception', 'volume_frequency'];
 const GAP_TYPE_NAMES = {
   perception: 'Perception',
   indexing: 'Discovery',

@@ -200,7 +200,7 @@ export default function ActionBriefPage() {
       )}
 
       {/* Action Cards by Gap Type */}
-      {["perception", "indexing", "volume_frequency"].map((gapType) => {
+      {["indexing", "perception", "volume_frequency"].map((gapType) => {
         const gapRows = gapGroups[gapType];
         if (!gapRows) return null;
         return (

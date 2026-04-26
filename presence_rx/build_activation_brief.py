@@ -82,7 +82,7 @@ def build_activation_brief(
     )
 
     # Sections per gap type
-    for gap_type in [GapType.PERCEPTION, GapType.INDEXING, GapType.VOLUME_FREQUENCY]:
+    for gap_type in [GapType.INDEXING, GapType.PERCEPTION, GapType.VOLUME_FREQUENCY]:
         gap_rows = rows_by_gap.get(gap_type, [])
         if not gap_rows:
             continue

@@ -2,6 +2,7 @@
 
 import { useBrand } from "@/hooks/useBrand";
 import { ChartSkeleton } from "@/components/charts/ChartSkeleton";
+import { humanGapType } from "@/lib/display-labels";
 import { useState, useEffect } from "react";
 import {
   BarChart,
@@ -20,6 +21,10 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
+  ScatterChart,
+  Scatter,
+  ZAxis,
+  ReferenceLine,
 } from "recharts";
 
 /* ── colour map (raw hex for Recharts) ──────────────────────── */
@@ -108,7 +113,6 @@ export default function AnalyticsPage() {
   const rows = data.study.rows;
   const metricsRows = data.metrics?.rows ?? [];
   const landscape = data.landscape?.topics ?? [];
-  const classificationSummary = data.classification?.summary ?? {};
 
   // 1. Visibility bar chart data
   const visData = rows.map((r) => ({
@@ -133,16 +137,29 @@ export default function AnalyticsPage() {
     competitorOwner: t.competitor_owner,
   }));
 
-  // 4. Method outcomes donut data
-  const outcomesRaw: Record<string, number> = {
-    confirmed: (classificationSummary as Record<string, number>).confirmed ?? 0,
-    provisional: (classificationSummary as Record<string, number>).provisional ?? 0,
-    conflicted: (classificationSummary as Record<string, number>).conflicted ?? 0,
-    insufficient: (classificationSummary as Record<string, number>).insufficient ?? 0,
+  // 4. Gap Mix donut data (replaces useless classification outcomes)
+  const gapCounts: Record<string, number> = {};
+  rows.forEach((r) => {
+    const label = humanGapType(r.gap_type);
+    gapCounts[label] = (gapCounts[label] || 0) + 1;
+  });
+  const gapMixData = Object.entries(gapCounts).map(([name, value]) => ({ name, value }));
+  const GAP_MIX_COLORS: Record<string, string> = {
+    Discovery: GAP_COLORS.indexing,
+    Perception: GAP_COLORS.perception,
+    Attention: GAP_COLORS.volume_frequency,
+    Stronghold: STRONGHOLD_COLOR,
   };
-  const outcomesData = Object.entries(outcomesRaw)
-    .filter(([, v]) => v > 0)
-    .map(([key, value]) => ({ name: key.charAt(0).toUpperCase() + key.slice(1), value }));
+
+  // 4b. Opportunity vs Evidence scatter data
+  const scatterData = metricsRows.map((m) => ({
+    name: m.cluster_label,
+    opportunity: m.opportunity_score,
+    evidence: m.proof_strength_score,
+    visibility: Math.round((rows.find((r) => r.cluster_id === m.cluster_id)?.visibility_target_share ?? 0) * 100),
+    gapType: m.gap_type,
+    fill: m.gap_type ? GAP_COLORS[m.gap_type] ?? "rgb(0,146,184)" : STRONGHOLD_COLOR,
+  }));
 
   // 5. Radar chart data
   const radarAxes = [
@@ -325,17 +342,18 @@ export default function AnalyticsPage() {
           </div>
         </FadeSlide>
 
-        {/* 4. Method Outcomes Donut */}
+        {/* 4. Gap Mix Donut */}
         <FadeSlide delay={300}>
           <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
-            <h2 className="text-peec-lg font-semibold tracking-tight mb-4">
-              Classification Outcomes
+            <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
+              Gap Mix
             </h2>
-            {outcomesData.length > 0 ? (
+            <p className="text-peec-sm text-peec-muted mb-4">Distribution of gap types across tracked topics</p>
+            {gapMixData.length > 0 ? (
               <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
-                    data={outcomesData}
+                    data={gapMixData}
                     cx="50%"
                     cy="50%"
                     innerRadius={70}
@@ -345,8 +363,8 @@ export default function AnalyticsPage() {
                     nameKey="name"
                     label={({ name, value }: any) => `${name}: ${value}`}
                   >
-                    {outcomesData.map((_, idx) => (
-                      <Cell key={idx} fill={PIE_COLORS[idx % PIE_COLORS.length]} />
+                    {gapMixData.map((entry, idx) => (
+                      <Cell key={idx} fill={GAP_MIX_COLORS[entry.name] || PIE_COLORS[idx % PIE_COLORS.length]} />
                     ))}
                   </Pie>
                   <Tooltip
@@ -358,7 +376,7 @@ export default function AnalyticsPage() {
                           <div className="flex items-center gap-2">
                             <span className="w-2.5 h-2.5 rounded-full" style={{ background: d.payload.fill }} />
                             <span className="font-semibold">{d.name}:</span>
-                            <span>{d.value}</span>
+                            <span>{d.value} {d.value === 1 ? 'topic' : 'topics'}</span>
                           </div>
                         </div>
                       );
@@ -373,14 +391,93 @@ export default function AnalyticsPage() {
               </ResponsiveContainer>
             ) : (
               <div className="flex items-center justify-center h-[300px] text-peec-muted">
-                No classification data available.
+                No gap data available.
               </div>
             )}
           </div>
         </FadeSlide>
       </div>
 
-      {/* Row 3: Radar Chart — full width */}
+      {/* Row 3: Opportunity vs Evidence Scatter — full width */}
+      <FadeSlide delay={350}>
+        <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
+          <h2 className="text-peec-lg font-semibold tracking-tight mb-1">
+            Action Priority vs Evidence Coverage
+          </h2>
+          <p className="text-peec-sm text-peec-muted mb-4">
+            Top-right = act now. Bottom-right = build evidence first. Top-left = maintain. Bottom-left = monitor.
+          </p>
+          {scatterData.length > 0 ? (
+            <ResponsiveContainer width="100%" height={360}>
+              <ScatterChart margin={{ top: 16, right: 16, bottom: 16, left: 16 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(23,23,23,0.08)" />
+                <XAxis
+                  type="number"
+                  dataKey="opportunity"
+                  name="Action Priority"
+                  domain={[0, 100]}
+                  tickLine={false}
+                  axisLine={false}
+                  tick={{ fontSize: 12, fill: "rgba(23,23,23,0.6)" }}
+                  label={{ value: "Action Priority →", position: "insideBottomRight", offset: -5, fontSize: 12, fill: "rgba(23,23,23,0.5)" }}
+                />
+                <YAxis
+                  type="number"
+                  dataKey="evidence"
+                  name="Evidence Coverage"
+                  domain={[0, 100]}
+                  tickLine={false}
+                  axisLine={false}
+                  tick={{ fontSize: 12, fill: "rgba(23,23,23,0.6)" }}
+                  label={{ value: "Evidence Coverage →", angle: -90, position: "insideLeft", offset: 10, fontSize: 12, fill: "rgba(23,23,23,0.5)" }}
+                />
+                <ZAxis type="number" dataKey="visibility" range={[80, 400]} name="Visibility" />
+                <ReferenceLine x={50} stroke="rgba(23,23,23,0.15)" strokeDasharray="4 4" />
+                <ReferenceLine y={50} stroke="rgba(23,23,23,0.15)" strokeDasharray="4 4" />
+                <Tooltip
+                  content={({ active, payload }: any) => {
+                    if (!active || !payload?.length) return null;
+                    const d = payload[0]?.payload;
+                    if (!d) return null;
+                    return (
+                      <div className="bg-white rounded-peec-lg shadow-peec-ring p-3 text-peec-sm border border-peec-hairline">
+                        <div className="font-semibold mb-1">{d.name}</div>
+                        <div>Action Priority: <strong>{d.opportunity}</strong></div>
+                        <div>Evidence Coverage: <strong>{d.evidence}</strong></div>
+                        <div>Visibility: <strong>{d.visibility}%</strong></div>
+                        <div className="text-peec-muted mt-1">
+                          {d.opportunity >= 50 && d.evidence >= 50 && "→ Act now"}
+                          {d.opportunity >= 50 && d.evidence < 50 && "→ Build evidence first"}
+                          {d.opportunity < 50 && d.evidence >= 50 && "→ Maintain"}
+                          {d.opportunity < 50 && d.evidence < 50 && "→ Monitor"}
+                        </div>
+                      </div>
+                    );
+                  }}
+                />
+                <Scatter data={scatterData} shape={(props: any) => {
+                  const { cx, cy, payload } = props;
+                  const r = Math.max(6, Math.min(20, payload.visibility / 5));
+                  return (
+                    <g>
+                      <circle cx={cx} cy={cy} r={r} fill={payload.fill} opacity={0.7} stroke={payload.fill} strokeWidth={1.5} />
+                      <text x={cx} y={cy - r - 4} textAnchor="middle" fontSize={11} fill="rgba(23,23,23,0.7)">
+                        {payload.name.length > 16 ? payload.name.slice(0, 14) + "…" : payload.name}
+                      </text>
+                    </g>
+                  );
+                }} />
+              </ScatterChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="flex items-center justify-center h-[360px] text-peec-muted">
+              No metric data available.
+            </div>
+          )}
+        </div>
+      </FadeSlide>
+
+      {/* Row 4: Radar Chart — full width */}
       <FadeSlide delay={400}>
         <div className="bg-white rounded-peec-xl shadow-peec-ring p-4">
           <h2 className="text-peec-lg font-semibold tracking-tight mb-4">
