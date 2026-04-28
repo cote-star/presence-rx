@@ -8,8 +8,6 @@ Presence Rx is the decision layer on top of Peec AI. Peec shows how a brand appe
 
 [![Animated Presence Rx walkthrough showing gap analysis, strategic actions, channel activation, and claim simulation](docs/demo-assets/presence-rx-walkthrough.webp)](docs/demo-assets/gap-analysis.png)
 
-Demo scripts, screenshots, and recording commands live in the [Marketing Demo Pack](docs/MARKETING_DEMOS.md).
-
 ---
 
 ## Why This Exists
@@ -109,8 +107,6 @@ Presence Rx ships those hero features as a reproducible case pipeline and dashbo
 | Dashboard | Diagnosis, action brief, analytics, claim simulator, export tools, and future-direction preview |
 
 The flagship case includes a verified Peec MCP visibility snapshot, Tavily public-web evidence, and a Gemini-compatible perception-analysis artifact grounded in the gap topics.
-
-For the deeper rationale behind the hero-feature order, see [Hero Feature Organization](docs/HERO_FEATURE_ORGANIZATION.md).
 
 ---
 
