@@ -18,7 +18,7 @@ const chromePath =
 const img2webpPath = process.env.IMG2WEBP_PATH ?? "img2webp";
 const baseUrl = process.env.PRESENCE_RX_URL ?? "http://localhost:3000";
 const debugPort = Number(process.env.CHROME_DEBUG_PORT ?? 9334);
-const frameDurationMs = Number(process.env.DEMO_FRAME_MS ?? 110);
+const frameDurationMs = Number(process.env.DEMO_FRAME_MS ?? 180);
 const webpQuality = String(process.env.DEMO_WEBP_QUALITY ?? 60);
 const viewport = {
   width: Number(process.env.DEMO_WIDTH ?? 1280),
@@ -240,8 +240,8 @@ async function main() {
     const state = { frames: [] };
 
     await navigate(cdp, `${baseUrl}/diagnosis`, "Conversation Blocks");
-    await captureHold(cdp, framesDir, state, 5);
-    await captureScroll(cdp, framesDir, state, 0, 760, 18);
+    await captureHold(cdp, framesDir, state, 8);
+    await captureScroll(cdp, framesDir, state, 0, 760, 28);
 
     await navigate(cdp, `${baseUrl}/`, "Discovery Gaps");
     const actionStart = await pageScrollY(
@@ -252,15 +252,15 @@ async function main() {
         return Math.max(0, (heading?.getBoundingClientRect().top ?? 0) + window.scrollY - 66);
       })()`,
     );
-    await captureScroll(cdp, framesDir, state, actionStart, actionStart + 980, 20);
+    await captureScroll(cdp, framesDir, state, actionStart, actionStart + 980, 32);
 
     await navigate(cdp, `${baseUrl}/evidence`, "Claim Simulator");
     await fillBlockedClaim(cdp);
-    await captureHold(cdp, framesDir, state, 12);
+    await captureHold(cdp, framesDir, state, 20);
 
     await navigate(cdp, `${baseUrl}/future`, "Illustrative preview");
-    await captureHold(cdp, framesDir, state, 4);
-    await captureScroll(cdp, framesDir, state, 0, 520, 12);
+    await captureHold(cdp, framesDir, state, 6);
+    await captureScroll(cdp, framesDir, state, 0, 520, 16);
 
     cdp.close();
     await encodeWebp(state.frames, outputFile);
