@@ -73,6 +73,7 @@ notebooks/executed/
 *.png
 *.jpg
 !docs/screenshot-*.png
+!docs/demo-assets/*.png
 .playwright-mcp/
 
 # Agent local working files
