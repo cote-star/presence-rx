@@ -16,7 +16,7 @@ const debugPort = Number(process.env.CHROME_DEBUG_PORT ?? 9333);
 const viewport = {
   width: Number(process.env.DEMO_WIDTH ?? 1440),
   height: Number(process.env.DEMO_HEIGHT ?? 1100),
-  deviceScaleFactor: 1,
+  deviceScaleFactor: 2,
   mobile: false,
 };
 

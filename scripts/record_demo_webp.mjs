@@ -23,7 +23,7 @@ const webpQuality = String(process.env.DEMO_WEBP_QUALITY ?? 60);
 const viewport = {
   width: Number(process.env.DEMO_WIDTH ?? 1280),
   height: Number(process.env.DEMO_HEIGHT ?? 720),
-  deviceScaleFactor: 1,
+  deviceScaleFactor: 2,
   mobile: false,
 };
 
